@@ -4,13 +4,12 @@ import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import FloatingButtons from './components/FloatingButtons'
+import { DEFAULT_METADATA, HOMEPAGE_SCHEMA } from './lib/metadata'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: 'Nha Trang Insight | Thông tin du lịch & đời sống Nha Trang',
-  description: 'Cung cấp thông tin du lịch, chuyến bay, giao thông, ẩm thực và lịch sử Nha Trang - Khánh Hòa giúp bạn có chuyến đi tuyệt vời nhất.',
-}
+export const metadata: Metadata = DEFAULT_METADATA
 
 export default function RootLayout({
   children,
@@ -28,6 +27,13 @@ export default function RootLayout({
           <Footer />
           <FloatingButtons />
         </div>
+        
+        {/* Schema.org JSON-LD */}
+        <Script
+          id="schema-homepage"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(HOMEPAGE_SCHEMA) }}
+        />
       </body>
     </html>
   )
