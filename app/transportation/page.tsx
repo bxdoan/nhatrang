@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { FaBus, FaMotorcycle, FaCar, FaTaxi, FaShip, FaMapMarkedAlt, FaPhone } from 'react-icons/fa';
+import { FaBus, FaMotorcycle, FaCar, FaTaxi, FaShip, FaMapMarkedAlt, FaPhone, FaWhatsapp, FaTelegram } from 'react-icons/fa';
 import { CONTACT_INFO } from '../lib/contact-config';
 
 export default function TransportationPage() {
@@ -181,9 +181,28 @@ export default function TransportationPage() {
               Cần tư vấn thêm về các phương tiện di chuyển hoặc đặt dịch vụ xe đưa đón tại Nha Trang? Liên hệ với chúng tôi ngay!
             </p>
             
-            <div className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full transition-colors">
-              <a href={`tel:${CONTACT_INFO.phoneNumber}`} className="flex items-center">
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a 
+                href={`tel:${CONTACT_INFO.phoneNumber}`}
+                className="inline-flex items-center justify-center bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-md transition-colors"
+              >
                 <FaPhone className="mr-2" /> Gọi ngay: {CONTACT_INFO.phoneNumber}
+              </a>
+              <a 
+                href={`https://zalo.me/${CONTACT_INFO.phoneNumber}`}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors"
+              >
+                <FaWhatsapp className="mr-2" /> Nhắn tin qua Zalo
+              </a>
+              <a 
+                href={`https://t.me/${CONTACT_INFO.telegramUsername}`}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md transition-colors"
+              >
+                <FaTelegram className="mr-2" /> Nhắn tin qua Telegram
               </a>
             </div>
           </div>
