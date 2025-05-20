@@ -16,7 +16,7 @@
    cp example.env.local .env.local
    ```
 
-3. Chỉnh sửa file `.env.local` với các thông tin cần thiết (API key, thông tin KV Storage...)
+3. Chỉnh sửa file `.env.local` với các thông tin cần thiết (API key, thông tin Redis...)
 
 4. Commit tất cả thay đổi vào Git repository (đừng commit file `.env.local`):
    ```bash
@@ -38,19 +38,21 @@
 2. Tạo API key hoặc sử dụng API key sẵn có
 3. Ghi nhớ API key để thiết lập trong Vercel
 
-### Chuẩn bị Vercel KV Storage (Redis)
+### Chuẩn bị Redis
 
-Ứng dụng sử dụng Vercel KV Storage để lưu trữ cache, giảm số lần gọi API.
+Ứng dụng sử dụng Redis để lưu trữ cache. Bạn có một số lựa chọn:
 
-1. Đăng nhập vào [Vercel Dashboard](https://vercel.com/dashboard)
-2. Truy cập mục Storage trong dashboard
-3. Chọn "Create KV Database"
-4. Làm theo hướng dẫn để tạo database mới
-5. Sau khi tạo, Vercel sẽ cung cấp thông tin kết nối (lưu lại các thông tin này):
-   - KV_URL
-   - KV_REST_API_URL
-   - KV_REST_API_TOKEN
-   - KV_REST_API_READ_ONLY_TOKEN
+1. **Redis Cloud (Khuyến nghị)**
+   - Đăng ký tài khoản Redis Cloud tại [Redis Cloud](https://redis.com/try-free/)
+   - Tạo cơ sở dữ liệu mới (có gói miễn phí)
+   - Lấy thông tin kết nối (Redis URL)
+   - URL sẽ có dạng: `redis://default:password@host:port`
+
+2. **Redis từ các nhà cung cấp khác**
+   - AWS ElastiCache
+   - DigitalOcean Managed Redis
+   - Upstash Redis
+   - v.v.
 
 ## Bước 3: Triển khai lên Vercel
 
@@ -63,10 +65,7 @@
 5. Cấu hình dự án:
    - Thêm các biến môi trường sau:
      - `AVIATIONSTACK_API_KEY`: API key của AviationStack
-     - `KV_URL`: URL của KV database
-     - `KV_REST_API_URL`: REST API URL 
-     - `KV_REST_API_TOKEN`: Token cho REST API
-     - `KV_REST_API_READ_ONLY_TOKEN`: Token chỉ đọc
+     - `REDIS_URL`: URL kết nối Redis (ví dụ: redis://default:Fc4FoduRg4oW63ZEdPCA9s8s8OrJ5Eay@redis-11687.c252.ap-southeast-1-1.ec2.redns.redis-cloud.com:11687)
      - `CACHE_TTL_HOURS`: Thời gian hết hạn của cache tính bằng giờ (mặc định: 10)
      - `MAX_API_CALLS_PER_DAY`: Số lần gọi API tối đa mỗi ngày (mặc định: 3)
 6. Nhấp vào "Deploy"
@@ -113,6 +112,14 @@ vercel env add VARIABLE_NAME
 # Xóa biến môi trường
 vercel env rm VARIABLE_NAME
 ```
+
+## Kiểm tra kết nối Redis
+
+Sau khi triển khai, để kiểm tra xem ứng dụng đã kết nối thành công đến Redis hay chưa:
+
+1. Truy cập trang `/cache` để xem thông tin về cache
+2. Kiểm tra logs trong Vercel Dashboard để xem có thông báo lỗi kết nối Redis không
+3. Nếu có lỗi, kiểm tra lại biến môi trường `REDIS_URL` và quyền truy cập Redis
 
 ## Lưu ý
 

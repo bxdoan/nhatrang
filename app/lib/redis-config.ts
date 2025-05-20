@@ -1,4 +1,16 @@
-import { kv } from '@vercel/kv';
+import Redis from 'ioredis';
+
+// Kết nối Redis
+const redis = new Redis(process.env.REDIS_URL || '');
+
+// Kiểm tra kết nối Redis
+redis.on('error', (error) => {
+  console.error('Lỗi kết nối Redis:', error);
+});
+
+redis.on('connect', () => {
+  console.log('Đã kết nối thành công đến Redis');
+});
 
 // Cache config
 export const CACHE_TTL_HOURS = parseInt(process.env.CACHE_TTL_HOURS || '10');
@@ -19,5 +31,8 @@ if (!API_KEY) {
   console.warn('AVIATIONSTACK_API_KEY không được cấu hình. Hãy đảm bảo thiết lập biến môi trường.');
 }
 
-// Export kv instance
-export { kv }; 
+if (!process.env.REDIS_URL) {
+  console.warn('REDIS_URL không được cấu hình. Hãy đảm bảo thiết lập biến môi trường.');
+}
+
+export { redis }; 

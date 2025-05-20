@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import axios from 'axios';
-import { API_KEY } from '../../lib/kv-config';
+import { API_KEY } from '../../lib/redis-config';
 import { 
   getCachedFlightData, 
   cacheFlightData, 

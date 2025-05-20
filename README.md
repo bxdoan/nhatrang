@@ -16,7 +16,7 @@
 - TypeScript
 - Tailwind CSS
 - AviationStack API
-- Vercel KV Storage (Redis) cho lưu trữ cache
+- Redis cho lưu trữ cache
 
 ## Cài đặt
 
@@ -47,11 +47,8 @@ Dự án sử dụng các biến môi trường để cấu hình. Tạo file `.
 # API keys
 AVIATIONSTACK_API_KEY=your_api_key_here
 
-# Vercel KV configuration 
-KV_URL=your_kv_url_here
-KV_REST_API_URL=your_kv_rest_api_url_here
-KV_REST_API_TOKEN=your_kv_rest_api_token_here
-KV_REST_API_READ_ONLY_TOKEN=your_kv_read_only_token_here
+# Redis configuration
+REDIS_URL=redis://default:password@host:port
 
 # Cache config
 CACHE_TTL_HOURS=10
@@ -64,17 +61,15 @@ MAX_API_CALLS_PER_DAY=3
 2. Đi đến trang tài khoản và lấy API key
 3. Thêm API key vào biến môi trường `AVIATIONSTACK_API_KEY`
 
-## Thiết lập Vercel KV Storage
+### Thiết lập Redis
 
-1. Tạo một tài khoản Vercel (nếu chưa có)
-2. Đăng nhập vào [Vercel Dashboard](https://vercel.com/dashboard)
-3. Tạo project mới và kết nối với repository GitHub
-4. Truy cập mục Storage và tạo một KV Database mới
-5. Lấy thông tin kết nối KV Database và thêm vào biến môi trường trong project:
-   - KV_URL
-   - KV_REST_API_URL 
-   - KV_REST_API_TOKEN
-   - KV_REST_API_READ_ONLY_TOKEN
+Dự án sử dụng Redis để lưu trữ cache. Bạn có thể sử dụng:
+
+1. **Redis Cloud**: Đăng ký tài khoản Redis Cloud (có gói miễn phí) tại [Redis Cloud](https://redis.com/try-free/)
+2. **Vercel Redis**: Đăng ký dịch vụ Redis từ Vercel (nếu có sẵn)
+3. **Phiên bản Redis tự host**: Cài đặt Redis trên server của bạn
+
+Sau khi có được Redis URL, thêm vào biến môi trường `REDIS_URL` của bạn.
 
 ## Triển khai (Deploy)
 

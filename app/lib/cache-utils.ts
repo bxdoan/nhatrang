@@ -1,27 +1,28 @@
 import { format } from 'date-fns';
-import { kv, 
+import { redis, 
   FLIGHT_DATA_KEY, 
   CACHE_TIMESTAMP_KEY, 
   CACHE_TTL_SECONDS,
   API_CALL_COUNT_KEY,
   API_CALL_DATE_KEY,
   MAX_API_CALLS_PER_DAY
-} from './kv-config';
+} from './redis-config';
 
 // Kiểm tra xem dữ liệu cache có khả dụng và còn mới không
 export async function getCachedFlightData() {
   try {
     // Lấy dữ liệu và timestamp
-    const data = await kv.get(FLIGHT_DATA_KEY);
-    const timestamp = await kv.get<number>(CACHE_TIMESTAMP_KEY);
-
+    const dataJson = await redis.get(FLIGHT_DATA_KEY);
+    const timestampStr = await redis.get(CACHE_TIMESTAMP_KEY);
+    
     // Nếu không có dữ liệu hoặc timestamp
-    if (!data || !timestamp) {
+    if (!dataJson || !timestampStr) {
       console.log('Không có dữ liệu cache');
       return null;
     }
 
     // Kiểm tra xem dữ liệu có quá cũ không
+    const timestamp = parseInt(timestampStr);
     const now = Date.now();
     const cacheAge = now - timestamp;
     
@@ -34,7 +35,8 @@ export async function getCachedFlightData() {
     const cacheExpiryMinutes = Math.round((CACHE_TTL_SECONDS * 1000 - cacheAge) / (60 * 1000));
     console.log(`Dữ liệu cache còn hiệu lực trong ${cacheExpiryMinutes} phút`);
 
-    return data;
+    // Parse dữ liệu JSON
+    return JSON.parse(dataJson);
   } catch (error) {
     console.error('Lỗi khi đọc dữ liệu cache:', error);
     return null;
@@ -47,8 +49,12 @@ export async function cacheFlightData(data: any) {
     const now = Date.now();
     
     // Lưu dữ liệu và timestamp
-    await kv.set(FLIGHT_DATA_KEY, data);
-    await kv.set(CACHE_TIMESTAMP_KEY, now);
+    await redis.set(FLIGHT_DATA_KEY, JSON.stringify(data));
+    await redis.set(CACHE_TIMESTAMP_KEY, now.toString());
+    
+    // Thiết lập thời gian tự động hết hạn (nếu cần)
+    // await redis.expire(FLIGHT_DATA_KEY, CACHE_TTL_SECONDS);
+    // await redis.expire(CACHE_TIMESTAMP_KEY, CACHE_TTL_SECONDS);
     
     console.log(`Đã lưu dữ liệu vào cache vào lúc ${new Date(now).toLocaleString()}`);
     return true;
@@ -62,18 +68,19 @@ export async function cacheFlightData(data: any) {
 export async function checkAndUpdateApiCallLimit() {
   try {
     const today = format(new Date(), 'yyyy-MM-dd');
-    const savedDate = await kv.get<string>(API_CALL_DATE_KEY);
+    const savedDate = await redis.get(API_CALL_DATE_KEY);
     
     // Reset counter nếu ngày mới
     if (savedDate !== today) {
-      await kv.set(API_CALL_COUNT_KEY, 1);
-      await kv.set(API_CALL_DATE_KEY, today);
+      await redis.set(API_CALL_COUNT_KEY, '1');
+      await redis.set(API_CALL_DATE_KEY, today);
       console.log(`Bắt đầu đếm API call cho ngày mới: ${today}`);
       return true;
     }
     
     // Kiểm tra số lần gọi API trong ngày
-    const callCount = await kv.get<number>(API_CALL_COUNT_KEY) || 0;
+    const callCountStr = await redis.get(API_CALL_COUNT_KEY);
+    const callCount = callCountStr ? parseInt(callCountStr) : 0;
     
     if (callCount >= MAX_API_CALLS_PER_DAY) {
       console.log(`Đã đạt giới hạn ${MAX_API_CALLS_PER_DAY} lần gọi API trong ngày`);
@@ -81,7 +88,7 @@ export async function checkAndUpdateApiCallLimit() {
     }
     
     // Tăng số lần gọi API
-    await kv.set(API_CALL_COUNT_KEY, callCount + 1);
+    await redis.set(API_CALL_COUNT_KEY, (callCount + 1).toString());
     console.log(`Đã sử dụng ${callCount + 1}/${MAX_API_CALLS_PER_DAY} lần gọi API trong ngày`);
     return true;
   } catch (error) {
@@ -94,9 +101,12 @@ export async function checkAndUpdateApiCallLimit() {
 // Lấy thông tin về số lần gọi API và thời gian cache
 export async function getCacheStats() {
   try {
-    const timestamp = await kv.get<number>(CACHE_TIMESTAMP_KEY) || 0;
-    const callCount = await kv.get<number>(API_CALL_COUNT_KEY) || 0;
-    const callDate = await kv.get<string>(API_CALL_DATE_KEY) || format(new Date(), 'yyyy-MM-dd');
+    const timestampStr = await redis.get(CACHE_TIMESTAMP_KEY);
+    const callCountStr = await redis.get(API_CALL_COUNT_KEY);
+    const callDate = await redis.get(API_CALL_DATE_KEY) || format(new Date(), 'yyyy-MM-dd');
+    
+    const timestamp = timestampStr ? parseInt(timestampStr) : 0;
+    const callCount = callCountStr ? parseInt(callCountStr) : 0;
     
     const cacheTime = timestamp ? new Date(timestamp).toLocaleString() : 'Chưa có';
     const cacheAge = timestamp ? Math.round((Date.now() - timestamp) / (60 * 1000)) : 0;
