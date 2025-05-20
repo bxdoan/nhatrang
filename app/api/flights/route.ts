@@ -8,6 +8,9 @@ import {
   getCacheStats 
 } from '../../lib/cache-utils';
 
+// Đánh dấu route này là động
+export const dynamic = 'force-dynamic';
+
 // API configuration
 const AIRPORT_CODE = 'CXR';  // Mã IATA sân bay Cam Ranh
 const BASE_URL = 'https://api.aviationstack.com/v1/flights';

@@ -15,22 +15,6 @@ export default function Home() {
         <h1 className="text-3xl font-bold mb-2 text-primary">
           Theo dõi chuyến bay - Sân bay Cam Ranh (CXR)
         </h1>
-        <p className="text-gray-600 mb-6">
-          Cập nhật thông tin chuyến bay đến sân bay Cam Ranh
-        </p>
-        
-        <p className="text-xs text-gray-500 mt-2">
-          <i>Hiển thị tối đa 100 chuyến bay, sắp xếp theo thời gian hạ cánh</i>
-        </p>
-        
-        <div className="mt-3">
-          <a 
-            href="/cache" 
-            className="text-sm text-blue-600 hover:text-blue-800 underline"
-          >
-            Xem thông tin cache
-          </a>
-        </div>
       </header>
       
       <main>
@@ -58,7 +42,7 @@ export default function Home() {
         {/* Flights list */}
         {!loading && !error && flights.length > 0 && (
           <div>
-            <p className="text-center mb-4">Hiển thị {flights.length} chuyến bay đến Cam Ranh</p>
+            <p className="text-center mb-4">Hiển thị {flights.length} chuyến bay đến Cam Ranh (CXR) trong 24h</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {flights.map((flight, index) => (
                 <FlightCard key={`${flight.flight.iata}-${index}`} flight={flight} />

@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { getCacheStats } from '../../lib/cache-utils';
 
+// Đánh dấu route này là động
+export const dynamic = 'force-dynamic';
+
 // API route để xem thông tin về cache
 export async function GET(request: Request) {
   try {
