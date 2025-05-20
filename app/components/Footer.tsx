@@ -15,9 +15,11 @@ import {
   FaUtensils,
   FaHistory
 } from 'react-icons/fa';
-import Link from 'next/link';
+import Link from 'next/link';   
+import { CONTACT_INFO } from '../lib/contact-config';
 
 export default function Footer() {
+
   return (
     <footer className="bg-gradient-to-r from-blue-800 to-blue-900 text-white pt-12">
       <div className="container mx-auto px-4">
@@ -97,15 +99,15 @@ export default function Footer() {
             <ul className="text-sm text-blue-200 space-y-3">
               <li className="flex items-start">
                 <FaMapMarkerAlt className="mr-2 mt-1 text-blue-300" />
-                <span>2/18 Ngô Đến, Vĩnh Phước , Tp. Nha Trang, Khánh Hòa</span>
+                <span>{CONTACT_INFO.address}</span>
               </li>
               <li className="flex items-center">
                 <FaPhone className="mr-2 text-blue-300" />
-                <span>+84 915 670 892</span>
+                <span>{CONTACT_INFO.phoneNumber}</span>
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="mr-2 text-blue-300" />
-                <span>info@nhatranginsight.vn</span>
+                <span>{CONTACT_INFO.email}</span>
               </li>
             </ul>
           </div>
@@ -132,7 +134,6 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-blue-700 py-6 text-center text-sm text-blue-300">
           <p>© {new Date().getFullYear()} Nha Trang Insight - Thông tin du lịch & đời sống Nha Trang</p>
-          <p className="mt-1 text-xs">Dữ liệu chuyến bay cung cấp bởi AviationStack API.</p>
         </div>
       </div>
     </footer>

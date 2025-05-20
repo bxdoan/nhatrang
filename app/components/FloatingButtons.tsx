@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { FaPhone, FaArrowUp, FaArrowDown, FaTelegram, FaComment, FaTimes, FaSlack } from 'react-icons/fa';
+import { CONTACT_INFO } from '../lib/contact-config';
 
 type ButtonType = 'contact' | 'top' | 'bottom';
 
@@ -11,12 +12,6 @@ export default function FloatingButtons() {
   const [showTooltip, setShowTooltip] = useState({ contact: false, top: false, bottom: false });
   const [showContactMenu, setShowContactMenu] = useState(false);
   const contactMenuRef = useRef<HTMLDivElement>(null);
-  
-  // Thông tin liên hệ
-  const contactInfo = {
-    phone: '+84915670892',
-    telegramUsername: 'nhatranginsight'
-  };
   
   // Xử lý hiển thị nút scroll khi cuộn xuống
   useEffect(() => {
@@ -116,17 +111,17 @@ export default function FloatingButtons() {
               <h3 className="text-sm font-medium text-gray-700">Liên hệ nhanh</h3>
             </div>
             
-            <a href={`tel:${contactInfo.phone}`} className="flex items-center px-3 py-2.5 hover:bg-gray-50 text-gray-700">
+            <a href={`tel:${CONTACT_INFO.phoneNumber}`} className="flex items-center px-3 py-2.5 hover:bg-gray-50 text-gray-700">
               <FaPhone className="mr-2 text-green-600" />
               <span className="text-sm">Gọi điện thoại</span>
             </a>
             
-            <a href={`https://zalo.me/${contactInfo.phone}`} target="_blank" rel="noreferrer" className="flex items-center px-3 py-2.5 hover:bg-gray-50 text-gray-700">
+            <a href={`https://zalo.me/${CONTACT_INFO.phoneNumber}`} target="_blank" rel="noreferrer" className="flex items-center px-3 py-2.5 hover:bg-gray-50 text-gray-700">
               <div className="mr-2 flex items-center justify-center w-4 h-4 bg-blue-600 text-white rounded-sm text-xs font-bold">Z</div>
               <span className="text-sm">Nhắn tin Zalo</span>
             </a>
             
-            <a href={`https://t.me/${contactInfo.telegramUsername}`} target="_blank" rel="noreferrer" className="flex items-center px-3 py-2.5 hover:bg-gray-50 text-gray-700">
+            <a href={`https://t.me/${CONTACT_INFO.telegramUsername}`} target="_blank" rel="noreferrer" className="flex items-center px-3 py-2.5 hover:bg-gray-50 text-gray-700">
               <FaTelegram className="mr-2 text-blue-500" />
               <span className="text-sm">Nhắn tin Telegram</span>
             </a>
