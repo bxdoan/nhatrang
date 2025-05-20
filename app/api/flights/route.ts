@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import axios from 'axios';
-import { API_KEY } from '../../lib/redis-config';
+import { API_KEY, NO_LIMIT, MAX_API_CALLS_PER_DAY } from '../../lib/redis-config';
 import { 
   getCachedFlightData, 
   cacheFlightData, 
@@ -14,40 +14,92 @@ export const dynamic = 'force-dynamic';
 // API configuration
 const AIRPORT_CODE = 'CXR';  // Mã IATA sân bay Cam Ranh
 const BASE_URL = 'https://api.aviationstack.com/v1/flights';
+const DEFAULT_LIMIT = 100;  // Giới hạn mặc định số lượng chuyến bay
 
 // Get flights API route
 export async function GET(request: Request) {
   try {
-    // Kiểm tra có yêu cầu làm mới cache không
+    // Lấy tham số từ URL
     const { searchParams } = new URL(request.url);
     const forceRefresh = searchParams.get('refresh') === 'true';
+    const limit = parseInt(searchParams.get('limit') || String(DEFAULT_LIMIT));
+    const offset = parseInt(searchParams.get('offset') || '0');
+    
+    // Tạo cache key dựa trên params
+    const cacheKey = `flights_${limit}_${offset}`;
     
     // Nếu không yêu cầu làm mới, kiểm tra cache trước
+    let cachedData = null;
     if (!forceRefresh) {
-      const cachedData = await getCachedFlightData();
+      try {
+        cachedData = await getCachedFlightData(cacheKey);
+      } catch (cacheError) {
+        console.error('Lỗi khi đọc cache:', cacheError);
+        // Tiếp tục mà không cần dừng nếu cache không hoạt động
+      }
       
       // Nếu có dữ liệu cache hợp lệ, trả về luôn
       if (cachedData) {
         // Lấy thông tin về cache cho client
-        const stats = await getCacheStats();
+        let stats = { 
+          lastUpdate: '',
+          cacheAgeMinutes: 0,
+          cacheExpiryMinutes: 0,
+          apiCallCount: 0,
+          apiCallDate: '',
+          maxApiCalls: MAX_API_CALLS_PER_DAY
+        };
+        
+        try {
+          const cacheStats = await getCacheStats();
+          if (cacheStats) {
+            stats = cacheStats;
+          }
+        } catch (statsError) {
+          console.error('Lỗi khi lấy thông tin cache:', statsError);
+        }
         
         // Trả về dữ liệu từ cache với thông tin thêm
         return NextResponse.json({
           ...cachedData,
           cache: {
             source: 'cache',
-            ...stats
+            ...stats,
+            noLimit: NO_LIMIT
           }
         });
       }
     }
     
     // Kiểm tra xem còn lượt gọi API không
-    const canCallApi = await checkAndUpdateApiCallLimit();
+    let canCallApi = true;
+    try {
+      canCallApi = await checkAndUpdateApiCallLimit();
+    } catch (limitError) {
+      console.error('Lỗi khi kiểm tra giới hạn API:', limitError);
+      // Nếu không kiểm tra được, vẫn cho phép gọi API
+    }
     
     if (!canCallApi) {
       // Nếu hết lượt gọi API, trả về lỗi
-      const stats = await getCacheStats();
+      let stats = { 
+        lastUpdate: '',
+        cacheAgeMinutes: 0,
+        cacheExpiryMinutes: 0, 
+        apiCallCount: 0,
+        apiCallDate: '',
+        maxApiCalls: MAX_API_CALLS_PER_DAY
+      };
+      
+      try {
+        const cacheStats = await getCacheStats();
+        if (cacheStats) {
+          stats = cacheStats;
+        }
+      } catch (statsError) {
+        console.error('Lỗi khi lấy thông tin cache:', statsError);
+      }
+      
       return NextResponse.json({
         error: {
           message: 'Đã đạt giới hạn gọi API cho ngày hôm nay',
@@ -55,7 +107,8 @@ export async function GET(request: Request) {
         },
         cache: {
           source: 'error',
-          ...stats
+          ...stats,
+          noLimit: NO_LIMIT
         }
       }, { status: 429 });
     }
@@ -64,24 +117,47 @@ export async function GET(request: Request) {
     const params = {
       access_key: API_KEY,
       arr_iata: AIRPORT_CODE,
-      limit: 100  // Giới hạn số lượng chuyến bay
+      limit: limit,
+      offset: offset
     };
 
     // Make request to AviationStack API
     const response = await axios.get(BASE_URL, { params });
     
     // Lưu dữ liệu vào cache
-    await cacheFlightData(response.data);
+    try {
+      await cacheFlightData(response.data, cacheKey);
+    } catch (cacheError) {
+      console.error('Lỗi khi lưu cache:', cacheError);
+      // Tiếp tục mà không dừng nếu cache không hoạt động
+    }
     
     // Lấy thông tin về cache cho client
-    const stats = await getCacheStats();
+    let stats = { 
+      lastUpdate: '',
+      cacheAgeMinutes: 0,
+      cacheExpiryMinutes: 0,
+      apiCallCount: 0,
+      apiCallDate: '',
+      maxApiCalls: MAX_API_CALLS_PER_DAY
+    };
+    
+    try {
+      const cacheStats = await getCacheStats();
+      if (cacheStats) {
+        stats = cacheStats;
+      }
+    } catch (statsError) {
+      console.error('Lỗi khi lấy thông tin cache:', statsError);
+    }
     
     // Return the API response with cache info
     return NextResponse.json({
       ...response.data,
       cache: {
         source: 'api',
-        ...stats
+        ...stats,
+        noLimit: NO_LIMIT
       }
     });
   } catch (error: any) {

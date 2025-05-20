@@ -70,6 +70,22 @@ export default function FlightCard({ flight }: { flight: Flight }) {
     }
   };
 
+  // Function to format date with timezone conversion
+  const formatDate = (dateString: string | undefined, timezone: string) => {
+    if (!dateString) return 'N/A';
+    try {
+      // Parse ISO string to Date
+      const date = parseISO(dateString);
+      // Convert UTC time to target timezone
+      const zonedDate = utcToZonedTime(date, timezone);
+      // Format the date with target timezone
+      return format(zonedDate, 'dd/MM/yyyy');
+    } catch (error) {
+      console.error('Error formatting date:', error);
+      return 'N/A';
+    }
+  };
+
   // Get status class based on flight status
   const getStatusClass = (status: string) => {
     switch (status.toLowerCase()) {
@@ -198,7 +214,7 @@ export default function FlightCard({ flight }: { flight: Flight }) {
           <div>
             <span className="text-sm text-gray-500">Ngày: </span>
             <span className="font-medium">
-              {format(new Date(flight.flight_date), 'dd/MM/yyyy')}
+              {formatDate(flight.arrival.scheduled, flight.arrival.timezone)}
             </span>
           </div>
         </div>

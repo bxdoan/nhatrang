@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getCacheStats } from '../../lib/cache-utils';
+import { NO_LIMIT } from '../../lib/redis-config';
 
 // Đánh dấu route này là động
 export const dynamic = 'force-dynamic';
@@ -10,7 +11,10 @@ export async function GET(request: Request) {
     const stats = await getCacheStats();
     
     return NextResponse.json({
-      cache: stats,
+      cache: {
+        ...stats,
+        noLimit: NO_LIMIT
+      },
       timestamp: new Date().toISOString()
     });
   } catch (error) {

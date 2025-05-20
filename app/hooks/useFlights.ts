@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
 // Types
@@ -88,6 +88,30 @@ export default function useFlights() {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [cacheInfo, setCacheInfo] = useState<CacheInfo | null>(null);
+  const [pagination, setPagination] = useState({
+    limit: 100,
+    offset: 0,
+    count: 0,
+    total: 0,
+    hasMore: false
+  });
+
+  // Hàm loại bỏ chuyến bay trùng lặp
+  const removeDuplicateFlights = (flights: Flight[]): Flight[] => {
+    const uniqueFlights = new Map<string, Flight>();
+    
+    for (const flight of flights) {
+      // Tạo key duy nhất dựa trên mã chuyến bay và thời gian khởi hành/đến
+      const flightKey = `${flight.flight.iata}-${flight.departure.scheduled}-${flight.arrival.scheduled}`;
+      
+      // Chỉ giữ lại phiên bản đầu tiên của mỗi chuyến bay
+      if (!uniqueFlights.has(flightKey)) {
+        uniqueFlights.set(flightKey, flight);
+      }
+    }
+    
+    return Array.from(uniqueFlights.values());
+  };
 
   // Hàm sắp xếp chuyến bay theo thời gian hạ cánh
   const sortFlightsByArrivalTime = (flights: Flight[]): Flight[] => {
@@ -105,51 +129,90 @@ export default function useFlights() {
     });
   };
 
-  useEffect(() => {
-    const fetchFlights = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        
-        // Call our API route
-        const response = await axios.get<FlightsResponse>('/api/flights');
-        
-        // Extract cache info
-        if (response.data.cache) {
-          setCacheInfo(response.data.cache);
-        }
-        
-        // Check if we have data
-        if (response.data && response.data.data) {
-          // Sắp xếp chuyến bay theo giờ hạ cánh
-          const sortedFlights = sortFlightsByArrivalTime(response.data.data);
-          setFlights(sortedFlights);
-        } else {
-          setFlights([]);
-        }
-      } catch (err: any) {
-        console.error('Error fetching flights:', err);
-        
-        // Nếu lỗi liên quan đến giới hạn API
-        if (err.response?.status === 429) {
-          setError('Đã đạt giới hạn gọi API. Sử dụng dữ liệu cache nếu có.');
-          
-          // Cập nhật thông tin cache nếu có
-          if (err.response?.data?.cache) {
-            setCacheInfo(err.response.data.cache);
-          }
-        } else {
-          setError('Không thể tải dữ liệu chuyến bay. Vui lòng thử lại sau.');
-        }
-        
-        setFlights([]);
-      } finally {
-        setLoading(false);
+  // Hàm fetch dữ liệu với tham số phân trang
+  const fetchFlights = useCallback(async (limit = 100, offset = 0) => {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      // Call our API route with pagination params
+      const response = await axios.get<FlightsResponse>(`/api/flights?limit=${limit}&offset=${offset}`);
+      
+      // Extract cache info
+      if (response.data.cache) {
+        setCacheInfo(response.data.cache);
       }
-    };
+      
+      // Extract pagination info
+      if (response.data.pagination) {
+        const { limit, offset, count, total } = response.data.pagination;
+        setPagination({
+          limit,
+          offset,
+          count,
+          total,
+          hasMore: offset + count < total
+        });
+      }
+      
+      // Check if we have data
+      if (response.data && response.data.data) {
+        // Loại bỏ các chuyến bay trùng lặp
+        const uniqueFlights = removeDuplicateFlights(response.data.data);
+        
+        // Sắp xếp chuyến bay theo giờ hạ cánh
+        const sortedFlights = sortFlightsByArrivalTime(uniqueFlights);
+        setFlights(sortedFlights);
+        
+        console.log(`Đã lọc từ ${response.data.data.length} chuyến bay xuống còn ${uniqueFlights.length} chuyến bay duy nhất`);
+      } else {
+        setFlights([]);
+      }
+    } catch (err: any) {
+      console.error('Error fetching flights:', err);
+      
+      // Nếu lỗi liên quan đến giới hạn API
+      if (err.response?.status === 429) {
+        setError('Đã đạt giới hạn gọi API. Sử dụng dữ liệu cache nếu có.');
+        
+        // Cập nhật thông tin cache nếu có
+        if (err.response?.data?.cache) {
+          setCacheInfo(err.response.data.cache);
+        }
+      } else {
+        setError('Không thể tải dữ liệu chuyến bay. Vui lòng thử lại sau.');
+      }
+      
+      setFlights([]);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
+  // Hàm tải thêm dữ liệu
+  const loadMore = useCallback(async () => {
+    if (!pagination.hasMore || loading) return;
+    
+    const nextOffset = pagination.offset + pagination.limit;
+    await fetchFlights(pagination.limit, nextOffset);
+  }, [pagination, loading, fetchFlights]);
+
+  // Hàm tải lại dữ liệu từ đầu
+  const refreshData = useCallback(async () => {
+    await fetchFlights(pagination.limit, 0);
+  }, [pagination.limit, fetchFlights]);
+
+  useEffect(() => {
     fetchFlights();
-  }, []); // Không còn phụ thuộc vào selectedDate
+  }, [fetchFlights]);
 
-  return { flights, loading, error, cacheInfo };
+  return { 
+    flights, 
+    loading, 
+    error, 
+    cacheInfo, 
+    pagination,
+    loadMore,
+    refreshData
+  };
 } 

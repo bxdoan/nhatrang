@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "buildCommand": "next build",
+  "framework": "nextjs",
+  "outputDirectory": ".next",
+  "regions": ["hkg1"],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+} 

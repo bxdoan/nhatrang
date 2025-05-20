@@ -5,19 +5,24 @@ import { redis,
   CACHE_TTL_SECONDS,
   API_CALL_COUNT_KEY,
   API_CALL_DATE_KEY,
-  MAX_API_CALLS_PER_DAY
+  MAX_API_CALLS_PER_DAY,
+  NO_LIMIT
 } from './redis-config';
 
 // Kiểm tra xem dữ liệu cache có khả dụng và còn mới không
-export async function getCachedFlightData() {
+export async function getCachedFlightData(cacheKey = 'default') {
   try {
+    // Tạo key duy nhất cho dữ liệu và timestamp
+    const dataKey = `${FLIGHT_DATA_KEY}:${cacheKey}`;
+    const timestampKey = `${CACHE_TIMESTAMP_KEY}:${cacheKey}`;
+    
     // Lấy dữ liệu và timestamp
-    const dataJson = await redis.get(FLIGHT_DATA_KEY);
-    const timestampStr = await redis.get(CACHE_TIMESTAMP_KEY);
+    const dataJson = await redis.get(dataKey);
+    const timestampStr = await redis.get(timestampKey);
     
     // Nếu không có dữ liệu hoặc timestamp
     if (!dataJson || !timestampStr) {
-      console.log('Không có dữ liệu cache');
+      console.log(`Không có dữ liệu cache cho key: ${cacheKey}`);
       return null;
     }
 
@@ -27,13 +32,13 @@ export async function getCachedFlightData() {
     const cacheAge = now - timestamp;
     
     if (cacheAge > CACHE_TTL_SECONDS * 1000) {
-      console.log('Dữ liệu cache đã hết hạn');
+      console.log(`Dữ liệu cache cho key ${cacheKey} đã hết hạn`);
       return null;
     }
 
     // Tính toán thời gian còn lại của cache
     const cacheExpiryMinutes = Math.round((CACHE_TTL_SECONDS * 1000 - cacheAge) / (60 * 1000));
-    console.log(`Dữ liệu cache còn hiệu lực trong ${cacheExpiryMinutes} phút`);
+    console.log(`Dữ liệu cache cho key ${cacheKey} còn hiệu lực trong ${cacheExpiryMinutes} phút`);
 
     // Parse dữ liệu JSON
     return JSON.parse(dataJson);
@@ -44,19 +49,23 @@ export async function getCachedFlightData() {
 }
 
 // Lưu dữ liệu mới vào cache
-export async function cacheFlightData(data: any) {
+export async function cacheFlightData(data: any, cacheKey = 'default') {
   try {
     const now = Date.now();
     
+    // Tạo key duy nhất cho dữ liệu và timestamp
+    const dataKey = `${FLIGHT_DATA_KEY}:${cacheKey}`;
+    const timestampKey = `${CACHE_TIMESTAMP_KEY}:${cacheKey}`;
+    
     // Lưu dữ liệu và timestamp
-    await redis.set(FLIGHT_DATA_KEY, JSON.stringify(data));
-    await redis.set(CACHE_TIMESTAMP_KEY, now.toString());
+    await redis.set(dataKey, JSON.stringify(data));
+    await redis.set(timestampKey, now.toString());
     
-    // Thiết lập thời gian tự động hết hạn (nếu cần)
-    // await redis.expire(FLIGHT_DATA_KEY, CACHE_TTL_SECONDS);
-    // await redis.expire(CACHE_TIMESTAMP_KEY, CACHE_TTL_SECONDS);
+    // Thiết lập thời gian tự động hết hạn
+    await redis.expire(dataKey, CACHE_TTL_SECONDS);
+    await redis.expire(timestampKey, CACHE_TTL_SECONDS);
     
-    console.log(`Đã lưu dữ liệu vào cache vào lúc ${new Date(now).toLocaleString()}`);
+    console.log(`Đã lưu dữ liệu vào cache với key ${cacheKey} vào lúc ${new Date(now).toLocaleString()}`);
     return true;
   } catch (error) {
     console.error('Lỗi khi lưu dữ liệu cache:', error);
@@ -67,6 +76,12 @@ export async function cacheFlightData(data: any) {
 // Kiểm tra và cập nhật số lần gọi API trong ngày
 export async function checkAndUpdateApiCallLimit() {
   try {
+    // Nếu NO_LIMIT=true, bỏ qua giới hạn API
+    if (NO_LIMIT) {
+      console.log('Bỏ qua kiểm tra giới hạn API do NO_LIMIT=true');
+      return true;
+    }
+    
     const today = format(new Date(), 'yyyy-MM-dd');
     const savedDate = await redis.get(API_CALL_DATE_KEY);
     

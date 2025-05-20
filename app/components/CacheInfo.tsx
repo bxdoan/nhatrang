@@ -9,6 +9,7 @@ interface CacheInfoProps {
     apiCallCount: number;
     apiCallDate: string;
     maxApiCalls: number;
+    noLimit?: boolean;
   } | null;
 }
 
@@ -48,14 +49,24 @@ export default function CacheInfo({ cacheInfo }: CacheInfoProps) {
         </div>
         <div>
           <span className="font-medium">Số lần gọi API:</span>{' '}
-          <span className={cacheInfo.apiCallCount >= cacheInfo.maxApiCalls ? 'text-red-600 font-semibold' : ''}>
-            {cacheInfo.apiCallCount}/{cacheInfo.maxApiCalls}
-          </span>
+          {cacheInfo.noLimit ? (
+            <span className="text-green-600 font-semibold">Không giới hạn</span>
+          ) : (
+            <span className={cacheInfo.apiCallCount >= cacheInfo.maxApiCalls ? 'text-red-600 font-semibold' : ''}>
+              {cacheInfo.apiCallCount}/{cacheInfo.maxApiCalls}
+            </span>
+          )}
         </div>
         <div>
           <span className="font-medium">Ngày:</span>{' '}
           {cacheInfo.apiCallDate}
         </div>
+        {cacheInfo.noLimit && (
+          <div className="col-span-2 mt-1 text-green-700 bg-green-50 p-1 rounded">
+            <span className="font-medium">⚡ Chế độ NO_LIMIT:</span>{' '}
+            Đã bật - Không giới hạn số lần gọi API
+          </div>
+        )}
       </div>
     </div>
   );
