@@ -65,7 +65,7 @@
 5. Cấu hình dự án:
    - Thêm các biến môi trường sau:
      - `AVIATIONSTACK_API_KEY`: API key của AviationStack
-     - `REDIS_URL`: URL kết nối Redis (ví dụ: redis://default:Fc4FoduRg4oW63ZEdPCA9s8s8OrJ5Eay@redis-11687.c252.ap-southeast-1-1.ec2.redns.redis-cloud.com:11687)
+     - `REDIS_URL`: URL kết nối Redis (ví dụ: redis://default:password@host:port)
      - `CACHE_TTL_HOURS`: Thời gian hết hạn của cache tính bằng giờ (mặc định: 10)
      - `MAX_API_CALLS_PER_DAY`: Số lần gọi API tối đa mỗi ngày (mặc định: 3)
 6. Nhấp vào "Deploy"
