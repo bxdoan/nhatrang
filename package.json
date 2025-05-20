@@ -9,13 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "axios": "^1.6.0",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.1",
     "ioredis": "^5.6.1",
     "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
     "@types/node": "^20",

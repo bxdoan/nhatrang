@@ -1,7 +1,7 @@
 import Redis from 'ioredis';
 
 // Cấu hình Redis URL
-const REDIS_URL = process.env.REDIS_URL || 'redis://default:Fc4FoduRg4oW63ZEdPCA9s8s8OrJ5Eay@redis-11687.c252.ap-southeast-1-1.ec2.redns.redis-cloud.com:11687';
+const REDIS_URL = process.env.REDIS_URL || 'redis://default:password@host:port';
 
 // Kết nối Redis với xử lý lỗi
 let redis: Redis;
