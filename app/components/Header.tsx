@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { FaPlane, FaBus, FaUmbrellaBeach, FaHistory, FaHotel, FaUtensils } from 'react-icons/fa';
+import { FaPlane, FaBus, FaUmbrellaBeach, FaHistory, FaHotel, FaUtensils, FaComments } from 'react-icons/fa';
 
 export default function Header() {
   const pathname = usePathname();
@@ -74,11 +74,11 @@ export default function Header() {
             </Link>
             
             <Link 
-              href="/history" 
-              className={`group flex items-center text-sm px-3 py-2 rounded-full transition-all ${pathname === '/history' ? 'bg-white text-blue-600 font-medium' : 'text-white hover:bg-blue-400'}`}
+              href="/contact" 
+              className={`group flex items-center text-sm px-3 py-2 rounded-full transition-all ${pathname === '/contact' ? 'bg-white text-blue-600 font-medium' : 'text-white hover:bg-blue-400'}`}
             >
-              <FaHistory className="mr-1.5 group-hover:animate-pulse" /> 
-              <span>Lịch sử</span>
+              <FaComments className="mr-1.5 group-hover:animate-pulse" /> 
+              <span>Liên hệ</span>
             </Link>
             
             {/* Ẩn liên kết đến trang cache, chỉ hiển thị cho admin */}

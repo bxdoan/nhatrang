@@ -13,13 +13,13 @@ import {
   FaHotel,
   FaUmbrellaBeach,
   FaUtensils,
-  FaHistory
+  FaHistory,
+  FaComments
 } from 'react-icons/fa';
-import Link from 'next/link';   
+import Link from 'next/link';
 import { CONTACT_INFO } from '../lib/contact-config';
 
 export default function Footer() {
-
   return (
     <footer className="bg-gradient-to-r from-blue-800 to-blue-900 text-white pt-12">
       <div className="container mx-auto px-4">
@@ -41,16 +41,16 @@ export default function Footer() {
               giúp bạn có chuyến đi tuyệt vời nhất.
             </p>
             <div className="flex space-x-3 mt-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-300 transition-colors">
+              <a href={CONTACT_INFO.socialMedia.facebook} target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-300 transition-colors">
                 <FaFacebook size={20} />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-300 transition-colors">
+              <a href={CONTACT_INFO.socialMedia.twitter} target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-300 transition-colors">
                 <FaTwitter size={20} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-300 transition-colors">
+              <a href={CONTACT_INFO.socialMedia.instagram} target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-300 transition-colors">
                 <FaInstagram size={20} />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-300 transition-colors">
+              <a href={CONTACT_INFO.socialMedia.youtube} target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-300 transition-colors">
                 <FaYoutube size={20} />
               </a>
             </div>
@@ -86,8 +86,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/history" className="hover:text-white flex items-center">
-                  <FaHistory className="mr-2" /> Lịch sử
+                <Link href="/contact" className="hover:text-white flex items-center">
+                  <FaComments className="mr-2" /> Liên hệ
                 </Link>
               </li>
             </ul>

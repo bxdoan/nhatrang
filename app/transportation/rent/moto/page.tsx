@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { FaMotorcycle, FaChevronLeft, FaPhone, FaWhatsapp, FaCheck, FaShieldAlt, FaMapMarkedAlt, FaInfoCircle } from 'react-icons/fa';
+import { FaMotorcycle, FaChevronLeft, FaPhone, FaWhatsapp, FaCheck, FaShieldAlt, FaMapMarkedAlt, FaInfoCircle, FaTelegram } from 'react-icons/fa';
 import { CONTACT_INFO } from '../../../lib/contact-config';
 
 export default function MotorbikeRentalPage() {
@@ -131,6 +131,14 @@ export default function MotorbikeRentalPage() {
                       className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-md transition-colors"
                     >
                       <FaWhatsapp className="mr-2" /> Nhắn tin qua Zalo
+                    </a>
+                    <a 
+                      href={`https://t.me/${CONTACT_INFO.telegramUsername}`}
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white px-5 py-3 rounded-md transition-colors"
+                    >
+                      <FaTelegram className="mr-2" /> Nhắn tin qua Telegram
                     </a>
                   </div>
                 </div>
@@ -269,7 +277,7 @@ export default function MotorbikeRentalPage() {
             <div className="bg-blue-50 rounded-lg p-6 shadow-sm text-center">
               <h2 className="text-xl font-bold mb-4">Liên hệ thuê xe máy ngay hôm nay</h2>
               <p className="text-gray-700 mb-6">
-                Hãy liên hệ với chúng tôi qua hotline hoặc Zalo để được tư vấn và đặt dịch vụ thuê xe máy tại Nha Trang
+                Hãy liên hệ với chúng tôi qua hotline hoặc mạng xã hội để được tư vấn và đặt dịch vụ thuê xe máy tại Nha Trang
               </p>
               
               <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -286,6 +294,14 @@ export default function MotorbikeRentalPage() {
                   className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors"
                 >
                   <FaWhatsapp className="mr-2" /> Nhắn tin qua Zalo
+                </a>
+                <a 
+                  href={`https://t.me/${CONTACT_INFO.telegramUsername}`}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md transition-colors"
+                >
+                  <FaTelegram className="mr-2" /> Nhắn tin qua Telegram
                 </a>
               </div>
             </div>

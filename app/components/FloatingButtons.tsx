@@ -128,7 +128,7 @@ export default function FloatingButtons() {
             
             <Link href="/contact" className="flex items-center px-3 py-2.5 hover:bg-gray-50 text-gray-700 border-t border-gray-100">
               <FaComment className="mr-2 text-blue-600" />
-              <span className="text-sm">Liên hệ khác</span>
+              <span className="text-sm">Trang liên hệ</span>
             </Link>
           </div>
         )}
