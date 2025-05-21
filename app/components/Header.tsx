@@ -57,7 +57,7 @@ export default function Header() {
               <span>Di chuyển</span>
             </Link>
             
-            <Link 
+            {/* <Link 
               href="/accommodations" 
               className={`group flex items-center text-sm px-3 py-2 rounded-full transition-all ${pathname === '/accommodations' ? 'bg-white text-blue-600 font-medium' : 'text-white hover:bg-blue-400'}`}
             >
@@ -71,7 +71,7 @@ export default function Header() {
             >
               <FaUtensils className="mr-1.5 group-hover:animate-pulse" /> 
               <span>Ẩm thực</span>
-            </Link>
+            </Link> */}
             
             <Link 
               href="/contact" 
