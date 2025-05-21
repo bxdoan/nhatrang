@@ -1,7 +1,8 @@
 'use client';
 
-import { FaPlane } from 'react-icons/fa';
+import { FaPlane, FaMotorcycle, FaCar, FaArrowRight } from 'react-icons/fa';
 import FlightSection from '../components/FlightSection';
+import Link from 'next/link';
 
 export default function FlightsPage() {
   return (
@@ -63,7 +64,7 @@ export default function FlightsPage() {
               </div>
             </div>
             
-            <div className="bg-gray-50 rounded-lg p-6">
+            <div className="bg-gray-50 rounded-lg p-6 mb-8">
               <h3 className="text-lg font-semibold mb-3">Tiện ích tại sân bay</h3>
               <ul className="list-disc pl-5 text-gray-700 space-y-1">
                 <li>Cửa hàng miễn thuế</li>
@@ -74,6 +75,61 @@ export default function FlightsPage() {
                 <li>Dịch vụ chăm sóc trẻ em</li>
                 <li>Phòng chờ VIP</li>
               </ul>
+            </div>
+            
+            {/* Thông tin dịch vụ thuê xe */}
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">Dịch vụ thuê xe tại Nha Trang</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {/* Thuê xe máy */}
+              <div className="bg-blue-50 rounded-lg p-6 border-l-4 border-blue-500">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center mr-4">
+                    <FaMotorcycle className="text-xl" />
+                  </div>
+                  <h3 className="text-xl font-semibold">Dịch vụ thuê xe máy</h3>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  Khám phá Nha Trang một cách linh hoạt bằng xe máy. Chúng tôi cung cấp dịch vụ thuê xe máy uy tín với:
+                </p>
+                <ul className="mb-4 space-y-1 text-gray-700">
+                  <li>• Đa dạng loại xe: từ xe số đến xe tay ga cao cấp</li>
+                  <li>• Giá thuê từ 100.000đ - 180.000đ/ngày</li>
+                  <li>• Thủ tục đơn giản, giao xe tận nơi</li>
+                  <li>• Bảo hiểm và hỗ trợ 24/7</li>
+                </ul>
+                <Link 
+                  href="/moto" 
+                  className="inline-flex items-center text-blue-600 font-medium hover:underline"
+                >
+                  Xem dịch vụ thuê xe máy <FaArrowRight className="ml-2 text-sm" />
+                </Link>
+              </div>
+              
+              {/* Thuê xe ô tô */}
+              <div className="bg-green-50 rounded-lg p-6 border-l-4 border-green-500">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center mr-4">
+                    <FaCar className="text-xl" />
+                  </div>
+                  <h3 className="text-xl font-semibold">Dịch vụ thuê xe ô tô</h3>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  Di chuyển thoải mái với gia đình hoặc nhóm bạn bằng dịch vụ thuê xe ô tô chất lượng cao:
+                </p>
+                <ul className="mb-4 space-y-1 text-gray-700">
+                  <li>• Đa dạng dòng xe từ 4-16 chỗ</li>
+                  <li>• Lựa chọn tự lái hoặc có tài xế</li>
+                  <li>• Dịch vụ đón/tiễn sân bay Cam Ranh</li>
+                  <li>• Đặt xe trực tuyến hoặc qua điện thoại</li>
+                </ul>
+                <Link 
+                  href="/oto" 
+                  className="inline-flex items-center text-green-600 font-medium hover:underline"
+                >
+                  Xem dịch vụ thuê xe ô tô <FaArrowRight className="ml-2 text-sm" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -5,7 +5,13 @@ import {
   FaCar, 
   FaChevronLeft,
   FaPhone, 
-  FaWhatsapp, FaCheck, FaMapMarkerAlt, FaTaxi, FaUserFriends, FaInfoCircle, FaTelegram } from 'react-icons/fa';
+  FaWhatsapp, 
+  FaCheck, 
+  FaMapMarkerAlt,
+  FaBus,
+  FaInfoCircle, 
+  FaTelegram 
+} from 'react-icons/fa';
 import { CONTACT_INFO } from '../lib/contact-config';
 
 export default function CarRentalPage() {
@@ -88,7 +94,7 @@ export default function CarRentalPage() {
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 text-center">
                     <div className="flex justify-center">
                       <div className="w-14 h-14 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mb-3">
-                        <FaUserFriends className="text-2xl" />
+                        <FaBus className="text-2xl" />
                       </div>
                     </div>
                     <h3 className="text-xl font-bold text-purple-600 mb-2">Xe 16 chỗ</h3>

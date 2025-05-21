@@ -2,9 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
-import { FaSearch, FaPlane, FaInfoCircle, FaUmbrellaBeach, FaHotel, FaBus } from 'react-icons/fa';
+import { FaSearch, FaPlane, FaInfoCircle, FaUmbrellaBeach, FaHotel, FaBus, FaMotorcycle, FaCar } from 'react-icons/fa';
 import Link from 'next/link';
-import FlightSection from './components/FlightSection';
 import Script from 'next/script';
 import { HOMEPAGE_SCHEMA } from './lib/metadata';
 
@@ -28,11 +27,11 @@ export default function Home() {
               Khám phá <span className="text-yellow-300">Nha Trang</span>
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10">
-              Thông tin du lịch, chuyến bay, giao thông và các dịch vụ tại thiên đường biển Nha Trang
+              Thông tin du lịch, giao thông và các dịch vụ tại thiên đường biển Nha Trang
             </p>
             <div className="flex flex-col md:flex-row justify-center gap-4 max-w-2xl mx-auto">
-              <Link href="/flights" className="py-3 px-8 bg-white text-blue-600 font-medium rounded-md hover:bg-blue-50 transition flex items-center justify-center">
-                <FaPlane className="mr-2" /> Xem chuyến bay
+              <Link href="/transportation" className="py-3 px-8 bg-white text-blue-600 font-medium rounded-md hover:bg-blue-50 transition flex items-center justify-center">
+                <FaBus className="mr-2" /> Xem dịch vụ di chuyển
               </Link>
               <button className="py-3 px-8 bg-transparent border-2 border-white text-white font-medium rounded-md hover:bg-white/10 transition flex items-center justify-center">
                 <FaSearch className="mr-2" /> Khám phá ngay
@@ -40,9 +39,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-        
-        {/* Flight Section */}
-        <FlightSection />
         
         {/* Tourism Info Section */}
         <section className="py-16 bg-white">
@@ -97,6 +93,36 @@ export default function Home() {
                 </p>
                 <Link href="/transportation" className="text-yellow-600 font-medium hover:text-yellow-700">
                   Xem chi tiết →
+                </Link>
+              </div>
+              
+              {/* Thuê xe máy */}
+              <div className="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center mb-4">
+                  <FaMotorcycle className="text-2xl" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Thuê xe máy</h3>
+                <p className="text-gray-600 mb-4">
+                  Dịch vụ cho thuê xe máy uy tín, giá rẻ từ 100.000đ - 180.000đ/ngày, đa dạng loại xe từ xe số đến xe ga cao cấp,
+                  giao xe tận nơi tại Nha Trang.
+                </p>
+                <Link href="/moto" className="text-blue-600 font-medium hover:text-blue-700">
+                  Xem dịch vụ thuê xe máy →
+                </Link>
+              </div>
+              
+              {/* Thuê xe ô tô */}
+              <div className="bg-green-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-14 h-14 bg-green-600 text-white rounded-full flex items-center justify-center mb-4">
+                  <FaCar className="text-2xl" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Thuê xe ô tô</h3>
+                <p className="text-gray-600 mb-4">
+                  Dịch vụ thuê xe ô tô tự lái hoặc có tài, đa dạng dòng xe từ 4-16 chỗ, giá cả hợp lý, thủ tục đơn giản,
+                  phục vụ đưa đón sân bay.
+                </p>
+                <Link href="/oto" className="text-green-600 font-medium hover:text-green-700">
+                  Xem dịch vụ thuê xe ô tô →
                 </Link>
               </div>
             </div>
