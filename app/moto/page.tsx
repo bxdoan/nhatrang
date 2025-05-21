@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { FaMotorcycle, FaChevronLeft, FaPhone, FaWhatsapp, FaCheck, FaShieldAlt, FaMapMarkedAlt, FaInfoCircle, FaTelegram } from 'react-icons/fa';
-import { CONTACT_INFO } from '../../../lib/contact-config';
+import { CONTACT_INFO } from '../lib/contact-config';
 
 export default function MotorbikeRentalPage() {
   const phoneNumber = CONTACT_INFO.phoneNumber;
@@ -246,38 +246,14 @@ export default function MotorbikeRentalPage() {
                     </p>
                   </div>
                 </div>
-                
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                    <FaMapMarkedAlt className="text-xl" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Giao nhận tận nơi</h3>
-                    <p className="text-gray-600">
-                      Miễn phí giao và nhận xe tại khách sạn hoặc điểm hẹn trong khu vực trung tâm Nha Trang
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                    <FaCheck className="text-xl" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Thủ tục đơn giản</h3>
-                    <p className="text-gray-600">
-                      Chỉ cần CMND/CCCD/Hộ chiếu, không cần bằng lái xe (tuy nhiên khuyến khích có bằng lái cho an toàn)
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
             
             {/* Contact Information */}
             <div className="bg-blue-50 rounded-lg p-6 shadow-sm text-center">
-              <h2 className="text-xl font-bold mb-4">Liên hệ thuê xe máy ngay hôm nay</h2>
+              <h2 className="text-xl font-bold mb-4">Liên hệ đặt xe ngay hôm nay</h2>
               <p className="text-gray-700 mb-6">
-                Hãy liên hệ với chúng tôi qua hotline hoặc mạng xã hội để được tư vấn và đặt dịch vụ thuê xe máy tại Nha Trang
+                Hãy liên hệ với chúng tôi qua hotline hoặc mạng xã hội để được tư vấn và đặt dịch vụ xe máy tại Nha Trang
               </p>
               
               <div className="flex flex-col sm:flex-row justify-center gap-4">

@@ -1,8 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { FaCar, FaChevronLeft, FaPhone, FaWhatsapp, FaCheck, FaMapMarkerAlt, FaTaxi, FaUserFriends, FaInfoCircle, FaTelegram } from 'react-icons/fa';
-import { CONTACT_INFO } from '../../../lib/contact-config';
+import { 
+  FaCar, 
+  FaChevronLeft,
+  FaPhone, 
+  FaWhatsapp, FaCheck, FaMapMarkerAlt, FaTaxi, FaUserFriends, FaInfoCircle, FaTelegram } from 'react-icons/fa';
+import { CONTACT_INFO } from '../lib/contact-config';
 
 export default function CarRentalPage() {
   const phoneNumber = CONTACT_INFO.phoneNumber;

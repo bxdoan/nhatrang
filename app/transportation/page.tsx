@@ -34,31 +34,38 @@ export default function TransportationPage() {
               </p>
               
               <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Link href="/transportation/rent/moto" className="block group">
-                  <div className="bg-blue-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
-                    <div className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors">
-                      <FaMotorcycle className="text-2xl" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">Thuê xe máy</h3>
-                    <p className="text-gray-600 mb-3">
-                      Phương tiện phổ biến và linh hoạt nhất để khám phá Nha Trang. Giá thuê từ 120.000đ - 200.000đ/ngày tùy loại xe.
-                    </p>
-                    <span className="text-blue-600 font-medium group-hover:underline">Xem dịch vụ thuê xe máy →</span>
+              <Link href="/moto" className="block group">
+                <div className="bg-blue-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
+                  <div className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors">
+                    <FaMotorcycle className="text-2xl" />
+                  </div>                    
+                  <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">
+                    Thuê xe máy
+                  </h3>                    
+                  <p className="text-gray-600 mb-3">
+                     Phương tiện phổ biến và linh hoạt nhất để khám phá Nha Trang. Giá thuê từ 120.000đ - 200.000đ/ngày tùy loại xe.
+                  </p>                    
+                  <span className="text-blue-600 font-medium group-hover:underline">
+                    Xem dịch vụ thuê xe máy →
+                  </span>
+                </div>
+              </Link>
+              <Link href="/oto" className="block group">                 
+                <div className="bg-green-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
+                  <div className="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-green-600 transition-colors">
+                    <FaCar className="text-2xl" />
                   </div>
-                </Link>
-                
-                <Link href="/transportation/rent/oto" className="block group">
-                  <div className="bg-green-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
-                    <div className="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-green-600 transition-colors">
-                      <FaCar className="text-2xl" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3 group-hover:text-green-600 transition-colors">Thuê xe ô tô</h3>
-                    <p className="text-gray-600 mb-3">
-                      Thuận tiện cho gia đình hoặc nhóm bạn. Có nhiều loại xe từ 4 chỗ đến 16 chỗ. Đặc biệt có dịch vụ đưa đón sân bay.
-                    </p>
-                    <span className="text-green-600 font-medium group-hover:underline">Xem dịch vụ thuê xe ô tô →</span>
-                  </div>
-                </Link>
+                  <h3 className="text-xl font-semibold mb-3 group-hover:text-green-600 transition-colors">
+                    Thuê xe ô tô
+                  </h3>
+                  <p className="text-gray-600 mb-3">
+                    Thuận tiện cho gia đình hoặc nhóm bạn. Có nhiều loại xe từ 4 chỗ đến 16 chỗ. Đặc biệt có dịch vụ đưa đón sân bay.
+                  </p>
+                  <span className="text-green-600 font-medium group-hover:underline">
+                    Xem dịch vụ thuê xe ô tô →
+                  </span>
+                </div>
+              </Link>
               </div>
             </div>
           </div>
@@ -158,11 +165,7 @@ export default function TransportationPage() {
                     <li>• Xe 16 chỗ: từ 500.000đ/lượt</li>
                     <li>• Thời gian di chuyển: 40-45 phút</li>
                   </ul>
-                  <div className="mt-4">
-                    <Link href="/transportation/rent/oto" className="text-blue-600 font-medium hover:underline flex items-center">
-                      <FaPhone className="mr-2" /> Xem dịch vụ xe đưa đón sân bay
-                    </Link>
-                  </div>
+                                    <div className="mt-4">                    <Link href="/oto" className="text-blue-600 font-medium hover:underline flex items-center">                      <FaPhone className="mr-2" /> Xem dịch vụ xe đưa đón sân bay                    </Link>                  </div>
                 </div>
               </div>
               

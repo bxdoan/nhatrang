@@ -115,17 +115,42 @@ export default function useFlights() {
 
   // Hàm sắp xếp chuyến bay theo thời gian hạ cánh
   const sortFlightsByArrivalTime = (flights: Flight[]): Flight[] => {
+    const now = new Date();
+    
     return [...flights].sort((a, b) => {
-      // Lấy thời gian hạ cánh từ cả scheduled, estimated hoặc actual
-      const getArrivalTime = (flight: Flight) => {
+      // Hàm chuyển đổi thời gian về cùng múi giờ UTC để so sánh chính xác
+      const getArrivalTimeUTC = (flight: Flight) => {
         // Ưu tiên theo thứ tự: actual > estimated > scheduled
-        if (flight.arrival.actual) return new Date(flight.arrival.actual).getTime();
-        if (flight.arrival.estimated) return new Date(flight.arrival.estimated).getTime();
-        if (flight.arrival.scheduled) return new Date(flight.arrival.scheduled).getTime();
-        return 0; // Nếu không có thông tin thời gian
+        let timeString = '';
+        if (flight.arrival.actual) timeString = flight.arrival.actual;
+        else if (flight.arrival.estimated) timeString = flight.arrival.estimated;
+        else if (flight.arrival.scheduled) timeString = flight.arrival.scheduled;
+        else return 0; // Nếu không có thông tin thời gian
+        
+        // Tạo đối tượng Date (chuỗi ISO tự xử lý múi giờ nếu có thông tin)
+        // API thường trả về thời gian đã bao gồm thông tin múi giờ trong chuỗi ISO
+        return new Date(timeString).getTime();
       };
 
-      return getArrivalTime(a) - getArrivalTime(b);
+      const timeA = getArrivalTimeUTC(a);
+      const timeB = getArrivalTimeUTC(b);
+      const nowTime = now.getTime();
+      
+      // Kiểm tra xem chuyến bay đã diễn ra chưa
+      const aInPast = timeA < nowTime;
+      const bInPast = timeB < nowTime;
+      
+      // Nếu một chuyến bay trong tương lai và một trong quá khứ, ưu tiên tương lai
+      if (aInPast && !bInPast) return 1;  // a trong quá khứ, b trong tương lai -> b đứng trước
+      if (!aInPast && bInPast) return -1; // a trong tương lai, b trong quá khứ -> a đứng trước
+      
+      // Nếu cả hai đều trong tương lai, sắp xếp từ gần đến xa
+      if (!aInPast && !bInPast) {
+        return timeA - timeB; // Thời gian gần hơn trước
+      }
+      
+      // Nếu cả hai đều trong quá khứ, sắp xếp từ gần đến xa (ngược lại)
+      return timeB - timeA; // Thời gian gần quá khứ hơn trước
     });
   };
 
