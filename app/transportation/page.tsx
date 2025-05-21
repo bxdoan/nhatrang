@@ -43,7 +43,7 @@ export default function TransportationPage() {
                     Thuê xe máy
                   </h3>                    
                   <p className="text-gray-600 mb-3">
-                     Phương tiện phổ biến và linh hoạt nhất để khám phá Nha Trang. Giá thuê từ 120.000đ - 200.000đ/ngày tùy loại xe.
+                     Phương tiện phổ biến và linh hoạt nhất để khám phá Nha Trang. Giá thuê từ 100.000đ - 170.000đ/ngày tùy loại xe.
                   </p>                    
                   <span className="text-blue-600 font-medium group-hover:underline">
                     Xem dịch vụ thuê xe máy →

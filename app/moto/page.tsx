@@ -1,11 +1,135 @@
 'use client';
 
 import Link from 'next/link';
-import { FaMotorcycle, FaChevronLeft, FaPhone, FaWhatsapp, FaCheck, FaShieldAlt, FaMapMarkedAlt, FaInfoCircle, FaTelegram } from 'react-icons/fa';
+import { FaMotorcycle, FaChevronLeft, FaPhone, FaWhatsapp, FaCheck, FaShieldAlt, FaMapMarkedAlt, FaInfoCircle, FaTelegram, FaExclamationTriangle, FaIdCard, FaCreditCard, FaMoneyBillWave, FaClock, FaTimes } from 'react-icons/fa';
 import { CONTACT_INFO } from '../lib/contact-config';
+import { useState } from 'react';
+
+// Định nghĩa kiểu dữ liệu cho đối tượng xe máy
+interface Motorbike {
+  imageUrl?: string;
+  model: string;
+  name: string;
+  price: string;
+  category: string;
+}
 
 export default function MotorbikeRentalPage() {
   const phoneNumber = CONTACT_INFO.phoneNumber;
+  const [showImagePopup, setShowImagePopup] = useState(false);
+  const [currentImage, setCurrentImage] = useState({ url: '', name: '', price: '' });
+  
+  // Danh sách xe máy cho thuê
+  const motorbikeList: Motorbike[] = [
+    // Xe số
+    { 
+      imageUrl: '/images/moto/wave.jpg', 
+      model: 'Honda Wave', 
+      name: 'Honda Wave Alpha', 
+      price: '100.000đ/ngày',
+      category: 'number'
+    },
+    { 
+      imageUrl: '/images/moto/sirius.jpg', 
+      model: 'Yamaha Sirius', 
+      name: 'Yamaha Sirius Fi', 
+      price: '120.000đ/ngày',
+      category: 'number'
+    },
+    { 
+      imageUrl: '/images/moto/jupiter.jpg', 
+      model: 'Jupiter', 
+      name: 'Yamaha Jupiter', 
+      price: '120.000đ/ngày',
+      category: 'number'
+    },
+    { 
+      imageUrl: '/images/moto/viva.jpg', 
+      model: 'Suzuki', 
+      name: 'Suzuki Viva', 
+      price: '100.000đ/ngày',
+      category: 'number'
+    },
+    
+    // Xe ga phổ thông
+    { 
+      imageUrl: '/images/moto/vision.png', 
+      model: 'Honda Vision', 
+      name: 'Honda Vision 2022', 
+      price: '150.000đ/ngày',
+      category: 'scooter'
+    },
+    { 
+      imageUrl: '/images/moto/ab.jpg', 
+      model: 'Honda Air Blade', 
+      name: 'Honda Air Blade 2021', 
+      price: '150.000đ/ngày',
+      category: 'scooter'
+    },
+    { 
+      imageUrl: '/images/moto/lead.jpg', 
+      model: 'Honda Lead', 
+      name: 'Honda Lead 2022', 
+      price: '150.000đ/ngày',
+      category: 'scooter'
+    },
+    { 
+      imageUrl: '/images/moto/nmax.jpg', 
+      model: 'Yamaha Nmax', 
+      name: 'Yamaha Nmax 155', 
+      price: '150.000đ/ngày',
+      category: 'scooter'
+    },
+    
+    // Xe ga cao cấp
+    { 
+      imageUrl: '/images/moto/pcx.jpg', 
+      model: 'Honda PCX', 
+      name: 'Honda PCX 2022', 
+      price: '180.000đ/ngày',
+      category: 'premium'
+    },
+    { 
+      imageUrl: '/images/moto/shmode.jpg', 
+      model: 'Honda SH Mode', 
+      name: 'Honda SH Mode 2022', 
+      price: '180.000đ/ngày',
+      category: 'premium'
+    },
+    { 
+      imageUrl: '/images/moto/nvx.jpg', 
+      model: 'Yamaha NVX', 
+      name: 'Yamaha NVX 155', 
+      price: '180.000đ/ngày',
+      category: 'premium'
+    },
+    { 
+      imageUrl: '/images/moto/vespa.jpg', 
+      model: 'Vespa', 
+      name: 'Vespa Primavera', 
+      price: '180.000đ/ngày',
+      category: 'premium'
+    }
+  ];
+
+  // Hàm mở popup khi click vào hình ảnh
+  const openImagePopup = (bike: Motorbike) => {
+    setCurrentImage({
+      url: bike.imageUrl || '/images/moto/placeholder.jpg',
+      name: bike.name,
+      price: bike.price
+    });
+    setShowImagePopup(true);
+    // Vô hiệu hóa scroll khi popup đang mở
+    document.body.style.overflow = 'hidden';
+  };
+
+  // Hàm đóng popup
+  const closeImagePopup = () => {
+    setShowImagePopup(false);
+    // Bật lại scroll khi đóng popup
+    document.body.style.overflow = 'auto';
+  };
   
   return (
     <div>
@@ -67,7 +191,7 @@ export default function MotorbikeRentalPage() {
                     </div>
                     <h3 className="text-xl font-bold text-blue-600 mb-2">Xe số</h3>
                     <p className="text-gray-700 font-medium mb-2">120.000đ/ngày</p>
-                    <p className="text-gray-500 text-sm">Wave, Sirius, Jupiter</p>
+                    <p className="text-gray-500 text-sm">Wave, Sirius, Jupiter, Suzuki</p>
                   </div>
                   
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 text-center">
@@ -78,7 +202,7 @@ export default function MotorbikeRentalPage() {
                     </div>
                     <h3 className="text-xl font-bold text-green-600 mb-2">Xe ga phổ thông</h3>
                     <p className="text-gray-700 font-medium mb-2">150.000đ/ngày</p>
-                    <p className="text-gray-500 text-sm">Vision, Lead, Air Blade</p>
+                    <p className="text-gray-500 text-sm">Vision, Lead, Air Blade, Vario, Nmax</p>
                   </div>
                   
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 text-center">
@@ -88,14 +212,92 @@ export default function MotorbikeRentalPage() {
                       </div>
                     </div>
                     <h3 className="text-xl font-bold text-purple-600 mb-2">Xe ga cao cấp</h3>
-                    <p className="text-gray-700 font-medium mb-2">200.000đ/ngày</p>
-                    <p className="text-gray-500 text-sm">SH Mode, Vespa, NVX</p>
+                    <p className="text-gray-700 font-medium mb-2">180.000đ/ngày</p>
+                    <p className="text-gray-500 text-sm">SH Mode, Vespa, NVX, PCX</p>
                   </div>
                 </div>
                 
+                {/* Gallery xe máy cho thuê */}
+                <div className="mt-8 mb-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                    <FaMotorcycle className="mr-2 text-blue-600" /> Hình ảnh xe máy cho thuê
+                  </h3>
+                  
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {motorbikeList.map((bike, index) => (
+                      <div 
+                        key={index} 
+                        className="group relative rounded-lg overflow-hidden bg-gray-200 h-48 cursor-pointer"
+                        onClick={() => openImagePopup(bike)}
+                      >
+                        {bike.imageUrl ? (
+                          <img 
+                            src={bike.imageUrl} 
+                            alt={bike.name} 
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center bg-gray-300">
+                            <span className="text-gray-600 font-medium">{bike.model}</span>
+                          </div>
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3">
+                          <p className="text-white font-medium">{bike.name}</p>
+                          <p className="text-white/80 text-sm">{bike.price}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <p className="mt-4 text-sm text-gray-500 italic text-center">
+                    * Hover lên ảnh để xem thông tin chi tiết, click để xem ảnh kích thước lớn. Hình ảnh chỉ mang tính chất minh họa.
+                  </p>
+                </div>
+                
                 <div className="border-t border-gray-200 pt-6">
-                  <h3 className="text-lg font-bold mb-4">Điều kiện thuê xe:</h3>
-                  <ul className="space-y-3">
+                  <h3 className="text-lg font-bold mb-4">Thủ tục và điều kiện thuê xe:</h3>
+                  
+                  <p className="text-gray-700 mb-4">
+                    Thủ tục thuê xe máy rất đơn giản, nhanh chóng. Bạn chỉ cần để lại <strong>một trong các giấy tờ sau</strong> là có thể thuê xe ngay:
+                  </p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div className="bg-gray-50 rounded-lg p-4 flex items-start">
+                      <div className="w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                        <FaIdCard className="text-sm" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">CMND / CCCD</h4>
+                        <p className="text-gray-600 text-sm">Chứng minh nhân dân hoặc căn cước công dân còn hiệu lực</p>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gray-50 rounded-lg p-4 flex items-start">
+                      <div className="w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                        <FaCreditCard className="text-sm" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">Bằng Lái Xe</h4>
+                        <p className="text-gray-600 text-sm">Bằng lái xe máy hoặc ô tô còn hiệu lực</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-blue-50 p-4 rounded-lg mb-5">
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 text-blue-600 mr-3 mt-1">
+                        <FaMapMarkedAlt className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="text-gray-700">
+                          <span className="font-medium">Dịch vụ giao xe miễn phí</span> tận nơi cho khách hàng tại khu vực trung tâm Nha Trang (khách sạn, nhà ga, bến xe)
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <h4 className="font-semibold mb-3">Các điều kiện thuê xe:</h4>
+                  <ul className="space-y-3 mb-5">
                     <li className="flex items-start">
                       <span className="text-blue-500 mr-2 mt-1">•</span>
                       <span>Cọc CMND/CCCD/Hộ chiếu gốc hoặc 5 triệu tiền mặt</span>
@@ -109,6 +311,24 @@ export default function MotorbikeRentalPage() {
                       <span>Bao gồm miễn phí: mũ bảo hiểm, áo mưa, giao xe tận nơi (trong bán kính 3km)</span>
                     </li>
                   </ul>
+                  
+                  <div className="bg-orange-50 rounded-lg p-4 border-l-4 border-orange-500">
+                    <h4 className="font-semibold mb-2">Lưu ý quan trọng:</h4>
+                    <ul className="space-y-2">
+                      <li className="flex items-start">
+                        <FaExclamationTriangle className="text-orange-500 mr-2 mt-1 flex-shrink-0" />
+                        <span>Không để xe dưới lòng, lề đường. Hãy để xe ở những bãi giữ xe an toàn</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaExclamationTriangle className="text-orange-500 mr-2 mt-1 flex-shrink-0" />
+                        <span>Tuân thủ luật giao thông: không vượt đèn đỏ, không đi ngược chiều, đội mũ bảo hiểm</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaExclamationTriangle className="text-orange-500 mr-2 mt-1 flex-shrink-0" />
+                        <span>Thời gian thuê xe máy: 1 ngày = 24h, nếu phát sinh 6h = 1/2 ngày</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               
@@ -284,6 +504,32 @@ export default function MotorbikeRentalPage() {
           </div>
         </div>
       </section>
+      
+      {/* Image Popup */}
+      {showImagePopup && (
+        <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4">
+          <div className="relative w-full max-w-4xl mx-auto">
+            <button 
+              onClick={closeImagePopup}
+              className="absolute top-0 right-0 -mt-12 -mr-12 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full z-10"
+              aria-label="Close"
+            >
+              <FaTimes className="text-2xl" />
+            </button>
+            <div className="bg-black relative rounded-lg overflow-hidden">
+              <img 
+                src={currentImage.url} 
+                alt={currentImage.name} 
+                className="w-full h-auto max-h-[80vh] object-contain"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4">
+                <h3 className="text-white font-medium text-lg">{currentImage.name}</h3>
+                <p className="text-white/80">{currentImage.price}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 } 
