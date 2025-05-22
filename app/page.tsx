@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
-import { FaSearch, FaPlane, FaInfoCircle, FaUmbrellaBeach, FaHotel, FaBus, FaMotorcycle, FaCar } from 'react-icons/fa';
+import { FaSearch, FaPlane, FaInfoCircle, FaUmbrellaBeach, FaHotel, FaBus, FaMotorcycle, FaCar, FaTaxi } from 'react-icons/fa';
 import Link from 'next/link';
 import Script from 'next/script';
 import { HOMEPAGE_SCHEMA } from './lib/metadata';
@@ -29,14 +29,6 @@ export default function Home() {
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10">
               Thông tin du lịch, giao thông và các dịch vụ tại thiên đường biển Nha Trang
             </p>
-            <div className="flex flex-col md:flex-row justify-center gap-4 max-w-2xl mx-auto">
-              <Link href="/transportation" className="py-3 px-8 bg-white text-blue-600 font-medium rounded-md hover:bg-blue-50 transition flex items-center justify-center">
-                <FaBus className="mr-2" /> Xem dịch vụ di chuyển
-              </Link>
-              <button className="py-3 px-8 bg-transparent border-2 border-white text-white font-medium rounded-md hover:bg-white/10 transition flex items-center justify-center">
-                <FaSearch className="mr-2" /> Khám phá ngay
-              </button>
-            </div>
           </div>
         </section>
         
@@ -52,7 +44,7 @@ export default function Home() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Điểm đến */}
-              <div className="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              {/* <div className="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4">
                   <FaUmbrellaBeach className="text-2xl" />
                 </div>
@@ -64,10 +56,10 @@ export default function Home() {
                 <Link href="/destinations" className="text-blue-600 font-medium hover:text-blue-700">
                   Xem chi tiết →
                 </Link>
-              </div>
+              </div> */}
               
               {/* Lưu trú */}
-              <div className="bg-green-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              {/* <div className="bg-green-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center mb-4">
                   <FaHotel className="text-2xl" />
                 </div>
@@ -79,7 +71,7 @@ export default function Home() {
                 <Link href="/accommodations" className="text-green-600 font-medium hover:text-green-700">
                   Xem chi tiết →
                 </Link>
-              </div>
+              </div> */}
               
               {/* Di chuyển */}
               <div className="bg-yellow-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
@@ -123,6 +115,36 @@ export default function Home() {
                 </p>
                 <Link href="/oto" className="text-green-600 font-medium hover:text-green-700">
                   Xem dịch vụ thuê xe ô tô →
+                </Link>
+              </div>
+              
+              {/* Xe Buýt */}
+              <div className="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4">
+                  <FaBus className="text-2xl" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Xe Buýt Nha Trang</h3>
+                <p className="text-gray-600 mb-4">
+                  Thông tin tuyến đường, lịch trình và bản đồ các tuyến xe buýt công cộng tại Nha Trang. Giá vé chỉ từ 7.000 VNĐ/lượt, 
+                  phương tiện tiết kiệm và thuận tiện.
+                </p>
+                <Link href="/bus" className="text-blue-600 font-medium hover:text-blue-700">
+                  Xem thông tin xe buýt →
+                </Link>
+              </div>
+              
+              {/* Taxi */}
+              <div className="bg-yellow-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-14 h-14 bg-yellow-500 text-white rounded-full flex items-center justify-center mb-4">
+                  <FaTaxi className="text-2xl" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Dịch vụ Taxi</h3>
+                <p className="text-gray-600 mb-4">
+                  Thông tin chi tiết về các hãng taxi uy tín tại Nha Trang, giá cước từ 15.000 - 20.000đ/km, 
+                  số điện thoại đặt xe và tuyến đường phổ biến.
+                </p>
+                <Link href="/taxi" className="text-yellow-600 font-medium hover:text-yellow-700">
+                  Xem thông tin dịch vụ taxi →
                 </Link>
               </div>
             </div>

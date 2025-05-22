@@ -82,6 +82,22 @@ export default function TransportationPage() {
                   </span>
                 </div>
               </Link>
+              <Link href="/bus" className="block group">                 
+                <div className="bg-blue-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
+                  <div className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors">
+                    <FaBus className="text-2xl" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">
+                    Xe Buýt Nha Trang
+                  </h3>
+                  <p className="text-gray-600 mb-3">
+                    Thông tin tuyến đường, lịch trình và bản đồ các tuyến xe buýt công cộng tại Nha Trang với giá vé chỉ từ 7.000đ/lượt.
+                  </p>
+                  <span className="text-blue-600 font-medium group-hover:underline">
+                    Xem thông tin xe buýt →
+                  </span>
+                </div>
+              </Link>
               </div>
             </div>
           </div>

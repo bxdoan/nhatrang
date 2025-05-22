@@ -1,0 +1,99 @@
+[
+  {
+    "id": "stop1",
+    "name": "Nha hát Đó",
+    "name_en": "Do Theatre",
+    "lat": 12.30003,
+    "lng": 109.23643,
+    "description": "Điểm đầu/cuối của nhiều tuyến xe buýt"
+  },
+  {
+    "id": "stop2",
+    "name": "Đối diện cổng Bến Du Thuyền Ana Marina",
+    "name_en": "Opposite gate of Ana Marina",
+    "lat": 12.29604,
+    "lng": 109.22121,
+    "description": "Đối diện cổng Bến Du Thuyền Ana Marina",
+    "description_en": "Opposite gate of Ana Marina"
+  },
+  {
+    "id": "stop3",
+    "name": "Nhà Văn Hoá Lao Động",
+    "name_en": "Social Cultural House of Labour",
+    "lat": 12.28137,
+    "lng": 109.20258,
+    "description": "Nhà Văn Hoá Lao Động",
+    "description_en": "Social Cultural House of Labour"
+  },
+  {
+    "id": "stop4",
+    "name": "Hòn Chồng",
+    "name_en": "Hòn Chồng",
+    "lat": 12.27244,
+    "lng": 109.20367,
+    "description": "Hòn Chồng",
+    "description_en": "Hòn Chồng"
+  },
+  {
+    "id": "stop5",
+    "name": "Nhà hàng Yến Sào",
+    "name_en": "Yen Sao Restaurant",
+    "lat": 12.266224,
+    "lng": 109.201720,
+    "description": "Nhà hàng Yến Sào",
+    "description_en": "Yen Sao Restaurant"
+  },
+  {
+    "id": "stop6",
+    "name": "Sở Tài Chính",
+    "name_en": "Department of Finance",
+    "lat": 12.252838,
+    "lng": 109.196409,
+    "description": "Sở Tài Chính",
+    "description_en": "Department of Finance"
+  },
+  {
+    "id": "stop7",
+    "name": "Nha Trang Center",
+    "name_en": "Nha Trang Center",
+    "lat": 12.2435,
+    "lng": 109.1965,
+    "description": "Nha Trang Center",
+    "description_en": "Nha Trang Center"
+  },
+  {
+    "id": "stop8",
+    "name": "Sân bay Cam Ranh",
+    "lat": 12.0057,
+    "lng": 109.2193,
+    "description": "Sân bay quốc tế"
+  },
+  {
+    "id": "stop9",
+    "name": "Ga Nha Trang",
+    "lat": 12.2399,
+    "lng": 109.1891,
+    "description": "Nhà ga đường sắt"
+  },
+  {
+    "id": "stop10",
+    "name": "I-Resort",
+    "lat": 12.2128,
+    "lng": 109.1762,
+    "description": "Khu du lịch suối khoáng"
+  },
+  {
+    "id": "stop11",
+    "name": "Tháp Bà Ponagar",
+    "lat": 12.2656,
+    "lng": 109.1962,
+    "description": "Di tích lịch sử"
+  },
+  {
+    "id": "stop12",
+    "name": "Bến tàu du lịch Cầu Đá",
+    "lat": 12.2335,
+    "lng": 109.1998,
+    "description": "Bến cảng du lịch"
+  }
+] 
