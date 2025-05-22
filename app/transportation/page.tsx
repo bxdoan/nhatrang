@@ -28,130 +28,128 @@ export default function TransportationPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-sm">
               <h2 className="text-2xl font-bold text-gray-800 mb-6">Phương tiện di chuyển tại Nha Trang</h2>
-              <p className="text-gray-700 mb-4">
+              <p className="text-gray-700 mb-6">
                 Nha Trang là thành phố du lịch nổi tiếng, có nhiều phương tiện di chuyển đa dạng phục vụ du khách. 
                 Tùy vào nhu cầu, ngân sách và lịch trình, bạn có thể lựa chọn phương tiện phù hợp để khám phá thành phố biển xinh đẹp này.
               </p>
               
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Link href="/moto" className="block group">
-                <div className="bg-blue-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
-                  <div className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors">
-                    <FaMotorcycle className="text-2xl" />
-                  </div>                    
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">
-                    Thuê xe máy
-                  </h3>                    
-                  <p className="text-gray-600 mb-3">
-                     Phương tiện phổ biến và linh hoạt nhất để khám phá Nha Trang. Giá thuê từ 100.000đ - 170.000đ/ngày tùy loại xe.
-                  </p>                    
-                  <span className="text-blue-600 font-medium group-hover:underline">
-                    Xem dịch vụ thuê xe máy →
-                  </span>
-                </div>
-              </Link>
-              <Link href="/oto" className="block group">                 
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Link href="/moto" className="block group"> 
+                  <div className="bg-blue-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
+                    <div className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors">
+                      <FaMotorcycle className="text-2xl" />
+                    </div>                    
+                    <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">
+                      Thuê xe máy
+                    </h3>
+                    <p className="text-gray-600 mb-3">
+                      Phương tiện phổ biến và linh hoạt nhất để khám phá Nha Trang. Giá thuê từ 100.000đ - 170.000đ/ngày tùy loại xe.
+                    </p>
+                    <ul className="text-gray-600 space-y-1 text-sm mb-4">
+                      <li>• Các loại xe: Xe số, xe ga, xe côn tay</li>
+                      <li>• Ưu điểm: Linh hoạt, tiết kiệm, dễ dàng đỗ xe</li>
+                      <li>• Có dịch vụ giao xe tận nơi, miễn phí mũ bảo hiểm</li>
+                    </ul>                    
+                    <span className="text-blue-600 font-medium group-hover:underline">
+                      Xem dịch vụ thuê xe máy →
+                    </span>
+                  </div>
+                </Link>
+                <Link href="/oto" className="block group">                 
+                  <div className="bg-green-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
+                    <div className="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-green-600 transition-colors">
+                      <FaCar className="text-2xl" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 group-hover:text-green-600 transition-colors">
+                      Thuê xe ô tô
+                    </h3>
+                    <p className="text-gray-600 mb-3">
+                      Thuận tiện cho gia đình hoặc nhóm bạn. Có nhiều loại xe từ 4 chỗ đến 16 chỗ. Đặc biệt có dịch vụ đưa đón sân bay.
+                    </p>
+                    <ul className="text-gray-600 space-y-1 text-sm mb-4">
+                      <li>• Giá thuê: từ 700.000đ/ngày tùy loại xe</li>
+                      <li>• Có dịch vụ thuê kèm tài xế hoặc tự lái</li>
+                      <li>• Thủ tục đơn giản, yêu cầu CMND/CCCD và bằng lái</li>
+                    </ul>
+                    <span className="text-green-600 font-medium group-hover:underline">
+                      Xem dịch vụ thuê xe ô tô →
+                    </span>
+                  </div>
+                </Link>
+                <Link href="/taxi" className="block group">                 
+                  <div className="bg-yellow-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
+                    <div className="w-14 h-14 bg-yellow-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-yellow-600 transition-colors">
+                      <FaTaxi className="text-2xl" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 group-hover:text-yellow-600 transition-colors">
+                      Dịch vụ Taxi
+                    </h3>
+                    <p className="text-gray-600 mb-3">
+                      Phương tiện thuận tiện để di chuyển trong thành phố. Có nhiều hãng taxi uy tín như Mai Linh, Vinasun, Nha Trang Taxi.
+                    </p>
+                    <ul className="text-gray-600 space-y-1 text-sm mb-4">
+                      <li>• Giá cước: 15.000 - 20.000đ/km</li>
+                      <li>• An toàn, tiện lợi, có thể đặt qua ứng dụng</li>
+                      <li>• Dễ dàng tìm ở các khu du lịch, khách sạn</li>
+                    </ul>
+                    <span className="text-yellow-600 font-medium group-hover:underline">
+                      Xem thông tin dịch vụ taxi →
+                    </span>
+                  </div>
+                </Link>
+                <Link href="/bus" className="block group">                 
+                  <div className="bg-blue-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
+                    <div className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors">
+                      <FaBus className="text-2xl" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">
+                      Xe Buýt Nha Trang
+                    </h3>
+                    <p className="text-gray-600 mb-3">
+                      Phương tiện giá rẻ để di chuyển trong thành phố. Nha Trang có nhiều tuyến xe buýt đi qua các địa điểm du lịch.
+                    </p>
+                    <ul className="text-gray-600 space-y-1 text-sm mb-4">
+                      <li>• Giá vé: 7.000 - 10.000đ/lượt</li>
+                      <li>• Tuyến phổ biến: số 4 (bãi biển), số 3 (chợ Đầm)</li>
+                      <li>• Hoạt động từ 5:30 - 18:30</li>
+                    </ul>
+                    <span className="text-blue-600 font-medium group-hover:underline">
+                      Xem thông tin xe buýt →
+                    </span>
+                  </div>
+                </Link>
                 <div className="bg-green-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
-                  <div className="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-green-600 transition-colors">
-                    <FaCar className="text-2xl" />
+                  <div className="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center mb-4">
+                    <FaShip className="text-2xl" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-green-600 transition-colors">
-                    Thuê xe ô tô
+                  <h3 className="text-xl font-semibold mb-3">
+                    Tàu thuyền
                   </h3>
                   <p className="text-gray-600 mb-3">
-                    Thuận tiện cho gia đình hoặc nhóm bạn. Có nhiều loại xe từ 4 chỗ đến 16 chỗ. Đặc biệt có dịch vụ đưa đón sân bay.
+                    Phương tiện lý tưởng để tham quan các đảo xung quanh Nha Trang như Hòn Mun, Hòn Tằm, Hòn Một.
                   </p>
-                  <span className="text-green-600 font-medium group-hover:underline">
-                    Xem dịch vụ thuê xe ô tô →
-                  </span>
+                  <ul className="text-gray-600 space-y-1 text-sm mb-4">
+                    <li>• Tour 4 đảo: 250.000 - 350.000đ/người</li>
+                    <li>• Cano riêng: từ 1.200.000đ/chiếc</li>
+                    <li>• Khởi hành từ cảng Cầu Đá hoặc bến du thuyền</li>
+                  </ul>
                 </div>
-              </Link>
-              <Link href="/taxi" className="block group">                 
-                <div className="bg-yellow-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
-                  <div className="w-14 h-14 bg-yellow-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-yellow-600 transition-colors">
-                    <FaTaxi className="text-2xl" />
+                <div className="bg-purple-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
+                  <div className="w-14 h-14 bg-purple-500 text-white rounded-full flex items-center justify-center mb-4">
+                    <FaMotorcycle className="text-2xl" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-yellow-600 transition-colors">
-                    Dịch vụ Taxi
+                  <h3 className="text-xl font-semibold mb-3">
+                    Xe ôm / Xe ôm công nghệ
                   </h3>
                   <p className="text-gray-600 mb-3">
-                    Thông tin chi tiết về các hãng taxi uy tín tại Nha Trang, giá cước, số điện thoại đặt xe và tuyến đường phổ biến.
+                    Phương tiện linh hoạt, nhanh chóng cho quãng đường ngắn trong thành phố. Dễ dàng di chuyển qua các con phố nhỏ.
                   </p>
-                  <span className="text-yellow-600 font-medium group-hover:underline">
-                    Xem thông tin dịch vụ taxi →
-                  </span>
+                  <ul className="text-gray-600 space-y-1 text-sm mb-4">
+                    <li>• Giá từ: 15.000 - 30.000đ/km tùy quãng đường</li>
+                    <li>• Có thể đặt qua ứng dụng Grab, Be</li>
+                    <li>• Phù hợp cho 1-2 người di chuyển nhanh</li>
+                  </ul>
                 </div>
-              </Link>
-              <Link href="/bus" className="block group">                 
-                <div className="bg-blue-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
-                  <div className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors">
-                    <FaBus className="text-2xl" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">
-                    Xe Buýt Nha Trang
-                  </h3>
-                  <p className="text-gray-600 mb-3">
-                    Thông tin tuyến đường, lịch trình và bản đồ các tuyến xe buýt công cộng tại Nha Trang với giá vé chỉ từ 7.000đ/lượt.
-                  </p>
-                  <span className="text-blue-600 font-medium group-hover:underline">
-                    Xem thông tin xe buýt →
-                  </span>
-                </div>
-              </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        {/* Transportation Options */}
-        <section className="py-12 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Các phương tiện di chuyển phổ biến</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <div className="bg-gray-50 rounded-lg p-6 shadow-sm">
-                <div className="w-12 h-12 bg-yellow-500 text-white rounded-full flex items-center justify-center mb-4">
-                  <FaTaxi className="text-xl" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">Taxi</h3>
-                <p className="text-gray-600 mb-4">
-                  Phương tiện thuận tiện để di chuyển trong thành phố. Có nhiều hãng taxi uy tín như Mai Linh, Vinasun, Nha Trang Taxi.
-                </p>
-                <ul className="text-gray-600 space-y-1 text-sm">
-                  <li>• Giá cước: 15.000 - 20.000đ/km</li>
-                  <li>• An toàn, tiện lợi</li>
-                  <li>• Dễ dàng tìm ở các khu du lịch, khách sạn</li>
-                </ul>
-              </div>
-              
-              <div className="bg-gray-50 rounded-lg p-6 shadow-sm">
-                <div className="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4">
-                  <FaBus className="text-xl" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">Xe buýt công cộng</h3>
-                <p className="text-gray-600 mb-4">
-                  Phương tiện giá rẻ để di chuyển trong thành phố. Nha Trang có nhiều tuyến xe buýt đi qua các địa điểm du lịch.
-                </p>
-                <ul className="text-gray-600 space-y-1 text-sm">
-                  <li>• Giá vé: 7.000 - 10.000đ/lượt</li>
-                  <li>• Tuyến phổ biến: số 4 (bãi biển), số 3 (chợ Đầm)</li>
-                  <li>• Hoạt động từ 5:30 - 18:30</li>
-                </ul>
-              </div>
-              
-              <div className="bg-gray-50 rounded-lg p-6 shadow-sm">
-                <div className="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center mb-4">
-                  <FaShip className="text-xl" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">Tàu thuyền</h3>
-                <p className="text-gray-600 mb-4">
-                  Phương tiện lý tưởng để tham quan các đảo xung quanh Nha Trang như Hòn Mun, Hòn Tằm, Hòn Một.
-                </p>
-                <ul className="text-gray-600 space-y-1 text-sm">
-                  <li>• Tour 4 đảo: 250.000 - 350.000đ/người</li>
-                  <li>• Cano riêng: từ 1.200.000đ/chiếc</li>
-                  <li>• Khởi hành từ cảng Cầu Đá hoặc bến du thuyền</li>
-                </ul>
               </div>
             </div>
           </div>

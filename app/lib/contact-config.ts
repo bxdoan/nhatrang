@@ -9,9 +9,6 @@ export const CONTACT_INFO = {
   // Số điện thoại theo định dạng quốc tế (dùng cho các ứng dụng yêu cầu mã quốc gia)
   phoneNumberIntl: "+84915670892",
   
-  // Số điện thoại đặt xe ô tô
-  carRentalPhone: "0327434080",
-  
   // Username Telegram
   telegramUsername: "nhatranginsight",
   
@@ -19,7 +16,7 @@ export const CONTACT_INFO = {
   address: "2/18 Ngô Đến, Vĩnh Phước, Tp. Nha Trang, Khánh Hòa",
   
   // Email liên hệ
-  email: "info@nhatranginsight.com",
+  email: "nhatranginsight@gmail.com",
   
   // Thông tin ngân hàng cho thanh toán
   bankAccount: {
@@ -35,6 +32,8 @@ export const CONTACT_INFO = {
     facebook: "https://facebook.com/nhatranginsight",
     instagram: "https://instagram.com/nhatranginsight",
     twitter: "https://twitter.com/nhatranginsight",
-    youtube: "https://youtube.com/@nhatranginsight"
+    youtube: "https://youtube.com/@nhatranginsight",
+    telegram: "https://t.me/nhatranginsight",
+    google: "https://github.com/bxdoan"
   }
 }; 
