@@ -59,25 +59,25 @@ export const DEFAULT_METADATA = {
     initialScale: 1,
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: '/images/logo/nti2.png',
+    shortcut: '/images/logo/nti2.png',
+    apple: '/images/logo/nti2.png',
     other: [
       {
         rel: 'apple-touch-icon',
-        url: '/apple-touch-icon.png',
+        url: '/images/logo/nti2.png',
       },
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '32x32',
-        url: '/favicon-32x32.png',
+        url: '/images/logo/nti2.png',
       },
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '16x16',
-        url: '/favicon-16x16.png',
+        url: '/images/logo/nti2.png',
       },
     ],
   },
@@ -187,4 +187,72 @@ export const TRANSPORTATION_PAGE_SCHEMA = {
   name: `Di chuyển tại Nha Trang | ${SITE_NAME}`,
   url: `${SITE_URL}/transportation`,
   description: 'Thông tin về phương tiện di chuyển và dịch vụ vận chuyển tại Nha Trang, từ thuê xe máy, xe ô tô đến xe buýt công cộng',
+};
+
+// Schema.org structured data cho trang Bus
+export const BUS_PAGE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: `Xe Buýt Nha Trang | ${SITE_NAME}`,
+  url: `${SITE_URL}/bus`,
+  description: 'Thông tin tuyến đường, lịch trình và bản đồ các tuyến xe buýt công cộng tại Nha Trang. Giá vé chỉ từ 7.000 VNĐ/lượt, phương tiện tiết kiệm và thuận tiện.',
+  mainEntity: {
+    '@type': 'ItemList',
+    name: 'Các tuyến xe buýt tại Nha Trang',
+    description: 'Danh sách các tuyến xe buýt công cộng tại Nha Trang, bao gồm thông tin về lộ trình, giá vé và lịch trình',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        item: {
+          '@type': 'Product',
+          name: 'Tuyến số 23: Bến du Thuyền Ana Marina - Vinpearl Land Nha Trang',
+          description: 'Tuyến xe buýt chính kết nối bến xe phía Nam với trung tâm thành phố và bến cảng du lịch',
+          offers: {
+            '@type': 'Offer',
+            price: '7000',
+            priceCurrency: 'VND'
+          }
+        }
+      }
+    ]
+  }
+};
+
+// Schema.org structured data cho trang Taxi
+export const TAXI_PAGE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: `Dịch vụ Taxi Nha Trang | ${SITE_NAME}`,
+  url: `${SITE_URL}/taxi`,
+  description: 'Thông tin chi tiết về các hãng taxi uy tín tại Nha Trang, giá cước, số điện thoại đặt xe và tuyến đường phổ biến.',
+  mainEntity: {
+    '@type': 'ItemList',
+    name: 'Các hãng taxi uy tín tại Nha Trang',
+    description: 'Danh sách các hãng taxi uy tín tại Nha Trang, bao gồm thông tin về giá cước, số điện thoại đặt xe',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        item: {
+          '@type': 'TaxiService',
+          name: 'Mai Linh Taxi Nha Trang',
+          description: 'Hãng taxi uy tín với đội xe hiện đại, giá cả hợp lý và dịch vụ chuyên nghiệp tại Nha Trang',
+          telephone: '0258.3811 811',
+          priceRange: '15.000đ - 20.000đ/km'
+        }
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        item: {
+          '@type': 'TaxiService',
+          name: 'Vinasun Taxi Nha Trang',
+          description: 'Dịch vụ taxi chất lượng cao với đội ngũ tài xế chuyên nghiệp, phục vụ khách du lịch tại Nha Trang',
+          telephone: '0258.3827 827',
+          priceRange: '15.000đ - 20.000đ/km'
+        }
+      }
+    ]
+  }
 }; 

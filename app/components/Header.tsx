@@ -20,16 +20,18 @@ export default function Header() {
       {/* Logo và Navigation */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <Link href="/" className="text-2xl font-bold text-white hover:text-blue-100 transition-colors flex items-center">
-              <span className="text-yellow-300 mr-2">☀️</span> 
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100">
-                Nha Trang Insight
-              </span>
+          <div className="mb-4 md:mb-0 flex items-center">
+            <Link href="/" className="flex items-center">
+              <img 
+                src="/images/logo/nti2.png" 
+                alt="Nha Trang Insight Logo" 
+                className="h-20"
+              />
             </Link>
-            <p className="text-sm text-blue-100">
-              Chuyên trang thông tin du lịch & đời sống Nha Trang
-            </p>
+            <div className="ml-3 text-blue-100">
+              <p className="text-sm leading-tight">Chuyên trang thông tin</p>
+              <p className="text-sm leading-tight">du lịch & đời sống Nha Trang</p>
+            </div>
           </div>
           
           <nav className="flex flex-wrap gap-2 md:gap-5 justify-center">

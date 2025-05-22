@@ -14,7 +14,8 @@ import {
   FaUmbrellaBeach,
   FaUtensils,
   FaHistory,
-  FaComments
+  FaComments,
+  FaGithub
 } from 'react-icons/fa';
 import Link from 'next/link';
 import { CONTACT_INFO } from '../lib/contact-config';
@@ -33,9 +34,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Logo và thông tin */}
           <div>
-            <h3 className="text-xl font-bold mb-4 flex items-center">
-              <span className="text-yellow-300 mr-2">☀️</span> Nha Trang Insight
-            </h3>
+            <div className="flex justify-center mb-4">
+              <Link href="/">
+                <img 
+                  src="/images/logo/nti2.png" 
+                  alt="Nha Trang Insight Logo" 
+                  className="h-20 hover:opacity-90 transition-opacity"
+                />
+              </Link>
+            </div>
             <p className="text-sm text-blue-200 mb-4">
               Cung cấp thông tin du lịch, giao thông, ẩm thực và lịch sử Nha Trang - Khánh Hòa 
               giúp bạn có chuyến đi tuyệt vời nhất.
@@ -52,6 +59,9 @@ export default function Footer() {
               </a>
               <a href={CONTACT_INFO.socialMedia.youtube} target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-300 transition-colors">
                 <FaYoutube size={20} />
+              </a>
+              <a href="https://github.com/bxdoan" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-300 transition-colors">
+                <FaGithub size={20} />
               </a>
             </div>
           </div>

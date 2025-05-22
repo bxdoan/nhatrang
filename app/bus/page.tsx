@@ -7,6 +7,7 @@ import { CONTACT_INFO } from '../lib/contact-config';
 import Script from 'next/script';
 import busStopsData from '../data/busStops.json';
 import busRoutesData from '../data/busRoutes.json';
+import { BUS_PAGE_SCHEMA } from '../lib/metadata';
 
 // Định nghĩa type cho Leaflet để TypeScript không báo lỗi
 declare global {
@@ -534,6 +535,13 @@ export default function BusPage() {
           </div>
         </div>
       </section>
+
+      {/* Schema.org JSON-LD */}
+      <Script
+        id="schema-bus"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(BUS_PAGE_SCHEMA) }}
+      />
     </div>
   );
 } 

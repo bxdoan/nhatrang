@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { FaTaxi, FaChevronLeft, FaPhone, FaMapMarkedAlt, FaInfoCircle, FaMoneyBillWave, FaStar, FaClock, FaRoute, FaCarSide, FaCheckCircle, FaMotorcycle, FaCar } from 'react-icons/fa';
 import { CONTACT_INFO } from '../lib/contact-config';
+import Script from 'next/script';
+import { TAXI_PAGE_SCHEMA } from '../lib/metadata';
 
 export default function TaxiPage() {
   const phoneNumber = CONTACT_INFO.phoneNumber;
@@ -462,6 +464,13 @@ export default function TaxiPage() {
           </div>
         </div>
       </section>
+      
+      {/* Schema.org JSON-LD */}
+      <Script
+        id="schema-taxi"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(TAXI_PAGE_SCHEMA) }}
+      />
     </div>
   );
 } 
