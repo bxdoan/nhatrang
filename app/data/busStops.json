@@ -56,44 +56,72 @@
     "id": "stop7",
     "name": "Nha Trang Center",
     "name_en": "Nha Trang Center",
-    "lat": 12.2435,
-    "lng": 109.1965,
+    "lat": 12.24766,
+    "lng": 109.19639,
     "description": "Nha Trang Center",
     "description_en": "Nha Trang Center"
   },
   {
     "id": "stop8",
-    "name": "Sân bay Cam Ranh",
-    "lat": 12.0057,
-    "lng": 109.2193,
-    "description": "Sân bay quốc tế"
+    "name": "KS The Costa",
+    "name_en": "KS The Costa",
+    "lat": 12.24397,
+    "lng": 109.19639,
+    "description": "KS The Costa",
+    "description_en": "KS The Costa"
   },
   {
     "id": "stop9",
-    "name": "Ga Nha Trang",
-    "lat": 12.2399,
-    "lng": 109.1891,
-    "description": "Nhà ga đường sắt"
+    "name": "Quảng Trường 2/4",
+    "name_en": "Quang Truong 2/4",
+    "lat": 12.24096,
+    "lng": 109.19643,
+    "description": "Quảng Trường 2/4",
+    "description_en": "Quang Truong 2/4"
   },
   {
     "id": "stop10",
-    "name": "I-Resort",
-    "lat": 12.2128,
-    "lng": 109.1762,
-    "description": "Khu du lịch suối khoáng"
+    "name": "KS Citadines Bayfront Nha Trang",
+    "name_en": "Citadines Bayfront Nha Trang Hotel",
+    "lat": 12.236317,
+    "lng": 109.197034,
+    "description": "KS Citadines Bayfront Nha Trang",
+    "description_en": "Citadines Bayfront Nha Trang Hotel"
   },
   {
     "id": "stop11",
-    "name": "Tháp Bà Ponagar",
-    "lat": 12.2656,
-    "lng": 109.1962,
-    "description": "Di tích lịch sử"
+    "name": "Trung tâm Thương mại Vincom",
+    "name_en": "Citadines Bayfront Nha Trang Hotel",
+    "lat": 12.23275,
+    "lng": 109.19781,
+    "description": "KS Citadines Bayfront Nha Trang",
+    "description_en": "Citadines Bayfront Nha Trang Hotel"
   },
   {
     "id": "stop12",
-    "name": "Bến tàu du lịch Cầu Đá",
-    "lat": 12.2335,
-    "lng": 109.1998,
-    "description": "Bến cảng du lịch"
+    "name": "Ana Beach House",
+    "name_en": "Ana Beach House",
+    "lat": 12.22466,
+    "lng": 109.20123,
+    "description": "Ana Beach House",
+    "description_en": "Ana Beach House"
+  },
+  {
+    "id": "stop13",
+    "name": "KS Imperial (đối diện công viên Thanh Niên)",
+    "name_en": "KS Imperial (opposite Youth Park)",
+    "lat": 12.21998,
+    "lng": 109.2039,
+    "description": "KS Imperial (đối diện công viên Thanh Niên)",
+    "description_en": "KS Imperial (opposite Youth Park)"
+  },
+  {
+    "id": "stop14",
+    "name": "VinPearl Nha Trang",
+    "name_en": "Vinpearl Nha Trang",
+    "lat": 12.20265,
+    "lng": 109.21602,
+    "description": "VinPearl Nha Trang",
+    "description_en": "Vinpearl Nha Trang"
   }
 ] 

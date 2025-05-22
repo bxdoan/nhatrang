@@ -4,6 +4,7 @@
     "name": "Vinbus 23: Bến du Thuyền Ana Marina -  Vinpearl Land Nha Trang",
     "name_en": "Vinbus 23: Ana Marina - Vinpearl Land Nha Trang",
     "color": "#4285F4",
+    "hotline": "1900866663",
     "stops": ["stop1", "stop2", "stop3", "stop4", "stop12"],
     "schedule": ["7:20 - 23:15", "Mỗi 20-30 phút/chuyến"],
     "fare": 15000,
@@ -1120,12 +1121,12 @@
             12.2372
         ],
         [
-            109.19694,
-            12.23689
-        ],
-        [
             109.19702,
             12.23647
+        ],
+        [
+            109.197034,
+            12.236317
         ],
         [
             109.19712,
