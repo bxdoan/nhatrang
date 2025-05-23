@@ -4,8 +4,11 @@ import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import FloatingButtons from './components/FloatingButtons'
+import AnalyticsProvider from './components/AnalyticsProvider'
 import { DEFAULT_METADATA, HOMEPAGE_SCHEMA } from './lib/metadata'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,14 +22,16 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body className={inter.className}>
-        <div className="flex flex-col min-h-screen">
-          <Header />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
-          <FloatingButtons />
-        </div>
+        <AnalyticsProvider>
+          <div className="flex flex-col min-h-screen">
+            <Header />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+            <FloatingButtons />
+          </div>
+        </AnalyticsProvider>
         
         {/* Schema.org JSON-LD */}
         <Script
@@ -34,6 +39,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(HOMEPAGE_SCHEMA) }}
         />
+        
+        {/* Vercel Analytics */}
+        <Analytics />
+        
+        {/* Vercel Speed Insights */}
+        <SpeedInsights />
       </body>
     </html>
   )

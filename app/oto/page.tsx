@@ -15,6 +15,12 @@ import {
 } from 'react-icons/fa';
 import { CONTACT_INFO } from '../lib/contact-config';
 import { useState } from 'react';
+import { 
+  trackPhoneCall, 
+  trackZaloClick, 
+  trackTelegramClick, 
+  trackGalleryImageView 
+} from '../lib/analytics';
 
 // Định nghĩa kiểu dữ liệu cho đối tượng xe ô tô
 interface Car {
@@ -80,6 +86,9 @@ export default function CarRentalPage() {
     setShowImagePopup(true);
     // Vô hiệu hóa scroll khi popup đang mở
     document.body.style.overflow = 'hidden';
+    
+    // Track analytics event
+    trackGalleryImageView(car.name, 'car', 'oto');
   };
 
   // Hàm đóng popup
@@ -87,6 +96,21 @@ export default function CarRentalPage() {
     setShowImagePopup(false);
     // Bật lại scroll khi đóng popup
     document.body.style.overflow = 'auto';
+  };
+
+  // Handler cho phone call clicks
+  const handlePhoneClick = (phone: string) => {
+    trackPhoneCall(phone, 'oto');
+  };
+
+  // Handler cho Zalo click
+  const handleZaloClick = () => {
+    trackZaloClick('oto');
+  };
+
+  // Handler cho Telegram click
+  const handleTelegramClick = () => {
+    trackTelegramClick('oto');
   };
 
   return (
@@ -124,12 +148,14 @@ export default function CarRentalPage() {
                   <div className="flex flex-col sm:flex-row gap-2">
                     <a 
                       href={`tel:${phoneNumber}`} 
+                      onClick={() => handlePhoneClick(phoneNumber)}
                       className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors text-sm"
                     >
                       <FaPhone className="mr-2" /> {phoneNumber}
                     </a>
                     <a 
                       href={`tel:${phoneNumber2}`} 
+                      onClick={() => handlePhoneClick(phoneNumber2)}
                       className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors text-sm"
                     >
                       <FaPhone className="mr-2" /> {phoneNumber2}
@@ -248,18 +274,21 @@ export default function CarRentalPage() {
                   <div className="flex flex-col sm:flex-row justify-center gap-3">
                     <a 
                       href={`tel:${phoneNumber}`}
+                      onClick={() => handlePhoneClick(phoneNumber)}
                       className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-md transition-colors"
                     >
                       <FaPhone className="mr-2" /> Gọi để đặt xe: {phoneNumber}
                     </a>
                     <a 
                       href={`tel:${phoneNumber2}`}
+                      onClick={() => handlePhoneClick(phoneNumber2)}
                       className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-md transition-colors"
                     >
                       <FaPhone className="mr-2" /> Gọi để đặt xe: {phoneNumber2}
                     </a>
                     <a 
                       href={`https://zalo.me/${phoneNumber}`}
+                      onClick={handleZaloClick}
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-md transition-colors"
@@ -268,6 +297,7 @@ export default function CarRentalPage() {
                     </a>
                     <a 
                       href={`https://t.me/${CONTACT_INFO.telegramUsername}`}
+                      onClick={handleTelegramClick}
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white px-5 py-3 rounded-md transition-colors"
@@ -367,18 +397,21 @@ export default function CarRentalPage() {
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <a 
                   href={`tel:${phoneNumber}`}
+                  onClick={() => handlePhoneClick(phoneNumber)}
                   className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-md transition-colors"
                 >
                   <FaPhone className="mr-2" /> Gọi ngay: {phoneNumber}
                 </a>
                 <a 
                   href={`tel:${phoneNumber2}`}
+                  onClick={() => handlePhoneClick(phoneNumber2)}
                   className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-md transition-colors"
                 >
                   <FaPhone className="mr-2" /> Gọi ngay: {phoneNumber2}
                 </a>
                 <a 
                   href={`https://zalo.me/${phoneNumber}`}
+                  onClick={handleZaloClick}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors"
@@ -387,6 +420,7 @@ export default function CarRentalPage() {
                 </a>
                 <a 
                   href={`https://t.me/${CONTACT_INFO.telegramUsername}`}
+                  onClick={handleTelegramClick}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md transition-colors"
