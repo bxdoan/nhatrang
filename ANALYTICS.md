@@ -10,26 +10,39 @@ npm install @vercel/analytics @vercel/speed-insights
 
 ## Cấu hình
 
-### 1. Vercel.json
-```json
-{
-  "analytics": {
-    "enable": true
-  },
-  "speedInsights": {
-    "enable": true
-  }
-}
-```
+### 1. Package Installation & Code Integration
+Analytics và Speed Insights được enable tự động khi:
+- Cài đặt packages `@vercel/analytics` và `@vercel/speed-insights`
+- Thêm components vào layout.tsx
+- Deploy lên Vercel platform
 
 ### 2. Layout.tsx
 - Tích hợp `<Analytics />` và `<SpeedInsights />`
 - Wrapper `<AnalyticsProvider>` cho page view tracking
 
+```tsx
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body>
+        <AnalyticsProvider>
+          {children}
+        </AnalyticsProvider>
+        <Analytics />
+        <SpeedInsights />
+      </body>
+    </html>
+  )
+}
+```
+
 ### 3. Custom Analytics (lib/analytics.ts)
 Hệ thống tracking events tùy chỉnh cho:
 
-#### Events được theo dõi:
+#### Events được theo dổi:
 - `phone_call_click` - Click vào số điện thoại
 - `zalo_click` - Click vào nút Zalo
 - `telegram_click` - Click vào nút Telegram
@@ -88,11 +101,12 @@ const openImagePopup = (car: Car) => {
 ## Dashboard Analytics
 
 ### Vercel Analytics Dashboard
-- Truy cập: Vercel Dashboard > Project > Analytics
+- Truy cập: Vercel Dashboard > Project > Analytics tab
 - Xem metrics: Page views, visitors, bounce rate
 - Custom events và conversions
 
 ### Speed Insights
+- Truy cập: Vercel Dashboard > Project > Speed Insights tab
 - Core Web Vitals
 - Performance metrics
 - Real User Monitoring (RUM)
@@ -168,4 +182,22 @@ const openImagePopup = (car: Car) => {
 ### 3. Updates
 - Keep packages updated
 - Monitor Vercel changelog
-- Test after updates 
+- Test after updates
+
+## Troubleshooting
+
+### Common Issues
+
+#### 1. Schema Validation Errors
+- Không thêm `analytics` hoặc `speedInsights` vào vercel.json
+- Analytics được enable tự động qua packages và code integration
+
+#### 2. Analytics Not Working
+- Đảm bảo packages đã được cài đặt đúng
+- Kiểm tra components đã được thêm vào layout
+- Analytics chỉ hoạt động trên production deployment
+
+#### 3. Custom Events Not Appearing
+- Custom events có thể mất vài phút để xuất hiện trong dashboard
+- Kiểm tra console errors trong browser
+- Đảm bảo event names và properties hợp lệ 
