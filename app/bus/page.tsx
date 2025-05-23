@@ -39,6 +39,54 @@ interface BusRoute {
   path: number[][]; // Tọa độ cho polyline
 }
 
+// Schema.org JSON-LD cho FAQ
+const FAQ_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Giá vé xe buýt Nha Trang là bao nhiêu?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Giá vé xe buýt nội thành Nha Trang là 7.000đ/lượt, xe buýt sân bay Cam Ranh là 50.000đ/lượt, vé tháng là 200.000đ. Học sinh, sinh viên, người cao tuổi và người khuyết tật được giảm 50% giá vé.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Xe buýt Nha Trang hoạt động từ mấy giờ đến mấy giờ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Xe buýt nội thành hoạt động từ 05:00 - 19:00 hàng ngày. Tuyến sân bay Cam Ranh hoạt động từ 04:00 - 21:00. Tần suất xe buýt là 15-30 phút/chuyến tùy theo tuyến.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Có bao nhiêu tuyến xe buýt tại Nha Trang?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Hiện tại Nha Trang có 4 tuyến xe buýt chính: Tuyến 23 (Ana Marina - Vinpearl), Tuyến 18 (Bình Hưng - Diên Khánh), Tuyến 9 (Bến xe - Sân bay Cam Ranh), và Tuyến 4 (Chợ Đầm - Bến xe Phía Nam).'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Làm thế nào để đi từ sân bay Cam Ranh về trung tâm Nha Trang bằng xe buýt?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Bạn có thể đi tuyến số 9 từ sân bay Cam Ranh về bến xe phía Nam Nha Trang. Giá vé 50.000đ/lượt, thời gian di chuyển khoảng 45-60 phút, xe chạy từ 04:00 - 21:00 với tần suất 30 phút/chuyến.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Xe buýt Nha Trang có chấp nhận thanh toán bằng thẻ không?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Hiện tại hầu hết các tuyến xe buýt Nha Trang chỉ chấp nhận thanh toán bằng tiền mặt. Bạn nên chuẩn bị sẵn tiền lẻ để mua vé. Một số tuyến đang thí điểm thanh toán không tiền mặt.'
+      }
+    }
+  ]
+};
+
 export default function BusPage() {
   const mapRef = useRef<any>(null);
   const leafletMapRef = useRef<any>(null);
@@ -536,11 +584,74 @@ export default function BusPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-8 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold text-center mb-8">Câu hỏi thường gặp về xe buýt Nha Trang</h2>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-4">
+              <details className="bg-gray-50 rounded-lg p-4">
+                <summary className="font-semibold cursor-pointer hover:text-blue-600">
+                  Giá vé xe buýt Nha Trang là bao nhiêu?
+                </summary>
+                <div className="mt-3 text-gray-700">
+                  <p>Giá vé xe buýt nội thành Nha Trang là <strong>7.000đ/lượt</strong>, xe buýt sân bay Cam Ranh là <strong>50.000đ/lượt</strong>, vé tháng là <strong>200.000đ</strong>. Học sinh, sinh viên, người cao tuổi và người khuyết tật được giảm 50% giá vé.</p>
+                </div>
+              </details>
+              
+              <details className="bg-gray-50 rounded-lg p-4">
+                <summary className="font-semibold cursor-pointer hover:text-blue-600">
+                  Xe buýt Nha Trang hoạt động từ mấy giờ đến mấy giờ?
+                </summary>
+                <div className="mt-3 text-gray-700">
+                  <p>Xe buýt nội thành hoạt động từ <strong>05:00 - 19:00</strong> hàng ngày. Tuyến sân bay Cam Ranh hoạt động từ <strong>04:00 - 21:00</strong>. Tần suất xe buýt là 15-30 phút/chuyến tùy theo tuyến.</p>
+                </div>
+              </details>
+              
+              <details className="bg-gray-50 rounded-lg p-4">
+                <summary className="font-semibold cursor-pointer hover:text-blue-600">
+                  Có bao nhiêu tuyến xe buýt tại Nha Trang?
+                </summary>
+                <div className="mt-3 text-gray-700">
+                  <p>Hiện tại Nha Trang có <strong>4 tuyến xe buýt chính</strong>: Tuyến 23 (Ana Marina - Vinpearl), Tuyến 18 (Bình Hưng - Diên Khánh), Tuyến 9 (Bến xe - Sân bay Cam Ranh), và Tuyến 4 (Chợ Đầm - Bến xe Phía Nam).</p>
+                </div>
+              </details>
+              
+              <details className="bg-gray-50 rounded-lg p-4">
+                <summary className="font-semibold cursor-pointer hover:text-blue-600">
+                  Làm thế nào để đi từ sân bay Cam Ranh về trung tâm Nha Trang bằng xe buýt?
+                </summary>
+                <div className="mt-3 text-gray-700">
+                  <p>Bạn có thể đi <strong>tuyến số 9</strong> từ sân bay Cam Ranh về bến xe phía Nam Nha Trang. Giá vé 50.000đ/lượt, thời gian di chuyển khoảng 45-60 phút, xe chạy từ 04:00 - 21:00 với tần suất 30 phút/chuyến.</p>
+                </div>
+              </details>
+              
+              <details className="bg-gray-50 rounded-lg p-4">
+                <summary className="font-semibold cursor-pointer hover:text-blue-600">
+                  Xe buýt Nha Trang có chấp nhận thanh toán bằng thẻ không?
+                </summary>
+                <div className="mt-3 text-gray-700">
+                  <p>Hiện tại hầu hết các tuyến xe buýt Nha Trang chỉ chấp nhận <strong>thanh toán bằng tiền mặt</strong>. Bạn nên chuẩn bị sẵn tiền lẻ để mua vé. Một số tuyến đang thí điểm thanh toán không tiền mặt.</p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Schema.org JSON-LD */}
       <Script
         id="schema-bus"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BUS_PAGE_SCHEMA) }}
+      />
+      
+      {/* FAQ Schema */}
+      <Script
+        id="schema-faq"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
       />
     </div>
   );

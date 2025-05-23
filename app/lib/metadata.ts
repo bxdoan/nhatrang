@@ -18,6 +18,14 @@ export const CONTACT_INFO = {
 // URL ảnh mặc định
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/images/nhatrang-og-image.jpg`;
 
+// Viewport configuration - tách riêng theo yêu cầu Next.js
+export function generateViewport() {
+  return {
+    width: 'device-width',
+    initialScale: 1,
+  };
+}
+
 // Metadata mặc định
 export const DEFAULT_METADATA = {
   metadataBase: new URL(SITE_URL),
@@ -53,10 +61,6 @@ export const DEFAULT_METADATA = {
     description: SITE_DESCRIPTION,
     images: [DEFAULT_OG_IMAGE],
     creator: '@nhatranginsight',
-  },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
   },
   icons: {
     icon: '/images/logo/nti2.png',
@@ -192,31 +196,228 @@ export const TRANSPORTATION_PAGE_SCHEMA = {
 // Schema.org structured data cho trang Bus
 export const BUS_PAGE_SCHEMA = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: `Xe Buýt Nha Trang | ${SITE_NAME}`,
+  '@type': ['WebPage', 'TransportService'],
+  name: `Xe Buýt Nha Trang - Tuyến Đường & Lịch Trình | ${SITE_NAME}`,
   url: `${SITE_URL}/bus`,
-  description: 'Thông tin tuyến đường, lịch trình và bản đồ các tuyến xe buýt công cộng tại Nha Trang. Giá vé chỉ từ 7.000 VNĐ/lượt, phương tiện tiết kiệm và thuận tiện.',
+  description: 'Thông tin chi tiết về tuyến đường, lịch trình, bản đồ và giá vé xe buýt công cộng Nha Trang. Tuyến nội thành chỉ 7.000đ, tuyến sân bay Cam Ranh 50.000đ.',
+  provider: {
+    '@type': 'Organization',
+    name: 'Trung tâm Điều hành xe buýt Nha Trang',
+    telephone: '0258.3810810',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Nha Trang',
+      addressRegion: 'Khánh Hòa',
+      addressCountry: 'VN'
+    }
+  },
+  serviceArea: {
+    '@type': 'City',
+    name: 'Nha Trang',
+    containedInPlace: {
+      '@type': 'AdministrativeArea',
+      name: 'Khánh Hòa'
+    }
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Dịch vụ xe buýt Nha Trang',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: 'Vé xe buýt nội thành',
+        description: 'Vé lẻ cho các tuyến xe buýt nội thành Nha Trang',
+        price: '7000',
+        priceCurrency: 'VND',
+        availability: 'https://schema.org/InStock',
+        validFrom: '2024-01-01',
+        category: 'Nội thành'
+      },
+      {
+        '@type': 'Offer',
+        name: 'Vé xe buýt sân bay Cam Ranh',
+        description: 'Vé lẻ tuyến xe buýt từ/đến sân bay Cam Ranh',
+        price: '50000',
+        priceCurrency: 'VND',
+        availability: 'https://schema.org/InStock',
+        validFrom: '2024-01-01',
+        category: 'Sân bay'
+      },
+      {
+        '@type': 'Offer',
+        name: 'Vé tháng xe buýt',
+        description: 'Vé tháng không giới hạn số lượt đi cho các tuyến nội thành',
+        price: '200000',
+        priceCurrency: 'VND',
+        availability: 'https://schema.org/InStock',
+        validFrom: '2024-01-01',
+        category: 'Vé tháng'
+      }
+    ]
+  },
   mainEntity: {
     '@type': 'ItemList',
     name: 'Các tuyến xe buýt tại Nha Trang',
-    description: 'Danh sách các tuyến xe buýt công cộng tại Nha Trang, bao gồm thông tin về lộ trình, giá vé và lịch trình',
+    description: 'Danh sách đầy đủ các tuyến xe buýt công cộng tại Nha Trang với thông tin chi tiết về lộ trình, giá vé và lịch trình',
+    numberOfItems: 4,
     itemListElement: [
       {
         '@type': 'ListItem',
         position: 1,
         item: {
-          '@type': 'Product',
+          '@type': 'BusTrip',
           name: 'Tuyến số 23: Bến du Thuyền Ana Marina - Vinpearl Land Nha Trang',
-          description: 'Tuyến xe buýt chính kết nối bến xe phía Nam với trung tâm thành phố và bến cảng du lịch',
+          description: 'Tuyến xe buýt chính kết nối bến xe phía Nam với trung tâm thành phố và bến cảng du lịch Vinpearl',
+          provider: {
+            '@type': 'Organization',
+            name: 'Trung tâm Điều hành xe buýt Nha Trang'
+          },
+          tripOrigin: {
+            '@type': 'BusStation',
+            name: 'Bến du Thuyền Ana Marina'
+          },
+          tripDestination: {
+            '@type': 'BusStation',
+            name: 'Vinpearl Land Nha Trang'
+          },
           offers: {
             '@type': 'Offer',
             price: '7000',
             priceCurrency: 'VND'
-          }
+          },
+          departureTime: '05:00',
+          arrivalTime: '19:00',
+          frequency: 'PT15M'
+        }
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        item: {
+          '@type': 'BusTrip',
+          name: 'Tuyến số 18: Bình Hưng - Diên Khánh',
+          description: 'Tuyến xe buýt kết nối huyện Diên Khánh với trung tâm thành phố Nha Trang',
+          provider: {
+            '@type': 'Organization',
+            name: 'Trung tâm Điều hành xe buýt Nha Trang'
+          },
+          offers: {
+            '@type': 'Offer',
+            price: '7000',
+            priceCurrency: 'VND'
+          },
+          departureTime: '05:30',
+          arrivalTime: '18:30',
+          frequency: 'PT20M'
+        }
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        item: {
+          '@type': 'BusTrip',
+          name: 'Tuyến số 9: Bến xe Phía Nam - Sân bay Cam Ranh',
+          description: 'Tuyến xe buýt cao cấp kết nối sân bay quốc tế Cam Ranh với trung tâm Nha Trang',
+          provider: {
+            '@type': 'Organization',
+            name: 'Trung tâm Điều hành xe buýt Nha Trang'
+          },
+          tripOrigin: {
+            '@type': 'BusStation',
+            name: 'Bến xe Phía Nam Nha Trang'
+          },
+          tripDestination: {
+            '@type': 'Airport',
+            name: 'Sân bay quốc tế Cam Ranh',
+            iataCode: 'CXR'
+          },
+          offers: {
+            '@type': 'Offer',
+            price: '50000',
+            priceCurrency: 'VND'
+          },
+          departureTime: '04:00',
+          arrivalTime: '21:00',
+          frequency: 'PT30M'
+        }
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        item: {
+          '@type': 'BusTrip',
+          name: 'Tuyến số 4: Chợ Đầm - Bến xe Phía Nam',
+          description: 'Tuyến xe buýt nội thành kết nối khu vực chợ Đầm với bến xe phía Nam',
+          provider: {
+            '@type': 'Organization',
+            name: 'Trung tâm Điều hành xe buýt Nha Trang'
+          },
+          offers: {
+            '@type': 'Offer',
+            price: '7000',
+            priceCurrency: 'VND'
+          },
+          departureTime: '05:15',
+          arrivalTime: '19:15',
+          frequency: 'PT25M'
         }
       }
     ]
-  }
+  },
+  operatingHours: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday'
+    ],
+    opens: '05:00',
+    closes: '19:00'
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '0258.3810810',
+    contactType: 'customer service',
+    hoursAvailable: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sunday'
+      ],
+      opens: '07:00',
+      closes: '17:00'
+    }
+  },
+  accessibilityFeature: [
+    'wheelchairAccessible',
+    'audioDescription'
+  ],
+  additionalProperty: [
+    {
+      '@type': 'PropertyValue',
+      name: 'Phương thức thanh toán',
+      value: 'Tiền mặt, Vé tháng'
+    },
+    {
+      '@type': 'PropertyValue',
+      name: 'Đối tượng ưu tiên',
+      value: 'Học sinh, sinh viên, người cao tuổi, người khuyết tật'
+    },
+    {
+      '@type': 'PropertyValue',
+      name: 'Tần suất trung bình',
+      value: '15-30 phút/chuyến'
+    }
+  ]
 };
 
 // Schema.org structured data cho trang Taxi
