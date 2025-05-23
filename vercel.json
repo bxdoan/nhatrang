@@ -10,12 +10,6 @@
       "dest": "/$1"
     }
   ],
-  "analytics": {
-    "enable": true
-  },
-  "speedInsights": {
-    "enable": true
-  },
   "functions": {
     "app/api/**/*.js": {
       "maxDuration": 10
