@@ -1,0 +1,81 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Xe Ôm & Xe Ôm Công Nghệ Nha Trang - Grab, Maxim | Nha Trang Insight',
+  description: 'Hướng dẫn đầy đủ về dịch vụ xe ôm truyền thống và xe ôm công nghệ tại Nha Trang. So sánh giá cước Grab, Maxim. Tips đi xe ôm an toàn và tiết kiệm chi phí.',
+  keywords: [
+    'xe ôm Nha Trang',
+    'xe ôm công nghệ Nha Trang', 
+    'Grab Nha Trang',
+    'Maxim Nha Trang',
+    'xe ôm truyền thống Nha Trang',
+    'giá xe ôm Nha Trang',
+    'app đặt xe ôm',
+    'xe máy chở khách',
+    'ride-hailing Vietnam',
+    'motorbike taxi Nha Trang',
+    'xe ôm sân bay Cam Ranh',
+    'đi xe ôm an toàn',
+    'so sánh app xe ôm',
+    'xe ôm du lịch Nha Trang',
+    'transportation Nha Trang',
+    'di chuyển bằng xe ôm'
+  ],
+  authors: [{ name: 'Nha Trang Insight' }],
+  creator: 'Nha Trang Insight',
+  publisher: 'Nha Trang Insight',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'vi_VN',
+    url: 'https://nhatranginsight.com/ride-hailing',
+    siteName: 'Nha Trang Insight',
+    title: 'Xe Ôm & Xe Ôm Công Nghệ Nha Trang - Grab, Maxim',
+    description: 'Hướng dẫn đầy đủ về dịch vụ xe ôm truyền thống và xe ôm công nghệ tại Nha Trang. So sánh giá cước Grab, Maxim.',
+    images: [
+      {
+        url: 'https://nhatranginsight.com/images/ride-hailing/xe-om-nha-trang-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Xe ôm và xe ôm công nghệ tại Nha Trang',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Xe Ôm & Xe Ôm Công Nghệ Nha Trang - Grab, Maxim',
+    description: 'Hướng dẫn đầy đủ về dịch vụ xe ôm truyền thống và xe ôm công nghệ tại Nha Trang. So sánh giá cước và tips an toàn.',
+    images: ['https://nhatranginsight.com/images/ride-hailing/xe-om-nha-trang-twitter.jpg'],
+    creator: '@nhatranginsight',
+  },
+  alternates: {
+    canonical: 'https://nhatranginsight.com/ride-hailing',
+    languages: {
+      'vi-VN': 'https://nhatranginsight.com/ride-hailing',
+      'en-US': 'https://nhatranginsight.com/en/ride-hailing',
+    },
+  },
+  other: {
+    'geo.region': 'VN-34',
+    'geo.placename': 'Nha Trang, Khánh Hòa',
+    'geo.position': '12.2388;109.1967',
+    'ICBM': '12.2388, 109.1967',
+    'DC.title': 'Xe Ôm & Xe Ôm Công Nghệ Nha Trang',
+    'DC.description': 'Hướng dẫn đầy đủ về dịch vụ xe ôm truyền thống và xe ôm công nghệ tại Nha Trang',
+    'DC.relation': 'https://nhatranginsight.com',
+    'DC.source': 'https://nhatranginsight.com/ride-hailing',
+    'DC.language': 'vi',
+    'DC.coverage': 'Nha Trang, Khánh Hòa, Vietnam',
+    'DC.subject': 'Xe ôm, ride-hailing, transportation, Nha Trang travel',
+  },
+}; 

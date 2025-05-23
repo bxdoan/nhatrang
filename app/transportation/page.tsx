@@ -134,22 +134,28 @@ export default function TransportationPage() {
                     <li>• Khởi hành từ cảng Cầu Đá hoặc bến du thuyền</li>
                   </ul>
                 </div>
-                <div className="bg-purple-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
-                  <div className="w-14 h-14 bg-purple-500 text-white rounded-full flex items-center justify-center mb-4">
-                    <FaMotorcycle className="text-2xl" />
+                <Link href="/ride-hailing" className="block group">
+                  <div className="bg-purple-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
+                    <div className="w-14 h-14 bg-purple-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-purple-600 transition-colors">
+                      <FaMotorcycle className="text-2xl" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 group-hover:text-purple-600 transition-colors">
+                      Xe ôm / Xe ôm công nghệ
+                    </h3>
+                    <p className="text-gray-600 mb-3">
+                      Phương tiện linh hoạt, nhanh chóng cho quãng đường ngắn. So sánh Grab, Maxim và xe ôm truyền thống.
+                    </p>
+                    <ul className="text-gray-600 space-y-1 text-sm mb-4">
+                      <li>• Xe ôm công nghệ: 12.000-18.000đ/km</li>
+                      <li>• Xe ôm truyền thống: 15.000-25.000đ/km</li>
+                      <li>• Có thể đặt qua app Grab, Maxim</li>
+                      <li>• Phù hợp cho 1-2 người di chuyển nhanh</li>
+                    </ul>
+                    <span className="text-purple-600 font-medium group-hover:underline">
+                      Xem hướng dẫn xe ôm →
+                    </span>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">
-                    Xe ôm / Xe ôm công nghệ
-                  </h3>
-                  <p className="text-gray-600 mb-3">
-                    Phương tiện linh hoạt, nhanh chóng cho quãng đường ngắn trong thành phố. Dễ dàng di chuyển qua các con phố nhỏ.
-                  </p>
-                  <ul className="text-gray-600 space-y-1 text-sm mb-4">
-                    <li>• Giá từ: 15.000 - 30.000đ/km tùy quãng đường</li>
-                    <li>• Có thể đặt qua ứng dụng Grab, Be</li>
-                    <li>• Phù hợp cho 1-2 người di chuyển nhanh</li>
-                  </ul>
-                </div>
+                </Link>
               </div>
             </div>
           </div>

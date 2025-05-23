@@ -768,4 +768,184 @@ export const OTO_PAGE_SCHEMA = {
       value: 'Liên hệ trước ít nhất 2 giờ'
     }
   ]
+};
+
+// Schema.org structured data cho trang Ride-hailing
+export const RIDE_HAILING_PAGE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': ['WebPage', 'Service'],
+  name: `Xe Ôm & Xe Ôm Công Nghệ Nha Trang | ${SITE_NAME}`,
+  url: `${SITE_URL}/ride-hailing`,
+  description: 'Hướng dẫn đầy đủ về dịch vụ xe ôm truyền thống và xe ôm công nghệ tại Nha Trang. So sánh Grab, Maxim và tips đi xe ôm an toàn.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: SITE_NAME,
+    telephone: CONTACT_INFO.phone,
+    email: CONTACT_INFO.email,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Nha Trang',
+      addressRegion: 'Khánh Hòa',
+      addressCountry: 'VN'
+    }
+  },
+  serviceArea: [
+    {
+      '@type': 'City',
+      name: 'Nha Trang',
+      containedInPlace: {
+        '@type': 'AdministrativeArea',
+        name: 'Khánh Hòa'
+      }
+    }
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Dịch vụ xe ôm tại Nha Trang',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: 'Xe ôm truyền thống',
+        description: 'Dịch vụ xe ôm truyền thống tại các điểm cố định',
+        priceRange: '15000-25000',
+        priceCurrency: 'VND',
+        availability: 'https://schema.org/InStock',
+        category: 'Traditional Motorbike Taxi',
+        unitText: 'km'
+      },
+      {
+        '@type': 'Offer',
+        name: 'Grab Bike',
+        description: 'Dịch vụ xe ôm công nghệ qua ứng dụng Grab',
+        priceRange: '12000-18000',
+        priceCurrency: 'VND',
+        availability: 'https://schema.org/InStock',
+        category: 'Tech-based Ride Hailing',
+        unitText: 'km'
+      },
+      {
+        '@type': 'Offer',
+        name: 'Maxim Bike',
+        description: 'Dịch vụ xe ôm công nghệ qua ứng dụng Maxim',
+        priceRange: '11000-16000',
+        priceCurrency: 'VND',
+        availability: 'https://schema.org/InStock',
+        category: 'Tech-based Ride Hailing',
+        unitText: 'km'
+      }
+    ]
+  },
+  mainEntity: {
+    '@type': 'ItemList',
+    name: 'Các ứng dụng xe ôm công nghệ tại Nha Trang',
+    description: 'Danh sách các ứng dụng xe ôm công nghệ phổ biến và dịch vụ xe ôm truyền thống',
+    numberOfItems: 3,
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        item: {
+          '@type': 'MobileApplication',
+          name: 'Grab',
+          applicationCategory: 'Transportation',
+          operatingSystem: ['Android', 'iOS'],
+          offers: {
+            '@type': 'AggregateOffer',
+            lowPrice: '12000',
+            highPrice: '18000',
+            priceCurrency: 'VND',
+            priceSpecification: {
+              '@type': 'UnitPriceSpecification',
+              unitText: 'km'
+            }
+          },
+          additionalProperty: [
+            {
+              '@type': 'PropertyValue',
+              name: 'Khuyến mãi',
+              value: 'Có chương trình khuyến mãi thường xuyên'
+            },
+            {
+              '@type': 'PropertyValue',
+              name: 'Thanh toán',
+              value: 'Tiền mặt, thẻ, ví điện tử'
+            }
+          ]
+        }
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        item: {
+          '@type': 'MobileApplication',
+          name: 'Maxim',
+          applicationCategory: 'Transportation',
+          operatingSystem: ['Android', 'iOS'],
+          offers: {
+            '@type': 'AggregateOffer',
+            lowPrice: '11000',
+            highPrice: '16000',
+            priceCurrency: 'VND'
+          }
+        }
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        item: {
+          '@type': 'Service',
+          name: 'Xe ôm truyền thống',
+          description: 'Dịch vụ xe ôm tại các điểm chờ cố định',
+          offers: {
+            '@type': 'AggregateOffer',
+            lowPrice: '15000',
+            highPrice: '25000',
+            priceCurrency: 'VND'
+          }
+        }
+      }
+    ]
+  },
+  operatingHours: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday'
+    ],
+    opens: '05:00',
+    closes: '23:00'
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: CONTACT_INFO.phone,
+    contactType: 'customer service',
+    availableLanguage: ['Vietnamese', 'English']
+  },
+  additionalProperty: [
+    {
+      '@type': 'PropertyValue',
+      name: 'An toàn',
+      value: 'Đội mũ bảo hiểm, kiểm tra thông tin tài xế'
+    },
+    {
+      '@type': 'PropertyValue',
+      name: 'Tiện lợi',
+      value: 'Đặt xe qua app, theo dõi hành trình'
+    },
+    {
+      '@type': 'PropertyValue',
+      name: 'Giá cả',
+      value: 'Giá cố định, không lo bị chặt chém'
+    },
+    {
+      '@type': 'PropertyValue',
+      name: 'Thời gian',
+      value: '24/7 với ứng dụng, 05:00-23:00 xe ôm truyền thống'
+    }
+  ]
 }; 

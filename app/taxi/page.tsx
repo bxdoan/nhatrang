@@ -80,6 +80,20 @@ export default function TaxiPage() {
         rating: 4.3,
         features: ['App đặt xe', 'Đội xe mới', 'Tài xế am hiểu địa phương', 'Giá cạnh tranh'],
         description: 'Maxim Taxi là hãng taxi địa phương, quen thuộc với các tuyến đường và điểm du lịch nổi tiếng ở Nha Trang.'
+    },
+    {
+        name: 'Grab',
+        phone: '',
+        baseRate: '15.000đ',
+        pricePerKm: '15.000đ - 16.000đ/km',
+        waitingRate: '42.000đ/giờ',
+        color: 'Xanh lá',
+        operatingHours: '24/7',
+        website: 'https://grab.com',
+        logo: '/images/taxi/grab.jpg',
+        rating: 4.3,
+        features: ['App đặt xe', 'Đội xe mới', 'Tài xế am hiểu địa phương', 'Giá cạnh tranh'],
+        description: 'Grab là hãng taxi địa phương, quen thuộc với các tuyến đường và điểm du lịch nổi tiếng ở Nha Trang.'
     }
   ];
   
