@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { FaMotorcycle, FaChevronLeft, FaPhone, FaWhatsapp, FaCheck, FaShieldAlt, FaMapMarkedAlt, FaInfoCircle, FaTelegram, FaExclamationTriangle, FaIdCard, FaCreditCard, FaMoneyBillWave, FaClock, FaTimes } from 'react-icons/fa';
 import { CONTACT_INFO } from '../lib/contact-config';
 import { useState } from 'react';
+import Script from 'next/script';
+import { MOTO_PAGE_SCHEMA } from '../lib/metadata';
 
 // Định nghĩa kiểu dữ liệu cho đối tượng xe máy
 interface Motorbike {
@@ -13,6 +15,54 @@ interface Motorbike {
   price: string;
   category: string;
 }
+
+// Schema.org JSON-LD cho FAQ
+const FAQ_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Giá thuê xe máy tại Nha Trang là bao nhiêu?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Giá thuê xe máy tại Nha Trang từ 100.000đ/ngày cho xe số (Wave, Sirius), 150.000đ/ngày cho xe ga phổ thông (Vision, Air Blade), và 180.000đ/ngày cho xe ga cao cấp (PCX, SH Mode).'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Thủ tục thuê xe máy tại Nha Trang như thế nào?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Thủ tục rất đơn giản, bạn chỉ cần để lại CMND/CCCD hoặc Bằng lái xe gốc. Có thể cọc 5 triệu tiền mặt thay thế. Thuê từ 3 ngày được giảm 10%.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Có giao xe máy tận nơi không?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Có, chúng tôi giao xe miễn phí tận nơi trong bán kính 3km từ trung tâm Nha Trang, bao gồm khách sạn, nhà ga, bến xe. Liên hệ trước 2 giờ để đặt xe.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Xe máy thuê có bảo hiểm không?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Có, tất cả xe đều được bảo hiểm đầy đủ. Ngoài ra chúng tôi cung cấp dịch vụ cứu hộ miễn phí 24/7 trong phạm vi thành phố Nha Trang nếu xe gặp sự cố.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Có những loại xe máy nào cho thuê?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Chúng tôi có đa dạng loại xe: Xe số (Honda Wave, Yamaha Sirius, Jupiter), xe ga phổ thông (Honda Vision, Air Blade, Lead, Nmax), xe ga cao cấp (PCX, SH Mode, NVX, Vespa).'
+      }
+    }
+  ]
+};
 
 export default function MotorbikeRentalPage() {
   const phoneNumber = CONTACT_INFO.phoneNumber;
@@ -504,6 +554,76 @@ export default function MotorbikeRentalPage() {
           </div>
         </div>
       </section>
+      
+      {/* FAQ Section */}
+      <section className="py-8 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-center mb-8">Câu hỏi thường gặp về thuê xe máy Nha Trang</h2>
+            
+            <div className="space-y-4">
+              <details className="bg-gray-50 rounded-lg p-4">
+                <summary className="font-semibold cursor-pointer hover:text-blue-600">
+                  Giá thuê xe máy tại Nha Trang là bao nhiêu?
+                </summary>
+                <div className="mt-3 text-gray-700">
+                  <p>Giá thuê xe máy tại Nha Trang từ <strong>100.000đ/ngày</strong> cho xe số (Wave, Sirius), <strong>150.000đ/ngày</strong> cho xe ga phổ thông (Vision, Air Blade), và <strong>180.000đ/ngày</strong> cho xe ga cao cấp (PCX, SH Mode).</p>
+                </div>
+              </details>
+              
+              <details className="bg-gray-50 rounded-lg p-4">
+                <summary className="font-semibold cursor-pointer hover:text-blue-600">
+                  Thủ tục thuê xe máy tại Nha Trang như thế nào?
+                </summary>
+                <div className="mt-3 text-gray-700">
+                  <p>Thủ tục rất đơn giản, bạn chỉ cần để lại <strong>CMND/CCCD hoặc Bằng lái xe gốc</strong>. Có thể cọc 5 triệu tiền mặt thay thế. Thuê từ 3 ngày được giảm 10%.</p>
+                </div>
+              </details>
+              
+              <details className="bg-gray-50 rounded-lg p-4">
+                <summary className="font-semibold cursor-pointer hover:text-blue-600">
+                  Có giao xe máy tận nơi không?
+                </summary>
+                <div className="mt-3 text-gray-700">
+                  <p>Có, chúng tôi <strong>giao xe miễn phí</strong> tận nơi trong bán kính 3km từ trung tâm Nha Trang, bao gồm khách sạn, nhà ga, bến xe. Liên hệ trước 2 giờ để đặt xe.</p>
+                </div>
+              </details>
+              
+              <details className="bg-gray-50 rounded-lg p-4">
+                <summary className="font-semibold cursor-pointer hover:text-blue-600">
+                  Xe máy thuê có bảo hiểm không?
+                </summary>
+                <div className="mt-3 text-gray-700">
+                  <p>Có, tất cả xe đều được <strong>bảo hiểm đầy đủ</strong>. Ngoài ra chúng tôi cung cấp dịch vụ cứu hộ miễn phí 24/7 trong phạm vi thành phố Nha Trang nếu xe gặp sự cố.</p>
+                </div>
+              </details>
+              
+              <details className="bg-gray-50 rounded-lg p-4">
+                <summary className="font-semibold cursor-pointer hover:text-blue-600">
+                  Có những loại xe máy nào cho thuê?
+                </summary>
+                <div className="mt-3 text-gray-700">
+                  <p>Chúng tôi có đa dạng loại xe: <strong>Xe số</strong> (Honda Wave, Yamaha Sirius, Jupiter), <strong>xe ga phổ thông</strong> (Honda Vision, Air Blade, Lead, Nmax), <strong>xe ga cao cấp</strong> (PCX, SH Mode, NVX, Vespa).</p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Schema.org JSON-LD */}
+      <Script
+        id="schema-moto"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(MOTO_PAGE_SCHEMA) }}
+      />
+      
+      {/* FAQ Schema */}
+      <Script
+        id="schema-moto-faq"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+      />
       
       {/* Image Popup */}
       {showImagePopup && (

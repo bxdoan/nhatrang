@@ -456,4 +456,316 @@ export const TAXI_PAGE_SCHEMA = {
       }
     ]
   }
+};
+
+// Schema.org structured data cho trang Moto
+export const MOTO_PAGE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': ['WebPage', 'Service'],
+  name: `Thuê Xe Máy Nha Trang - Giá Rẻ & Giao Tận Nơi | ${SITE_NAME}`,
+  url: `${SITE_URL}/moto`,
+  description: 'Dịch vụ thuê xe máy Nha Trang uy tín, giá từ 100.000đ/ngày. Xe số, xe ga, xe cao cấp đầy đủ. Giao xe tận nơi miễn phí, thủ tục đơn giản.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: SITE_NAME,
+    telephone: CONTACT_INFO.phone,
+    email: CONTACT_INFO.email,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Nha Trang',
+      addressRegion: 'Khánh Hòa',
+      addressCountry: 'VN'
+    }
+  },
+  serviceArea: {
+    '@type': 'City',
+    name: 'Nha Trang',
+    containedInPlace: {
+      '@type': 'AdministrativeArea',
+      name: 'Khánh Hòa'
+    }
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Dịch vụ thuê xe máy Nha Trang',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: 'Thuê xe số',
+        description: 'Honda Wave, Yamaha Sirius, Jupiter, Suzuki Viva',
+        price: '100000',
+        priceCurrency: 'VND',
+        availability: 'https://schema.org/InStock',
+        validFrom: '2024-01-01',
+        category: 'Xe số',
+        unitText: 'ngày'
+      },
+      {
+        '@type': 'Offer',
+        name: 'Thuê xe ga phổ thông',
+        description: 'Honda Vision, Air Blade, Lead, Yamaha Nmax',
+        price: '150000',
+        priceCurrency: 'VND',
+        availability: 'https://schema.org/InStock',
+        validFrom: '2024-01-01',
+        category: 'Xe ga',
+        unitText: 'ngày'
+      },
+      {
+        '@type': 'Offer',
+        name: 'Thuê xe ga cao cấp',
+        description: 'Honda PCX, SH Mode, Yamaha NVX, Vespa Primavera',
+        price: '180000',
+        priceCurrency: 'VND',
+        availability: 'https://schema.org/InStock',
+        validFrom: '2024-01-01',
+        category: 'Xe cao cấp',
+        unitText: 'ngày'
+      }
+    ]
+  },
+  mainEntity: {
+    '@type': 'ItemList',
+    name: 'Các loại xe máy cho thuê tại Nha Trang',
+    description: 'Đa dạng các loại xe máy cho thuê từ xe số tiết kiệm đến xe ga cao cấp',
+    numberOfItems: 12,
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        item: {
+          '@type': 'Product',
+          name: 'Honda Wave Alpha',
+          category: 'Xe số',
+          offers: {
+            '@type': 'Offer',
+            price: '100000',
+            priceCurrency: 'VND',
+            unitText: 'ngày'
+          }
+        }
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        item: {
+          '@type': 'Product',
+          name: 'Honda Vision 2022',
+          category: 'Xe ga phổ thông',
+          offers: {
+            '@type': 'Offer',
+            price: '150000',
+            priceCurrency: 'VND',
+            unitText: 'ngày'
+          }
+        }
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        item: {
+          '@type': 'Product',
+          name: 'Honda PCX 2022',
+          category: 'Xe ga cao cấp',
+          offers: {
+            '@type': 'Offer',
+            price: '180000',
+            priceCurrency: 'VND',
+            unitText: 'ngày'
+          }
+        }
+      }
+    ]
+  },
+  operatingHours: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday'
+    ],
+    opens: '07:00',
+    closes: '20:00'
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: CONTACT_INFO.phone,
+    contactType: 'customer service',
+    availableLanguage: ['Vietnamese', 'English']
+  },
+  additionalProperty: [
+    {
+      '@type': 'PropertyValue',
+      name: 'Giao xe tận nơi',
+      value: 'Miễn phí trong bán kính 3km'
+    },
+    {
+      '@type': 'PropertyValue',
+      name: 'Thủ tục',
+      value: 'CMND/CCCD hoặc Bằng lái xe'
+    },
+    {
+      '@type': 'PropertyValue',
+      name: 'Bảo hiểm',
+      value: 'Xe được bảo hiểm đầy đủ'
+    },
+    {
+      '@type': 'PropertyValue',
+      name: 'Hỗ trợ',
+      value: 'Cứu hộ 24/7 trong thành phố'
+    }
+  ]
+};
+
+// Schema.org structured data cho trang Oto
+export const OTO_PAGE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': ['WebPage', 'Service'],
+  name: `Thuê Xe Ô Tô Nha Trang - Đưa Đón Sân Bay | ${SITE_NAME}`,
+  url: `${SITE_URL}/oto`,
+  description: 'Dịch vụ thuê xe ô tô và đưa đón sân bay Cam Ranh Nha Trang. Xe 4-16 chỗ, tài xế chuyên nghiệp, giá từ 250.000đ. Không ghép khách, đúng giờ.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: SITE_NAME,
+    telephone: CONTACT_INFO.phone,
+    email: CONTACT_INFO.email,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Nha Trang',
+      addressRegion: 'Khánh Hòa',
+      addressCountry: 'VN'
+    }
+  },
+  serviceArea: [
+    {
+      '@type': 'City',
+      name: 'Nha Trang',
+      containedInPlace: {
+        '@type': 'AdministrativeArea',
+        name: 'Khánh Hòa'
+      }
+    },
+    {
+      '@type': 'Airport',
+      name: 'Sân bay quốc tế Cam Ranh',
+      iataCode: 'CXR'
+    }
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Dịch vụ thuê xe ô tô Nha Trang',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: 'Đưa đón sân bay xe 4 chỗ',
+        description: 'Dịch vụ đưa đón sân bay Cam Ranh bằng xe 4 chỗ',
+        price: '250000',
+        priceCurrency: 'VND',
+        availability: 'https://schema.org/InStock',
+        validFrom: '2024-01-01',
+        category: 'Airport Transfer',
+        unitText: 'lượt'
+      },
+      {
+        '@type': 'Offer',
+        name: 'Đưa đón sân bay xe 7 chỗ',
+        description: 'Dịch vụ đưa đón sân bay Cam Ranh bằng xe 7 chỗ',
+        price: '300000',
+        priceCurrency: 'VND',
+        availability: 'https://schema.org/InStock',
+        validFrom: '2024-01-01',
+        category: 'Airport Transfer',
+        unitText: 'lượt'
+      },
+      {
+        '@type': 'Offer',
+        name: 'Đưa đón sân bay xe 16 chỗ',
+        description: 'Dịch vụ đưa đón sân bay Cam Ranh bằng xe 16 chỗ',
+        price: '500000',
+        priceCurrency: 'VND',
+        availability: 'https://schema.org/InStock',
+        validFrom: '2024-01-01',
+        category: 'Airport Transfer',
+        unitText: 'lượt'
+      }
+    ]
+  },
+  mainEntity: {
+    '@type': 'ItemList',
+    name: 'Các dịch vụ xe ô tô tại Nha Trang',
+    description: 'Dịch vụ thuê xe ô tô đa dạng từ đưa đón sân bay đến tour du lịch',
+    numberOfItems: 6,
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        item: {
+          '@type': 'Service',
+          name: 'Đưa đón sân bay Cam Ranh',
+          description: 'Dịch vụ đưa đón từ/đến sân bay quốc tế Cam Ranh',
+          offers: {
+            '@type': 'AggregateOffer',
+            lowPrice: '250000',
+            highPrice: '500000',
+            priceCurrency: 'VND'
+          }
+        }
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        item: {
+          '@type': 'Service',
+          name: 'Tour Nha Trang - Đà Lạt',
+          description: 'Dịch vụ xe đi tour thành phố ngàn hoa Đà Lạt',
+          offers: {
+            '@type': 'Offer',
+            price: 'Theo thỏa thuận',
+            priceCurrency: 'VND'
+          }
+        }
+      }
+    ]
+  },
+  operatingHours: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday'
+    ],
+    opens: '06:00',
+    closes: '22:00'
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: CONTACT_INFO.phone,
+    contactType: 'customer service',
+    availableLanguage: ['Vietnamese', 'English']
+  },
+  additionalProperty: [
+    {
+      '@type': 'PropertyValue',
+      name: 'Không ghép khách',
+      value: 'Dịch vụ riêng tư, không ghép khách'
+    },
+    {
+      '@type': 'PropertyValue',
+      name: 'Tài xế chuyên nghiệp',
+      value: 'Tài xế kinh nghiệm, am hiểu địa phương'
+    },
+    {
+      '@type': 'PropertyValue',
+      name: 'Đặt xe trước',
+      value: 'Liên hệ trước ít nhất 2 giờ'
+    }
+  ]
 }; 
