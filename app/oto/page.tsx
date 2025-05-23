@@ -28,6 +28,7 @@ interface Car {
 
 export default function CarRentalPage() {
   const phoneNumber = CONTACT_INFO.phoneNumber;
+  const phoneNumber2 = CONTACT_INFO.phoneNumber2;
   const [showImagePopup, setShowImagePopup] = useState(false);
   const [currentImage, setCurrentImage] = useState({ url: '', name: '', price: '', capacity: '' });
   
@@ -35,7 +36,7 @@ export default function CarRentalPage() {
   const carList: Car[] = [
     // Xe 4 chỗ
     { 
-      imageUrl: '/images/oto/oto1.jpg', 
+      imageUrl: '/images/oto/vios.jpg', 
       model: 'Toyota Vios', 
       name: 'Toyota Vios 2022', 
       price: '250.000đ/lượt',
@@ -43,7 +44,7 @@ export default function CarRentalPage() {
       category: '4-seat'
     },
     { 
-      imageUrl: '/images/oto/oto2.jpg', 
+      imageUrl: '/images/oto/xpander.jpg', 
       model: 'Mitsubishi Xpander', 
       name: 'Mitsubishi Xpander 2022', 
       price: '300.000đ/lượt',
@@ -51,7 +52,7 @@ export default function CarRentalPage() {
       category: '7-seat'
     },
     { 
-      imageUrl: '/images/oto/oto3.jpg', 
+      imageUrl: '/images/oto/inova.jpg', 
       model: 'Toyota Innova', 
       name: 'Toyota Innova 2022', 
       price: '300.000đ/lượt',
@@ -59,7 +60,7 @@ export default function CarRentalPage() {
       category: '7-seat'
     },
     { 
-      imageUrl: '/images/oto/oto4.jpg', 
+      imageUrl: '/images/oto/ecosport.jpg', 
       model: 'Ford EcoSport', 
       name: 'Ford EcoSport 2022', 
       price: '300.000đ/lượt',
@@ -120,12 +121,20 @@ export default function CarRentalPage() {
               <div className="p-6 md:p-8">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                   <h2 className="text-2xl font-bold text-gray-800 mb-4 md:mb-0">Dịch vụ đưa đón sân bay Cam Ranh</h2>
-                  <a 
-                    href={`tel:${phoneNumber}`} 
-                    className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-md transition-colors"
-                  >
-                    <FaPhone className="mr-2" /> {phoneNumber}
-                  </a>
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <a 
+                      href={`tel:${phoneNumber}`} 
+                      className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors text-sm"
+                    >
+                      <FaPhone className="mr-2" /> {phoneNumber}
+                    </a>
+                    <a 
+                      href={`tel:${phoneNumber2}`} 
+                      className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors text-sm"
+                    >
+                      <FaPhone className="mr-2" /> {phoneNumber2}
+                    </a>
+                  </div>
                 </div>
                 
                 <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6">
@@ -239,9 +248,15 @@ export default function CarRentalPage() {
                   <div className="flex flex-col sm:flex-row justify-center gap-3">
                     <a 
                       href={`tel:${phoneNumber}`}
-                      className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-md transition-colors"
+                      className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-md transition-colors"
                     >
                       <FaPhone className="mr-2" /> Gọi để đặt xe: {phoneNumber}
+                    </a>
+                    <a 
+                      href={`tel:${phoneNumber2}`}
+                      className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-md transition-colors"
+                    >
+                      <FaPhone className="mr-2" /> Gọi để đặt xe: {phoneNumber2}
                     </a>
                     <a 
                       href={`https://zalo.me/${phoneNumber}`}
@@ -352,9 +367,15 @@ export default function CarRentalPage() {
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <a 
                   href={`tel:${phoneNumber}`}
-                  className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors"
+                  className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-md transition-colors"
                 >
                   <FaPhone className="mr-2" /> Gọi ngay: {phoneNumber}
+                </a>
+                <a 
+                  href={`tel:${phoneNumber2}`}
+                  className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-md transition-colors"
+                >
+                  <FaPhone className="mr-2" /> Gọi ngay: {phoneNumber2}
                 </a>
                 <a 
                   href={`https://zalo.me/${phoneNumber}`}

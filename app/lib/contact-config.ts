@@ -5,6 +5,7 @@
 export const CONTACT_INFO = {
   // Số điện thoại chính (có thể sử dụng trong các cuộc gọi)
   phoneNumber: "0915670892",
+  phoneNumber2: "0336998380",
   
   // Số điện thoại theo định dạng quốc tế (dùng cho các ứng dụng yêu cầu mã quốc gia)
   phoneNumberIntl: "+84915670892",
