@@ -10,13 +10,84 @@ import {
   FaMapMarkerAlt,
   FaBus,
   FaInfoCircle, 
-  FaTelegram 
+  FaTelegram,
+  FaTimes 
 } from 'react-icons/fa';
 import { CONTACT_INFO } from '../lib/contact-config';
+import { useState } from 'react';
+
+// Định nghĩa kiểu dữ liệu cho đối tượng xe ô tô
+interface Car {
+  imageUrl?: string;
+  model: string;
+  name: string;
+  price: string;
+  category: string;
+  capacity: string;
+}
 
 export default function CarRentalPage() {
   const phoneNumber = CONTACT_INFO.phoneNumber;
+  const [showImagePopup, setShowImagePopup] = useState(false);
+  const [currentImage, setCurrentImage] = useState({ url: '', name: '', price: '', capacity: '' });
   
+  // Danh sách xe ô tô cho thuê
+  const carList: Car[] = [
+    // Xe 4 chỗ
+    { 
+      imageUrl: '/images/oto/oto1.jpg', 
+      model: 'Toyota Vios', 
+      name: 'Toyota Vios 2022', 
+      price: '250.000đ/lượt',
+      capacity: '4 chỗ ngồi',
+      category: '4-seat'
+    },
+    { 
+      imageUrl: '/images/oto/oto2.jpg', 
+      model: 'Mitsubishi Xpander', 
+      name: 'Mitsubishi Xpander 2022', 
+      price: '300.000đ/lượt',
+      capacity: '7 chỗ ngồi',
+      category: '7-seat'
+    },
+    { 
+      imageUrl: '/images/oto/oto3.jpg', 
+      model: 'Toyota Innova', 
+      name: 'Toyota Innova 2022', 
+      price: '300.000đ/lượt',
+      capacity: '7 chỗ ngồi',
+      category: '7-seat'
+    },
+    { 
+      imageUrl: '/images/oto/oto4.jpg', 
+      model: 'Ford EcoSport', 
+      name: 'Ford EcoSport 2022', 
+      price: '300.000đ/lượt',
+      capacity: '7 chỗ ngồi',
+      category: '7-seat'
+    }
+  ];
+
+  // Hàm mở popup khi click vào hình ảnh
+  const openImagePopup = (car: Car) => {
+    setCurrentImage({
+      url: car.imageUrl || '/images/oto/placeholder.jpg',
+      name: car.name,
+      price: car.price,
+      capacity: car.capacity
+    });
+    setShowImagePopup(true);
+    // Vô hiệu hóa scroll khi popup đang mở
+    document.body.style.overflow = 'hidden';
+  };
+
+  // Hàm đóng popup
+  const closeImagePopup = () => {
+    setShowImagePopup(false);
+    // Bật lại scroll khi đóng popup
+    document.body.style.overflow = 'auto';
+  };
+
   return (
     <div>
       {/* Hero Banner */}
@@ -101,6 +172,44 @@ export default function CarRentalPage() {
                     <p className="text-gray-700 font-medium mb-2">500.000đ/lượt</p>
                     <p className="text-gray-500 text-sm">Phù hợp cho 8-16 hành khách</p>
                   </div>
+                </div>
+                
+                {/* Gallery xe ô tô cho thuê */}
+                <div className="mt-8 mb-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                    <FaCar className="mr-2 text-green-600" /> Hình ảnh xe ô tô cho thuê
+                  </h3>
+                  
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {carList.map((car, index) => (
+                      <div 
+                        key={index} 
+                        className="group relative rounded-lg overflow-hidden bg-gray-200 h-48 cursor-pointer"
+                        onClick={() => openImagePopup(car)}
+                      >
+                        {car.imageUrl ? (
+                          <img 
+                            src={car.imageUrl} 
+                            alt={car.name} 
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center bg-gray-300">
+                            <span className="text-gray-600 font-medium">{car.model}</span>
+                          </div>
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3">
+                          <p className="text-white font-medium">{car.name}</p>
+                          <p className="text-white/80 text-sm">{car.capacity}</p>
+                          <p className="text-white/80 text-sm">{car.price}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <p className="mt-4 text-sm text-gray-500 italic text-center">
+                    * Hover lên ảnh để xem thông tin chi tiết, click để xem ảnh kích thước lớn. Hình ảnh chỉ mang tính chất minh họa.
+                  </p>
                 </div>
                 
                 <div className="border-t border-gray-200 pt-6">
@@ -268,6 +377,33 @@ export default function CarRentalPage() {
           </div>
         </div>
       </section>
+      
+      {/* Image Popup */}
+      {showImagePopup && (
+        <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4">
+          <div className="relative w-full max-w-4xl mx-auto">
+            <button 
+              onClick={closeImagePopup}
+              className="absolute top-0 right-0 -mt-12 -mr-12 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full z-10"
+              aria-label="Close"
+            >
+              <FaTimes className="text-2xl" />
+            </button>
+            <div className="bg-black relative rounded-lg overflow-hidden">
+              <img 
+                src={currentImage.url} 
+                alt={currentImage.name} 
+                className="w-full h-auto max-h-[80vh] object-contain"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4">
+                <h3 className="text-white font-medium text-lg">{currentImage.name}</h3>
+                <p className="text-white/80">{currentImage.capacity}</p>
+                <p className="text-white/80">{currentImage.price}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 } 
