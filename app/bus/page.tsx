@@ -269,10 +269,6 @@ export default function BusPage() {
             <p className="max-w-3xl mx-auto text-blue-100 text-lg">
               Thông tin tuyến đường, lịch trình và bản đồ các tuyến xe buýt công cộng tại Nha Trang
             </p>
-            <div className="mt-4 text-sm text-blue-200">
-              <FaRegClock className="inline mr-2" />
-              Cập nhật lần cuối: {formatDate(getLatestUpdateDate())}
-            </div>
           </div>
         </div>
       </section>

@@ -9,6 +9,7 @@ export const CONTACT_INFO = {
   
   // Số điện thoại theo định dạng quốc tế (dùng cho các ứng dụng yêu cầu mã quốc gia)
   phoneNumberIntl: "+84915670892",
+  phoneNumberIntl2: "+84336998380",
   
   // Username Telegram
   telegramUsername: "nhatranginsight",
@@ -30,7 +31,7 @@ export const CONTACT_INFO = {
   
   // Tài khoản mạng xã hội
   socialMedia: {
-    facebook: "https://facebook.com/nhatranginsight",
+    facebook: "https://www.facebook.com/profile.php?id=61576747556381",
     instagram: "https://instagram.com/nhatranginsight",
     twitter: "https://twitter.com/nhatranginsight",
     youtube: "https://youtube.com/@nhatranginsight",
