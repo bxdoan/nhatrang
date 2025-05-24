@@ -330,5 +330,32 @@
     "lng": 109.10837,
     "description": "Cây Dầu đôi",
     "description_en": "Dau Doi Tree"
+  },
+  {
+    "id": "stop38",
+    "name": "Thông Tin",
+    "name_en": "Thông Tin",
+    "lat": 12.252571,
+    "lng": 109.1902,
+    "description": "Thông Tin",
+    "description_en": "Thông Tin"
+  },
+  {
+    "id": "stop39",
+    "name": "Quang Trung - Yersin",
+    "name_en": "Quang Trung - Yersin",
+    "lat": 12.250002,
+    "lng": 109.190674,
+    "description": "Vòng xoay Quang Trung - Yersin",
+    "description_en": "Quang Trung - Yersin roundabout"
+  },
+  {
+    "id": "stop40",
+    "name": "Quang Trung - Sacombank",
+    "name_en": "Quang Trung - Sacombank",
+    "lat": 12.248424,
+    "lng": 109.191045,
+    "description": "Quang Trung - Sacombank",
+    "description_en": "Quang Trung - Sacombank"
   }
 ] 
