@@ -99,6 +99,25 @@ export default function BusPage() {
   const busStops: BusStop[] = busStopsData;
   const busRoutes: BusRoute[] = busRoutesData;
   
+  // Tìm ngày cập nhật gần nhất từ dữ liệu routes
+  const getLatestUpdateDate = () => {
+    const dates = busRoutes
+      .map(route => (route as any).updated_at)
+      .filter(date => date)
+      .sort((a, b) => new Date(b).getTime() - new Date(a).getTime());
+    
+    return dates[0] || new Date().toISOString().split('T')[0];
+  };
+  
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('vi-VN', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+  
   // Khởi tạo bản đồ khi component được render
   useEffect(() => {
     if (typeof window !== 'undefined' && !mapReady) {
@@ -250,6 +269,10 @@ export default function BusPage() {
             <p className="max-w-3xl mx-auto text-blue-100 text-lg">
               Thông tin tuyến đường, lịch trình và bản đồ các tuyến xe buýt công cộng tại Nha Trang
             </p>
+            <div className="mt-4 text-sm text-blue-200">
+              <FaRegClock className="inline mr-2" />
+              Cập nhật lần cuối: {formatDate(getLatestUpdateDate())}
+            </div>
           </div>
         </div>
       </section>
@@ -343,7 +366,7 @@ export default function BusPage() {
                         <div>
                           <div className="font-medium">{route.name}</div>
                           <div className="text-sm text-gray-600 mt-1 flex items-center">
-                            <FaRegClock className="mr-1" /> {route.frequency}
+                            <FaRegClock className="mr-1" /> {route.frequency.join(' - ')} phút/chuyến
                           </div>
                         </div>
                       </div>
@@ -384,6 +407,13 @@ export default function BusPage() {
                       <div className="text-sm text-gray-500">Thông tin:</div>
                       <div className="text-sm">{selectedRoute.description}</div>
                     </div>
+                    
+                    {(selectedRoute as any).updated_at && (
+                      <div>
+                        <div className="text-sm text-gray-500">Cập nhật:</div>
+                        <div className="text-sm">{formatDate((selectedRoute as any).updated_at)}</div>
+                      </div>
+                    )}
                     
                     <div>
                       <div className="text-sm text-gray-500 mb-2">Các trạm dừng:</div>
@@ -579,6 +609,48 @@ export default function BusPage() {
               <p className="text-gray-700 mt-1">
                 Tổng đài hỗ trợ hành khách: <span className="font-medium">1900 8110</span>
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Data Update Information */}
+      <section className="py-6 bg-gray-100 border-t">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-lg shadow-sm p-6">
+              <div className="flex items-center justify-between flex-wrap gap-4">
+                <div className="flex items-center">
+                  <FaInfoCircle className="text-blue-500 mr-3 text-xl" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Thông tin cập nhật dữ liệu</h3>
+                    <p className="text-sm text-gray-600">
+                      Dữ liệu tuyến xe buýt được cập nhật thường xuyên để đảm bảo tính chính xác
+                    </p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <div className="text-sm text-gray-500">Cập nhật gần nhất</div>
+                  <div className="font-semibold text-blue-600">{formatDate(getLatestUpdateDate())}</div>
+                </div>
+              </div>
+              
+              <div className="mt-4 pt-4 border-t border-gray-200">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                  <div className="text-center">
+                    <div className="font-medium text-gray-900">{busRoutes.length}</div>
+                    <div className="text-gray-600">Tuyến xe buýt</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-medium text-gray-900">{busStops.length}</div>
+                    <div className="text-gray-600">Trạm xe buýt</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-medium text-gray-900">24/7</div>
+                    <div className="text-gray-600">Hỗ trợ thông tin</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

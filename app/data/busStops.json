@@ -267,5 +267,68 @@
     "lng": 109.21552,
     "description": "Ga Quốc Nội sân bay Cam Ranh",
     "description_en": "Cam Ranh International Airport"
+  },
+  {
+    "id": "stop31",
+    "name": "UBND Vĩnh Trường",
+    "name_en": "UBND Vĩnh Trường",
+    "lat": 12.20581,
+    "lng": 109.20315,
+    "description": "UBND Vĩnh Trường",
+    "description_en": "UBND Vĩnh Trường"
+  },
+  {
+    "id": "stop32",
+    "name": "Trường Tiểu Học Diên Sơn 2",
+    "name_en": "Diên Sơn 2 Primary School",
+    "lat": 12.26877,
+    "lng": 109.10038,
+    "description": "Trường Tiểu Học Diên Sơn 2",
+    "description_en": "Diên Sơn 2 Primary School"
+  },
+  {
+    "id": "stop33",
+    "name": "Trường Trung học phổ thông Phạm Văn Đông",
+    "name_en": "Pham Van Dong High School",
+    "lat": 12.21322,
+    "lng": 109.19995,
+    "description": "Trường Trung học phổ thông Phạm Văn Đông",
+    "description_en": "Pham Van Dong High School"
+  },
+  {
+    "id": "stop34",
+    "name": "Mã Vòng",
+    "name_en": "Horse Park",
+    "lat": 12.2497,
+    "lng": 109.18134,
+    "description": "Mã Vòng",
+    "description_en": "Horse Park"
+  },
+  {
+    "id": "stop35",
+    "name": "Cầu Dứa",
+    "name_en": "Dua Bridge",
+    "lat": 12.256115,
+    "lng": 109.158493,
+    "description": "Cầu Dứa",
+    "description_en": "Dua Bridge"
+  },
+  {
+    "id": "stop36",
+    "name": "MM Mega Market",
+    "name_en": "MM Mega Market",
+    "lat": 12.257409,
+    "lng": 109.134284,
+    "description": "MM Mega Market",
+    "description_en": "MM Mega Market"
+  },
+  {
+    "id": "stop37",
+    "name": "Cây Dầu đôi",
+    "name_en": "Dau Doi Tree",
+    "lat": 12.25715,
+    "lng": 109.10837,
+    "description": "Cây Dầu đôi",
+    "description_en": "Dau Doi Tree"
   }
 ] 
