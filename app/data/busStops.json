@@ -123,5 +123,149 @@
     "lng": 109.21602,
     "description": "VinPearl Nha Trang",
     "description_en": "Vinpearl Nha Trang"
+  },
+  {
+    "id": "stop15",
+    "name": "Đối diện số 14 đường Hoàng Diệu",
+    "name_en": "Opposite number 14 Hoang Dieu street",
+    "lat": 12.22076,
+    "lng": 109.20053,
+    "description": "Đối diện số 14 đường Hoàng Diệu",
+    "description_en": "Opposite number 14 Hoang Dieu street"
+  },
+  {
+    "id": "stop16",
+    "name": "Đối diện số 17A đường Nguyễn Đức Cảnh",
+    "name_en": "Opposite number 17A Nguyen Duc Canh street",
+    "lat": 12.21594,
+    "lng": 109.19391,
+    "description": "Đối diện số 17A đường Nguyễn Đức Cảnh",
+    "description_en": "Opposite number 17A Nguyen Duc Canh street"
+  },
+  {
+    "id": "stop17",
+    "name": "Siêu thị Điện Máy Xanh Phước Đồng",
+    "name_en": "Electrical Store Xanh Phước Đồng",
+    "lat": 12.19277,
+    "lng": 109.17254,
+    "description": "Siêu thị Điện Máy Xanh Phước Đồng",
+    "description_en": "Electrical Store Xanh Phước Đồng"
+  },
+  {
+    "id": "stop18",
+    "name": "Diamond Bay Resort",
+    "name_en": "Diamond Bay Resort",
+    "lat": 12.16458,
+    "lng": 109.19732,
+    "description": "Diamond Bay Resort",
+    "description_en": "Diamond Bay Resort"
+  },
+  {
+    "id": "stop19",
+    "name": "Aquamarine Cam Ranh Resort",
+    "name_en": "Aquamarine Cam Ranh Resort",
+    "lat": 12.10329,
+    "lng": 109.18858,
+    "description": "Aquamarine Cam Ranh Resort",
+    "description_en": "Aquamarine Cam Ranh Resort"
+  },
+  {
+    "id": "stop20",
+    "name": "The Anam Cam Ranh Resort",
+    "name_en": "The Anam Cam Ranh Resort",
+    "lat": 12.09987,
+    "lng": 109.18851,
+    "description": "The Anam Cam Ranh Resort",
+    "description_en": "The Anam Cam Ranh Resort"
+  },
+  {
+    "id": "stop21",
+    "name": "Riviera Cam Ranh Resort",
+    "name_en": "Riviera Cam Ranh Resort",
+    "lat": 12.09654,
+    "lng": 109.18844,
+    "description": "Riviera Cam Ranh Resort",
+    "description_en": "Riviera Cam Ranh Resort"
+  },
+  {
+    "id": "stop22",
+    "name": "Selectum Noa Cam Ranh Resort",
+    "name_en": "Selectum Noa Cam Ranh Resort",
+    "lat": 12.086734,
+    "lng": 109.188319,
+    "description": "Selectum Noa Cam Ranh Resort",
+    "description_en": "Selectum Noa Cam Ranh Resort"
+  },
+  {
+    "id": "stop23",
+    "name": "Meliá Vinpearl Cam Ranh Resort",
+    "name_en": "Meliá Vinpearl Cam Ranh Resort",
+    "lat": 12.07649,
+    "lng": 109.19158,
+    "description": "Meliá Vinpearl Cam Ranh Resort",
+    "description_en": "Meliá Vinpearl Cam Ranh Resort"
+  },
+  {
+    "id": "stop24",
+    "name": "Alma Cam Ranh Resort",
+    "name_en": "Alma Cam Ranh Resort",
+    "lat": 12.073310,
+    "lng": 109.193019,
+    "description": "Alma Cam Ranh Resort",
+    "description_en": "Alma Cam Ranh Resort"
+  },
+  {
+    "id": "stop25",
+    "name": "Duyen Ha Cam Ranh Resort",
+    "name_en": "Duyen Ha Cam Ranh Resort",
+    "lat": 12.054619,
+    "lng": 109.19848,
+    "description": "Duyen Ha Cam Ranh Resort",
+    "description_en": "Duyen Ha Cam Ranh Resort"
+  },
+  {
+    "id": "stop26",
+    "name": "Mövenpick Cam Ranh Resort",
+    "name_en": "Mövenpick Cam Ranh Resort",
+    "lat": 12.04476,
+    "lng": 109.20548,
+    "description": "Mövenpick Cam Ranh Resort",
+    "description_en": "Mövenpick Cam Ranh Resort"
+  },
+  {
+    "id": "stop27",
+    "name": "Swandor Cam Ranh Resort",
+    "name_en": "Swandor Cam Ranh Resort",
+    "lat": 12.03548,
+    "lng": 109.20966,
+    "description": "Swandor Cam Ranh Resort",
+    "description_en": "Swandor Cam Ranh Resort"
+  },
+  {
+    "id": "stop28",
+    "name": "Khách sạn WyndHam Garden Cam Ranh",
+    "name_en": "WyndHam Garden Cam Ranh Hotel",
+    "lat": 12.03011,
+    "lng": 109.21174,
+    "description": "Khách sạn WyndHam Garden Cam Ranh",
+    "description_en": "WyndHam Garden Cam Ranh Hotel"
+  },
+  {
+    "id": "stop29",
+    "name": "The Arena Cam Ranh Resort",
+    "name_en": "The Arena Cam Ranh Resort",
+    "lat": 12.02356,
+    "lng": 109.21445,
+    "description": "The Arena Cam Ranh Resort",
+    "description_en": "The Arena Cam Ranh Resort"
+  },
+  {
+    "id": "stop30",
+    "name": "Ga Quốc Nội sân bay Cam Ranh",
+    "name_en": "Cam Ranh International Airport",
+    "lat": 12.00752,
+    "lng": 109.21552,
+    "description": "Ga Quốc Nội sân bay Cam Ranh",
+    "description_en": "Cam Ranh International Airport"
   }
 ] 
