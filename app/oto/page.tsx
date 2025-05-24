@@ -137,6 +137,55 @@ export default function CarRentalPage() {
         </div>
       </div>
       
+      {/* Contact Information - Moved to top */}
+      <section className="py-6 bg-white border-b">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-6 shadow-sm text-center">
+              <h2 className="text-xl font-bold mb-4 text-gray-800">📞 Liên hệ đặt xe ngay hôm nay</h2>
+              <p className="text-gray-700 mb-6">
+                Hãy liên hệ với chúng tôi qua hotline hoặc mạng xã hội để được tư vấn và đặt dịch vụ xe ô tô tại Nha Trang
+              </p>
+              
+              <div className="flex flex-col sm:flex-row justify-center gap-3">
+                <a 
+                  href={`tel:${phoneNumber}`}
+                  onClick={() => handlePhoneClick(phoneNumber)}
+                  className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-md transition-colors font-medium"
+                >
+                  <FaPhone className="mr-2" /> Gọi ngay: {phoneNumber}
+                </a>
+                <a 
+                  href={`tel:${phoneNumber2}`}
+                  onClick={() => handlePhoneClick(phoneNumber2)}
+                  className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-md transition-colors font-medium"
+                >
+                  <FaPhone className="mr-2" /> Gọi ngay: {phoneNumber2}
+                </a>
+                <a 
+                  href={`https://zalo.me/${phoneNumber}`}
+                  onClick={handleZaloClick}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors font-medium"
+                >
+                  <FaWhatsapp className="mr-2" /> Nhắn tin qua Zalo
+                </a>
+                <a 
+                  href={`https://t.me/${CONTACT_INFO.telegramUsername}`}
+                  onClick={handleTelegramClick}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md transition-colors font-medium"
+                >
+                  <FaTelegram className="mr-2" /> Nhắn tin qua Telegram
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Main Content */}
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -145,22 +194,6 @@ export default function CarRentalPage() {
               <div className="p-6 md:p-8">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                   <h2 className="text-2xl font-bold text-gray-800 mb-4 md:mb-0">Dịch vụ đưa đón sân bay Cam Ranh</h2>
-                  <div className="flex flex-col sm:flex-row gap-2">
-                    <a 
-                      href={`tel:${phoneNumber}`} 
-                      onClick={() => handlePhoneClick(phoneNumber)}
-                      className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors text-sm"
-                    >
-                      <FaPhone className="mr-2" /> {phoneNumber}
-                    </a>
-                    <a 
-                      href={`tel:${phoneNumber2}`} 
-                      onClick={() => handlePhoneClick(phoneNumber2)}
-                      className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors text-sm"
-                    >
-                      <FaPhone className="mr-2" /> {phoneNumber2}
-                    </a>
-                  </div>
                 </div>
                 
                 <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6">
@@ -262,49 +295,11 @@ export default function CarRentalPage() {
                       <span className="text-green-500 mr-2 mt-1">•</span>
                       <span className="font-medium">Tuyệt đối không ghép khách, đưa đón tận nơi</span>
                     </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-500 mr-2 mt-1">•</span>
+                      <span className="font-medium">Để đặt xe đón tại sân bay, vui lòng liên hệ trước ít nhất 2 giờ</span>
+                    </li>
                   </ul>
-                </div>
-              </div>
-              
-              <div className="bg-blue-50 p-6">
-                <div className="text-center">
-                  <p className="font-medium text-blue-800 mb-4">
-                    Để đặt xe đón tại sân bay, vui lòng liên hệ trước ít nhất 2 giờ
-                  </p>
-                  <div className="flex flex-col sm:flex-row justify-center gap-3">
-                    <a 
-                      href={`tel:${phoneNumber}`}
-                      onClick={() => handlePhoneClick(phoneNumber)}
-                      className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-md transition-colors"
-                    >
-                      <FaPhone className="mr-2" /> Gọi để đặt xe: {phoneNumber}
-                    </a>
-                    <a 
-                      href={`tel:${phoneNumber2}`}
-                      onClick={() => handlePhoneClick(phoneNumber2)}
-                      className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-md transition-colors"
-                    >
-                      <FaPhone className="mr-2" /> Gọi để đặt xe: {phoneNumber2}
-                    </a>
-                    <a 
-                      href={`https://zalo.me/${phoneNumber}`}
-                      onClick={handleZaloClick}
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-md transition-colors"
-                    >
-                      <FaWhatsapp className="mr-2" /> Nhắn tin qua Zalo
-                    </a>
-                    <a 
-                      href={`https://t.me/${CONTACT_INFO.telegramUsername}`}
-                      onClick={handleTelegramClick}
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white px-5 py-3 rounded-md transition-colors"
-                    >
-                      <FaTelegram className="mr-2" /> Nhắn tin qua Telegram
-                    </a>
-                  </div>
                 </div>
               </div>
             </div>
@@ -384,49 +379,6 @@ export default function CarRentalPage() {
                     <FaCheck className="text-green-500 mr-2" /> Tài xế nhiệt tình, lái xe an toàn
                   </li>
                 </ul>
-              </div>
-            </div>
-            
-            {/* Contact Information */}
-            <div className="bg-green-50 rounded-lg p-6 shadow-sm text-center">
-              <h2 className="text-xl font-bold mb-4">Liên hệ đặt xe ngay hôm nay</h2>
-              <p className="text-gray-700 mb-6">
-                Hãy liên hệ với chúng tôi qua hotline hoặc mạng xã hội để được tư vấn và đặt dịch vụ xe ô tô tại Nha Trang
-              </p>
-              
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <a 
-                  href={`tel:${phoneNumber}`}
-                  onClick={() => handlePhoneClick(phoneNumber)}
-                  className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-md transition-colors"
-                >
-                  <FaPhone className="mr-2" /> Gọi ngay: {phoneNumber}
-                </a>
-                <a 
-                  href={`tel:${phoneNumber2}`}
-                  onClick={() => handlePhoneClick(phoneNumber2)}
-                  className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-md transition-colors"
-                >
-                  <FaPhone className="mr-2" /> Gọi ngay: {phoneNumber2}
-                </a>
-                <a 
-                  href={`https://zalo.me/${phoneNumber}`}
-                  onClick={handleZaloClick}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors"
-                >
-                  <FaWhatsapp className="mr-2" /> Nhắn tin qua Zalo
-                </a>
-                <a 
-                  href={`https://t.me/${CONTACT_INFO.telegramUsername}`}
-                  onClick={handleTelegramClick}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md transition-colors"
-                >
-                  <FaTelegram className="mr-2" /> Nhắn tin qua Telegram
-                </a>
               </div>
             </div>
           </div>
