@@ -24,13 +24,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Thuê Xe Ô Tô Nha Trang - Đưa Đón Sân Bay Cam Ranh | ${SITE_NAME}`,
     description: 'Dịch vụ thuê xe ô tô chuyên nghiệp tại Nha Trang. Đưa đón sân bay Cam Ranh, xe tour du lịch với tài xế kinh nghiệm. Đặt xe ngay!',
-    url: `${SITE_URL}/oto`,
+    url: `${SITE_URL}/car`,
     type: 'website',
     siteName: SITE_NAME,
     locale: 'vi_VN',
     images: [
       {
-        url: `${SITE_URL}/images/oto/nhatrang-car-rental-og.jpg`,
+        url: `${SITE_URL}/images/car/nhatrang-car-rental-og.jpg`,
         width: 1200,
         height: 630,
         alt: 'Thuê Xe Ô Tô Nha Trang - Dịch vụ đưa đón sân bay',
@@ -45,15 +45,15 @@ export const metadata: Metadata = {
     title: `Thuê Xe Ô Tô Nha Trang - Đưa Đón Sân Bay`,
     description: 'Dịch vụ thuê xe ô tô và đưa đón sân bay Cam Ranh với tài xế chuyên nghiệp, xe đời mới.',
     images: [{
-      url: `${SITE_URL}/images/oto/nhatrang-car-rental-og.jpg`,
+      url: `${SITE_URL}/images/car/nhatrang-car-rental-og.jpg`,
       alt: 'Thuê Xe Ô Tô Nha Trang',
     }],
   },
   alternates: {
-    canonical: `${SITE_URL}/oto`,
+    canonical: `${SITE_URL}/car`,
     languages: {
-      'vi-VN': `${SITE_URL}/oto`,
-      'en-US': `${SITE_URL}/en/oto`,
+      'vi-VN': `${SITE_URL}/car`,
+      'en-US': `${SITE_URL}/en/car`,
     },
   },
   robots: {

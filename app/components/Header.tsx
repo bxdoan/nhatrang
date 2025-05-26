@@ -32,7 +32,7 @@ export default function Header() {
 
   // Kiểm tra xem có đang ở trang transportation hoặc sub-pages không
   const isTransportationActive = pathname.startsWith('/transportation') || 
-                                  pathname === '/oto' || 
+                                  pathname === '/car' || 
                                   pathname === '/moto' || 
                                   pathname === '/bus' || 
                                   pathname === '/taxi' || 
@@ -47,7 +47,7 @@ export default function Header() {
       description: t.header?.transportation?.overviewDesc || 'Tất cả phương tiện'
     },
     {
-      href: '/oto',
+      href: '/car',
       icon: FaCar,
       title: t.header?.transportation?.car || 'Xe ô tô',
       description: t.header?.transportation?.carDesc || 'Thuê xe & đưa đón'

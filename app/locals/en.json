@@ -5,7 +5,15 @@
     "backToHome": "Back to Home",
     "loading": "Loading...",
     "error": "An error occurred",
-    "contact": "Contact"
+    "contact": "Contact",
+    "backToTransportation": "Back to Transportation",
+    "callNow": "Call now",
+    "messageZalo": "Message via Zalo",
+    "messageTelegram": "Message via Telegram",
+    "bookNow": "Book now",
+    "viewService": "View service",
+    "contactForBooking": "Contact for booking",
+    "priceNote": "* Prices may vary depending on time. Please check before booking service."
   },
   "header": {
     "banner": "Discover the beauty of Nha Trang beaches - Vietnam's coastal paradise",
@@ -82,6 +90,746 @@
         "description": "Detailed information about reputable taxi companies in Nha Trang, fares from 15,000 - 20,000đ/km, booking phone numbers and popular routes.",
         "link": "View taxi service information →"
       }
+    }
+  },
+  "transportation": {
+    "hero": {
+      "title": "Transportation in Nha Trang",
+      "subtitle": "Learn about transportation options and services in Nha Trang, from motorbike and car rentals to public buses"
+    },
+    "intro": {
+      "title": "Transportation Options in Nha Trang",
+      "description": "Nha Trang is a famous tourist city with diverse transportation options serving visitors. Depending on your needs, budget and itinerary, you can choose the suitable means to explore this beautiful coastal city."
+    },
+    "moto": {
+      "title": "Motorbike Rental",
+      "description": "The most popular and flexible way to explore Nha Trang. Rental prices from 100,000đ - 170,000đ/day depending on bike type.",
+      "features": [
+        "Bike types: Manual, automatic, sport bikes",
+        "Advantages: Flexible, economical, easy parking",
+        "Delivery service available, free helmet included"
+      ],
+      "link": "View motorbike rental service →"
+    },
+    "car": {
+      "title": "Car Rental",
+      "description": "Convenient for families or groups. Various car types from 4-seater to 16-seater. Airport transfer service available.",
+      "features": [
+        "Rental price: from 700,000đ/day depending on car type",
+        "Self-drive or with driver options available",
+        "Simple procedures, requires ID and driving license"
+      ],
+      "link": "View car rental service →"
+    },
+    "taxi": {
+      "title": "Taxi Service",
+      "description": "Convenient transportation within the city. Reputable taxi companies like Mai Linh, Vinasun, Nha Trang Taxi.",
+      "features": [
+        "Fare: 15,000 - 20,000đ/km",
+        "Safe, convenient, can book via app",
+        "Easy to find in tourist areas and hotels"
+      ],
+      "link": "View taxi service information →"
+    },
+    "bus": {
+      "title": "Nha Trang Bus",
+      "description": "Budget-friendly transportation within the city. Nha Trang has many bus routes passing through tourist attractions.",
+      "features": [
+        "Ticket price: 7,000 - 10,000đ/trip",
+        "Popular routes: No.4 (beach), No.3 (Dam Market)",
+        "Operating hours: 5:30 - 18:30"
+      ],
+      "link": "View bus information →"
+    },
+    "boat": {
+      "title": "Boats",
+      "description": "Ideal for visiting islands around Nha Trang like Hon Mun, Hon Tam, Hon Mot.",
+      "features": [
+        "4-island tour: 250,000 - 350,000đ/person",
+        "Private speedboat: from 1,200,000đ/boat",
+        "Departure from Cau Da port or marina"
+      ]
+    },
+    "rideHailing": {
+      "title": "Motorbike Taxi / Ride-hailing",
+      "description": "Flexible, quick transportation for short distances. Compare Grab, Maxim and traditional motorbike taxis.",
+      "features": [
+        "App-based motorbike taxi: 12,000-18,000đ/km",
+        "Traditional motorbike taxi: 15,000-25,000đ/km",
+        "Can book via Grab, Maxim apps",
+        "Suitable for 1-2 people quick travel"
+      ],
+      "link": "View motorbike taxi guide →"
+    },
+    "airport": {
+      "title": "Transportation from Cam Ranh Airport",
+      "description": "Cam Ranh International Airport is about 30km from Nha Trang city center. Here are transportation options from the airport to the city.",
+      "busTitle": "Airport Bus",
+      "busDescription": "Bus No.18 runs from airport to Nha Trang city center. Ticket price around 50,000đ/trip.",
+      "busFeatures": [
+        "Travel time: about 60 minutes",
+        "Frequency: every 30 minutes",
+        "Cost-effective but time-consuming"
+      ],
+      "transferTitle": "Professional Transfer Service",
+      "transferDescription": "Airport transfer service by transport companies, pre-booked with door-to-door pickup.",
+      "transferFeatures": [
+        "4-seater car: from 250,000đ/trip",
+        "7-seater car: from 300,000đ/trip"
+      ]
+    }
+  },
+  "moto": {
+    "hero": {
+      "title": "Motorbike Rental Service in Nha Trang",
+      "subtitle": "Reliable and affordable motorbike rental service with diverse bike types and door-to-door delivery in Nha Trang"
+    },
+    "backToTransportation": "Back to Transportation",
+    "serviceTitle": "Affordable Motorbike Rental Service in Nha Trang",
+    "serviceDescription": "New, beautiful, safe bikes - Door-to-door delivery - Simple procedures",
+    "serviceNote": "To book a motorbike rental, please contact us at least 2 hours in advance",
+    "categories": {
+      "manual": {
+        "title": "Manual Bikes",
+        "price": "120,000đ/day",
+        "description": "Wave, Sirius, Jupiter, Suzuki"
+      },
+      "scooter": {
+        "title": "Standard Scooters",
+        "price": "150,000đ/day",
+        "description": "Vision, Lead, Air Blade, Vario, Nmax"
+      },
+      "premium": {
+        "title": "Premium Scooters",
+        "price": "180,000đ/day",
+        "description": "SH Mode, Vespa, NVX, PCX"
+      }
+    },
+    "gallery": {
+      "title": "Motorbike Rental Gallery",
+      "note": "* Hover over images for details, click to view full size. Images are for illustration purposes only."
+    },
+    "procedures": {
+      "title": "Rental Procedures and Conditions:",
+      "description": "Motorbike rental procedures are very simple and quick. You just need to leave one of the following documents to rent a bike immediately:",
+      "documents": {
+        "idCard": {
+          "title": "ID Card / Citizen ID",
+          "description": "Valid national ID card or citizen identification card"
+        },
+        "license": {
+          "title": "Driving License",
+          "description": "Valid motorbike or car driving license"
+        }
+      },
+      "deliveryNote": "Free door-to-door delivery service for customers in central Nha Trang area (hotels, train station, bus station)",
+      "conditions": {
+        "title": "Rental conditions:",
+        "items": [
+          "Deposit original ID/Citizen ID/Passport or 5 million VND cash",
+          "Rent for 3+ days get 10% discount on total bill",
+          "Free included: helmet, raincoat, door-to-door delivery (within 3km radius)"
+        ]
+      },
+      "importantNotes": {
+        "title": "Important notes:",
+        "items": [
+          "Don't park on the street or roadside. Use safe parking areas",
+          "Follow traffic laws: no red light violations, no wrong-way driving, wear helmet",
+          "Rental time: 1 day = 24h, if exceeding 6h = 1/2 day charge"
+        ]
+      }
+    },
+    "touring": {
+      "title": "Explore Nha Trang by Motorbike",
+      "description": "Motorbike rental is the most flexible and convenient way to explore Nha Trang and surrounding areas. Here are some ideal destinations to explore by motorbike:",
+      "destinations": {
+        "baiDai": {
+          "title": "Bai Dai and Bai Doc Let",
+          "description": "Two beautiful, pristine beaches about 20-30km north of Nha Trang center"
+        },
+        "ninhVan": {
+          "title": "Ninh Van Bay and Lang Co Bay",
+          "description": "Wild and peaceful scenery, about 60km north of Nha Trang"
+        },
+        "ponagar": {
+          "title": "Po Nagar Towers",
+          "description": "Ancient Cham historical site, located right in Nha Trang city"
+        },
+        "daiLanh": {
+          "title": "Dai Lanh Beach and Mui Dien",
+          "description": "Beautiful coastal road at the border between Khanh Hoa and Phu Yen"
+        }
+      },
+      "tips": {
+        "title": "Motorbike rental tips",
+        "items": [
+          "Always carry personal documents and wear helmet when riding",
+          "Check the bike carefully before receiving (brakes, lights, horn, fuel)",
+          "Take photos of the bike before receiving to avoid disputes",
+          "Follow traffic laws and ride at safe speeds"
+        ]
+      }
+    },
+    "benefits": {
+      "title": "Advantages of Renting with Nha Trang Insight",
+      "newBikes": {
+        "title": "New, Quality Bikes",
+        "description": "All bikes are new, regularly maintained, ensuring safety and good performance"
+      },
+      "support": {
+        "title": "24/7 Rescue Support",
+        "description": "Free rescue service within Nha Trang city if the bike breaks down"
+      }
+    },
+    "contactSection": {
+      "title": "Contact us to book today",
+      "description": "Contact us via hotline or social media for consultation and motorbike rental service booking in Nha Trang"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions about Motorbike Rental in Nha Trang",
+      "questions": {
+        "price": {
+          "question": "How much does motorbike rental cost in Nha Trang?",
+          "answer": "Motorbike rental prices in Nha Trang start from 100,000đ/day for manual bikes (Wave, Sirius), 150,000đ/day for standard scooters (Vision, Air Blade), and 180,000đ/day for premium scooters (PCX, SH Mode)."
+        },
+        "procedures": {
+          "question": "What are the motorbike rental procedures in Nha Trang?",
+          "answer": "Procedures are very simple, you just need to leave your original ID/Citizen ID or Driving License. Can deposit 5 million VND cash as alternative. Rent for 3+ days get 10% discount."
+        },
+        "delivery": {
+          "question": "Is door-to-door motorbike delivery available?",
+          "answer": "Yes, we provide free door-to-door delivery within 3km radius from Nha Trang center, including hotels, train station, bus station. Contact 2 hours in advance to book."
+        },
+        "insurance": {
+          "question": "Are rental motorbikes insured?",
+          "answer": "Yes, all bikes are fully insured. We also provide free 24/7 rescue service within Nha Trang city if the bike breaks down."
+        },
+        "types": {
+          "question": "What types of motorbikes are available for rent?",
+          "answer": "We have diverse bike types: Manual bikes (Honda Wave, Yamaha Sirius, Jupiter), standard scooters (Honda Vision, Air Blade, Lead, Nmax), premium scooters (PCX, SH Mode, NVX, Vespa)."
+        }
+      }
+    }
+  },
+  "car": {
+    "hero": {
+      "title": "Car Rental and Airport Transfer Service in Nha Trang",
+      "subtitle": "Airport transfer service and tour car rental with reasonable prices, new cars, professional drivers"
+    },
+    "backToTransportation": "Back to Transportation",
+    "contactSection": {
+      "title": "📞 Contact us to book today",
+      "description": "Contact us via hotline or social media for consultation and car rental service booking in Nha Trang"
+    },
+    "airportService": {
+      "title": "Cam Ranh Airport Transfer Service",
+      "guarantee": "Guaranteed on-time pickup - No shared rides - All-inclusive price",
+      "categories": {
+        "car4": {
+          "title": "4-seater Car",
+          "price": "250,000đ/trip",
+          "description": "Suitable for 1-4 passengers"
+        },
+        "car7": {
+          "title": "7-seater Car",
+          "price": "300,000đ/trip",
+          "description": "Suitable for 5-7 passengers"
+        },
+        "car16": {
+          "title": "16-seater Van",
+          "price": "500,000đ/trip",
+          "description": "Suitable for 8-16 passengers"
+        }
+      },
+      "gallery": {
+        "title": "Car Rental Gallery",
+        "note": "* Hover over images for details, click to view full size. Images are for illustration purposes only."
+      },
+      "notes": {
+        "title": "Service notes:",
+        "items": [
+          "Additional 50,000đ for areas far from center (beyond Tran Phu Bridge)",
+          "50,000đ surcharge for pickups after 8 PM",
+          "Absolutely no shared rides, door-to-door service",
+          "To book airport pickup, please contact at least 2 hours in advance"
+        ]
+      }
+    },
+    "tourService": {
+      "title": "Tour Car Service to Explore Surrounding Areas",
+      "description": "Besides airport transfer service, we also provide car rental service for touring nearby destinations from Nha Trang:",
+      "destinations": {
+        "dalat": {
+          "title": "Nha Trang - Da Lat",
+          "description": "Tour to the city of thousands of flowers, travel time about 3-4 hours"
+        },
+        "vinhHy": {
+          "title": "Nha Trang - Vinh Hy",
+          "description": "Explore the most beautiful bay in Central Vietnam, swimming in clear waters and coral viewing"
+        },
+        "binhBa": {
+          "title": "Nha Trang - Binh Ba - Binh Hung",
+          "description": "Lobster island tour with pristine beaches, swimming and seafood cuisine"
+        },
+        "phanRang": {
+          "title": "Nha Trang - Ninh Thuan - Phan Rang",
+          "description": "Visit fishing villages, vineyards, Cham towers and taste Phan Rang wine"
+        }
+      },
+      "additionalRoutes": "We also serve additional routes:",
+      "routes": [
+        "Nha Trang - Quy Nhon",
+        "Nha Trang - Phu Yen"
+      ],
+      "commitment": {
+        "title": "Service commitment",
+        "items": [
+          "Reliable - Professional",
+          "New, clean, fragrant cars",
+          "Enthusiastic drivers, safe driving"
+        ]
+      }
+    }
+  },
+  "taxi": {
+    "hero": {
+      "title": "Taxi Service in Nha Trang",
+      "subtitle": "Detailed information about reputable taxi companies, fares and services in Nha Trang"
+    },
+    "backToTransportation": "Back to Transportation",
+    "intro": {
+      "title": "Taxis in Nha Trang",
+      "description": "Taxi is a popular and convenient means of transportation in Nha Trang. With many reputable taxi companies operating in the area, tourists can easily catch taxis at tourist areas, hotels, restaurants and attractions.",
+      "warning": "To avoid being overcharged, you should use reputable taxi companies and ask the driver to turn on the meter when getting in the car."
+    },
+    "companies": {
+      "title": "Reputable Taxi Companies in Nha Trang",
+      "features": "Key features:",
+      "rating": "Rating",
+      "operatingHours": "Operating hours",
+      "fare": "Fare",
+      "contact": "Contact"
+    },
+    "types": {
+      "title": "Common Taxi Types",
+      "car4": {
+        "title": "4-seater Taxi",
+        "capacity": "4 people + moderate luggage",
+        "priceRange": "15,000đ - 17,000đ/km",
+        "bestFor": "Individuals, couples, small families"
+      },
+      "car7": {
+        "title": "7-seater Taxi",
+        "capacity": "7 people + lots of luggage",
+        "priceRange": "17,000đ - 20,000đ/km",
+        "bestFor": "Large families, groups of friends"
+      },
+      "vip": {
+        "title": "VIP Taxi",
+        "capacity": "4 people + premium service",
+        "priceRange": "20,000đ - 25,000đ/km",
+        "bestFor": "Business travelers, VIP guests"
+      }
+    },
+    "routes": {
+      "title": "Popular Taxi Routes and Estimated Fares",
+      "note": "* Estimated fares based on 4-seater taxi rates. Actual prices may vary depending on taxi company, time, traffic conditions and other factors.",
+      "headers": {
+        "route": "Route",
+        "distance": "Distance",
+        "estimatedPrice": "Estimated Price",
+        "time": "Time"
+      }
+    },
+    "tips": {
+      "title": "Tips for Taking Taxis in Nha Trang",
+      "items": {
+        "reputableCompanies": "Use only reputable taxi companies - Prioritize major taxi companies like Mai Linh, Vinasun, Nha Trang Taxi to avoid being overcharged.",
+        "useMeter": "Request meter usage - Always ask the driver to turn on the meter when getting in the car.",
+        "bookByPhone": "Book by phone - If possible, book taxis through company hotlines to ensure safety.",
+        "confirmPrice": "Confirm price beforehand - For long routes like from airport to city, confirm fixed price before departure.",
+        "keepReceipt": "Keep receipts - Always request receipts after payment, especially for business expense claims."
+      }
+    },
+    "alternatives": {
+      "title": "Alternative Transportation",
+      "description": "Besides taxis, Nha Trang has many other transportation alternatives:",
+      "moto": {
+        "title": "Motorbike Rental",
+        "description": "From 100,000đ/day, flexible transportation"
+      },
+      "car": {
+        "title": "Car Rental",
+        "description": "Self-drive or with driver options"
+      }
+    },
+    "contactSection": {
+      "title": "Need more advice about transportation in Nha Trang?",
+      "description": "Contact us for consultation and support in booking transportation services in Nha Trang"
+    }
+  },
+  "bus": {
+    "hero": {
+      "title": "Nha Trang Bus",
+      "subtitle": "Route information, schedules and maps of public bus routes in Nha Trang"
+    },
+    "backToTransportation": "Back to Transportation",
+    "searchPlaceholder": "Search bus stops...",
+    "searchResults": "Results",
+    "noResults": "No bus stops found",
+    "routes": {
+      "title": "Bus Routes",
+      "frequency": "minutes/trip"
+    },
+    "routeInfo": {
+      "title": "Route Information",
+      "routeName": "Route name:",
+      "operatingHours": "Operating hours:",
+      "frequency": "Frequency:",
+      "fare": "Fare:",
+      "information": "Information:",
+      "lastUpdated": "Last updated:",
+      "stops": "Bus stops:"
+    },
+    "stopInfo": {
+      "title": "Stop",
+      "description": "Description:",
+      "routesThrough": "Routes through:",
+      "noRoutes": "No routes pass through this stop"
+    },
+    "mapLegend": {
+      "title": "Map Legend",
+      "startPoint": "Start point",
+      "endPoint": "End point",
+      "busStop": "Bus stop",
+      "busRoute": "Bus route"
+    },
+    "information": {
+      "title": "Nha Trang Bus Information",
+      "fareSection": {
+        "title": "Fares",
+        "cityRoute": "City routes: 7,000đ/trip",
+        "airportRoute": "Cam Ranh Airport route: 50,000đ/trip",
+        "monthlyPass": "Monthly pass: 200,000đ/month",
+        "discount": "Priority groups: 50% discount for students, elderly and disabled"
+      },
+      "scheduleSection": {
+        "title": "Operating Hours",
+        "cityRoutes": "City routes: 05:00 - 19:00",
+        "airportRoute": "Cam Ranh Airport route: 04:00 - 21:00",
+        "frequency": "Frequency: 15-30 minutes/trip depending on route"
+      },
+      "notesSection": {
+        "title": "Bus Travel Notes",
+        "cashOnly": "Prepare cash for tickets. Some routes don't support card payment yet.",
+        "checkSchedule": "Check bus schedules before traveling, some routes may change on weekends."
+      },
+      "contactSection": {
+        "title": "Contact",
+        "busCenter": "Nha Trang Bus Operation Center: 0258.3810 810",
+        "hotline": "Passenger support hotline: 1900 8110"
+      }
+    },
+    "dataUpdate": {
+      "title": "Data Update Information",
+      "description": "Bus route data is regularly updated to ensure accuracy",
+      "lastUpdate": "Last update",
+      "stats": {
+        "routes": "Bus routes",
+        "stops": "Bus stops",
+        "support": "Information support"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions about Nha Trang Bus",
+      "questions": {
+        "fare": {
+          "question": "How much are Nha Trang bus fares?",
+          "answer": "Nha Trang city bus fares are 7,000đ/trip, Cam Ranh airport bus is 50,000đ/trip, monthly pass is 200,000đ. Students, elderly and disabled get 50% discount."
+        },
+        "schedule": {
+          "question": "What are Nha Trang bus operating hours?",
+          "answer": "City buses operate from 05:00 - 19:00 daily. Cam Ranh airport route operates from 04:00 - 21:00. Bus frequency is 15-30 minutes/trip depending on route."
+        },
+        "routes": {
+          "question": "How many bus routes are there in Nha Trang?",
+          "answer": "Currently Nha Trang has 4 main bus routes: Route 23 (Ana Marina - Vinpearl), Route 18 (Binh Hung - Dien Khanh), Route 9 (Bus station - Cam Ranh Airport), and Route 4 (Dam Market - South Bus Station)."
+        },
+        "airport": {
+          "question": "How to get from Cam Ranh Airport to Nha Trang center by bus?",
+          "answer": "You can take route 9 from Cam Ranh Airport to Nha Trang South Bus Station. Fare is 50,000đ/trip, travel time about 45-60 minutes, operating from 04:00 - 21:00 with 30-minute frequency."
+        },
+        "payment": {
+          "question": "Do Nha Trang buses accept card payment?",
+          "answer": "Currently most Nha Trang bus routes only accept cash payment. You should prepare exact change for tickets. Some routes are piloting cashless payment."
+        }
+      }
+    }
+  },
+  "flights": {
+    "hero": {
+      "title": "Flights to Cam Ranh (CXR)",
+      "subtitle": "Check flight times, status and details of upcoming flights to Cam Ranh Airport - the aviation gateway to the coastal city of Nha Trang"
+    },
+    "airportInfo": {
+      "title": "Cam Ranh Airport (CXR) Information",
+      "intro": {
+        "title": "Introduction",
+        "description1": "Cam Ranh International Airport is located about 30km south of Nha Trang city center. It is the main aviation gateway for tourists visiting Nha Trang and surrounding areas in Khanh Hoa province.",
+        "description2": "The airport serves both domestic and international flights, with many airlines such as Vietnam Airlines, Bamboo Airways, VietJet Air, Pacific Airlines and many other international carriers."
+      },
+      "contact": {
+        "title": "Contact Information",
+        "address": "Address: Nguyen Tat Thanh, Cam Hai Dong, Cam Lam, Khanh Hoa",
+        "phone": "Phone: +84 258 3983 375",
+        "email": "Email: info@chra.vn",
+        "website": "Website:"
+      },
+      "transportation": {
+        "title": "Transportation from Airport",
+        "taxi": "Taxi: Available outside the terminal, travel time about 40-45 minutes to Nha Trang center.",
+        "bus": "Bus: Bus route 18 from airport to city center.",
+        "shuttle": "Hotel shuttle: Many hotels provide airport shuttle service, check when booking.",
+        "rental": "Car rental: Car rental companies available at the airport."
+      },
+      "facilities": {
+        "title": "Airport Facilities",
+        "items": [
+          "Duty-free shops",
+          "Restaurants and cafes",
+          "Currency exchange and ATMs",
+          "Free Wi-Fi",
+          "Special assistance services",
+          "Child care services",
+          "VIP lounges"
+        ]
+      }
+    },
+    "rentalServices": {
+      "title": "Vehicle Rental Services in Nha Trang",
+      "moto": {
+        "title": "Motorbike Rental Service",
+        "description": "Explore Nha Trang flexibly by motorbike. We provide reliable motorbike rental service with:",
+        "features": [
+          "• Diverse bike types: from manual to premium scooters",
+          "• Rental from 100,000đ - 180,000đ/day",
+          "• Simple procedures, door-to-door delivery",
+          "• Insurance and 24/7 support"
+        ],
+        "link": "View motorbike rental service"
+      },
+      "car": {
+        "title": "Car Rental Service",
+        "description": "Travel comfortably with family or friends using quality car rental service:",
+        "features": [
+          "• Diverse vehicle range from 4-16 seats",
+          "• Self-drive or with driver options",
+          "• Cam Ranh airport pickup/drop-off service",
+          "• Online or phone booking"
+        ],
+        "link": "View car rental service"
+      }
+    }
+  },
+  "rideHailing": {
+    "hero": {
+      "title": "Motorbike Taxi & Ride-hailing in Nha Trang",
+      "subtitle": "Compare traditional motorbike taxis and ride-hailing apps (Grab, Maxim) - Usage guide and fares"
+    },
+    "backToTransportation": "Back to Transportation",
+    "intro": {
+      "title": "Motorbike Taxis in Nha Trang",
+      "description": "Motorbike taxi is a popular and quick transportation method in Nha Trang, especially suitable for short distances within the city. Currently there are two main types: traditional motorbike taxis and app-based ride-hailing."
+    },
+    "types": {
+      "title": "Types of Motorbike Taxis in Nha Trang",
+      "traditional": {
+        "title": "Traditional Motorbike Taxis",
+        "description": "Traditional motorbike taxis usually gather at fixed points like markets, bus stations, hotel entrances, restaurants.",
+        "priceRange": "15,000 - 25,000đ/km",
+        "advantages": [
+          "Available at many points in the city",
+          "No app needed, can book directly",
+          "Drivers know local areas well",
+          "Can negotiate prices for long distances"
+        ],
+        "disadvantages": [
+          "Fares may not be fixed",
+          "Need to negotiate price before departure",
+          "Inconsistent bike and service quality",
+          "Difficult to control safety"
+        ]
+      },
+      "app": {
+        "title": "App-based Ride-hailing (Grab, Maxim)",
+        "description": "App-based ride-hailing operates through mobile applications, providing convenient and transparent service.",
+        "priceRange": "12,000 - 18,000đ/km",
+        "advantages": [
+          "Transparent fares, calculated in app",
+          "Can track journey route",
+          "Convenient payment (cash or card)",
+          "Driver and service quality ratings",
+          "24/7 customer support"
+        ],
+        "disadvantages": [
+          "Need smartphone and internet connection",
+          "May have long wait times during peak hours",
+          "Depends on number of online drivers",
+          "Prices may surge during peak hours"
+        ]
+      }
+    },
+    "apps": {
+      "title": "Popular Ride-hailing Apps",
+      "grab": {
+        "name": "Grab",
+        "description": "Leading Southeast Asian ride-hailing app, available in Nha Trang with GrabBike service.",
+        "features": [
+          "User-friendly interface, easy to use",
+          "Multiple payment methods",
+          "Regular promotional programs",
+          "Diverse services: GrabBike, GrabCar, GrabFood"
+        ]
+      },
+      "maxim": {
+        "name": "Maxim",
+        "description": "Ride-hailing app with competitive fares, increasingly popular in Nha Trang.",
+        "features": [
+          "Usually cheaper fares than Grab",
+          "Simple interface",
+          "Cash payment support",
+          "Usually shorter wait times"
+        ]
+      }
+    },
+    "comparison": {
+      "title": "Comparison: Traditional vs App-based Motorbike Taxis",
+      "headers": {
+        "criteria": "Criteria",
+        "traditional": "Traditional Motorbike Taxi",
+        "app": "App-based Ride-hailing"
+      },
+      "rows": {
+        "price": {
+          "criteria": "Fare",
+          "traditional": "15,000-25,000đ/km (negotiable)",
+          "app": "12,000-18,000đ/km (fixed)"
+        },
+        "convenience": {
+          "criteria": "Convenience",
+          "traditional": "Need to find gathering points",
+          "app": "Book anytime, anywhere"
+        },
+        "safety": {
+          "criteria": "Safety",
+          "traditional": "Difficult to control",
+          "app": "Journey tracking, driver ratings"
+        },
+        "availability": {
+          "criteria": "Availability",
+          "traditional": "At fixed points",
+          "app": "Depends on online drivers"
+        },
+        "payment": {
+          "criteria": "Payment",
+          "traditional": "Cash only",
+          "app": "Cash or card"
+        }
+      }
+    },
+    "tips": {
+      "title": "Tips for Using Motorbike Taxis",
+      "items": [
+        "Always wear helmet when riding motorbike taxi",
+        "Confirm destination and fare before departure",
+        "For traditional taxis, negotiate price beforehand",
+        "For app-based rides, check driver info and license plate",
+        "Don't carry oversized items",
+        "Share trip info with relatives for long distances",
+        "Rate drivers after trips to improve service quality"
+      ]
+    },
+    "routes": {
+      "title": "Popular Motorbike Taxi Routes and Estimated Fares",
+      "note": "* Fares may vary depending on time, app and traffic conditions."
+    },
+    "alternatives": {
+      "title": "Alternative Transportation",
+      "description": "Besides motorbike taxis, you can consider other transportation:"
+    },
+    "contactSection": {
+      "title": "Need help with transportation in Nha Trang?",
+      "description": "Contact us for advice on the most suitable transportation options for your trip"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "Have questions or need support? Contact Nha Trang Insight for the quickest response"
+    },
+    "contactInfo": {
+      "title": "Contact Information",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address"
+    },
+    "socialMedia": {
+      "title": "Connect with us"
+    },
+    "map": {
+      "title": "Map"
+    },
+    "form": {
+      "title": "Send Contact Information",
+      "successMessage": "Thank you for your message! We will contact you as soon as possible.",
+      "fields": {
+        "name": {
+          "label": "Full Name *",
+          "placeholder": "Enter your full name"
+        },
+        "email": {
+          "label": "Email *",
+          "placeholder": "Enter your email address"
+        },
+        "phone": {
+          "label": "Phone Number",
+          "placeholder": "Enter your phone number"
+        },
+        "subject": {
+          "label": "Subject *",
+          "placeholder": "Select subject",
+          "options": {
+            "tourism": "Tourism Information",
+            "rental": "Vehicle Rental Service",
+            "tour": "Tour Booking",
+            "accommodation": "Accommodation Support",
+            "other": "Other"
+          }
+        },
+        "message": {
+          "label": "Message Content *",
+          "placeholder": "Please describe your requirements in detail..."
+        }
+      },
+      "submitButton": "Send Message",
+      "submittingButton": "Sending..."
+    },
+    "payment": {
+      "title": "Payment Information",
+      "bankInfo": {
+        "title": "Bank Transfer Information",
+        "bank": "Bank:",
+        "branch": "Branch:",
+        "accountNumber": "Account Number:",
+        "accountHolder": "Account Holder:",
+        "transferContent": "Transfer Content:"
+      },
+      "qrCode": {
+        "title": "Scan QR Code to Pay",
+        "description": "Scan QR code with banking app or e-wallet"
+      },
+      "note": "Please clearly state your name and service booked in the transfer content so we can confirm your payment."
     }
   }
 } 

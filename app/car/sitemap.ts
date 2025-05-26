@@ -4,7 +4,7 @@ import { SITE_URL } from '../lib/metadata';
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: `${SITE_URL}/oto`,
+      url: `${SITE_URL}/car`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,

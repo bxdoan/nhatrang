@@ -5,9 +5,9 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
-      allow: '/oto',
+      allow: '/car',
       disallow: [],
     },
-    sitemap: `${SITE_URL}/oto/sitemap.xml`,
+    sitemap: `${SITE_URL}/car/sitemap.xml`,
   };
 } 

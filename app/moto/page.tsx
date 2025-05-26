@@ -6,6 +6,7 @@ import { CONTACT_INFO } from '../lib/contact-config';
 import { useState } from 'react';
 import Script from 'next/script';
 import { MOTO_PAGE_SCHEMA } from '../lib/metadata';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Định nghĩa kiểu dữ liệu cho đối tượng xe máy
 interface Motorbike {
@@ -65,9 +66,21 @@ const FAQ_SCHEMA = {
 };
 
 export default function MotorbikeRentalPage() {
+  const { t, isLoading } = useLanguage();
   const phoneNumber = CONTACT_INFO.phoneNumber;
   const [showImagePopup, setShowImagePopup] = useState(false);
   const [currentImage, setCurrentImage] = useState({ url: '', name: '', price: '' });
+  
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
   
   // Danh sách xe máy cho thuê
   const motorbikeList: Motorbike[] = [
@@ -188,9 +201,9 @@ export default function MotorbikeRentalPage() {
         <div className="container mx-auto px-4">
           <div className="text-center text-white">
             <FaMotorcycle className="inline-block text-4xl mb-4" />
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">Dịch vụ thuê xe máy Nha Trang</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">{t.moto?.hero?.title || 'Dịch vụ thuê xe máy Nha Trang'}</h1>
             <p className="max-w-3xl mx-auto text-blue-100 text-lg">
-              Dịch vụ cho thuê xe máy uy tín, giá rẻ, đa dạng loại xe, giao nhận tận nơi tại Nha Trang
+              {t.moto?.hero?.subtitle || 'Dịch vụ cho thuê xe máy uy tín, giá rẻ, đa dạng loại xe, giao nhận tận nơi tại Nha Trang'}
             </p>
           </div>
         </div>

@@ -5,7 +5,15 @@
     "backToHome": "Về trang chủ",
     "loading": "Đang tải...",
     "error": "Có lỗi xảy ra",
-    "contact": "Liên hệ"
+    "contact": "Liên hệ",
+    "backToTransportation": "Quay lại trang Di chuyển",
+    "callNow": "Gọi ngay",
+    "messageZalo": "Nhắn tin qua Zalo",
+    "messageTelegram": "Nhắn tin qua Telegram",
+    "bookNow": "Đặt ngay",
+    "viewService": "Xem dịch vụ",
+    "contactForBooking": "Liên hệ để đặt dịch vụ",
+    "priceNote": "* Giá có thể thay đổi theo thời điểm. Vui lòng kiểm tra trước khi đặt dịch vụ."
   },
   "header": {
     "banner": "Khám phá vẻ đẹp biển đảo Nha Trang - Thiên đường nghỉ dưỡng của Việt Nam",
@@ -82,6 +90,746 @@
         "description": "Thông tin chi tiết về các hãng taxi uy tín tại Nha Trang, giá cước từ 15.000 - 20.000đ/km, số điện thoại đặt xe và tuyến đường phổ biến.",
         "link": "Xem thông tin dịch vụ taxi →"
       }
+    }
+  },
+  "transportation": {
+    "hero": {
+      "title": "Di chuyển tại Nha Trang",
+      "subtitle": "Tìm hiểu các phương tiện di chuyển và dịch vụ vận chuyển tại Nha Trang, từ thuê xe máy, xe ô tô đến xe buýt công cộng"
+    },
+    "intro": {
+      "title": "Phương tiện di chuyển tại Nha Trang",
+      "description": "Nha Trang là thành phố du lịch nổi tiếng, có nhiều phương tiện di chuyển đa dạng phục vụ du khách. Tùy vào nhu cầu, ngân sách và lịch trình, bạn có thể lựa chọn phương tiện phù hợp để khám phá thành phố biển xinh đẹp này."
+    },
+    "moto": {
+      "title": "Thuê xe máy",
+      "description": "Phương tiện phổ biến và linh hoạt nhất để khám phá Nha Trang. Giá thuê từ 100.000đ - 170.000đ/ngày tùy loại xe.",
+      "features": [
+        "Các loại xe: Xe số, xe ga, xe côn tay",
+        "Ưu điểm: Linh hoạt, tiết kiệm, dễ dàng đỗ xe",
+        "Có dịch vụ giao xe tận nơi, miễn phí mũ bảo hiểm"
+      ],
+      "link": "Xem dịch vụ thuê xe máy →"
+    },
+    "car": {
+      "title": "Thuê xe ô tô",
+      "description": "Thuận tiện cho gia đình hoặc nhóm bạn. Có nhiều loại xe từ 4 chỗ đến 16 chỗ. Đặc biệt có dịch vụ đưa đón sân bay.",
+      "features": [
+        "Giá thuê: từ 700.000đ/ngày tùy loại xe",
+        "Có dịch vụ thuê kèm tài xế hoặc tự lái",
+        "Thủ tục đơn giản, yêu cầu CMND/CCCD và bằng lái"
+      ],
+      "link": "Xem dịch vụ thuê xe ô tô →"
+    },
+    "taxi": {
+      "title": "Dịch vụ Taxi",
+      "description": "Phương tiện thuận tiện để di chuyển trong thành phố. Có nhiều hãng taxi uy tín như Mai Linh, Vinasun, Nha Trang Taxi.",
+      "features": [
+        "Giá cước: 15.000 - 20.000đ/km",
+        "An toàn, tiện lợi, có thể đặt qua ứng dụng",
+        "Dễ dàng tìm ở các khu du lịch, khách sạn"
+      ],
+      "link": "Xem thông tin dịch vụ taxi →"
+    },
+    "bus": {
+      "title": "Xe Buýt Nha Trang",
+      "description": "Phương tiện giá rẻ để di chuyển trong thành phố. Nha Trang có nhiều tuyến xe buýt đi qua các địa điểm du lịch.",
+      "features": [
+        "Giá vé: 7.000 - 10.000đ/lượt",
+        "Tuyến phổ biến: số 4 (bãi biển), số 3 (chợ Đầm)",
+        "Hoạt động từ 5:30 - 18:30"
+      ],
+      "link": "Xem thông tin xe buýt →"
+    },
+    "boat": {
+      "title": "Tàu thuyền",
+      "description": "Phương tiện lý tưởng để tham quan các đảo xung quanh Nha Trang như Hòn Mun, Hòn Tằm, Hòn Một.",
+      "features": [
+        "Tour 4 đảo: 250.000 - 350.000đ/người",
+        "Cano riêng: từ 1.200.000đ/chiếc",
+        "Khởi hành từ cảng Cầu Đá hoặc bến du thuyền"
+      ]
+    },
+    "rideHailing": {
+      "title": "Xe ôm / Xe ôm công nghệ",
+      "description": "Phương tiện linh hoạt, nhanh chóng cho quãng đường ngắn. So sánh Grab, Maxim và xe ôm truyền thống.",
+      "features": [
+        "Xe ôm công nghệ: 12.000-18.000đ/km",
+        "Xe ôm truyền thống: 15.000-25.000đ/km",
+        "Có thể đặt qua app Grab, Maxim",
+        "Phù hợp cho 1-2 người di chuyển nhanh"
+      ],
+      "link": "Xem hướng dẫn xe ôm →"
+    },
+    "airport": {
+      "title": "Di chuyển từ Sân bay Cam Ranh",
+      "description": "Sân bay quốc tế Cam Ranh cách trung tâm Nha Trang khoảng 30km. Dưới đây là các phương tiện di chuyển từ sân bay về thành phố.",
+      "busTitle": "Xe buýt sân bay",
+      "busDescription": "Xe buýt số 18 đi từ sân bay về trung tâm thành phố Nha Trang. Giá vé khoảng 50.000đ/lượt.",
+      "busFeatures": [
+        "Thời gian di chuyển: khoảng 60 phút",
+        "Tần suất: 30 phút/chuyến",
+        "Tiết kiệm chi phí nhưng mất nhiều thời gian"
+      ],
+      "transferTitle": "Xe đưa đón chuyên nghiệp",
+      "transferDescription": "Dịch vụ xe đưa đón sân bay của các công ty vận chuyển, đặt trước và được đón tận nơi.",
+      "transferFeatures": [
+        "Xe 4 chỗ: từ 250.000đ/lượt",
+        "Xe 7 chỗ: từ 300.000đ/lượt"
+      ]
+    }
+  },
+  "moto": {
+    "hero": {
+      "title": "Dịch vụ thuê xe máy Nha Trang",
+      "subtitle": "Dịch vụ cho thuê xe máy uy tín, giá rẻ, đa dạng loại xe, giao nhận tận nơi tại Nha Trang"
+    },
+    "backToTransportation": "Quay lại trang Di chuyển",
+    "serviceTitle": "Dịch vụ thuê xe máy giá rẻ tại Nha Trang",
+    "serviceDescription": "Xe mới, đẹp, an toàn - Giao xe tận nơi - Thủ tục đơn giản",
+    "serviceNote": "Để đặt thuê xe máy, vui lòng liên hệ trước ít nhất 2 giờ",
+    "categories": {
+      "manual": {
+        "title": "Xe số",
+        "price": "120.000đ/ngày",
+        "description": "Wave, Sirius, Jupiter, Suzuki"
+      },
+      "scooter": {
+        "title": "Xe ga phổ thông",
+        "price": "150.000đ/ngày",
+        "description": "Vision, Lead, Air Blade, Vario, Nmax"
+      },
+      "premium": {
+        "title": "Xe ga cao cấp",
+        "price": "180.000đ/ngày",
+        "description": "SH Mode, Vespa, NVX, PCX"
+      }
+    },
+    "gallery": {
+      "title": "Hình ảnh xe máy cho thuê",
+      "note": "* Hover lên ảnh để xem thông tin chi tiết, click để xem ảnh kích thước lớn. Hình ảnh chỉ mang tính chất minh họa."
+    },
+    "procedures": {
+      "title": "Thủ tục và điều kiện thuê xe:",
+      "description": "Thủ tục thuê xe máy rất đơn giản, nhanh chóng. Bạn chỉ cần để lại một trong các giấy tờ sau là có thể thuê xe ngay:",
+      "documents": {
+        "idCard": {
+          "title": "CMND / CCCD",
+          "description": "Chứng minh nhân dân hoặc căn cước công dân còn hiệu lực"
+        },
+        "license": {
+          "title": "Bằng Lái Xe",
+          "description": "Bằng lái xe máy hoặc ô tô còn hiệu lực"
+        }
+      },
+      "deliveryNote": "Dịch vụ giao xe miễn phí tận nơi cho khách hàng tại khu vực trung tâm Nha Trang (khách sạn, nhà ga, bến xe)",
+      "conditions": {
+        "title": "Các điều kiện thuê xe:",
+        "items": [
+          "Cọc CMND/CCCD/Hộ chiếu gốc hoặc 5 triệu tiền mặt",
+          "Thuê từ 3 ngày trở lên được giảm 10% tổng hóa đơn",
+          "Bao gồm miễn phí: mũ bảo hiểm, áo mưa, giao xe tận nơi (trong bán kính 3km)"
+        ]
+      },
+      "importantNotes": {
+        "title": "Lưu ý quan trọng:",
+        "items": [
+          "Không để xe dưới lòng, lề đường. Hãy để xe ở những bãi giữ xe an toàn",
+          "Tuân thủ luật giao thông: không vượt đèn đỏ, không đi ngược chiều, đội mũ bảo hiểm",
+          "Thời gian thuê xe máy: 1 ngày = 24h, nếu phát sinh 6h = 1/2 ngày"
+        ]
+      }
+    },
+    "touring": {
+      "title": "Khám phá Nha Trang bằng xe máy",
+      "description": "Thuê xe máy là cách linh hoạt và thuận tiện nhất để khám phá Nha Trang và các vùng lân cận. Dưới đây là một số điểm đến lý tưởng để khám phá bằng xe máy:",
+      "destinations": {
+        "baiDai": {
+          "title": "Bãi Dài và Bãi Dốc Lết",
+          "description": "Hai bãi biển đẹp, hoang sơ cách trung tâm Nha Trang khoảng 20-30km về phía Bắc"
+        },
+        "ninhVan": {
+          "title": "Vịnh Ninh Vân và Vịnh Lăng Cô",
+          "description": "Cảnh đẹp hoang sơ và yên bình, cách Nha Trang khoảng 60km về phía Bắc"
+        },
+        "ponagar": {
+          "title": "Tháp Bà Ponagar",
+          "description": "Di tích lịch sử Chăm Pa cổ, nằm ngay trong thành phố Nha Trang"
+        },
+        "daiLanh": {
+          "title": "Bãi biển Đại Lãnh và Mũi Điện",
+          "description": "Cung đường ven biển đẹp, nằm ở ranh giới giữa Khánh Hòa và Phú Yên"
+        }
+      },
+      "tips": {
+        "title": "Lưu ý khi thuê xe máy",
+        "items": [
+          "Luôn mang theo giấy tờ cá nhân và đội mũ bảo hiểm khi lái xe",
+          "Kiểm tra xe kỹ trước khi nhận (thắng, đèn, còi, xăng)",
+          "Nên chụp ảnh xe trước khi nhận để tránh tranh chấp",
+          "Tuân thủ luật giao thông và chạy với tốc độ an toàn"
+        ]
+      }
+    },
+    "benefits": {
+      "title": "Ưu điểm khi thuê xe tại Nha Trang Insight",
+      "newBikes": {
+        "title": "Xe đời mới, chất lượng",
+        "description": "Tất cả xe đều là xe mới, được bảo dưỡng thường xuyên, đảm bảo an toàn và vận hành tốt"
+      },
+      "support": {
+        "title": "Hỗ trợ cứu hộ 24/7",
+        "description": "Dịch vụ cứu hộ miễn phí trong phạm vi thành phố Nha Trang nếu xe gặp sự cố"
+      }
+    },
+    "contactSection": {
+      "title": "Liên hệ đặt xe ngay hôm nay",
+      "description": "Hãy liên hệ với chúng tôi qua hotline hoặc mạng xã hội để được tư vấn và đặt dịch vụ xe máy tại Nha Trang"
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp về thuê xe máy Nha Trang",
+      "questions": {
+        "price": {
+          "question": "Giá thuê xe máy tại Nha Trang là bao nhiêu?",
+          "answer": "Giá thuê xe máy tại Nha Trang từ 100.000đ/ngày cho xe số (Wave, Sirius), 150.000đ/ngày cho xe ga phổ thông (Vision, Air Blade), và 180.000đ/ngày cho xe ga cao cấp (PCX, SH Mode)."
+        },
+        "procedures": {
+          "question": "Thủ tục thuê xe máy tại Nha Trang như thế nào?",
+          "answer": "Thủ tục rất đơn giản, bạn chỉ cần để lại CMND/CCCD hoặc Bằng lái xe gốc. Có thể cọc 5 triệu tiền mặt thay thế. Thuê từ 3 ngày được giảm 10%."
+        },
+        "delivery": {
+          "question": "Có giao xe máy tận nơi không?",
+          "answer": "Có, chúng tôi giao xe miễn phí tận nơi trong bán kính 3km từ trung tâm Nha Trang, bao gồm khách sạn, nhà ga, bến xe. Liên hệ trước 2 giờ để đặt xe."
+        },
+        "insurance": {
+          "question": "Xe máy thuê có bảo hiểm không?",
+          "answer": "Có, tất cả xe đều được bảo hiểm đầy đủ. Ngoài ra chúng tôi cung cấp dịch vụ cứu hộ miễn phí 24/7 trong phạm vi thành phố Nha Trang nếu xe gặp sự cố."
+        },
+        "types": {
+          "question": "Có những loại xe máy nào cho thuê?",
+          "answer": "Chúng tôi có đa dạng loại xe: Xe số (Honda Wave, Yamaha Sirius, Jupiter), xe ga phổ thông (Honda Vision, Air Blade, Lead, Nmax), xe ga cao cấp (PCX, SH Mode, NVX, Vespa)."
+        }
+      }
+    }
+  },
+  "car": {
+    "hero": {
+      "title": "Dịch vụ đưa đón và thuê xe ô tô Nha Trang",
+      "subtitle": "Dịch vụ xe đưa đón sân bay, đi tour du lịch với giá cả hợp lý, xe đời mới, tài xế chuyên nghiệp"
+    },
+    "backToTransportation": "Quay lại trang Di chuyển",
+    "contactSection": {
+      "title": "📞 Liên hệ đặt xe ngay hôm nay",
+      "description": "Hãy liên hệ với chúng tôi qua hotline hoặc mạng xã hội để được tư vấn và đặt dịch vụ xe ô tô tại Nha Trang"
+    },
+    "airportService": {
+      "title": "Dịch vụ đưa đón sân bay Cam Ranh",
+      "guarantee": "Đảm bảo đón đúng giờ - Không ghép khách - Giá trọn gói",
+      "categories": {
+        "car4": {
+          "title": "Xe 4 chỗ",
+          "price": "250.000đ/lượt",
+          "description": "Phù hợp cho 1-4 hành khách"
+        },
+        "car7": {
+          "title": "Xe 7 chỗ",
+          "price": "300.000đ/lượt",
+          "description": "Phù hợp cho 5-7 hành khách"
+        },
+        "car16": {
+          "title": "Xe 16 chỗ",
+          "price": "500.000đ/lượt",
+          "description": "Phù hợp cho 8-16 hành khách"
+        }
+      },
+      "gallery": {
+        "title": "Hình ảnh xe ô tô cho thuê",
+        "note": "* Hover lên ảnh để xem thông tin chi tiết, click để xem ảnh kích thước lớn. Hình ảnh chỉ mang tính chất minh họa."
+      },
+      "notes": {
+        "title": "Lưu ý khi sử dụng dịch vụ:",
+        "items": [
+          "Giá cước cộng thêm 50.000đ cho khu vực xa trung tâm (qua cầu Trần Phú)",
+          "Phụ thu 50.000đ cho chuyến đón sau 20h tối",
+          "Tuyệt đối không ghép khách, đưa đón tận nơi",
+          "Để đặt xe đón tại sân bay, vui lòng liên hệ trước ít nhất 2 giờ"
+        ]
+      }
+    },
+    "tourService": {
+      "title": "Dịch vụ xe du lịch khám phá vùng phụ cận",
+      "description": "Ngoài dịch vụ đưa đón sân bay, chúng tôi còn cung cấp dịch vụ thuê xe ô tô đi du lịch các địa điểm lân cận Nha Trang:",
+      "destinations": {
+        "dalat": {
+          "title": "Nha Trang - Đà Lạt",
+          "description": "Tour tham quan thành phố ngàn hoa, thời gian di chuyển khoảng 3-4 giờ"
+        },
+        "vinhHy": {
+          "title": "Nha Trang - Vĩnh Hy",
+          "description": "Khám phá vịnh đẹp nhất miền Trung, tắm biển trong xanh và ngắm san hô"
+        },
+        "binhBa": {
+          "title": "Nha Trang - Bình Ba - Bình Hưng",
+          "description": "Tour đảo tôm hùm với các bãi biển hoang sơ, tắm biển và ẩm thực hải sản"
+        },
+        "phanRang": {
+          "title": "Nha Trang - Ninh Thuận - Phan Rang",
+          "description": "Tham quan làng chài, vườn nho, tháp Chàm và thưởng thức rượu vang Phan Rang"
+        }
+      },
+      "additionalRoutes": "Ngoài ra chúng tôi còn phục vụ các tuyến:",
+      "routes": [
+        "Nha Trang - Quy Nhơn",
+        "Nha Trang - Phú Yên"
+      ],
+      "commitment": {
+        "title": "Cam kết dịch vụ",
+        "items": [
+          "Uy tín - Chuyên nghiệp",
+          "Xe form mới, sạch sẽ, thơm tho",
+          "Tài xế nhiệt tình, lái xe an toàn"
+        ]
+      }
+    }
+  },
+  "taxi": {
+    "hero": {
+      "title": "Dịch vụ Taxi Nha Trang",
+      "subtitle": "Thông tin chi tiết về các hãng taxi uy tín, giá cước và dịch vụ tại Nha Trang"
+    },
+    "backToTransportation": "Quay lại trang Di chuyển",
+    "intro": {
+      "title": "Taxi tại Nha Trang",
+      "description": "Taxi là phương tiện di chuyển phổ biến và thuận tiện tại Nha Trang. Với nhiều hãng taxi uy tín hoạt động trong khu vực, du khách có thể dễ dàng bắt taxi tại các khu du lịch, khách sạn, nhà hàng và các điểm tham quan.",
+      "warning": "Để tránh bị \"chặt chém\", bạn nên đi các hãng taxi uy tín và yêu cầu tài xế bật đồng hồ tính tiền khi lên xe."
+    },
+    "companies": {
+      "title": "Các hãng taxi uy tín tại Nha Trang",
+      "features": "Đặc điểm nổi bật:",
+      "rating": "Đánh giá",
+      "operatingHours": "Hoạt động",
+      "fare": "Giá",
+      "contact": "Liên hệ"
+    },
+    "types": {
+      "title": "Các loại taxi phổ biến",
+      "car4": {
+        "title": "Taxi 4 chỗ",
+        "capacity": "4 người + hành lý vừa phải",
+        "priceRange": "15.000đ - 17.000đ/km",
+        "bestFor": "Cá nhân, cặp đôi, gia đình nhỏ"
+      },
+      "car7": {
+        "title": "Taxi 7 chỗ",
+        "capacity": "7 người + hành lý nhiều",
+        "priceRange": "17.000đ - 20.000đ/km",
+        "bestFor": "Gia đình lớn, nhóm bạn"
+      },
+      "vip": {
+        "title": "Taxi VIP",
+        "capacity": "4 người + dịch vụ cao cấp",
+        "priceRange": "20.000đ - 25.000đ/km",
+        "bestFor": "Doanh nhân, khách VIP"
+      }
+    },
+    "routes": {
+      "title": "Các tuyến taxi phổ biến và giá cước ước tính",
+      "note": "* Giá cước ước tính dựa trên bảng giá taxi 4 chỗ. Giá thực tế có thể thay đổi tùy thuộc vào hãng taxi, thời điểm, tình trạng giao thông và các yếu tố khác.",
+      "headers": {
+        "route": "Tuyến đường",
+        "distance": "Khoảng cách",
+        "estimatedPrice": "Giá ước tính",
+        "time": "Thời gian"
+      }
+    },
+    "tips": {
+      "title": "Lời khuyên khi đi taxi tại Nha Trang",
+      "items": {
+        "reputableCompanies": "Chỉ đi các hãng taxi uy tín - Ưu tiên các hãng taxi lớn như Mai Linh, Vinasun, Nha Trang Taxi để tránh bị \"chặt chém\".",
+        "useMeter": "Yêu cầu bật đồng hồ - Luôn yêu cầu tài xế bật đồng hồ tính tiền khi lên xe.",
+        "bookByPhone": "Đặt xe qua tổng đài - Nếu có thể, hãy đặt xe qua tổng đài của các hãng taxi để đảm bảo an toàn.",
+        "confirmPrice": "Xác nhận giá trước - Với các tuyến đường dài như từ sân bay về thành phố, hãy xác nhận giá trọn gói trước khi đi.",
+        "keepReceipt": "Giữ hóa đơn - Luôn yêu cầu hóa đơn sau khi trả tiền, nhất là khi cần thanh toán công tác phí."
+      }
+    },
+    "alternatives": {
+      "title": "Phương tiện di chuyển thay thế",
+      "description": "Ngoài taxi, Nha Trang còn có nhiều phương tiện di chuyển thay thế khác:",
+      "moto": {
+        "title": "Thuê xe máy",
+        "description": "Từ 100.000đ/ngày, linh hoạt di chuyển"
+      },
+      "car": {
+        "title": "Thuê xe ô tô",
+        "description": "Thuê xe tự lái hoặc có tài xế"
+      }
+    },
+    "contactSection": {
+      "title": "Cần tư vấn thêm về di chuyển tại Nha Trang?",
+      "description": "Liên hệ với chúng tôi để được tư vấn về các phương tiện di chuyển phù hợp nhất cho chuyến đi của bạn"
+    }
+  },
+  "bus": {
+    "hero": {
+      "title": "Xe Buýt Nha Trang",
+      "subtitle": "Thông tin tuyến đường, lịch trình và bản đồ các tuyến xe buýt công cộng tại Nha Trang"
+    },
+    "backToTransportation": "Quay lại trang Di chuyển",
+    "searchPlaceholder": "Tìm trạm xe buýt...",
+    "searchResults": "Kết quả",
+    "noResults": "Không tìm thấy trạm xe buýt nào",
+    "routes": {
+      "title": "Các tuyến xe buýt",
+      "frequency": "phút/chuyến"
+    },
+    "routeInfo": {
+      "title": "Thông tin tuyến",
+      "routeName": "Tên tuyến:",
+      "operatingHours": "Giờ hoạt động:",
+      "frequency": "Tần suất:",
+      "fare": "Giá vé:",
+      "information": "Thông tin:",
+      "lastUpdated": "Cập nhật:",
+      "stops": "Các trạm dừng:"
+    },
+    "stopInfo": {
+      "title": "Trạm",
+      "description": "Mô tả:",
+      "routesThrough": "Các tuyến đi qua:",
+      "noRoutes": "Không có tuyến nào đi qua trạm này"
+    },
+    "mapLegend": {
+      "title": "Chú thích bản đồ",
+      "startPoint": "Điểm bắt đầu",
+      "endPoint": "Điểm kết thúc",
+      "busStop": "Trạm dừng",
+      "busRoute": "Tuyến xe buýt"
+    },
+    "information": {
+      "title": "Thông tin xe buýt Nha Trang",
+      "fareSection": {
+        "title": "Giá vé",
+        "cityRoute": "Tuyến nội thành: 7.000đ/lượt",
+        "airportRoute": "Tuyến Sân bay Cam Ranh: 50.000đ/lượt",
+        "monthlyPass": "Vé tháng: 200.000đ/tháng",
+        "discount": "Đối tượng ưu tiên: Giảm 50% giá vé cho học sinh, sinh viên, người cao tuổi và người khuyết tật"
+      },
+      "scheduleSection": {
+        "title": "Giờ hoạt động",
+        "cityRoutes": "Tuyến nội thành: 05:00 - 19:00",
+        "airportRoute": "Tuyến Sân bay Cam Ranh: 04:00 - 21:00",
+        "frequency": "Tần suất: 15-30 phút/chuyến tùy tuyến"
+      },
+      "notesSection": {
+        "title": "Lưu ý khi đi xe buýt",
+        "cashOnly": "Chuẩn bị sẵn tiền mặt để mua vé. Một số tuyến chưa hỗ trợ thanh toán bằng thẻ.",
+        "checkSchedule": "Kiểm tra lịch trình xe buýt trước khi di chuyển, một số tuyến có thể thay đổi vào cuối tuần."
+      },
+      "contactSection": {
+        "title": "Liên hệ",
+        "busCenter": "Trung tâm Điều hành xe buýt Nha Trang: 0258.3810 810",
+        "hotline": "Tổng đài hỗ trợ hành khách: 1900 8110"
+      }
+    },
+    "dataUpdate": {
+      "title": "Thông tin cập nhật dữ liệu",
+      "description": "Dữ liệu tuyến xe buýt được cập nhật thường xuyên để đảm bảo tính chính xác",
+      "lastUpdate": "Cập nhật gần nhất",
+      "stats": {
+        "routes": "Tuyến xe buýt",
+        "stops": "Trạm xe buýt",
+        "support": "Hỗ trợ thông tin"
+      }
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp về xe buýt Nha Trang",
+      "questions": {
+        "fare": {
+          "question": "Giá vé xe buýt Nha Trang là bao nhiêu?",
+          "answer": "Giá vé xe buýt nội thành Nha Trang là 7.000đ/lượt, xe buýt sân bay Cam Ranh là 50.000đ/lượt, vé tháng là 200.000đ. Học sinh, sinh viên, người cao tuổi và người khuyết tật được giảm 50% giá vé."
+        },
+        "schedule": {
+          "question": "Xe buýt Nha Trang hoạt động từ mấy giờ đến mấy giờ?",
+          "answer": "Xe buýt nội thành hoạt động từ 05:00 - 19:00 hàng ngày. Tuyến sân bay Cam Ranh hoạt động từ 04:00 - 21:00. Tần suất xe buýt là 15-30 phút/chuyến tùy theo tuyến."
+        },
+        "routes": {
+          "question": "Có bao nhiêu tuyến xe buýt tại Nha Trang?",
+          "answer": "Hiện tại Nha Trang có 4 tuyến xe buýt chính: Tuyến 23 (Ana Marina - Vinpearl), Tuyến 18 (Bình Hưng - Diên Khánh), Tuyến 9 (Bến xe - Sân bay Cam Ranh), và Tuyến 4 (Chợ Đầm - Bến xe Phía Nam)."
+        },
+        "airport": {
+          "question": "Làm thế nào để đi từ sân bay Cam Ranh về trung tâm Nha Trang bằng xe buýt?",
+          "answer": "Bạn có thể đi tuyến số 9 từ sân bay Cam Ranh về bến xe phía Nam Nha Trang. Giá vé 50.000đ/lượt, thời gian di chuyển khoảng 45-60 phút, xe chạy từ 04:00 - 21:00 với tần suất 30 phút/chuyến."
+        },
+        "payment": {
+          "question": "Xe buýt Nha Trang có chấp nhận thanh toán bằng thẻ không?",
+          "answer": "Hiện tại hầu hết các tuyến xe buýt Nha Trang chỉ chấp nhận thanh toán bằng tiền mặt. Bạn nên chuẩn bị sẵn tiền lẻ để mua vé. Một số tuyến đang thí điểm thanh toán không tiền mặt."
+        }
+      }
+    }
+  },
+  "flights": {
+    "hero": {
+      "title": "Chuyến bay đến Cam Ranh (CXR)",
+      "subtitle": "Kiểm tra thông tin thời gian, trạng thái và chi tiết các chuyến bay sắp đến sân bay Cam Ranh - cửa ngõ hàng không của thành phố biển Nha Trang"
+    },
+    "airportInfo": {
+      "title": "Thông tin sân bay Cam Ranh (CXR)",
+      "intro": {
+        "title": "Giới thiệu",
+        "description1": "Sân bay quốc tế Cam Ranh nằm cách trung tâm thành phố Nha Trang khoảng 30km về phía nam. Đây là cửa ngõ hàng không chính cho du khách đến Nha Trang và các khu vực lân cận thuộc tỉnh Khánh Hòa.",
+        "description2": "Sân bay phục vụ cả các chuyến bay nội địa và quốc tế, với nhiều hãng hàng không như Vietnam Airlines, Bamboo Airways, VietJet Air, Pacific Airlines và nhiều hãng quốc tế khác."
+      },
+      "contact": {
+        "title": "Thông tin liên hệ",
+        "address": "Địa chỉ: Nguyễn Tất Thành, Cam Hải Đông, Cam Lâm, Khánh Hòa",
+        "phone": "Điện thoại: +84 258 3983 375",
+        "email": "Email: info@chra.vn",
+        "website": "Website:"
+      },
+      "transportation": {
+        "title": "Di chuyển từ sân bay",
+        "taxi": "Taxi: Có sẵn bên ngoài nhà ga, thời gian di chuyển khoảng 40-45 phút đến trung tâm Nha Trang.",
+        "bus": "Xe buýt: Có tuyến xe buýt số 18 từ sân bay đến trung tâm thành phố.",
+        "shuttle": "Xe đưa đón: Nhiều khách sạn cung cấp dịch vụ đưa đón sân bay, hãy kiểm tra khi đặt phòng.",
+        "rental": "Thuê xe: Có các công ty cho thuê xe tại sân bay."
+      },
+      "facilities": {
+        "title": "Tiện ích tại sân bay",
+        "items": [
+          "Cửa hàng miễn thuế",
+          "Nhà hàng và quán cà phê",
+          "Đổi tiền và ATM",
+          "Wi-Fi miễn phí",
+          "Dịch vụ hỗ trợ đặc biệt cho hành khách",
+          "Dịch vụ chăm sóc trẻ em",
+          "Phòng chờ VIP"
+        ]
+      }
+    },
+    "rentalServices": {
+      "title": "Dịch vụ thuê xe tại Nha Trang",
+      "moto": {
+        "title": "Dịch vụ thuê xe máy",
+        "description": "Khám phá Nha Trang một cách linh hoạt bằng xe máy. Chúng tôi cung cấp dịch vụ thuê xe máy uy tín với:",
+        "features": [
+          "• Đa dạng loại xe: từ xe số đến xe tay ga cao cấp",
+          "• Giá thuê từ 100.000đ - 180.000đ/ngày",
+          "• Thủ tục đơn giản, giao xe tận nơi",
+          "• Bảo hiểm và hỗ trợ 24/7"
+        ],
+        "link": "Xem dịch vụ thuê xe máy"
+      },
+      "car": {
+        "title": "Dịch vụ thuê xe ô tô",
+        "description": "Di chuyển thoải mái với gia đình hoặc nhóm bạn bằng dịch vụ thuê xe ô tô chất lượng cao:",
+        "features": [
+          "• Đa dạng dòng xe từ 4-16 chỗ",
+          "• Lựa chọn tự lái hoặc có tài xế",
+          "• Dịch vụ đón/tiễn sân bay Cam Ranh",
+          "• Đặt xe trực tuyến hoặc qua điện thoại"
+        ],
+        "link": "Xem dịch vụ thuê xe ô tô"
+      }
+    }
+  },
+  "rideHailing": {
+    "hero": {
+      "title": "Xe ôm và Xe ôm công nghệ tại Nha Trang",
+      "subtitle": "So sánh xe ôm truyền thống và xe ôm công nghệ (Grab, Maxim) - Hướng dẫn sử dụng và giá cước"
+    },
+    "backToTransportation": "Quay lại trang Di chuyển",
+    "intro": {
+      "title": "Xe ôm tại Nha Trang",
+      "description": "Xe ôm là phương tiện di chuyển phổ biến và nhanh chóng tại Nha Trang, đặc biệt phù hợp cho những quãng đường ngắn trong thành phố. Hiện tại có hai loại chính: xe ôm truyền thống và xe ôm công nghệ qua ứng dụng."
+    },
+    "types": {
+      "title": "Các loại xe ôm tại Nha Trang",
+      "traditional": {
+        "title": "Xe ôm truyền thống",
+        "description": "Xe ôm truyền thống thường tập trung tại các điểm cố định như chợ, bến xe, trước cổng khách sạn, nhà hàng.",
+        "priceRange": "15.000 - 25.000đ/km",
+        "advantages": [
+          "Có sẵn tại nhiều điểm trong thành phố",
+          "Không cần ứng dụng, có thể đặt trực tiếp",
+          "Tài xế am hiểu địa phương",
+          "Có thể thương lượng giá cho quãng đường dài"
+        ],
+        "disadvantages": [
+          "Giá cước có thể không cố định",
+          "Cần thương lượng giá trước khi đi",
+          "Chất lượng xe và dịch vụ không đồng đều",
+          "Khó kiểm soát an toàn"
+        ]
+      },
+      "app": {
+        "title": "Xe ôm công nghệ (Grab, Maxim)",
+        "description": "Xe ôm công nghệ hoạt động thông qua ứng dụng di động, cung cấp dịch vụ tiện lợi và minh bạch.",
+        "priceRange": "12.000 - 18.000đ/km",
+        "advantages": [
+          "Giá cước minh bạch, tính sẵn trên app",
+          "Theo dõi được hành trình di chuyển",
+          "Thanh toán tiện lợi (tiền mặt hoặc thẻ)",
+          "Đánh giá tài xế và chất lượng dịch vụ",
+          "Hỗ trợ khách hàng 24/7"
+        ],
+        "disadvantages": [
+          "Cần có smartphone và kết nối internet",
+          "Thời gian chờ có thể lâu vào giờ cao điểm",
+          "Phụ thuộc vào số lượng tài xế online",
+          "Giá có thể tăng vào giờ cao điểm"
+        ]
+      }
+    },
+    "apps": {
+      "title": "Các ứng dụng xe ôm phổ biến",
+      "grab": {
+        "name": "Grab",
+        "description": "Ứng dụng xe ôm công nghệ hàng đầu Đông Nam Á, có mặt tại Nha Trang với dịch vụ GrabBike.",
+        "features": [
+          "Giao diện thân thiện, dễ sử dụng",
+          "Nhiều hình thức thanh toán",
+          "Chương trình khuyến mãi thường xuyên",
+          "Dịch vụ đa dạng: GrabBike, GrabCar, GrabFood"
+        ]
+      },
+      "maxim": {
+        "name": "Maxim",
+        "description": "Ứng dụng xe ôm công nghệ với giá cước cạnh tranh, ngày càng phổ biến tại Nha Trang.",
+        "features": [
+          "Giá cước thường rẻ hơn Grab",
+          "Giao diện đơn giản",
+          "Hỗ trợ thanh toán tiền mặt",
+          "Thời gian chờ xe thường ngắn"
+        ]
+      }
+    },
+    "comparison": {
+      "title": "So sánh xe ôm truyền thống và xe ôm công nghệ",
+      "headers": {
+        "criteria": "Tiêu chí",
+        "traditional": "Xe ôm truyền thống",
+        "app": "Xe ôm công nghệ"
+      },
+      "rows": {
+        "price": {
+          "criteria": "Giá cước",
+          "traditional": "15.000-25.000đ/km (có thể thương lượng)",
+          "app": "12.000-18.000đ/km (cố định)"
+        },
+        "convenience": {
+          "criteria": "Tiện lợi",
+          "traditional": "Cần tìm điểm tập trung",
+          "app": "Đặt xe mọi lúc mọi nơi"
+        },
+        "safety": {
+          "criteria": "An toàn",
+          "traditional": "Khó kiểm soát",
+          "app": "Theo dõi hành trình, đánh giá tài xế"
+        },
+        "availability": {
+          "criteria": "Sẵn có",
+          "traditional": "Tại các điểm cố định",
+          "app": "Phụ thuộc số tài xế online"
+        },
+        "payment": {
+          "criteria": "Thanh toán",
+          "traditional": "Chỉ tiền mặt",
+          "app": "Tiền mặt hoặc thẻ"
+        }
+      }
+    },
+    "tips": {
+      "title": "Lời khuyên khi sử dụng xe ôm",
+      "items": [
+        "Luôn đội mũ bảo hiểm khi đi xe ôm",
+        "Xác nhận điểm đến và giá cước trước khi khởi hành",
+        "Với xe ôm truyền thống, nên thương lượng giá trước",
+        "Với xe ôm công nghệ, kiểm tra thông tin tài xế và biển số xe",
+        "Không mang theo đồ vật quá cồng kềnh",
+        "Chia sẻ thông tin chuyến đi với người thân khi đi xa",
+        "Đánh giá tài xế sau chuyến đi để cải thiện chất lượng dịch vụ"
+      ]
+    },
+    "routes": {
+      "title": "Các tuyến xe ôm phổ biến và giá ước tính",
+      "note": "* Giá cước có thể thay đổi tùy theo thời điểm, ứng dụng và tình trạng giao thông."
+    },
+    "alternatives": {
+      "title": "Các phương tiện thay thế",
+      "description": "Ngoài xe ôm, bạn có thể cân nhắc các phương tiện khác:"
+    },
+    "contactSection": {
+      "title": "Cần hỗ trợ về di chuyển tại Nha Trang?",
+      "description": "Liên hệ với chúng tôi để được tư vấn về các phương tiện di chuyển phù hợp nhất cho chuyến đi của bạn"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Liên hệ với chúng tôi",
+      "subtitle": "Bạn có thắc mắc hoặc cần hỗ trợ? Liên hệ ngay với Nha Trang Insight để được phản hồi trong thời gian sớm nhất"
+    },
+    "contactInfo": {
+      "title": "Thông tin liên hệ",
+      "phone": "Điện thoại",
+      "email": "Email",
+      "address": "Địa chỉ"
+    },
+    "socialMedia": {
+      "title": "Kết nối với chúng tôi"
+    },
+    "map": {
+      "title": "Bản đồ"
+    },
+    "form": {
+      "title": "Gửi thông tin liên hệ",
+      "successMessage": "Cảm ơn bạn đã gửi thông tin! Chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.",
+      "fields": {
+        "name": {
+          "label": "Họ và tên *",
+          "placeholder": "Nhập họ tên của bạn"
+        },
+        "email": {
+          "label": "Email *",
+          "placeholder": "Nhập địa chỉ email"
+        },
+        "phone": {
+          "label": "Số điện thoại",
+          "placeholder": "Nhập số điện thoại của bạn"
+        },
+        "subject": {
+          "label": "Chủ đề *",
+          "placeholder": "Chọn chủ đề",
+          "options": {
+            "tourism": "Thông tin du lịch",
+            "rental": "Dịch vụ thuê xe",
+            "tour": "Đặt tour",
+            "accommodation": "Hỗ trợ đặt phòng",
+            "other": "Khác"
+          }
+        },
+        "message": {
+          "label": "Nội dung tin nhắn *",
+          "placeholder": "Hãy mô tả chi tiết yêu cầu của bạn..."
+        }
+      },
+      "submitButton": "Gửi tin nhắn",
+      "submittingButton": "Đang gửi..."
+    },
+    "payment": {
+      "title": "Thông tin thanh toán",
+      "bankInfo": {
+        "title": "Thông tin chuyển khoản",
+        "bank": "Ngân hàng:",
+        "branch": "Chi nhánh:",
+        "accountNumber": "Số tài khoản:",
+        "accountHolder": "Chủ tài khoản:",
+        "transferContent": "Nội dung CK:"
+      },
+      "qrCode": {
+        "title": "Quét mã QR để thanh toán",
+        "description": "Quét mã QR bằng ứng dụng ngân hàng hoặc ví điện tử"
+      },
+      "note": "Vui lòng ghi rõ tên và dịch vụ bạn đặt trong nội dung chuyển khoản để chúng tôi có thể xác nhận thanh toán của bạn."
     }
   }
 } 

@@ -124,7 +124,7 @@ export default function FlightsPage() {
                   <li>• Đặt xe trực tuyến hoặc qua điện thoại</li>
                 </ul>
                 <Link 
-                  href="/oto" 
+                  href="/car" 
                   className="inline-flex items-center text-green-600 font-medium hover:underline"
                 >
                   Xem dịch vụ thuê xe ô tô <FaArrowRight className="ml-2 text-sm" />

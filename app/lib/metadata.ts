@@ -626,7 +626,7 @@ export const OTO_PAGE_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': ['WebPage', 'Service'],
   name: `Thuê Xe Ô Tô Nha Trang - Đưa Đón Sân Bay | ${SITE_NAME}`,
-  url: `${SITE_URL}/oto`,
+  url: `${SITE_URL}/car`,
   description: 'Dịch vụ thuê xe ô tô và đưa đón sân bay Cam Ranh Nha Trang. Xe 4-16 chỗ, tài xế chuyên nghiệp, giá từ 250.000đ. Không ghép khách, đúng giờ.',
   provider: {
     '@type': 'LocalBusiness',

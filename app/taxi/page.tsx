@@ -426,7 +426,7 @@ export default function TaxiPage() {
                     </div>
                   </Link>
                   
-                  <Link href="/oto" className="group">
+                  <Link href="/car" className="group">
                     <div className="border border-gray-200 rounded-lg p-4 hover:border-green-500 transition">
                       <div className="flex items-center">
                         <div className="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3">

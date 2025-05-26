@@ -124,7 +124,7 @@ export default function Home() {
                 <p className="text-gray-600 mb-4">
                   {t.homepage?.sections?.car?.description || 'Dịch vụ thuê xe ô tô tự lái hoặc có tài, đa dạng dòng xe từ 4-16 chỗ, giá cả hợp lý, thủ tục đơn giản, phục vụ đưa đón sân bay.'}
                 </p>
-                <Link href="/oto" className="text-green-600 font-medium hover:text-green-700">
+                <Link href="/car" className="text-green-600 font-medium hover:text-green-700">
                   {t.homepage?.sections?.car?.link || 'Xem dịch vụ thuê xe ô tô →'}
                 </Link>
               </div>

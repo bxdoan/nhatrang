@@ -23,13 +23,13 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${SITE_URL}/transportation/rent/moto`,
+      url: `${SITE_URL}/moto`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
-      url: `${SITE_URL}/transportation/rent/oto`,
+      url: `${SITE_URL}/car`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.7,
