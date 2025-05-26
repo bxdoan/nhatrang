@@ -696,6 +696,21 @@
       "title": "Chuyến bay đến Cam Ranh (CXR)",
       "subtitle": "Kiểm tra thông tin thời gian, trạng thái và chi tiết các chuyến bay sắp đến sân bay Cam Ranh - cửa ngõ hàng không của thành phố biển Nha Trang"
     },
+    "flightCard": {
+      "departureFrom": "Khởi hành từ",
+      "arrivalTo": "Đến",
+      "scheduled": "Lịch",
+      "actual": "Thực tế",
+      "delayed": "Trễ",
+      "early": "Sớm",
+      "minutes": "phút",
+      "terminal": "Nhà ga",
+      "gate": "Cổng",
+      "baggage": "Băng chuyền hành lý",
+      "flightNumber": "Chuyến bay",
+      "date": "Ngày",
+      "operatedBy": "Được điều hành bởi"
+    },
     "airportInfo": {
       "title": "Thông tin sân bay Cam Ranh (CXR)",
       "intro": {

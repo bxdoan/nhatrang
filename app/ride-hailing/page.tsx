@@ -32,6 +32,7 @@ import {
   trackTelegramClick 
 } from '../lib/analytics';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useLocalizedLink } from '../hooks/useLocalizedLink';
 import ContactSection from '../components/ContactSection';
 
 // Định nghĩa kiểu dữ liệu cho ứng dụng xe ôm
@@ -101,6 +102,7 @@ const FAQ_SCHEMA = {
 
 export default function RideHailingPage() {
   const { t, isLoading } = useLanguage();
+  const { createLink } = useLocalizedLink();
   const phoneNumber = CONTACT_INFO.phoneNumber;
   
   if (isLoading) {
@@ -181,7 +183,7 @@ export default function RideHailingPage() {
       {/* Back to main */}
       <div className="bg-gray-50 py-3">
         <div className="container mx-auto px-4">
-          <Link href="/transportation" className="inline-flex items-center text-orange-600 hover:text-orange-800">
+          <Link href={createLink('/transportation')} className="inline-flex items-center text-orange-600 hover:text-orange-800">
             <FaChevronLeft className="mr-1 text-sm" /> {t.rideHailing?.backToTransportation || 'Quay lại trang Di chuyển'}
           </Link>
         </div>

@@ -4,10 +4,12 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { FaPhone, FaArrowUp, FaArrowDown, FaTelegram, FaComment, FaTimes, FaSlack } from 'react-icons/fa';
 import { CONTACT_INFO } from '../lib/contact-config';
+import { useLocalizedLink } from '../hooks/useLocalizedLink';
 
 type ButtonType = 'contact' | 'top' | 'bottom';
 
 export default function FloatingButtons() {
+  const { createLink } = useLocalizedLink();
   const [showScrollButtons, setShowScrollButtons] = useState(false);
   const [showTooltip, setShowTooltip] = useState({ contact: false, top: false, bottom: false });
   const [showContactMenu, setShowContactMenu] = useState(false);
@@ -126,7 +128,7 @@ export default function FloatingButtons() {
               <span className="text-sm">Nhắn tin Telegram</span>
             </a>
             
-            <Link href="/contact" className="flex items-center px-3 py-2.5 hover:bg-gray-50 text-gray-700 border-t border-gray-100">
+            <Link href={createLink('/contact')} className="flex items-center px-3 py-2.5 hover:bg-gray-50 text-gray-700 border-t border-gray-100">
               <FaComment className="mr-2 text-blue-600" />
               <span className="text-sm">Trang liên hệ</span>
             </Link>

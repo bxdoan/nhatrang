@@ -6,10 +6,12 @@ import { CONTACT_INFO } from '../lib/contact-config';
 import Script from 'next/script';
 import { TRANSPORTATION_PAGE_SCHEMA } from '../lib/metadata';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useLocalizedLink } from '../hooks/useLocalizedLink';
 import ContactSection from '../components/ContactSection';
 
 export default function TransportationPage() {
   const { t, isLoading } = useLanguage();
+  const { createLink } = useLocalizedLink();
   
   if (isLoading) {
     return (
@@ -63,7 +65,7 @@ export default function TransportationPage() {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Link href="/moto" className="block group"> 
+                <Link href={createLink('/moto')} className="block group"> 
                   <div className="bg-blue-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
                     <div className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors">
                       <FaMotorcycle className="text-2xl" />
@@ -88,7 +90,7 @@ export default function TransportationPage() {
                     </span>
                   </div>
                 </Link>
-                <Link href="/car" className="block group">                 
+                <Link href={createLink('/car')} className="block group">                 
                   <div className="bg-green-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
                     <div className="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-green-600 transition-colors">
                       <FaCar className="text-2xl" />
@@ -113,7 +115,7 @@ export default function TransportationPage() {
                     </span>
                   </div>
                 </Link>
-                <Link href="/taxi" className="block group">                 
+                <Link href={createLink('/taxi')} className="block group">                 
                   <div className="bg-yellow-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
                     <div className="w-14 h-14 bg-yellow-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-yellow-600 transition-colors">
                       <FaTaxi className="text-2xl" />
@@ -138,7 +140,7 @@ export default function TransportationPage() {
                     </span>
                   </div>
                 </Link>
-                <Link href="/bus" className="block group">                 
+                <Link href={createLink('/bus')} className="block group">                 
                   <div className="bg-blue-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
                     <div className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors">
                       <FaBus className="text-2xl" />
@@ -183,7 +185,7 @@ export default function TransportationPage() {
                     ))}
                   </ul>
                 </div>
-                <Link href="/ride-hailing" className="block group">
+                <Link href={createLink('/ride-hailing')} className="block group">
                   <div className="bg-purple-50 rounded-xl p-6 hover:shadow-md transition-shadow h-full">
                     <div className="w-14 h-14 bg-purple-500 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-purple-600 transition-colors">
                       <FaMotorcycle className="text-2xl" />
@@ -263,7 +265,7 @@ export default function TransportationPage() {
                     ))}
                   </ul>
                   <div className="mt-4">
-                    <Link href="/car" className="text-blue-600 font-medium hover:underline flex items-center">
+                    <Link href={createLink('/car')} className="text-blue-600 font-medium hover:underline flex items-center">
                       <FaPhone className="mr-2" /> {t.transportation?.airport?.transferLink || 'Xem dịch vụ xe đưa đón sân bay'}
                     </Link>
                   </div>

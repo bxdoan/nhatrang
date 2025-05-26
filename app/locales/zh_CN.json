@@ -672,6 +672,21 @@
       "title": "金兰机场 (CXR) 到达航班",
       "subtitle": "查看到达金兰机场的航班时间、状态和详细信息 - 芽庄海滨城市的航空门户"
     },
+    "flightCard": {
+      "departureFrom": "出发地",
+      "delayed": "延迟",
+      "early": "早到",
+      "minutes": "分钟",
+      "scheduled": "计划",
+      "actual": "实际",
+      "arrivalTo": "到达",
+      "terminal": "航站楼",
+      "gate": "登机口",
+      "baggage": "行李",
+      "flightCode": "航班号",
+      "date": "日期",
+      "operatedBy": "运营"
+    },
     "airportInfo": {
       "title": "金兰机场 (CXR) 信息",
       "intro": {

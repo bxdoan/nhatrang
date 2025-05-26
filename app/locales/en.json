@@ -696,6 +696,20 @@
       "title": "Flights to Cam Ranh (CXR)",
       "subtitle": "Check flight times, status and details of upcoming flights to Cam Ranh Airport - the aviation gateway to the coastal city of Nha Trang"
     },
+    "flightCard": {
+      "departureFrom": "Departure from",
+      "delayed": "Delayed",
+      "early": "Early",
+      "minutes": "minutes",
+      "scheduled": "Scheduled",
+      "actual": "Actual",
+      "arrivalTo": "Arrival to",
+      "terminal": "Terminal",
+      "gate": "Gate",
+      "baggage": "Baggage",
+      "flightCode": "Flight code",
+      "date": "Date"
+    },
     "airportInfo": {
       "title": "Cam Ranh Airport (CXR) Information",
       "intro": {

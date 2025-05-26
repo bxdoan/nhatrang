@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useLocalizedLink } from '../hooks/useLocalizedLink';
 import { FaTaxi, FaChevronLeft, FaPhone, FaMapMarkedAlt, FaInfoCircle, FaMoneyBillWave, FaStar, FaClock, FaRoute, FaCarSide, FaCheckCircle, FaMotorcycle, FaCar } from 'react-icons/fa';
 import { CONTACT_INFO } from '../lib/contact-config';
 import Script from 'next/script';
@@ -9,6 +10,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 export default function TaxiPage() {
   const { t, isLoading } = useLanguage();
+  const { createLink } = useLocalizedLink();
   const phoneNumber = CONTACT_INFO.phoneNumber;
   
   if (isLoading) {
@@ -185,7 +187,7 @@ export default function TaxiPage() {
       {/* Back to main */}
       <div className="bg-gray-50 py-3">
         <div className="container mx-auto px-4">
-          <Link href="/transportation" className="inline-flex items-center text-yellow-600 hover:text-yellow-800">
+          <Link href={createLink('/transportation')} className="inline-flex items-center text-yellow-600 hover:text-yellow-800">
             <FaChevronLeft className="mr-1 text-sm" /> {t.taxi?.backToTransportation || 'Quay lại trang Di chuyển'}
           </Link>
         </div>
@@ -455,7 +457,7 @@ export default function TaxiPage() {
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                  <Link href="/moto" className="group">
+                  <Link href={createLink('/moto')} className="group">
                     <div className="border border-gray-200 rounded-lg p-4 hover:border-blue-500 transition">
                       <div className="flex items-center">
                         <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-3">
@@ -469,7 +471,7 @@ export default function TaxiPage() {
                     </div>
                   </Link>
                   
-                  <Link href="/car" className="group">
+                                      <Link href={createLink('/car')} className="group">
                     <div className="border border-gray-200 rounded-lg p-4 hover:border-green-500 transition">
                       <div className="flex items-center">
                         <div className="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3">

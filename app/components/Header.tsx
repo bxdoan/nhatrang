@@ -6,10 +6,12 @@ import { FaPlane, FaBus, FaUmbrellaBeach, FaHistory, FaHotel, FaUtensils, FaComm
 import { useState, useRef, useEffect } from 'react';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useLocalizedLink } from '../hooks/useLocalizedLink';
 
 export default function Header() {
   const pathname = usePathname();
   const { t } = useLanguage();
+  const { createLink } = useLocalizedLink();
   const [isTransportDropdownOpen, setIsTransportDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   
@@ -41,37 +43,37 @@ export default function Header() {
   // Danh sách các trang con của transportation
   const transportationPages = [
     {
-      href: '/transportation',
+      href: createLink('/transportation'),
       icon: FaBus,
       title: t.header?.transportation?.overview || 'Tổng quan',
       description: t.header?.transportation?.overviewDesc || 'Tất cả phương tiện'
     },
     {
-      href: '/car',
+      href: createLink('/car'),
       icon: FaCar,
       title: t.header?.transportation?.car || 'Xe ô tô',
       description: t.header?.transportation?.carDesc || 'Thuê xe & đưa đón'
     },
     {
-      href: '/moto',
+      href: createLink('/moto'),
       icon: FaMotorcycle,
       title: t.header?.transportation?.moto || 'Xe máy',
       description: t.header?.transportation?.motoDesc || 'Thuê xe máy'
     },
     {
-      href: '/bus',
+      href: createLink('/bus'),
       icon: FaBus,
       title: t.header?.transportation?.bus || 'Xe buýt',
       description: t.header?.transportation?.busDesc || 'Tuyến & lịch trình'
     },
     {
-      href: '/taxi',
+      href: createLink('/taxi'),
       icon: FaTaxi,
       title: t.header?.transportation?.taxi || 'Taxi',
       description: t.header?.transportation?.taxiDesc || 'Các hãng taxi'
     },
     {
-      href: '/ride-hailing',
+      href: createLink('/ride-hailing'),
       icon: FaMotorcycle,
       title: t.header?.transportation?.rideHailing || 'Xe ôm',
       description: t.header?.transportation?.rideHailingDesc || 'Grab, Maxim'
@@ -89,7 +91,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0 flex items-center">
-            <Link href="/" className="flex items-center">
+            <Link href={createLink('/')} className="flex items-center">
               <img 
                 src="/images/logo/nti2.png" 
                 alt="Nha Trang Insight Logo" 
@@ -105,7 +107,7 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <nav className="flex flex-wrap gap-2 md:gap-5 justify-center">
             <Link 
-              href="/" 
+              href={createLink('/')} 
               className={`group flex items-center text-sm px-3 py-2 rounded-full transition-all ${pathname === '/' ? 'bg-white text-blue-600 font-medium' : 'text-white hover:bg-blue-400'}`}
             >
               <FaUmbrellaBeach className="mr-1.5 group-hover:animate-pulse" /> 
@@ -113,7 +115,7 @@ export default function Header() {
             </Link>
             
             <Link 
-              href="/flights" 
+              href={createLink('/flights')} 
               className={`group flex items-center text-sm px-3 py-2 rounded-full transition-all ${pathname === '/flights' ? 'bg-white text-blue-600 font-medium' : 'text-white hover:bg-blue-400'}`}
             >
               <FaPlane className="mr-1.5 group-hover:animate-pulse" /> 
@@ -161,8 +163,8 @@ export default function Header() {
               )}
             </div>
             
-            {/* <Link 
-              href="/accommodations" 
+            {/*             <Link 
+              href={createLink('/accommodations')} 
               className={`group flex items-center text-sm px-3 py-2 rounded-full transition-all ${pathname === '/accommodations' ? 'bg-white text-blue-600 font-medium' : 'text-white hover:bg-blue-400'}`}
             >
               <FaHotel className="mr-1.5 group-hover:animate-pulse" /> 
@@ -170,7 +172,7 @@ export default function Header() {
             </Link>
             
             <Link 
-              href="/food" 
+              href={createLink('/food')} 
               className={`group flex items-center text-sm px-3 py-2 rounded-full transition-all ${pathname === '/food' ? 'bg-white text-blue-600 font-medium' : 'text-white hover:bg-blue-400'}`}
             >
               <FaUtensils className="mr-1.5 group-hover:animate-pulse" /> 
@@ -178,7 +180,7 @@ export default function Header() {
             </Link> */}
             
             <Link 
-              href="/contact" 
+              href={createLink('/contact')} 
               className={`group flex items-center text-sm px-3 py-2 rounded-full transition-all ${pathname === '/contact' ? 'bg-white text-blue-600 font-medium' : 'text-white hover:bg-blue-400'}`}
             >
               <FaComments className="mr-1.5 group-hover:animate-pulse" /> 

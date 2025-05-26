@@ -673,6 +673,21 @@
       "title": "깜란 공항 (CXR) 도착 항공편",
       "subtitle": "깜란 공항 도착 예정 항공편의 시간, 상태, 세부 정보를 확인하세요 - 나트랑 해변 도시의 항공 관문"
     },
+    "flightCard": {
+      "departureFrom": "출발",
+      "delayed": "지연",
+      "early": "조금 일찍",
+      "minutes": "분",
+      "scheduled": "예정",
+      "actual": "실제",
+      "arrivalTo": "도착",
+      "terminal": "터미널",
+      "gate": "게이트",
+      "baggage": "짐",
+      "flightCode": "항공편 번호",
+      "date": "날짜",
+      "operatedBy": "운영"
+    },
     "airportInfo": {
       "title": "깜란 공항 (CXR) 정보",
       "intro": {

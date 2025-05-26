@@ -7,6 +7,7 @@ import { useState } from 'react';
 import Script from 'next/script';
 import { MOTO_PAGE_SCHEMA } from '../lib/metadata';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useLocalizedLink } from '../hooks/useLocalizedLink';
 import ContactSection from '../components/ContactSection';
 
 // Định nghĩa kiểu dữ liệu cho đối tượng xe máy
@@ -68,6 +69,7 @@ const FAQ_SCHEMA = {
 
 export default function MotorbikeRentalPage() {
   const { t, isLoading } = useLanguage();
+  const { createLink } = useLocalizedLink();
   const phoneNumber = CONTACT_INFO.phoneNumber;
   const [showImagePopup, setShowImagePopup] = useState(false);
   const [currentImage, setCurrentImage] = useState({ url: '', name: '', price: '' });
@@ -213,7 +215,7 @@ export default function MotorbikeRentalPage() {
       {/* Back to main */}
       <div className="bg-gray-50 py-3">
         <div className="container mx-auto px-4">
-          <Link href="/transportation" className="inline-flex items-center text-blue-600 hover:text-blue-800">
+          <Link href={createLink('/transportation')} className="inline-flex items-center text-blue-600 hover:text-blue-800">
             <FaChevronLeft className="mr-1 text-sm" /> {t.moto?.backToTransportation || 'Quay lại trang Di chuyển'}
           </Link>
         </div>

@@ -8,6 +8,7 @@ import busStopsData from '../data/busStops.json';
 import busRoutesData from '../data/busRoutes.json';
 import { BUS_PAGE_SCHEMA } from '../lib/metadata';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useLocalizedLink } from '../hooks/useLocalizedLink';
 
 // Định nghĩa type cho Leaflet để TypeScript không báo lỗi
 declare global {
@@ -89,6 +90,7 @@ const FAQ_SCHEMA = {
 
 export default function BusPage() {
   const { t, isLoading } = useLanguage();
+  const { createLink } = useLocalizedLink();
   const mapRef = useRef<any>(null);
   const leafletMapRef = useRef<any>(null);
   const [activeRoute, setActiveRoute] = useState<string | null>(null);
@@ -288,7 +290,7 @@ export default function BusPage() {
       {/* Back to main */}
       <div className="bg-gray-50 py-3">
         <div className="container mx-auto px-4">
-          <Link href="/transportation" className="inline-flex items-center text-blue-600 hover:text-blue-800">
+          <Link href={createLink('/transportation')} className="inline-flex items-center text-blue-600 hover:text-blue-800">
             <FaChevronLeft className="mr-1 text-sm" /> {t.bus?.backToTransportation || 'Quay lại trang Di chuyển'}
           </Link>
         </div>

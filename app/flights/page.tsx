@@ -4,9 +4,11 @@ import { FaPlane, FaMotorcycle, FaCar, FaArrowRight } from 'react-icons/fa';
 import FlightSection from '../components/FlightSection';
 import Link from 'next/link';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useLocalizedLink } from '../hooks/useLocalizedLink';
 
 export default function FlightsPage() {
   const { t, isLoading } = useLanguage();
+  const { createLink } = useLocalizedLink();
   
   if (isLoading) {
     return (
@@ -57,20 +59,20 @@ export default function FlightsPage() {
               <div className="bg-gray-50 rounded-lg p-6">
                 <h3 className="text-lg font-semibold mb-3">{t.flights?.airportInfo?.contact?.title || 'Thông tin liên hệ'}</h3>
                 <ul className="space-y-2 text-gray-700">
-                  <li><span className="font-medium">{t.flights?.airportInfo?.contact?.address || 'Địa chỉ'}:</span> Nguyễn Tất Thành, Cam Hải Đông, Cam Lâm, Khánh Hòa</li>
-                  <li><span className="font-medium">{t.flights?.airportInfo?.contact?.phone || 'Điện thoại'}:</span> +84 258 3983 375</li>
-                  <li><span className="font-medium">{t.flights?.airportInfo?.contact?.email || 'Email'}:</span> info@chra.vn</li>
-                  <li><span className="font-medium">{t.flights?.airportInfo?.contact?.website || 'Website'}:</span> <a href="http://chra.vn" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">http://chra.vn</a></li>
+                  <li><span className="font-medium">{t.flights?.airportInfo?.contact?.address || 'Địa chỉ'}</span></li>
+                  <li><span className="font-medium">{t.flights?.airportInfo?.contact?.phone || 'Điện thoại'}</span></li>
+                  <li><span className="font-medium">{t.flights?.airportInfo?.contact?.email || 'Email'}</span></li>
+                  <li><span className="font-medium">{t.flights?.airportInfo?.contact?.website || 'Website'}</span> <a href="http://chra.vn" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">http://chra.vn</a></li>
                 </ul>
               </div>
               
               <div className="bg-gray-50 rounded-lg p-6">
                 <h3 className="text-lg font-semibold mb-3">{t.flights?.airportInfo?.transportation?.title || 'Di chuyển từ sân bay'}</h3>
                 <ul className="space-y-2 text-gray-700">
-                  <li><span className="font-medium">{t.flights?.airportInfo?.transportation?.taxi || 'Taxi'}:</span> Có sẵn bên ngoài nhà ga, thời gian di chuyển khoảng 40-45 phút đến trung tâm Nha Trang.</li>
-                  <li><span className="font-medium">{t.flights?.airportInfo?.transportation?.bus || 'Xe buýt'}:</span> Có tuyến xe buýt số 18 từ sân bay đến trung tâm thành phố.</li>
-                  <li><span className="font-medium">{t.flights?.airportInfo?.transportation?.shuttle || 'Xe đưa đón'}:</span> Nhiều khách sạn cung cấp dịch vụ đưa đón sân bay, hãy kiểm tra khi đặt phòng.</li>
-                  <li><span className="font-medium">{t.flights?.airportInfo?.transportation?.rental || 'Thuê xe'}:</span> Có các công ty cho thuê xe tại sân bay.</li>
+                  <li><span className="font-medium">{t.flights?.airportInfo?.transportation?.taxi || 'Taxi'}</span></li>
+                  <li><span className="font-medium">{t.flights?.airportInfo?.transportation?.bus || 'Xe buýt'}</span></li>
+                  <li><span className="font-medium">{t.flights?.airportInfo?.transportation?.shuttle || 'Xe đưa đón'}</span></li>
+                  <li><span className="font-medium">{t.flights?.airportInfo?.transportation?.rental || 'Thuê xe'}</span></li>
                 </ul>
               </div>
             </div>
@@ -111,7 +113,7 @@ export default function FlightsPage() {
                 </p>
                 <ul className="mb-4 space-y-1 text-gray-700">
                   {t.flights?.rentalServices?.moto?.features?.map((feature: string, index: number) => (
-                    <li key={index}>• {feature}</li>
+                    <li key={index}>{feature}</li>
                   )) || (
                     <>
                       <li>• Đa dạng loại xe: từ xe số đến xe tay ga cao cấp</li>
@@ -122,7 +124,7 @@ export default function FlightsPage() {
                   )}
                 </ul>
                 <Link 
-                  href="/moto" 
+                  href={createLink('/moto')} 
                   className="inline-flex items-center text-blue-600 font-medium hover:underline"
                 >
                   {t.flights?.rentalServices?.moto?.link || 'Xem dịch vụ thuê xe máy'} <FaArrowRight className="ml-2 text-sm" />
@@ -142,7 +144,7 @@ export default function FlightsPage() {
                 </p>
                 <ul className="mb-4 space-y-1 text-gray-700">
                   {t.flights?.rentalServices?.car?.features?.map((feature: string, index: number) => (
-                    <li key={index}>• {feature}</li>
+                    <li key={index}>{feature}</li>
                   )) || (
                     <>
                       <li>• Đa dạng dòng xe từ 4-16 chỗ</li>
@@ -153,7 +155,7 @@ export default function FlightsPage() {
                   )}
                 </ul>
                 <Link 
-                  href="/car" 
+                  href={createLink('/car')} 
                   className="inline-flex items-center text-green-600 font-medium hover:underline"
                 >
                   {t.flights?.rentalServices?.car?.link || 'Xem dịch vụ thuê xe ô tô'} <FaArrowRight className="ml-2 text-sm" />

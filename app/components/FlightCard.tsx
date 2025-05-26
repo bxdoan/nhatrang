@@ -1,5 +1,6 @@
 import { format, parseISO } from 'date-fns';
 import { utcToZonedTime } from 'date-fns-tz';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface Flight {
   flight_date: string;
@@ -54,6 +55,8 @@ interface Flight {
 }
 
 export default function FlightCard({ flight }: { flight: Flight }) {
+  const { t } = useLanguage();
+  
   // Function to format date and time with timezone conversion
   const formatTime = (dateString: string | undefined, timezone: string) => {
     if (!dateString) return 'N/A';
@@ -126,7 +129,7 @@ export default function FlightCard({ flight }: { flight: Flight }) {
     return (
       <div className="text-xs mt-1">
         <span className={delay > 0 ? "text-red-600 font-medium" : "text-green-600 font-medium"}>
-          {delay > 0 ? `Trễ ${delay} phút` : `Sớm ${Math.abs(delay)} phút`}
+          {delay > 0 ? `${t.flights?.flightCard?.delayed || 'Trễ'} ${delay} ${t.flights?.flightCard?.minutes || 'phút'}` : `${t.flights?.flightCard?.early || 'Sớm'} ${Math.abs(delay)} ${t.flights?.flightCard?.minutes || 'phút'}`}
         </span>
       </div>
     );
@@ -143,62 +146,62 @@ export default function FlightCard({ flight }: { flight: Flight }) {
 
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <p className="text-sm text-gray-500">Khởi hành từ</p>
+          <p className="text-sm text-gray-500">{t.flights?.flightCard?.departureFrom || 'Khởi hành từ'}</p>
           <p className="font-medium">{flight.departure.airport} ({flight.departure.iata})</p>
           <div className="mt-1">
-            <span className="text-sm text-gray-500">Lịch: </span>
+            <span className="text-sm text-gray-500">{t.flights?.flightCard?.scheduled || 'Lịch'}: </span>
             <span className="font-medium">{formatTime(flight.departure.scheduled, flight.departure.timezone)}</span>
           </div>
           {flight.departure.actual && (
             <div className="mt-1">
-              <span className="text-sm text-gray-500">Thực tế: </span>
+              <span className="text-sm text-gray-500">{t.flights?.flightCard?.actual || 'Thực tế'}: </span>
               <span className="font-medium">{formatTime(flight.departure.actual, flight.departure.timezone)}</span>
             </div>
           )}
           {getDelayInfo(flight.departure.delay)}
           {flight.departure.terminal && (
             <div className="mt-1">
-              <span className="text-sm text-gray-500">Nhà ga: </span>
+              <span className="text-sm text-gray-500">{t.flights?.flightCard?.terminal || 'Nhà ga'}: </span>
               <span className="font-medium">{flight.departure.terminal}</span>
             </div>
           )}
           {flight.departure.gate && (
             <div className="mt-1">
-              <span className="text-sm text-gray-500">Cổng: </span>
+              <span className="text-sm text-gray-500">{t.flights?.flightCard?.gate || 'Cổng'}: </span>
               <span className="font-medium">{flight.departure.gate}</span>
             </div>
           )}
         </div>
 
         <div>
-          <p className="text-sm text-gray-500">Đến</p>
+          <p className="text-sm text-gray-500">{t.flights?.flightCard?.arrivalTo || 'Đến'}</p>
           <p className="font-medium">{flight.arrival.airport} ({flight.arrival.iata})</p>
           <div className="mt-1">
-            <span className="text-sm text-gray-500">Lịch: </span>
+            <span className="text-sm text-gray-500">{t.flights?.flightCard?.scheduled || 'Lịch'}: </span>
             <span className="font-medium">{formatTime(flight.arrival.scheduled, flight.arrival.timezone)}</span>
           </div>
           {flight.arrival.actual && (
             <div className="mt-1">
-              <span className="text-sm text-gray-500">Thực tế: </span>
+              <span className="text-sm text-gray-500">{t.flights?.flightCard?.actual || 'Thực tế'}: </span>
               <span className="font-medium">{formatTime(flight.arrival.actual, flight.arrival.timezone)}</span>
             </div>
           )}
           {getDelayInfo(flight.arrival.delay)}
           {flight.arrival.terminal && (
             <div className="mt-1">
-              <span className="text-sm text-gray-500">Nhà ga: </span>
+              <span className="text-sm text-gray-500">{t.flights?.flightCard?.terminal || 'Nhà ga'}: </span>
               <span className="font-medium">{flight.arrival.terminal}</span>
             </div>
           )}
           {flight.arrival.gate && (
             <div className="mt-1">
-              <span className="text-sm text-gray-500">Cổng: </span>
+              <span className="text-sm text-gray-500">{t.flights?.flightCard?.gate || 'Cổng'}: </span>
               <span className="font-medium">{flight.arrival.gate}</span>
             </div>
           )}
           {flight.arrival.baggage && (
             <div className="mt-1">
-              <span className="text-sm text-gray-500">Băng chuyền hành lý: </span>
+              <span className="text-sm text-gray-500">{t.flights?.flightCard?.baggage || 'Băng chuyền hành lý'}: </span>
               <span className="font-medium">{flight.arrival.baggage}</span>
             </div>
           )}
@@ -208,11 +211,11 @@ export default function FlightCard({ flight }: { flight: Flight }) {
       <div className="mt-3 pt-3 border-t border-gray-200">
         <div className="flex justify-between">
           <div>
-            <span className="text-sm text-gray-500">Chuyến bay: </span>
+            <span className="text-sm text-gray-500">{t.flights?.flightCard?.flightCode || 'Chuyến bay'}: </span>
             <span className="font-medium">{getFlightCode()}</span>
           </div>
           <div>
-            <span className="text-sm text-gray-500">Ngày: </span>
+            <span className="text-sm text-gray-500">{t.flights?.flightCard?.date || 'Ngày'}: </span>
             <span className="font-medium">
               {formatDate(flight.arrival.scheduled, flight.arrival.timezone)}
             </span>
@@ -220,7 +223,7 @@ export default function FlightCard({ flight }: { flight: Flight }) {
         </div>
         {flight.flight.codeshared && (
           <div className="mt-1 text-xs text-gray-500">
-            Được điều hành bởi {flight.flight.codeshared.airline_name.toUpperCase()} ({flight.flight.codeshared.flight_iata.toUpperCase()})
+            {t.flights?.flightCard?.operatedBy || 'Được điều hành bởi'} {flight.flight.codeshared.airline_name.toUpperCase()} ({flight.flight.codeshared.flight_iata.toUpperCase()})
           </div>
         )}
       </div>

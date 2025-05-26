@@ -3,8 +3,10 @@
 import { FaInfoCircle, FaPlane } from 'react-icons/fa';
 import FlightCard from './FlightCard';
 import useFlights from '../hooks/useFlights';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function FlightSection({ showTitle = true }) {
+  const { t } = useLanguage();
   // Fetch flights data using custom hook
   const { flights, loading, error, pagination, loadMore, refreshData } = useFlights();
   
@@ -13,10 +15,9 @@ export default function FlightSection({ showTitle = true }) {
       <div className="container mx-auto px-4">
         {showTitle && (
           <div className="mb-8 text-center">
-            <h2 className="text-3xl font-bold text-gray-800 mb-3">Chuyến bay đến Nha Trang</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-3">{t.flights?.hero?.title || 'Chuyến bay đến Cam Ranh (CXR)'}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Cập nhật thông tin chuyến bay đến sân bay Cam Ranh (CXR) - cửa ngõ hàng không của Nha Trang, 
-              giúp bạn lên kế hoạch cho chuyến đi tuyệt vời.
+              {t.flights?.hero?.subtitle || 'Kiểm tra thông tin thời gian, trạng thái và chi tiết các chuyến bay sắp đến sân bay Cam Ranh - cửa ngõ hàng không của thành phố biển Nha Trang'}
             </p>
           </div>
         )}
@@ -40,7 +41,7 @@ export default function FlightSection({ showTitle = true }) {
         {!loading && !error && flights.length === 0 && (
           <div className="bg-blue-50 p-8 rounded-lg border border-blue-200 text-blue-700 text-center max-w-3xl mx-auto">
             <FaPlane className="mx-auto text-3xl mb-3" />
-            <p className="font-medium">Không có dữ liệu chuyến bay đến Nha Trang. Vui lòng thử lại sau.</p>
+            <p className="font-medium">{t.common?.error || 'Không có dữ liệu chuyến bay đến Nha Trang. Vui lòng thử lại sau.'}</p>
           </div>
         )}
         
@@ -48,7 +49,7 @@ export default function FlightSection({ showTitle = true }) {
         {flights.length > 0 && (
           <div>
             <div className="flex flex-col md:flex-row justify-between items-center mb-6">
-              <p className="text-gray-700 mb-4 md:mb-0">Hiển thị {flights.length} chuyến bay đến sân bay Cam Ranh (CXR)</p>
+              <p className="text-gray-700 mb-4 md:mb-0">{t.flights?.hero?.subtitle || 'Hiển thị {flights.length} chuyến bay đến sân bay Cam Ranh (CXR)'}</p>
               <button 
                 onClick={refreshData}
                 disabled={loading}
@@ -58,7 +59,7 @@ export default function FlightSection({ showTitle = true }) {
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                {loading ? 'Đang cập nhật...' : 'Cập nhật dữ liệu'}
+                {loading && (t.common?.loading || 'Đang cập nhật...')}
               </button>
             </div>
             
@@ -85,10 +86,10 @@ export default function FlightSection({ showTitle = true }) {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
-                      Đang tải...
+                      {t.common?.loading || 'Đang tải...'}
                     </>
                   ) : (
-                    'Xem thêm chuyến bay'
+                    t.flights?.hero?.subtitle || 'Xem thêm chuyến bay'
                   )}
                 </button>
               </div>

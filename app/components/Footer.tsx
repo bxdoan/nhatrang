@@ -20,9 +20,11 @@ import {
 import Link from 'next/link';
 import { CONTACT_INFO } from '../lib/contact-config';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useLocalizedLink } from '../hooks/useLocalizedLink';
 
 export default function Footer() {
   const { t } = useLanguage();
+  const { createLink } = useLocalizedLink();
   
   return (
     <footer className="bg-gradient-to-r from-blue-800 to-blue-900 text-white pt-12">
@@ -38,7 +40,7 @@ export default function Footer() {
           {/* Logo và thông tin */}
           <div>
             <div className="flex justify-center mb-4">
-              <Link href="/">
+              <Link href={createLink('/')}>
                 <img 
                   src="/images/logo/nti2.png" 
                   alt="Nha Trang Insight Logo" 
@@ -73,32 +75,32 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">{t.footer?.explore || 'Khám phá'}</h3>
             <ul className="text-sm text-blue-200 space-y-2">
               <li>
-                <Link href="/" className="hover:text-white flex items-center">
+                <Link href={createLink('/')} className="hover:text-white flex items-center">
                   <FaUmbrellaBeach className="mr-2" /> {t.navigation?.home || 'Du lịch'}
                 </Link>
               </li>
               <li>
-                <Link href="/flights" className="hover:text-white flex items-center">
+                <Link href={createLink('/flights')} className="hover:text-white flex items-center">
                   <FaPlane className="mr-2" /> {t.navigation?.flights || 'Chuyến bay'}
                 </Link>
               </li>
               <li>
-                <Link href="/transportation" className="hover:text-white flex items-center">
+                <Link href={createLink('/transportation')} className="hover:text-white flex items-center">
                   <FaBus className="mr-2" /> {t.navigation?.transportation || 'Di chuyển'}
                 </Link>
               </li>
               <li>
-                <Link href="/accommodations" className="hover:text-white flex items-center">
+                <Link href={createLink('/accommodations')} className="hover:text-white flex items-center">
                   <FaHotel className="mr-2" /> {t.navigation?.accommodations || 'Lưu trú'}
                 </Link>
               </li>
               <li>
-                <Link href="/food" className="hover:text-white flex items-center">
+                <Link href={createLink('/food')} className="hover:text-white flex items-center">
                   <FaUtensils className="mr-2" /> {t.navigation?.food || 'Ẩm thực'}
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white flex items-center">
+                <Link href={createLink('/contact')} className="hover:text-white flex items-center">
                   <FaComments className="mr-2" /> {t.navigation?.contact || 'Liên hệ'}
                 </Link>
               </li>

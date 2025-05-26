@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Suspense } from 'react'
 import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -15,6 +16,16 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = DEFAULT_METADATA
 
+function LanguageProviderWrapper({ children }: { children: React.ReactNode }) {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LanguageProvider>
+        {children}
+      </LanguageProvider>
+    </Suspense>
+  );
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body className={inter.className}>
-        <LanguageProvider>
+        <LanguageProviderWrapper>
           <AnalyticsProvider>
             <div className="flex flex-col min-h-screen">
               <Header />
@@ -34,7 +45,7 @@ export default function RootLayout({
               <FloatingButtons />
             </div>
           </AnalyticsProvider>
-        </LanguageProvider>
+        </LanguageProviderWrapper>
         
         {/* Schema.org JSON-LD */}
         <Script

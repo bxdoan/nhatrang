@@ -588,6 +588,21 @@ export interface TranslationStructure {
         link: string;
       };
     };
+    flightCard: {
+      departureFrom: string;
+      delayed: string;
+      early: string;
+      minutes: string;
+      scheduled: string;
+      actual: string;
+      arrivalTo: string;
+      operatedBy: string;
+      terminal: string;
+      gate: string;
+      baggage: string;
+      flightCode: string;
+      date: string;
+    };
   };
   rideHailing: {
     hero: {

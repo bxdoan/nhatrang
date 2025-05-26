@@ -22,6 +22,7 @@ import {
   trackGalleryImageView 
 } from '../lib/analytics';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useLocalizedLink } from '../hooks/useLocalizedLink';
 import ContactSection from '../components/ContactSection';
 
 // Định nghĩa kiểu dữ liệu cho đối tượng xe ô tô
@@ -36,6 +37,7 @@ interface Car {
 
 export default function CarRentalPage() {
   const { t, isLoading } = useLanguage();
+  const { createLink } = useLocalizedLink();
   const phoneNumber = CONTACT_INFO.phoneNumber;
   const phoneNumber2 = CONTACT_INFO.phoneNumber2;
   const [showImagePopup, setShowImagePopup] = useState(false);
@@ -145,7 +147,7 @@ export default function CarRentalPage() {
       {/* Back to main */}
       <div className="bg-gray-50 py-3">
         <div className="container mx-auto px-4">
-          <Link href="/transportation" className="inline-flex items-center text-blue-600 hover:text-blue-800">
+          <Link href={createLink('/transportation')} className="inline-flex items-center text-blue-600 hover:text-blue-800">
             <FaChevronLeft className="mr-1 text-sm" /> {t.car?.backToTransportation || 'Quay lại trang Di chuyển'}
           </Link>
         </div>

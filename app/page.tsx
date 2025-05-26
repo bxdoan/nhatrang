@@ -7,9 +7,11 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { HOMEPAGE_SCHEMA } from './lib/metadata';
 import { useLanguage } from './contexts/LanguageContext';
+import { useLocalizedLink } from './hooks/useLocalizedLink';
 
 export default function Home() {
   const { t, isLoading } = useLanguage();
+  const { createLink } = useLocalizedLink();
   
   if (isLoading) {
     return (
@@ -33,7 +35,7 @@ export default function Home() {
       hoverColor: 'hover:text-yellow-700',
       title: t.homepage?.sections?.transportation?.title || 'Di chuyển & Giao thông',
       description: t.homepage?.sections?.transportation?.description || 'Thông tin về cách di chuyển đến Nha Trang và phương tiện đi lại trong thành phố: taxi, xe buýt, thuê xe máy và nhiều lựa chọn khác.',
-      link: '/transportation',
+      link: createLink('/transportation'),
       linkText: t.homepage?.sections?.transportation?.link || 'Xem chi tiết →'
     },
     {
@@ -45,7 +47,7 @@ export default function Home() {
       hoverColor: 'hover:text-blue-700',
       title: t.homepage?.sections?.moto?.title || 'Thuê xe máy',
       description: t.homepage?.sections?.moto?.description || 'Dịch vụ cho thuê xe máy uy tín, giá rẻ từ 100.000đ - 180.000đ/ngày, đa dạng loại xe từ xe số đến xe ga cao cấp, giao xe tận nơi tại Nha Trang.',
-      link: '/moto',
+      link: createLink('/moto'),
       linkText: t.homepage?.sections?.moto?.link || 'Xem dịch vụ thuê xe máy →'
     },
     {
@@ -57,7 +59,7 @@ export default function Home() {
       hoverColor: 'hover:text-green-700',
       title: t.homepage?.sections?.car?.title || 'Thuê xe ô tô',
       description: t.homepage?.sections?.car?.description || 'Dịch vụ thuê xe ô tô tự lái hoặc có tài, đa dạng dòng xe từ 4-16 chỗ, giá cả hợp lý, thủ tục đơn giản, phục vụ đưa đón sân bay.',
-      link: '/car',
+      link: createLink('/car'),
       linkText: t.homepage?.sections?.car?.link || 'Xem dịch vụ thuê xe ô tô →'
     },
     {
@@ -69,7 +71,7 @@ export default function Home() {
       hoverColor: 'hover:text-blue-700',
       title: t.homepage?.sections?.bus?.title || 'Xe Buýt Nha Trang',
       description: t.homepage?.sections?.bus?.description || 'Thông tin tuyến đường, lịch trình và bản đồ các tuyến xe buýt công cộng tại Nha Trang. Giá vé chỉ từ 7.000 VNĐ/lượt, phương tiện tiết kiệm và thuận tiện.',
-      link: '/bus',
+      link: createLink('/bus'),
       linkText: t.homepage?.sections?.bus?.link || 'Xem thông tin xe buýt →'
     },
     {
@@ -81,7 +83,7 @@ export default function Home() {
       hoverColor: 'hover:text-yellow-700',
       title: t.homepage?.sections?.taxi?.title || 'Dịch vụ Taxi',
       description: t.homepage?.sections?.taxi?.description || 'Thông tin chi tiết về các hãng taxi uy tín tại Nha Trang, giá cước từ 15.000 - 20.000đ/km, số điện thoại đặt xe và tuyến đường phổ biến.',
-      link: '/taxi',
+      link: createLink('/taxi'),
       linkText: t.homepage?.sections?.taxi?.link || 'Xem thông tin dịch vụ taxi →'
     }
   ];

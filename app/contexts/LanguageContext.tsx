@@ -1,7 +1,8 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { Locale, defaultLocale, TranslationStructure } from '../i18n';
+import { useSearchParams, useRouter, usePathname } from 'next/navigation';
+import { Locale, defaultLocale, TranslationStructure, locales } from '../i18n';
 
 interface LanguageContextType {
   locale: Locale;
@@ -17,9 +18,30 @@ interface LanguageProviderProps {
 }
 
 export function LanguageProvider({ children }: LanguageProviderProps) {
-  const [locale, setLocaleState] = useState<Locale>(defaultLocale);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+  
+  // Lấy locale từ URL params, mặc định là 'vi'
+  const getLocaleFromUrl = (): Locale => {
+    const localeParam = searchParams.get('locale') as Locale;
+    if (localeParam && locales.includes(localeParam)) {
+      return localeParam;
+    }
+    return defaultLocale;
+  };
+
+  const [locale, setLocaleState] = useState<Locale>(getLocaleFromUrl());
   const [translations, setTranslations] = useState<TranslationStructure | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  // Cập nhật locale khi URL params thay đổi
+  useEffect(() => {
+    const newLocale = getLocaleFromUrl();
+    if (newLocale !== locale) {
+      setLocaleState(newLocale);
+    }
+  }, [searchParams]);
 
   // Load translations
   useEffect(() => {
@@ -43,17 +65,26 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     loadTranslations();
   }, [locale]);
 
-  // Load saved locale from localStorage
-  useEffect(() => {
-    const savedLocale = localStorage.getItem('locale') as Locale;
-    if (savedLocale && savedLocale !== locale) {
-      setLocaleState(savedLocale);
-    }
-  }, []);
-
   const setLocale = (newLocale: Locale) => {
+    // Tạo URL mới với locale param
+    const params = new URLSearchParams(searchParams.toString());
+    
+    if (newLocale === defaultLocale) {
+      // Nếu là locale mặc định, xóa param locale
+      params.delete('locale');
+    } else {
+      // Nếu không phải locale mặc định, set param locale
+      params.set('locale', newLocale);
+    }
+    
+    // Tạo URL mới
+    const newUrl = params.toString() ? `${pathname}?${params.toString()}` : pathname;
+    
+    // Navigate đến URL mới
+    router.push(newUrl);
+    
+    // Cập nhật state
     setLocaleState(newLocale);
-    localStorage.setItem('locale', newLocale);
   };
 
   const value: LanguageContextType = {
