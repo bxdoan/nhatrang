@@ -22,6 +22,7 @@ import {
   trackGalleryImageView 
 } from '../lib/analytics';
 import { useLanguage } from '../contexts/LanguageContext';
+import ContactSection from '../components/ContactSection';
 
 // Định nghĩa kiểu dữ liệu cho đối tượng xe ô tô
 interface Car {
@@ -154,47 +155,13 @@ export default function CarRentalPage() {
       <section className="py-6 bg-white border-b">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-6 shadow-sm text-center">
-              <h2 className="text-xl font-bold mb-4 text-gray-800">{t.car?.contactSection?.title || '📞 Liên hệ đặt xe ngay hôm nay'}</h2>
-              <p className="text-gray-700 mb-6">
-                {t.car?.contactSection?.description || 'Hãy liên hệ với chúng tôi qua hotline hoặc mạng xã hội để được tư vấn và đặt dịch vụ xe ô tô tại Nha Trang'}
-              </p>
-              
-              <div className="flex flex-col sm:flex-row justify-center gap-3">
-                                  <a 
-                    href={`tel:${phoneNumber}`}
-                    onClick={() => handlePhoneClick(phoneNumber)}
-                    className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-md transition-colors font-medium"
-                  >
-                    <FaPhone className="mr-2" /> {t.common?.callNow || 'Gọi ngay'}: {phoneNumber}
-                  </a>
-                  <a 
-                    href={`tel:${phoneNumber2}`}
-                    onClick={() => handlePhoneClick(phoneNumber2)}
-                    className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-md transition-colors font-medium"
-                  >
-                    <FaPhone className="mr-2" /> {t.common?.callNow || 'Gọi ngay'}: {phoneNumber2}
-                  </a>
-                  <a 
-                    href={`https://zalo.me/${phoneNumber}`}
-                    onClick={handleZaloClick}
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors font-medium"
-                  >
-                    <FaWhatsapp className="mr-2" /> {t.common?.messageZalo || 'Nhắn tin qua Zalo'}
-                  </a>
-                  <a 
-                    href={`https://t.me/${CONTACT_INFO.telegramUsername}`}
-                    onClick={handleTelegramClick}
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md transition-colors font-medium"
-                  >
-                    <FaTelegram className="mr-2" /> {t.common?.messageTelegram || 'Nhắn tin qua Telegram'}
-                  </a>
-              </div>
-            </div>
+            <ContactSection 
+              title={t.car?.contactSection?.title || '📞 Liên hệ đặt xe ngay hôm nay'}
+              description={t.car?.contactSection?.description || 'Hãy liên hệ với chúng tôi qua hotline hoặc mạng xã hội để được tư vấn và đặt dịch vụ xe ô tô tại Nha Trang'}
+              bgColor="bg-gradient-to-r from-green-50 to-blue-50"
+              phoneNumber={phoneNumber}
+              showSecondPhone={true}
+            />
           </div>
         </div>
       </section>

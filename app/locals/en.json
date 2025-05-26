@@ -177,6 +177,10 @@
         "4-seater car: from 250,000đ/trip",
         "7-seater car: from 300,000đ/trip"
       ]
+    },
+    "contactSection": {
+      "title": "📞 Contact for Transportation Services",
+      "description": "Need more advice on transportation options or want to book transfer services in Nha Trang? Contact us now!"
     }
   },
   "moto": {
@@ -405,11 +409,97 @@
     },
     "companies": {
       "title": "Reputable Taxi Companies in Nha Trang",
-      "features": "Key features:",
+      "features": "Key features",
       "rating": "Rating",
       "operatingHours": "Operating hours",
       "fare": "Fare",
-      "contact": "Contact"
+      "contact": "Contact",
+      "data": [
+        {
+          "name": "Mai Linh Taxi",
+          "phone": "025 83 83 8383",
+          "baseRate": "15,000đ",
+          "pricePerKm": "15,000đ - 17,000đ/km",
+          "waitingRate": "45,000đ/hour",
+          "color": "Green",
+          "operatingHours": "24/7",
+          "website": "https://mailinh.vn",
+          "logo": "/images/taxi/mailinh.png",
+          "rating": 4.5,
+          "features": ["Large fleet", "Professional drivers", "Card payment accepted"],
+          "description": "Mai Linh is one of the largest and most reputable taxi companies in Nha Trang, serving many tourist routes."
+        },
+        {
+          "name": "Vinasun Taxi",
+          "phone": "0258 3827 272",
+          "baseRate": "15,000đ",
+          "pricePerKm": "16,000đ - 18,000đ/km",
+          "waitingRate": "47,000đ/hour",
+          "color": "White-blue",
+          "operatingHours": "24/7",
+          "website": "https://vinasuntaxi.com",
+          "logo": "/images/taxi/vinasun.png",
+          "rating": 4.3,
+          "features": ["Booking app", "App payment", "Diverse services", "VAT invoices"],
+          "description": "Vinasun is a reputable taxi company from Ho Chi Minh City, expanded operations to Nha Trang to serve tourists."
+        },
+        {
+          "name": "Taxi Xanh",
+          "phone": "1900 2088",
+          "baseRate": "15,000đ",
+          "pricePerKm": "15,000đ - 16,500đ/km",
+          "waitingRate": "40,000đ/hour",
+          "color": "Blue",
+          "operatingHours": "5:00 - 24:00",
+          "website": "https://taxi-xanh.vn",
+          "logo": "/images/taxi/xanhsm.png",
+          "rating": 4.0,
+          "features": ["Booking app", "Affordable prices", "Attentive service", "Airport transfers"],
+          "description": "Taxi Xanh is a local taxi company with affordable prices, suitable for budget-conscious tourists."
+        },
+        {
+          "name": "Sun Taxi",
+          "phone": "0258 3 89 89 89",
+          "baseRate": "16,000đ",
+          "pricePerKm": "17,000đ - 18,000đ/km",
+          "waitingRate": "45,000đ/hour",
+          "color": "Yellow",
+          "operatingHours": "24/7",
+          "website": "https://suntaxi.vn",
+          "logo": "/images/taxi/suntaxi.png",
+          "rating": 4.2,
+          "features": ["Luxury vehicles", "VIP service", "Airport transfers"],
+          "description": "Sun Taxi provides premium taxi services with luxury vehicles, suitable for group and VIP customers."
+        },
+        {
+          "name": "Maxim Taxi",
+          "phone": "1900 01585",
+          "baseRate": "15,000đ",
+          "pricePerKm": "15,000đ - 16,000đ/km",
+          "waitingRate": "42,000đ/hour",
+          "color": "White-red",
+          "operatingHours": "24/7",
+          "website": "https://maximtaxi.vn",
+          "logo": "/images/taxi/maxim.jpg",
+          "rating": 4.3,
+          "features": ["Booking app", "New fleet", "Local knowledge", "Competitive prices"],
+          "description": "Maxim Taxi is a local taxi company, familiar with routes and famous tourist spots in Nha Trang."
+        },
+        {
+          "name": "Grab",
+          "phone": "",
+          "baseRate": "15,000đ",
+          "pricePerKm": "15,000đ - 16,000đ/km",
+          "waitingRate": "42,000đ/hour",
+          "color": "Green",
+          "operatingHours": "24/7",
+          "website": "https://grab.com",
+          "logo": "/images/taxi/grab.jpg",
+          "rating": 4.3,
+          "features": ["Booking app", "New fleet", "Local knowledge", "Competitive prices"],
+          "description": "Grab is a ride-hailing service, familiar with routes and famous tourist spots in Nha Trang."
+        }
+      ]
     },
     "types": {
       "title": "Common Taxi Types",
@@ -440,7 +530,37 @@
         "distance": "Distance",
         "estimatedPrice": "Estimated Price",
         "time": "Time"
-      }
+      },
+      "data": [
+        {
+          "from": "Cam Ranh Airport",
+          "to": "Nha Trang Center",
+          "distance": "~30km",
+          "estimatedPrice": "350,000đ - 400,000đ",
+          "estimatedTime": "40-45 minutes"
+        },
+        {
+          "from": "Nha Trang Center",
+          "to": "Vinpearl Land",
+          "distance": "~5km",
+          "estimatedPrice": "80,000đ - 100,000đ",
+          "estimatedTime": "15-20 minutes"
+        },
+        {
+          "from": "Nha Trang Center",
+          "to": "I-Resort",
+          "distance": "~7km",
+          "estimatedPrice": "120,000đ - 140,000đ",
+          "estimatedTime": "20-25 minutes"
+        },
+        {
+          "from": "Nha Trang Center",
+          "to": "Po Nagar Towers",
+          "distance": "~4km",
+          "estimatedPrice": "70,000đ - 90,000đ",
+          "estimatedTime": "10-15 minutes"
+        }
+      ]
     },
     "tips": {
       "title": "Tips for Taking Taxis in Nha Trang",
@@ -484,18 +604,18 @@
     },
     "routeInfo": {
       "title": "Route Information",
-      "routeName": "Route name:",
-      "operatingHours": "Operating hours:",
-      "frequency": "Frequency:",
-      "fare": "Fare:",
-      "information": "Information:",
-      "lastUpdated": "Last updated:",
-      "stops": "Bus stops:"
+      "routeName": "Route name",
+      "operatingHours": "Operating hours",
+      "frequency": "Frequency",
+      "fare": "Fare",
+      "information": "Information",
+      "lastUpdated": "Last updated",
+      "stops": "Bus stops"
     },
     "stopInfo": {
       "title": "Stop",
-      "description": "Description:",
-      "routesThrough": "Routes through:",
+      "description": "Description",
+      "routesThrough": "Routes through",
       "noRoutes": "No routes pass through this stop"
     },
     "mapLegend": {
@@ -640,7 +760,8 @@
     "backToTransportation": "Back to Transportation",
     "intro": {
       "title": "Motorbike Taxis in Nha Trang",
-      "description": "Motorbike taxi is a popular and quick transportation method in Nha Trang, especially suitable for short distances within the city. Currently there are two main types: traditional motorbike taxis and app-based ride-hailing."
+      "description": "Motorbike taxi is a popular and quick transportation method in Nha Trang, especially suitable for short distances within the city. Currently there are two main types: traditional motorbike taxis and app-based ride-hailing.",
+      "warning": "App-based ride-hailing is safer with fixed prices - Traditional motorbike taxis are flexible and negotiable"
     },
     "types": {
       "title": "Types of Motorbike Taxis in Nha Trang",
@@ -681,7 +802,9 @@
       }
     },
     "apps": {
-      "title": "Popular Ride-hailing Apps",
+      "title": "Ride-hailing Apps Comparison",
+      "featuresTitle": "Key Features",
+      "prosConsTitle": "Pros & Cons",
       "grab": {
         "name": "Grab",
         "description": "Leading Southeast Asian ride-hailing app, available in Nha Trang with GrabBike service.",
@@ -690,6 +813,19 @@
           "Multiple payment methods",
           "Regular promotional programs",
           "Diverse services: GrabBike, GrabCar, GrabFood"
+        ],
+        "rating": "4.5/5",
+        "priceRange": "12,000-18,000đ/km",
+        "availability": "24/7 operation",
+        "pros": [
+          "Largest driver network",
+          "Many promotional programs",
+          "Diverse services (GrabBike, GrabCar)",
+          "Flexible payment options"
+        ],
+        "cons": [
+          "Prices may be high during rush hours",
+          "Long wait times during peak hours"
         ]
       },
       "maxim": {
@@ -700,6 +836,20 @@
           "Simple interface",
           "Cash payment support",
           "Usually shorter wait times"
+        ],
+        "rating": "4.2/5",
+        "priceRange": "11,000-16,000đ/km",
+        "availability": "24/7 operation",
+        "pros": [
+          "Cheaper fares than Grab",
+          "Drivers know local areas well",
+          "Good customer support",
+          "No peak hour surcharge"
+        ],
+        "cons": [
+          "Fewer drivers than Grab",
+          "Fewer features",
+          "May have longer wait times"
         ]
       }
     },
@@ -739,20 +889,77 @@
       }
     },
     "tips": {
-      "title": "Tips for Using Motorbike Taxis",
-      "items": [
-        "Always wear helmet when riding motorbike taxi",
-        "Confirm destination and fare before departure",
-        "For traditional taxis, negotiate price beforehand",
-        "For app-based rides, check driver info and license plate",
-        "Don't carry oversized items",
-        "Share trip info with relatives for long distances",
-        "Rate drivers after trips to improve service quality"
-      ]
+      "title": "Safe Motorbike Taxi Tips in Nha Trang",
+      "appBased": {
+        "title": "With app-based ride-hailing",
+        "items": [
+          "Check driver information and license plate before boarding",
+          "Share trip details with family and friends",
+          "Always wear the provided helmet",
+          "Track your journey on the app",
+          "Rate the driver after the trip"
+        ]
+      },
+      "traditional": {
+        "title": "With traditional motorbike taxis",
+        "items": [
+          "Agree on fare clearly before departure",
+          "Choose drivers at official waiting points",
+          "Request helmet and check its quality",
+          "Remember license plate and inform relatives",
+          "Avoid traveling at night if not necessary"
+        ]
+      },
+      "importantNotes": {
+        "title": "Important Notes",
+        "items": [
+          "Don't use phone while traveling",
+          "Hold tight to bags and personal belongings",
+          "Prepare small bills for payment",
+          "Refuse if driver shows signs of intoxication or abnormal behavior"
+        ]
+      }
     },
     "routes": {
-      "title": "Popular Motorbike Taxi Routes and Estimated Fares",
-      "note": "* Fares may vary depending on time, app and traffic conditions."
+      "title": "Popular Routes and Estimated Fares",
+      "headers": {
+        "route": "Route",
+        "distance": "Distance",
+        "appBased": "App-based",
+        "traditional": "Traditional",
+        "time": "Time"
+      },
+      "data": [
+        {
+          "route": "City Center → Vinpearl",
+          "distance": "~5km",
+          "appBased": "60,000-90,000đ",
+          "traditional": "75,000-125,000đ",
+          "time": "15-20 mins"
+        },
+        {
+          "route": "Cam Ranh Airport → City Center",
+          "distance": "~30km",
+          "appBased": "360,000-540,000đ",
+          "traditional": "450,000-750,000đ",
+          "time": "40-50 mins"
+        },
+        {
+          "route": "City Center → Po Nagar Towers",
+          "distance": "~4km",
+          "appBased": "48,000-72,000đ",
+          "traditional": "60,000-100,000đ",
+          "time": "12-18 mins"
+        },
+        {
+          "route": "City Center → Bai Dai Beach",
+          "distance": "~25km",
+          "appBased": "300,000-450,000đ",
+          "traditional": "375,000-625,000đ",
+          "time": "35-45 mins"
+        }
+      ],
+      "note": "* Fares may vary depending on time, traffic conditions and other factors. App-based ride-hailing prices include all fees, while traditional motorbike taxi fares are negotiable."
     },
     "alternatives": {
       "title": "Alternative Transportation",
@@ -761,6 +968,31 @@
     "contactSection": {
       "title": "Need help with transportation in Nha Trang?",
       "description": "Contact us for advice on the most suitable transportation options for your trip"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions about Motorbike Taxis in Nha Trang",
+      "questions": {
+        "popularApps": {
+          "question": "Which ride-hailing apps are most popular in Nha Trang?",
+          "answer": "Grab and Maxim are the two main ride-hailing apps in Nha Trang. Grab has a wide driver network and many promotions, while Maxim offers competitive fares and local service."
+        },
+        "pricing": {
+          "question": "How much do motorbike taxis cost in Nha Trang?",
+          "answer": "App-based ride-hailing: 12,000-18,000đ/km. Traditional motorbike taxis: 15,000-25,000đ/km depending on distance. Prices may increase during peak hours or bad weather."
+        },
+        "safety": {
+          "question": "How to ride motorbike taxis safely in Nha Trang?",
+          "answer": "Always wear a helmet, check driver information and license plate, share trip details with relatives. For traditional taxis, agree on price before departure."
+        },
+        "availability": {
+          "question": "Do motorbike taxis operate 24/7?",
+          "answer": "App-based ride-hailing like Grab and Maxim operate 24/7 but fewer drivers available at night. Traditional motorbike taxis usually operate from 5:00-23:00."
+        },
+        "choice": {
+          "question": "Should I choose traditional or app-based motorbike taxis?",
+          "answer": "App-based ride-hailing is safer with fixed prices and journey tracking. Traditional motorbike taxis are more flexible and allow price negotiation for short distances."
+        }
+      }
     }
   },
   "contact": {
@@ -785,11 +1017,11 @@
       "successMessage": "Thank you for your message! We will contact you as soon as possible.",
       "fields": {
         "name": {
-          "label": "Full Name *",
+          "label": "Full Name",
           "placeholder": "Enter your full name"
         },
         "email": {
-          "label": "Email *",
+          "label": "Email",
           "placeholder": "Enter your email address"
         },
         "phone": {
@@ -797,7 +1029,7 @@
           "placeholder": "Enter your phone number"
         },
         "subject": {
-          "label": "Subject *",
+          "label": "Subject",
           "placeholder": "Select subject",
           "options": {
             "tourism": "Tourism Information",
@@ -808,7 +1040,7 @@
           }
         },
         "message": {
-          "label": "Message Content *",
+          "label": "Message Content",
           "placeholder": "Please describe your requirements in detail..."
         }
       },
@@ -819,11 +1051,11 @@
       "title": "Payment Information",
       "bankInfo": {
         "title": "Bank Transfer Information",
-        "bank": "Bank:",
-        "branch": "Branch:",
-        "accountNumber": "Account Number:",
-        "accountHolder": "Account Holder:",
-        "transferContent": "Transfer Content:"
+        "bank": "Bank",
+        "branch": "Branch",
+        "accountNumber": "Account Number",
+        "accountHolder": "Account Holder",
+        "transferContent": "Transfer Content"
       },
       "qrCode": {
         "title": "Scan QR Code to Pay",

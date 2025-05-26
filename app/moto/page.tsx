@@ -7,6 +7,7 @@ import { useState } from 'react';
 import Script from 'next/script';
 import { MOTO_PAGE_SCHEMA } from '../lib/metadata';
 import { useLanguage } from '../contexts/LanguageContext';
+import ContactSection from '../components/ContactSection';
 
 // Định nghĩa kiểu dữ liệu cho đối tượng xe máy
 interface Motorbike {
@@ -213,10 +214,25 @@ export default function MotorbikeRentalPage() {
       <div className="bg-gray-50 py-3">
         <div className="container mx-auto px-4">
           <Link href="/transportation" className="inline-flex items-center text-blue-600 hover:text-blue-800">
-            <FaChevronLeft className="mr-1 text-sm" /> Quay lại trang Di chuyển
+            <FaChevronLeft className="mr-1 text-sm" /> {t.moto?.backToTransportation || 'Quay lại trang Di chuyển'}
           </Link>
         </div>
       </div>
+
+      {/* Contact Section - Moved to top */}
+      <section className="py-8 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <ContactSection 
+              title={t.moto?.contactSection?.title || 'Liên hệ đặt xe ngay hôm nay'}
+              description={t.moto?.contactSection?.description || 'Hãy liên hệ với chúng tôi qua hotline hoặc mạng xã hội để được tư vấn và đặt dịch vụ xe máy tại Nha Trang'}
+              bgColor="bg-blue-50"
+              phoneNumber={phoneNumber}
+              showSecondPhone={true}
+            />
+          </div>
+        </div>
+      </section>
       
       {/* Main Content */}
       <section className="py-12 bg-gray-50">
@@ -225,7 +241,7 @@ export default function MotorbikeRentalPage() {
             <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-8">
               <div className="p-6 md:p-8">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-4 md:mb-0">Dịch vụ thuê xe máy giá rẻ tại Nha Trang</h2>
+                  <h2 className="text-2xl font-bold text-gray-800 mb-4 md:mb-0">{t.moto?.serviceTitle || 'Dịch vụ thuê xe máy giá rẻ tại Nha Trang'}</h2>
                   <a 
                     href={`tel:${phoneNumber}`} 
                     className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-md transition-colors"
@@ -240,7 +256,7 @@ export default function MotorbikeRentalPage() {
                       <FaInfoCircle className="h-5 w-5 text-yellow-500" />
                     </div>
                     <div className="ml-3">
-                      <p className="text-yellow-700 font-medium">Xe mới, đẹp, an toàn - Giao xe tận nơi - Thủ tục đơn giản</p>
+                      <p className="text-yellow-700 font-medium">{t.moto?.serviceNote || 'Xe mới, đẹp, an toàn - Giao xe tận nơi - Thủ tục đơn giản'}</p>
                     </div>
                   </div>
                 </div>
@@ -252,9 +268,9 @@ export default function MotorbikeRentalPage() {
                         <FaMotorcycle className="text-2xl" />
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold text-blue-600 mb-2">Xe số</h3>
-                    <p className="text-gray-700 font-medium mb-2">120.000đ/ngày</p>
-                    <p className="text-gray-500 text-sm">Wave, Sirius, Jupiter, Suzuki</p>
+                    <h3 className="text-xl font-bold text-blue-600 mb-2">{t.moto?.categories?.manual?.title || 'Xe số'}</h3>
+                    <p className="text-gray-700 font-medium mb-2">{t.moto?.categories?.manual?.price || '120.000đ/ngày'}</p>
+                    <p className="text-gray-500 text-sm">{t.moto?.categories?.manual?.description || 'Wave, Sirius, Jupiter, Suzuki'}</p>
                   </div>
                   
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 text-center">
@@ -263,9 +279,9 @@ export default function MotorbikeRentalPage() {
                         <FaMotorcycle className="text-2xl" />
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold text-green-600 mb-2">Xe ga phổ thông</h3>
-                    <p className="text-gray-700 font-medium mb-2">150.000đ/ngày</p>
-                    <p className="text-gray-500 text-sm">Vision, Lead, Air Blade, Vario, Nmax</p>
+                    <h3 className="text-xl font-bold text-green-600 mb-2">{t.moto?.categories?.scooter?.title || 'Xe ga phổ thông'}</h3>
+                    <p className="text-gray-700 font-medium mb-2">{t.moto?.categories?.scooter?.price || '150.000đ/ngày'}</p>
+                    <p className="text-gray-500 text-sm">{t.moto?.categories?.scooter?.description || 'Vision, Lead, Air Blade, Vario, Nmax'}</p>
                   </div>
                   
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 text-center">
@@ -274,16 +290,16 @@ export default function MotorbikeRentalPage() {
                         <FaMotorcycle className="text-2xl" />
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold text-purple-600 mb-2">Xe ga cao cấp</h3>
-                    <p className="text-gray-700 font-medium mb-2">180.000đ/ngày</p>
-                    <p className="text-gray-500 text-sm">SH Mode, Vespa, NVX, PCX</p>
+                    <h3 className="text-xl font-bold text-purple-600 mb-2">{t.moto?.categories?.premium?.title || 'Xe ga cao cấp'}</h3>
+                    <p className="text-gray-700 font-medium mb-2">{t.moto?.categories?.premium?.price || '180.000đ/ngày'}</p>
+                    <p className="text-gray-500 text-sm">{t.moto?.categories?.premium?.description || 'SH Mode, Vespa, NVX, PCX'}</p>
                   </div>
                 </div>
                 
                 {/* Gallery xe máy cho thuê */}
                 <div className="mt-8 mb-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                    <FaMotorcycle className="mr-2 text-blue-600" /> Hình ảnh xe máy cho thuê
+                    <FaMotorcycle className="mr-2 text-blue-600" /> {t.moto?.gallery?.title || 'Hình ảnh xe máy cho thuê'}
                   </h3>
                   
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -313,15 +329,15 @@ export default function MotorbikeRentalPage() {
                   </div>
                   
                   <p className="mt-4 text-sm text-gray-500 italic text-center">
-                    * Hover lên ảnh để xem thông tin chi tiết, click để xem ảnh kích thước lớn. Hình ảnh chỉ mang tính chất minh họa.
+                    {t.moto?.gallery?.note || '* Hover lên ảnh để xem thông tin chi tiết, click để xem ảnh kích thước lớn. Hình ảnh chỉ mang tính chất minh họa.'}
                   </p>
                 </div>
                 
                 <div className="border-t border-gray-200 pt-6">
-                  <h3 className="text-lg font-bold mb-4">Thủ tục và điều kiện thuê xe:</h3>
+                  <h3 className="text-lg font-bold mb-4">{t.moto?.procedures?.title || 'Thủ tục và điều kiện thuê xe:'}</h3>
                   
                   <p className="text-gray-700 mb-4">
-                    Thủ tục thuê xe máy rất đơn giản, nhanh chóng. Bạn chỉ cần để lại <strong>một trong các giấy tờ sau</strong> là có thể thuê xe ngay:
+                    {t.moto?.procedures?.description || 'Thủ tục thuê xe máy rất đơn giản, nhanh chóng. Bạn chỉ cần để lại một trong các giấy tờ sau là có thể thuê xe ngay:'}
                   </p>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
@@ -330,8 +346,8 @@ export default function MotorbikeRentalPage() {
                         <FaIdCard className="text-sm" />
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-1">CMND / CCCD</h4>
-                        <p className="text-gray-600 text-sm">Chứng minh nhân dân hoặc căn cước công dân còn hiệu lực</p>
+                        <h4 className="font-semibold mb-1">{t.moto?.procedures?.documents?.idCard?.title || 'CMND / CCCD'}</h4>
+                        <p className="text-gray-600 text-sm">{t.moto?.procedures?.documents?.idCard?.description || 'Chứng minh nhân dân hoặc căn cước công dân còn hiệu lực'}</p>
                       </div>
                     </div>
                     
@@ -340,8 +356,8 @@ export default function MotorbikeRentalPage() {
                         <FaCreditCard className="text-sm" />
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-1">Bằng Lái Xe</h4>
-                        <p className="text-gray-600 text-sm">Bằng lái xe máy hoặc ô tô còn hiệu lực</p>
+                        <h4 className="font-semibold mb-1">{t.moto?.procedures?.documents?.license?.title || 'Bằng Lái Xe'}</h4>
+                        <p className="text-gray-600 text-sm">{t.moto?.procedures?.documents?.license?.description || 'Bằng lái xe máy hoặc ô tô còn hiệu lực'}</p>
                       </div>
                     </div>
                   </div>
@@ -353,43 +369,61 @@ export default function MotorbikeRentalPage() {
                       </div>
                       <div>
                         <p className="text-gray-700">
-                          <span className="font-medium">Dịch vụ giao xe miễn phí</span> tận nơi cho khách hàng tại khu vực trung tâm Nha Trang (khách sạn, nhà ga, bến xe)
+                          {t.moto?.procedures?.deliveryNote || 'Dịch vụ giao xe miễn phí tận nơi cho khách hàng tại khu vực trung tâm Nha Trang (khách sạn, nhà ga, bến xe)'}
                         </p>
                       </div>
                     </div>
                   </div>
                   
-                  <h4 className="font-semibold mb-3">Các điều kiện thuê xe:</h4>
+                  <h4 className="font-semibold mb-3">{t.moto?.procedures?.conditions?.title || 'Các điều kiện thuê xe:'}</h4>
                   <ul className="space-y-3 mb-5">
-                    <li className="flex items-start">
-                      <span className="text-blue-500 mr-2 mt-1">•</span>
-                      <span>Cọc CMND/CCCD/Hộ chiếu gốc hoặc 5 triệu tiền mặt</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-500 mr-2 mt-1">•</span>
-                      <span>Thuê từ 3 ngày trở lên được giảm 10% tổng hóa đơn</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-500 mr-2 mt-1">•</span>
-                      <span>Bao gồm miễn phí: mũ bảo hiểm, áo mưa, giao xe tận nơi (trong bán kính 3km)</span>
-                    </li>
+                    {t.moto?.procedures?.conditions?.items?.map((item, index) => (
+                      <li key={index} className="flex items-start">
+                        <span className="text-blue-500 mr-2 mt-1">•</span>
+                        <span>{item}</span>
+                      </li>
+                    )) || (
+                      <>
+                        <li className="flex items-start">
+                          <span className="text-blue-500 mr-2 mt-1">•</span>
+                          <span>Cọc CMND/CCCD/Hộ chiếu gốc hoặc 5 triệu tiền mặt</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-blue-500 mr-2 mt-1">•</span>
+                          <span>Thuê từ 3 ngày trở lên được giảm 10% tổng hóa đơn</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-blue-500 mr-2 mt-1">•</span>
+                          <span>Bao gồm miễn phí: mũ bảo hiểm, áo mưa, giao xe tận nơi (trong bán kính 3km)</span>
+                        </li>
+                      </>
+                    )}
                   </ul>
                   
                   <div className="bg-orange-50 rounded-lg p-4 border-l-4 border-orange-500">
-                    <h4 className="font-semibold mb-2">Lưu ý quan trọng:</h4>
+                    <h4 className="font-semibold mb-2">{t.moto?.procedures?.importantNotes?.title || 'Lưu ý quan trọng:'}</h4>
                     <ul className="space-y-2">
-                      <li className="flex items-start">
-                        <FaExclamationTriangle className="text-orange-500 mr-2 mt-1 flex-shrink-0" />
-                        <span>Không để xe dưới lòng, lề đường. Hãy để xe ở những bãi giữ xe an toàn</span>
-                      </li>
-                      <li className="flex items-start">
-                        <FaExclamationTriangle className="text-orange-500 mr-2 mt-1 flex-shrink-0" />
-                        <span>Tuân thủ luật giao thông: không vượt đèn đỏ, không đi ngược chiều, đội mũ bảo hiểm</span>
-                      </li>
-                      <li className="flex items-start">
-                        <FaExclamationTriangle className="text-orange-500 mr-2 mt-1 flex-shrink-0" />
-                        <span>Thời gian thuê xe máy: 1 ngày = 24h, nếu phát sinh 6h = 1/2 ngày</span>
-                      </li>
+                      {t.moto?.procedures?.importantNotes?.items?.map((note, index) => (
+                        <li key={index} className="flex items-start">
+                          <FaExclamationTriangle className="text-orange-500 mr-2 mt-1 flex-shrink-0" />
+                          <span>{note}</span>
+                        </li>
+                      )) || (
+                        <>
+                          <li className="flex items-start">
+                            <FaExclamationTriangle className="text-orange-500 mr-2 mt-1 flex-shrink-0" />
+                            <span>Không để xe dưới lòng, lề đường. Hãy để xe ở những bãi giữ xe an toàn</span>
+                          </li>
+                          <li className="flex items-start">
+                            <FaExclamationTriangle className="text-orange-500 mr-2 mt-1 flex-shrink-0" />
+                            <span>Tuân thủ luật giao thông: không vượt đèn đỏ, không đi ngược chiều, đội mũ bảo hiểm</span>
+                          </li>
+                          <li className="flex items-start">
+                            <FaExclamationTriangle className="text-orange-500 mr-2 mt-1 flex-shrink-0" />
+                            <span>Thời gian thuê xe máy: 1 ngày = 24h, nếu phát sinh 6h = 1/2 ngày</span>
+                          </li>
+                        </>
+                      )}
                     </ul>
                   </div>
                 </div>
@@ -398,14 +432,14 @@ export default function MotorbikeRentalPage() {
               <div className="bg-blue-50 p-6">
                 <div className="text-center">
                   <p className="font-medium text-blue-800 mb-4">
-                    Để đặt thuê xe máy, vui lòng liên hệ trước ít nhất 2 giờ
+                    {t.common?.contactForBooking || 'Để đặt thuê xe máy, vui lòng liên hệ trước ít nhất 2 giờ'}
                   </p>
                   <div className="flex flex-col sm:flex-row justify-center gap-3">
                     <a 
                       href={`tel:${phoneNumber}`}
                       className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-md transition-colors"
                     >
-                      <FaPhone className="mr-2" /> Gọi để đặt xe: {phoneNumber}
+                      <FaPhone className="mr-2" /> {t.common?.callNow || 'Gọi để đặt xe'}: {phoneNumber}
                     </a>
                     <a 
                       href={`https://zalo.me/${phoneNumber}`}
@@ -413,7 +447,7 @@ export default function MotorbikeRentalPage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-md transition-colors"
                     >
-                      <FaWhatsapp className="mr-2" /> Nhắn tin qua Zalo
+                      <FaWhatsapp className="mr-2" /> {t.common?.messageZalo || 'Nhắn tin qua Zalo'}
                     </a>
                     <a 
                       href={`https://t.me/${CONTACT_INFO.telegramUsername}`}
@@ -421,7 +455,7 @@ export default function MotorbikeRentalPage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white px-5 py-3 rounded-md transition-colors"
                     >
-                      <FaTelegram className="mr-2" /> Nhắn tin qua Telegram
+                      <FaTelegram className="mr-2" /> {t.common?.messageTelegram || 'Nhắn tin qua Telegram'}
                     </a>
                   </div>
                 </div>
@@ -430,10 +464,10 @@ export default function MotorbikeRentalPage() {
             
             {/* Touring Information */}
             <div className="bg-white rounded-lg p-6 md:p-8 shadow-sm mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Khám phá Nha Trang bằng xe máy</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">{t.moto?.touring?.title || 'Khám phá Nha Trang bằng xe máy'}</h2>
               
               <p className="text-gray-700 mb-6">
-                Thuê xe máy là cách linh hoạt và thuận tiện nhất để khám phá Nha Trang và các vùng lân cận. Dưới đây là một số điểm đến lý tưởng để khám phá bằng xe máy:
+                {t.moto?.touring?.description || 'Thuê xe máy là cách linh hoạt và thuận tiện nhất để khám phá Nha Trang và các vùng lân cận. Dưới đây là một số điểm đến lý tưởng để khám phá bằng xe máy:'}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
@@ -442,9 +476,9 @@ export default function MotorbikeRentalPage() {
                     <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-3">
                       <FaMapMarkedAlt />
                     </div>
-                    <h3 className="text-lg font-semibold">Bãi Dài và Bãi Dốc Lết</h3>
+                    <h3 className="text-lg font-semibold">{t.moto?.touring?.destinations?.baiDai?.title || 'Bãi Dài và Bãi Dốc Lết'}</h3>
                   </div>
-                  <p className="text-gray-600">Hai bãi biển đẹp, hoang sơ cách trung tâm Nha Trang khoảng 20-30km về phía Bắc</p>
+                  <p className="text-gray-600">{t.moto?.touring?.destinations?.baiDai?.description || 'Hai bãi biển đẹp, hoang sơ cách trung tâm Nha Trang khoảng 20-30km về phía Bắc'}</p>
                 </div>
                 
                 <div className="border border-gray-200 rounded-lg p-4">
@@ -452,9 +486,9 @@ export default function MotorbikeRentalPage() {
                     <div className="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3">
                       <FaMapMarkedAlt />
                     </div>
-                    <h3 className="text-lg font-semibold">Vịnh Ninh Vân và Vịnh Lăng Cô</h3>
+                    <h3 className="text-lg font-semibold">{t.moto?.touring?.destinations?.ninhVan?.title || 'Vịnh Ninh Vân và Vịnh Lăng Cô'}</h3>
                   </div>
-                  <p className="text-gray-600">Cảnh đẹp hoang sơ và yên bình, cách Nha Trang khoảng 60km về phía Bắc</p>
+                  <p className="text-gray-600">{t.moto?.touring?.destinations?.ninhVan?.description || 'Cảnh đẹp hoang sơ và yên bình, cách Nha Trang khoảng 60km về phía Bắc'}</p>
                 </div>
                 
                 <div className="border border-gray-200 rounded-lg p-4">
@@ -462,9 +496,9 @@ export default function MotorbikeRentalPage() {
                     <div className="w-10 h-10 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mr-3">
                       <FaMapMarkedAlt />
                     </div>
-                    <h3 className="text-lg font-semibold">Tháp Bà Ponagar</h3>
+                    <h3 className="text-lg font-semibold">{t.moto?.touring?.destinations?.ponagar?.title || 'Tháp Bà Ponagar'}</h3>
                   </div>
-                  <p className="text-gray-600">Di tích lịch sử Chăm Pa cổ, nằm ngay trong thành phố Nha Trang</p>
+                  <p className="text-gray-600">{t.moto?.touring?.destinations?.ponagar?.description || 'Di tích lịch sử Chăm Pa cổ, nằm ngay trong thành phố Nha Trang'}</p>
                 </div>
                 
                 <div className="border border-gray-200 rounded-lg p-4">
@@ -472,38 +506,47 @@ export default function MotorbikeRentalPage() {
                     <div className="w-10 h-10 bg-red-100 text-red-600 rounded-full flex items-center justify-center mr-3">
                       <FaMapMarkedAlt />
                     </div>
-                    <h3 className="text-lg font-semibold">Bãi biển Đại Lãnh và Mũi Điện</h3>
+                    <h3 className="text-lg font-semibold">{t.moto?.touring?.destinations?.daiLanh?.title || 'Bãi biển Đại Lãnh và Mũi Điện'}</h3>
                   </div>
-                  <p className="text-gray-600">Cung đường ven biển đẹp, nằm ở ranh giới giữa Khánh Hòa và Phú Yên</p>
+                  <p className="text-gray-600">{t.moto?.touring?.destinations?.daiLanh?.description || 'Cung đường ven biển đẹp, nằm ở ranh giới giữa Khánh Hòa và Phú Yên'}</p>
                 </div>
               </div>
               
               <div className="bg-gray-50 rounded-lg p-5 mt-4">
-                <h3 className="text-lg font-semibold mb-3">Lưu ý khi thuê xe máy</h3>
+                <h3 className="text-lg font-semibold mb-3">{t.moto?.touring?.tips?.title || 'Lưu ý khi thuê xe máy'}</h3>
                 <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <FaCheck className="text-green-500 mr-2 mt-1" /> 
-                    <span>Luôn mang theo giấy tờ cá nhân và đội mũ bảo hiểm khi lái xe</span>
-                  </li>
-                  <li className="flex items-start">
-                    <FaCheck className="text-green-500 mr-2 mt-1" /> 
-                    <span>Kiểm tra xe kỹ trước khi nhận (thắng, đèn, còi, xăng)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <FaCheck className="text-green-500 mr-2 mt-1" /> 
-                    <span>Nên chụp ảnh xe trước khi nhận để tránh tranh chấp</span>
-                  </li>
-                  <li className="flex items-start">
-                    <FaCheck className="text-green-500 mr-2 mt-1" /> 
-                    <span>Tuân thủ luật giao thông và chạy với tốc độ an toàn</span>
-                  </li>
+                  {t.moto?.touring?.tips?.items?.map((tip, index) => (
+                    <li key={index} className="flex items-start">
+                      <FaCheck className="text-green-500 mr-2 mt-1" /> 
+                      <span>{tip}</span>
+                    </li>
+                  )) || (
+                    <>
+                      <li className="flex items-start">
+                        <FaCheck className="text-green-500 mr-2 mt-1" /> 
+                        <span>Luôn mang theo giấy tờ cá nhân và đội mũ bảo hiểm khi lái xe</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheck className="text-green-500 mr-2 mt-1" /> 
+                        <span>Kiểm tra xe kỹ trước khi nhận (thắng, đèn, còi, xăng)</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheck className="text-green-500 mr-2 mt-1" /> 
+                        <span>Nên chụp ảnh xe trước khi nhận để tránh tranh chấp</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheck className="text-green-500 mr-2 mt-1" /> 
+                        <span>Tuân thủ luật giao thông và chạy với tốc độ an toàn</span>
+                      </li>
+                    </>
+                  )}
                 </ul>
               </div>
             </div>
             
             {/* Benefits */}
             <div className="bg-white rounded-lg p-6 md:p-8 shadow-sm mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Ưu điểm khi thuê xe tại Nha Trang Insight</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">{t.moto?.benefits?.title || 'Ưu điểm khi thuê xe tại Nha Trang Insight'}</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex items-start">
@@ -511,9 +554,9 @@ export default function MotorbikeRentalPage() {
                     <FaMotorcycle className="text-xl" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">Xe đời mới, chất lượng</h3>
+                    <h3 className="text-lg font-semibold mb-2">{t.moto?.benefits?.newBikes?.title || 'Xe đời mới, chất lượng'}</h3>
                     <p className="text-gray-600">
-                      Tất cả xe đều là xe mới, được bảo dưỡng thường xuyên, đảm bảo an toàn và vận hành tốt
+                      {t.moto?.benefits?.newBikes?.description || 'Tất cả xe đều là xe mới, được bảo dưỡng thường xuyên, đảm bảo an toàn và vận hành tốt'}
                     </p>
                   </div>
                 </div>
@@ -523,47 +566,16 @@ export default function MotorbikeRentalPage() {
                     <FaShieldAlt className="text-xl" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">Hỗ trợ cứu hộ 24/7</h3>
+                    <h3 className="text-lg font-semibold mb-2">{t.moto?.benefits?.support?.title || 'Hỗ trợ cứu hộ 24/7'}</h3>
                     <p className="text-gray-600">
-                      Dịch vụ cứu hộ miễn phí trong phạm vi thành phố Nha Trang nếu xe gặp sự cố
+                      {t.moto?.benefits?.support?.description || 'Dịch vụ cứu hộ miễn phí trong phạm vi thành phố Nha Trang nếu xe gặp sự cố'}
                     </p>
                   </div>
                 </div>
               </div>
             </div>
             
-            {/* Contact Information */}
-            <div className="bg-blue-50 rounded-lg p-6 shadow-sm text-center">
-              <h2 className="text-xl font-bold mb-4">Liên hệ đặt xe ngay hôm nay</h2>
-              <p className="text-gray-700 mb-6">
-                Hãy liên hệ với chúng tôi qua hotline hoặc mạng xã hội để được tư vấn và đặt dịch vụ xe máy tại Nha Trang
-              </p>
-              
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <a 
-                  href={`tel:${phoneNumber}`}
-                  className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors"
-                >
-                  <FaPhone className="mr-2" /> Gọi ngay: {phoneNumber}
-                </a>
-                <a 
-                  href={`https://zalo.me/${phoneNumber}`}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors"
-                >
-                  <FaWhatsapp className="mr-2" /> Nhắn tin qua Zalo
-                </a>
-                <a 
-                  href={`https://t.me/${CONTACT_INFO.telegramUsername}`}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md transition-colors"
-                >
-                  <FaTelegram className="mr-2" /> Nhắn tin qua Telegram
-                </a>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
@@ -572,51 +584,51 @@ export default function MotorbikeRentalPage() {
       <section className="py-8 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-center mb-8">Câu hỏi thường gặp về thuê xe máy Nha Trang</h2>
+            <h2 className="text-2xl font-bold text-center mb-8">{t.moto?.faq?.title || 'Câu hỏi thường gặp về thuê xe máy Nha Trang'}</h2>
             
             <div className="space-y-4">
               <details className="bg-gray-50 rounded-lg p-4">
                 <summary className="font-semibold cursor-pointer hover:text-blue-600">
-                  Giá thuê xe máy tại Nha Trang là bao nhiêu?
+                  {t.moto?.faq?.questions?.price?.question || 'Giá thuê xe máy tại Nha Trang là bao nhiêu?'}
                 </summary>
                 <div className="mt-3 text-gray-700">
-                  <p>Giá thuê xe máy tại Nha Trang từ <strong>100.000đ/ngày</strong> cho xe số (Wave, Sirius), <strong>150.000đ/ngày</strong> cho xe ga phổ thông (Vision, Air Blade), và <strong>180.000đ/ngày</strong> cho xe ga cao cấp (PCX, SH Mode).</p>
+                  <p>{t.moto?.faq?.questions?.price?.answer || 'Giá thuê xe máy tại Nha Trang từ 100.000đ/ngày cho xe số (Wave, Sirius), 150.000đ/ngày cho xe ga phổ thông (Vision, Air Blade), và 180.000đ/ngày cho xe ga cao cấp (PCX, SH Mode).'}</p>
                 </div>
               </details>
               
               <details className="bg-gray-50 rounded-lg p-4">
                 <summary className="font-semibold cursor-pointer hover:text-blue-600">
-                  Thủ tục thuê xe máy tại Nha Trang như thế nào?
+                  {t.moto?.faq?.questions?.procedures?.question || 'Thủ tục thuê xe máy tại Nha Trang như thế nào?'}
                 </summary>
                 <div className="mt-3 text-gray-700">
-                  <p>Thủ tục rất đơn giản, bạn chỉ cần để lại <strong>CMND/CCCD hoặc Bằng lái xe gốc</strong>. Có thể cọc 5 triệu tiền mặt thay thế. Thuê từ 3 ngày được giảm 10%.</p>
+                  <p>{t.moto?.faq?.questions?.procedures?.answer || 'Thủ tục rất đơn giản, bạn chỉ cần để lại CMND/CCCD hoặc Bằng lái xe gốc. Có thể cọc 5 triệu tiền mặt thay thế. Thuê từ 3 ngày được giảm 10%.'}</p>
                 </div>
               </details>
               
               <details className="bg-gray-50 rounded-lg p-4">
                 <summary className="font-semibold cursor-pointer hover:text-blue-600">
-                  Có giao xe máy tận nơi không?
+                  {t.moto?.faq?.questions?.delivery?.question || 'Có giao xe máy tận nơi không?'}
                 </summary>
                 <div className="mt-3 text-gray-700">
-                  <p>Có, chúng tôi <strong>giao xe miễn phí</strong> tận nơi trong bán kính 3km từ trung tâm Nha Trang, bao gồm khách sạn, nhà ga, bến xe. Liên hệ trước 2 giờ để đặt xe.</p>
+                  <p>{t.moto?.faq?.questions?.delivery?.answer || 'Có, chúng tôi giao xe miễn phí tận nơi trong bán kính 3km từ trung tâm Nha Trang, bao gồm khách sạn, nhà ga, bến xe. Liên hệ trước 2 giờ để đặt xe.'}</p>
                 </div>
               </details>
               
               <details className="bg-gray-50 rounded-lg p-4">
                 <summary className="font-semibold cursor-pointer hover:text-blue-600">
-                  Xe máy thuê có bảo hiểm không?
+                  {t.moto?.faq?.questions?.insurance?.question || 'Xe máy thuê có bảo hiểm không?'}
                 </summary>
                 <div className="mt-3 text-gray-700">
-                  <p>Có, tất cả xe đều được <strong>bảo hiểm đầy đủ</strong>. Ngoài ra chúng tôi cung cấp dịch vụ cứu hộ miễn phí 24/7 trong phạm vi thành phố Nha Trang nếu xe gặp sự cố.</p>
+                  <p>{t.moto?.faq?.questions?.insurance?.answer || 'Có, tất cả xe đều được bảo hiểm đầy đủ. Ngoài ra chúng tôi cung cấp dịch vụ cứu hộ miễn phí 24/7 trong phạm vi thành phố Nha Trang nếu xe gặp sự cố.'}</p>
                 </div>
               </details>
               
               <details className="bg-gray-50 rounded-lg p-4">
                 <summary className="font-semibold cursor-pointer hover:text-blue-600">
-                  Có những loại xe máy nào cho thuê?
+                  {t.moto?.faq?.questions?.types?.question || 'Có những loại xe máy nào cho thuê?'}
                 </summary>
                 <div className="mt-3 text-gray-700">
-                  <p>Chúng tôi có đa dạng loại xe: <strong>Xe số</strong> (Honda Wave, Yamaha Sirius, Jupiter), <strong>xe ga phổ thông</strong> (Honda Vision, Air Blade, Lead, Nmax), <strong>xe ga cao cấp</strong> (PCX, SH Mode, NVX, Vespa).</p>
+                  <p>{t.moto?.faq?.questions?.types?.answer || 'Chúng tôi có đa dạng loại xe: Xe số (Honda Wave, Yamaha Sirius, Jupiter), xe ga phổ thông (Honda Vision, Air Blade, Lead, Nmax), xe ga cao cấp (PCX, SH Mode, NVX, Vespa).'}</p>
                 </div>
               </details>
             </div>

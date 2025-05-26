@@ -177,6 +177,10 @@
         "Xe 4 chỗ: từ 250.000đ/lượt",
         "Xe 7 chỗ: từ 300.000đ/lượt"
       ]
+    },
+    "contactSection": {
+      "title": "📞 Liên hệ đặt dịch vụ vận chuyển",
+      "description": "Cần tư vấn thêm về các phương tiện di chuyển hoặc đặt dịch vụ xe đưa đón tại Nha Trang? Liên hệ với chúng tôi ngay!"
     }
   },
   "moto": {
@@ -409,7 +413,93 @@
       "rating": "Đánh giá",
       "operatingHours": "Hoạt động",
       "fare": "Giá",
-      "contact": "Liên hệ"
+      "contact": "Liên hệ",
+      "data": [
+        {
+          "name": "Mai Linh Taxi",
+          "phone": "025 83 83 8383",
+          "baseRate": "15.000đ",
+          "pricePerKm": "15.000đ - 17.000đ/km",
+          "waitingRate": "45.000đ/giờ",
+          "color": "Xanh lá",
+          "operatingHours": "24/7",
+          "website": "https://mailinh.vn",
+          "logo": "/images/taxi/mailinh.png",
+          "rating": 4.5,
+          "features": ["Đội xe lớn", "Tài xế chuyên nghiệp", "Có thẻ thanh toán"],
+          "description": "Mai Linh là một trong những hãng taxi lớn nhất và uy tín nhất tại Nha Trang, phục vụ nhiều tuyến du lịch."
+        },
+        {
+          "name": "Vinasun Taxi",
+          "phone": "0258 3827 272",
+          "baseRate": "15.000đ",
+          "pricePerKm": "16.000đ - 18.000đ/km",
+          "waitingRate": "47.000đ/giờ",
+          "color": "Trắng-xanh",
+          "operatingHours": "24/7",
+          "website": "https://vinasuntaxi.com",
+          "logo": "/images/taxi/vinasun.png",
+          "rating": 4.3,
+          "features": ["App đặt xe", "Thanh toán qua app", "Dịch vụ đa dạng", "Có hóa đơn VAT"],
+          "description": "Vinasun là hãng taxi uy tín từ TPHCM, đã mở rộng hoạt động tại Nha Trang để phục vụ du khách."
+        },
+        {
+          "name": "Taxi Xanh",
+          "phone": "1900 2088",
+          "baseRate": "15.000đ",
+          "pricePerKm": "15.000đ - 16.500đ/km",
+          "waitingRate": "40.000đ/giờ",
+          "color": "Xanh dương",
+          "operatingHours": "5:00 - 24:00",
+          "website": "https://taxi-xanh.vn",
+          "logo": "/images/taxi/xanhsm.png",
+          "rating": 4.0,
+          "features": ["App đặt xe", "Giá rẻ", "Phục vụ tận tình", "Đưa đón sân bay"],
+          "description": "Taxi Xanh là hãng taxi địa phương với giá cả phải chăng, phù hợp cho khách du lịch muốn di chuyển tiết kiệm."
+        },
+        {
+          "name": "Sun Taxi",
+          "phone": "0258 3 89 89 89",
+          "baseRate": "16.000đ",
+          "pricePerKm": "17.000đ - 18.000đ/km",
+          "waitingRate": "45.000đ/giờ",
+          "color": "Vàng",
+          "operatingHours": "24/7",
+          "website": "https://suntaxi.vn",
+          "logo": "/images/taxi/suntaxi.png",
+          "rating": 4.2,
+          "features": ["Xe sang trọng", "Dịch vụ VIP", "Đón tiễn sân bay"],
+          "description": "Sun Taxi cung cấp dịch vụ taxi cao cấp với các loại xe sang trọng, phù hợp cho khách đoàn và khách VIP."
+        },
+        {
+          "name": "Maxim Taxi",
+          "phone": "1900 01585",
+          "baseRate": "15.000đ",
+          "pricePerKm": "15.000đ - 16.000đ/km",
+          "waitingRate": "42.000đ/giờ",
+          "color": "Trắng-đỏ",
+          "operatingHours": "24/7",
+          "website": "https://maximtaxi.vn",
+          "logo": "/images/taxi/maxim.jpg",
+          "rating": 4.3,
+          "features": ["App đặt xe", "Đội xe mới", "Tài xế am hiểu địa phương", "Giá cạnh tranh"],
+          "description": "Maxim Taxi là hãng taxi địa phương, quen thuộc với các tuyến đường và điểm du lịch nổi tiếng ở Nha Trang."
+        },
+        {
+          "name": "Grab",
+          "phone": "",
+          "baseRate": "15.000đ",
+          "pricePerKm": "15.000đ - 16.000đ/km",
+          "waitingRate": "42.000đ/giờ",
+          "color": "Xanh lá",
+          "operatingHours": "24/7",
+          "website": "https://grab.com",
+          "logo": "/images/taxi/grab.jpg",
+          "rating": 4.3,
+          "features": ["App đặt xe", "Đội xe mới", "Tài xế am hiểu địa phương", "Giá cạnh tranh"],
+          "description": "Grab là hãng taxi địa phương, quen thuộc với các tuyến đường và điểm du lịch nổi tiếng ở Nha Trang."
+        }
+      ]
     },
     "types": {
       "title": "Các loại taxi phổ biến",
@@ -440,7 +530,37 @@
         "distance": "Khoảng cách",
         "estimatedPrice": "Giá ước tính",
         "time": "Thời gian"
-      }
+      },
+      "data": [
+        {
+          "from": "Sân bay Cam Ranh",
+          "to": "Trung tâm Nha Trang",
+          "distance": "~30km",
+          "estimatedPrice": "350.000đ - 400.000đ",
+          "estimatedTime": "40-45 phút"
+        },
+        {
+          "from": "Trung tâm Nha Trang",
+          "to": "Vinpearl Land",
+          "distance": "~5km",
+          "estimatedPrice": "80.000đ - 100.000đ",
+          "estimatedTime": "15-20 phút"
+        },
+        {
+          "from": "Trung tâm Nha Trang",
+          "to": "I-Resort",
+          "distance": "~7km",
+          "estimatedPrice": "120.000đ - 140.000đ",
+          "estimatedTime": "20-25 phút"
+        },
+        {
+          "from": "Trung tâm Nha Trang",
+          "to": "Tháp Bà Ponagar",
+          "distance": "~4km",
+          "estimatedPrice": "70.000đ - 90.000đ",
+          "estimatedTime": "10-15 phút"
+        }
+      ]
     },
     "tips": {
       "title": "Lời khuyên khi đi taxi tại Nha Trang",
@@ -484,18 +604,18 @@
     },
     "routeInfo": {
       "title": "Thông tin tuyến",
-      "routeName": "Tên tuyến:",
-      "operatingHours": "Giờ hoạt động:",
-      "frequency": "Tần suất:",
-      "fare": "Giá vé:",
-      "information": "Thông tin:",
-      "lastUpdated": "Cập nhật:",
-      "stops": "Các trạm dừng:"
+      "routeName": "Tên tuyến",
+      "operatingHours": "Giờ hoạt động",
+      "frequency": "Tần suất",
+      "fare": "Giá vé",
+      "information": "Thông tin",
+      "lastUpdated": "Cập nhật",
+      "stops": "Các trạm dừng"
     },
     "stopInfo": {
       "title": "Trạm",
-      "description": "Mô tả:",
-      "routesThrough": "Các tuyến đi qua:",
+      "description": "Mô tả",
+      "routesThrough": "Các tuyến đi qua",
       "noRoutes": "Không có tuyến nào đi qua trạm này"
     },
     "mapLegend": {
@@ -640,7 +760,8 @@
     "backToTransportation": "Quay lại trang Di chuyển",
     "intro": {
       "title": "Xe ôm tại Nha Trang",
-      "description": "Xe ôm là phương tiện di chuyển phổ biến và nhanh chóng tại Nha Trang, đặc biệt phù hợp cho những quãng đường ngắn trong thành phố. Hiện tại có hai loại chính: xe ôm truyền thống và xe ôm công nghệ qua ứng dụng."
+      "description": "Xe ôm là phương tiện di chuyển phổ biến và nhanh chóng tại Nha Trang, đặc biệt phù hợp cho những quãng đường ngắn trong thành phố. Hiện tại có hai loại chính: xe ôm truyền thống và xe ôm công nghệ qua ứng dụng.",
+      "warning": "Xe ôm công nghệ an toàn hơn với giá cố định - Xe ôm truyền thống linh hoạt và có thể thương lượng"
     },
     "types": {
       "title": "Các loại xe ôm tại Nha Trang",
@@ -681,7 +802,9 @@
       }
     },
     "apps": {
-      "title": "Các ứng dụng xe ôm phổ biến",
+      "title": "So sánh các ứng dụng xe ôm công nghệ",
+      "featuresTitle": "Tính năng nổi bật:",
+      "prosConsTitle": "Ưu điểm & Nhược điểm:",
       "grab": {
         "name": "Grab",
         "description": "Ứng dụng xe ôm công nghệ hàng đầu Đông Nam Á, có mặt tại Nha Trang với dịch vụ GrabBike.",
@@ -690,6 +813,19 @@
           "Nhiều hình thức thanh toán",
           "Chương trình khuyến mãi thường xuyên",
           "Dịch vụ đa dạng: GrabBike, GrabCar, GrabFood"
+        ],
+        "rating": "4.5/5",
+        "priceRange": "12.000-18.000đ/km",
+        "availability": "Hoạt động 24/7",
+        "pros": [
+          "Mạng lưới tài xế rộng nhất",
+          "Nhiều chương trình khuyến mãi",
+          "Dịch vụ đa dạng (GrabBike, GrabCar)",
+          "Thanh toán linh hoạt"
+        ],
+        "cons": [
+          "Giá có thể cao vào giờ rush",
+          "Thời gian chờ lâu vào peak time"
         ]
       },
       "maxim": {
@@ -700,6 +836,20 @@
           "Giao diện đơn giản",
           "Hỗ trợ thanh toán tiền mặt",
           "Thời gian chờ xe thường ngắn"
+        ],
+        "rating": "4.2/5",
+        "priceRange": "11.000-16.000đ/km",
+        "availability": "Hoạt động 24/7",
+        "pros": [
+          "Giá cước rẻ hơn Grab",
+          "Tài xế am hiểu địa phương",
+          "Hỗ trợ khách hàng tốt",
+          "Không phụ thu cao điểm"
+        ],
+        "cons": [
+          "Số lượng tài xế ít hơn Grab",
+          "Tính năng ít hơn",
+          "Thời gian chờ có thể lâu"
         ]
       }
     },
@@ -739,20 +889,77 @@
       }
     },
     "tips": {
-      "title": "Lời khuyên khi sử dụng xe ôm",
-      "items": [
-        "Luôn đội mũ bảo hiểm khi đi xe ôm",
-        "Xác nhận điểm đến và giá cước trước khi khởi hành",
-        "Với xe ôm truyền thống, nên thương lượng giá trước",
-        "Với xe ôm công nghệ, kiểm tra thông tin tài xế và biển số xe",
-        "Không mang theo đồ vật quá cồng kềnh",
-        "Chia sẻ thông tin chuyến đi với người thân khi đi xa",
-        "Đánh giá tài xế sau chuyến đi để cải thiện chất lượng dịch vụ"
-      ]
+      "title": "Tips đi xe ôm an toàn tại Nha Trang",
+      "appBased": {
+        "title": "Với xe ôm công nghệ",
+        "items": [
+          "Kiểm tra thông tin tài xế và biển số xe trước khi lên",
+          "Chia sẻ hành trình với gia đình, bạn bè",
+          "Luôn đội mũ bảo hiểm được cung cấp",
+          "Theo dõi hành trình trên app",
+          "Đánh giá tài xế sau chuyến đi"
+        ]
+      },
+      "traditional": {
+        "title": "Với xe ôm truyền thống",
+        "items": [
+          "Thỏa thuận giá cước rõ ràng trước khi đi",
+          "Chọn tài xế ở các điểm chờ chính thức",
+          "Yêu cầu mũ bảo hiểm và kiểm tra chất lượng",
+          "Ghi nhớ biển số xe và thông báo cho người thân",
+          "Tránh đi vào ban đêm nếu không cần thiết"
+        ]
+      },
+      "importantNotes": {
+        "title": "Lưu ý quan trọng",
+        "items": [
+          "Không sử dụng điện thoại khi đang di chuyển",
+          "Giữ chặt túi xách và đồ đạc cá nhân",
+          "Chuẩn bị tiền lẻ để thanh toán",
+          "Từ chối nếu tài xế có dấu hiệu say xỉn hoặc bất thường"
+        ]
+      }
     },
     "routes": {
-      "title": "Các tuyến xe ôm phổ biến và giá ước tính",
-      "note": "* Giá cước có thể thay đổi tùy theo thời điểm, ứng dụng và tình trạng giao thông."
+      "title": "Tuyến đường phổ biến và giá cước ước tính",
+      "headers": {
+        "route": "Tuyến đường",
+        "distance": "Khoảng cách",
+        "appBased": "Xe ôm công nghệ",
+        "traditional": "Xe ôm truyền thống",
+        "time": "Thời gian"
+      },
+      "data": [
+        {
+          "route": "Trung tâm → Vinpearl",
+          "distance": "~5km",
+          "appBased": "60.000-90.000đ",
+          "traditional": "75.000-125.000đ",
+          "time": "15-20 phút"
+        },
+        {
+          "route": "Sân bay Cam Ranh → Trung tâm",
+          "distance": "~30km",
+          "appBased": "360.000-540.000đ",
+          "traditional": "450.000-750.000đ",
+          "time": "40-50 phút"
+        },
+        {
+          "route": "Trung tâm → Tháp Bà",
+          "distance": "~4km",
+          "appBased": "48.000-72.000đ",
+          "traditional": "60.000-100.000đ",
+          "time": "12-18 phút"
+        },
+        {
+          "route": "Trung tâm → Bãi Dài",
+          "distance": "~25km",
+          "appBased": "300.000-450.000đ",
+          "traditional": "375.000-625.000đ",
+          "time": "35-45 phút"
+        }
+      ],
+      "note": "* Giá cước có thể thay đổi tùy theo thời điểm, tình trạng giao thông và các yếu tố khác. Giá xe ôm công nghệ đã bao gồm các loại phí, trong khi xe ôm truyền thống có thể thương lượng."
     },
     "alternatives": {
       "title": "Các phương tiện thay thế",
@@ -761,6 +968,31 @@
     "contactSection": {
       "title": "Cần hỗ trợ về di chuyển tại Nha Trang?",
       "description": "Liên hệ với chúng tôi để được tư vấn về các phương tiện di chuyển phù hợp nhất cho chuyến đi của bạn"
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp về xe ôm Nha Trang",
+      "questions": {
+        "popularApps": {
+          "question": "Ứng dụng xe ôm nào phổ biến nhất tại Nha Trang?",
+          "answer": "Grab và Maxim là hai ứng dụng xe ôm chính tại Nha Trang. Grab có mạng lưới tài xế rộng và nhiều khuyến mãi, trong khi Maxim có giá cước cạnh tranh và dịch vụ địa phương."
+        },
+        "pricing": {
+          "question": "Giá xe ôm tại Nha Trang là bao nhiêu?",
+          "answer": "Xe ôm công nghệ: 12.000-18.000đ/km. Xe ôm truyền thống: 15.000-25.000đ/km tùy khoảng cách. Giá có thể tăng vào giờ cao điểm hoặc thời tiết xấu."
+        },
+        "safety": {
+          "question": "Làm thế nào để đi xe ôm an toàn tại Nha Trang?",
+          "answer": "Luôn đội mũ bảo hiểm, kiểm tra thông tin tài xế và biển số xe, chia sẻ hành trình với người thân. Với xe ôm truyền thống, thống nhất giá trước khi đi."
+        },
+        "availability": {
+          "question": "Xe ôm có hoạt động 24/7 không?",
+          "answer": "Ứng dụng xe ôm công nghệ như Grab, Maxim hoạt động 24/7 nhưng số lượng tài xế ít vào ban đêm. Xe ôm truyền thống thường hoạt động từ 5:00-23:00."
+        },
+        "choice": {
+          "question": "Nên chọn xe ôm truyền thống hay xe ôm công nghệ?",
+          "answer": "Xe ôm công nghệ an toàn hơn với giá cố định, theo dõi hành trình. Xe ôm truyền thống linh hoạt hơn, có thể thương lượng giá cho đoạn đường ngắn."
+        }
+      }
     }
   },
   "contact": {
@@ -785,11 +1017,11 @@
       "successMessage": "Cảm ơn bạn đã gửi thông tin! Chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.",
       "fields": {
         "name": {
-          "label": "Họ và tên *",
+          "label": "Họ và tên",
           "placeholder": "Nhập họ tên của bạn"
         },
         "email": {
-          "label": "Email *",
+          "label": "Email",
           "placeholder": "Nhập địa chỉ email"
         },
         "phone": {
@@ -797,7 +1029,7 @@
           "placeholder": "Nhập số điện thoại của bạn"
         },
         "subject": {
-          "label": "Chủ đề *",
+          "label": "Chủ đề",
           "placeholder": "Chọn chủ đề",
           "options": {
             "tourism": "Thông tin du lịch",
@@ -808,7 +1040,7 @@
           }
         },
         "message": {
-          "label": "Nội dung tin nhắn *",
+          "label": "Nội dung tin nhắn",
           "placeholder": "Hãy mô tả chi tiết yêu cầu của bạn..."
         }
       },
@@ -819,11 +1051,11 @@
       "title": "Thông tin thanh toán",
       "bankInfo": {
         "title": "Thông tin chuyển khoản",
-        "bank": "Ngân hàng:",
-        "branch": "Chi nhánh:",
-        "accountNumber": "Số tài khoản:",
-        "accountHolder": "Chủ tài khoản:",
-        "transferContent": "Nội dung CK:"
+        "bank": "Ngân hàng",
+        "branch": "Chi nhánh",
+        "accountNumber": "Số tài khoản",
+        "accountHolder": "Chủ tài khoản",
+        "transferContent": "Nội dung CK"
       },
       "qrCode": {
         "title": "Quét mã QR để thanh toán",

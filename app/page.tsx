@@ -22,6 +22,70 @@ export default function Home() {
     );
   }
 
+  // Danh sách thông tin du lịch
+  const tourismInfoList = [
+    {
+      id: 'transportation',
+      icon: FaBus,
+      bgColor: 'bg-yellow-50',
+      iconBgColor: 'bg-yellow-500',
+      textColor: 'text-yellow-600',
+      hoverColor: 'hover:text-yellow-700',
+      title: t.homepage?.sections?.transportation?.title || 'Di chuyển & Giao thông',
+      description: t.homepage?.sections?.transportation?.description || 'Thông tin về cách di chuyển đến Nha Trang và phương tiện đi lại trong thành phố: taxi, xe buýt, thuê xe máy và nhiều lựa chọn khác.',
+      link: '/transportation',
+      linkText: t.homepage?.sections?.transportation?.link || 'Xem chi tiết →'
+    },
+    {
+      id: 'moto',
+      icon: FaMotorcycle,
+      bgColor: 'bg-blue-50',
+      iconBgColor: 'bg-blue-600',
+      textColor: 'text-blue-600',
+      hoverColor: 'hover:text-blue-700',
+      title: t.homepage?.sections?.moto?.title || 'Thuê xe máy',
+      description: t.homepage?.sections?.moto?.description || 'Dịch vụ cho thuê xe máy uy tín, giá rẻ từ 100.000đ - 180.000đ/ngày, đa dạng loại xe từ xe số đến xe ga cao cấp, giao xe tận nơi tại Nha Trang.',
+      link: '/moto',
+      linkText: t.homepage?.sections?.moto?.link || 'Xem dịch vụ thuê xe máy →'
+    },
+    {
+      id: 'car',
+      icon: FaCar,
+      bgColor: 'bg-green-50',
+      iconBgColor: 'bg-green-600',
+      textColor: 'text-green-600',
+      hoverColor: 'hover:text-green-700',
+      title: t.homepage?.sections?.car?.title || 'Thuê xe ô tô',
+      description: t.homepage?.sections?.car?.description || 'Dịch vụ thuê xe ô tô tự lái hoặc có tài, đa dạng dòng xe từ 4-16 chỗ, giá cả hợp lý, thủ tục đơn giản, phục vụ đưa đón sân bay.',
+      link: '/car',
+      linkText: t.homepage?.sections?.car?.link || 'Xem dịch vụ thuê xe ô tô →'
+    },
+    {
+      id: 'bus',
+      icon: FaBus,
+      bgColor: 'bg-blue-50',
+      iconBgColor: 'bg-blue-500',
+      textColor: 'text-blue-600',
+      hoverColor: 'hover:text-blue-700',
+      title: t.homepage?.sections?.bus?.title || 'Xe Buýt Nha Trang',
+      description: t.homepage?.sections?.bus?.description || 'Thông tin tuyến đường, lịch trình và bản đồ các tuyến xe buýt công cộng tại Nha Trang. Giá vé chỉ từ 7.000 VNĐ/lượt, phương tiện tiết kiệm và thuận tiện.',
+      link: '/bus',
+      linkText: t.homepage?.sections?.bus?.link || 'Xem thông tin xe buýt →'
+    },
+    {
+      id: 'taxi',
+      icon: FaTaxi,
+      bgColor: 'bg-yellow-50',
+      iconBgColor: 'bg-yellow-500',
+      textColor: 'text-yellow-600',
+      hoverColor: 'hover:text-yellow-700',
+      title: t.homepage?.sections?.taxi?.title || 'Dịch vụ Taxi',
+      description: t.homepage?.sections?.taxi?.description || 'Thông tin chi tiết về các hãng taxi uy tín tại Nha Trang, giá cước từ 15.000 - 20.000đ/km, số điện thoại đặt xe và tuyến đường phổ biến.',
+      link: '/taxi',
+      linkText: t.homepage?.sections?.taxi?.link || 'Xem thông tin dịch vụ taxi →'
+    }
+  ];
+
   return (
     <>
       <div>
@@ -57,105 +121,28 @@ export default function Home() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Điểm đến */}
-              {/* <div className="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4">
-                  <FaUmbrellaBeach className="text-2xl" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Điểm tham quan nổi bật</h3>
-                <p className="text-gray-600 mb-4">
-                  Khám phá những địa điểm du lịch nổi tiếng nhất tại Nha Trang như Vinpearl Land, Tháp Bà Ponagar, 
-                  Vịnh Ninh Vân và nhiều hơn nữa.
-                </p>
-                <Link href="/destinations" className="text-blue-600 font-medium hover:text-blue-700">
-                  Xem chi tiết →
-                </Link>
-              </div> */}
-              
-              {/* Lưu trú */}
-              {/* <div className="bg-green-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center mb-4">
-                  <FaHotel className="text-2xl" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Khách sạn & Lưu trú</h3>
-                <p className="text-gray-600 mb-4">
-                  Tìm hiểu các lựa chọn lưu trú từ khách sạn 5 sao sang trọng đến những homestay giá rẻ phù hợp với 
-                  ngân sách của bạn.
-                </p>
-                <Link href="/accommodations" className="text-green-600 font-medium hover:text-green-700">
-                  Xem chi tiết →
-                </Link>
-              </div> */}
-              
-              {/* Di chuyển */}
-              <div className="bg-yellow-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 bg-yellow-500 text-white rounded-full flex items-center justify-center mb-4">
-                  <FaBus className="text-2xl" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">{t.homepage?.sections?.transportation?.title || 'Di chuyển & Giao thông'}</h3>
-                <p className="text-gray-600 mb-4">
-                  {t.homepage?.sections?.transportation?.description || 'Thông tin về cách di chuyển đến Nha Trang và phương tiện đi lại trong thành phố: taxi, xe buýt, thuê xe máy và nhiều lựa chọn khác.'}
-                </p>
-                <Link href="/transportation" className="text-yellow-600 font-medium hover:text-yellow-700">
-                  {t.homepage?.sections?.transportation?.link || 'Xem chi tiết →'}
-                </Link>
-              </div>
-              
-              {/* Thuê xe máy */}
-              <div className="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center mb-4">
-                  <FaMotorcycle className="text-2xl" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">{t.homepage?.sections?.moto?.title || 'Thuê xe máy'}</h3>
-                <p className="text-gray-600 mb-4">
-                  {t.homepage?.sections?.moto?.description || 'Dịch vụ cho thuê xe máy uy tín, giá rẻ từ 100.000đ - 180.000đ/ngày, đa dạng loại xe từ xe số đến xe ga cao cấp, giao xe tận nơi tại Nha Trang.'}
-                </p>
-                <Link href="/moto" className="text-blue-600 font-medium hover:text-blue-700">
-                  {t.homepage?.sections?.moto?.link || 'Xem dịch vụ thuê xe máy →'}
-                </Link>
-              </div>
-              
-              {/* Thuê xe ô tô */}
-              <div className="bg-green-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 bg-green-600 text-white rounded-full flex items-center justify-center mb-4">
-                  <FaCar className="text-2xl" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">{t.homepage?.sections?.car?.title || 'Thuê xe ô tô'}</h3>
-                <p className="text-gray-600 mb-4">
-                  {t.homepage?.sections?.car?.description || 'Dịch vụ thuê xe ô tô tự lái hoặc có tài, đa dạng dòng xe từ 4-16 chỗ, giá cả hợp lý, thủ tục đơn giản, phục vụ đưa đón sân bay.'}
-                </p>
-                <Link href="/car" className="text-green-600 font-medium hover:text-green-700">
-                  {t.homepage?.sections?.car?.link || 'Xem dịch vụ thuê xe ô tô →'}
-                </Link>
-              </div>
-              
-              {/* Xe Buýt */}
-              <div className="bg-blue-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4">
-                  <FaBus className="text-2xl" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">{t.homepage?.sections?.bus?.title || 'Xe Buýt Nha Trang'}</h3>
-                <p className="text-gray-600 mb-4">
-                  {t.homepage?.sections?.bus?.description || 'Thông tin tuyến đường, lịch trình và bản đồ các tuyến xe buýt công cộng tại Nha Trang. Giá vé chỉ từ 7.000 VNĐ/lượt, phương tiện tiết kiệm và thuận tiện.'}
-                </p>
-                <Link href="/bus" className="text-blue-600 font-medium hover:text-blue-700">
-                  {t.homepage?.sections?.bus?.link || 'Xem thông tin xe buýt →'}
-                </Link>
-              </div>
-              
-              {/* Taxi */}
-              <div className="bg-yellow-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 bg-yellow-500 text-white rounded-full flex items-center justify-center mb-4">
-                  <FaTaxi className="text-2xl" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">{t.homepage?.sections?.taxi?.title || 'Dịch vụ Taxi'}</h3>
-                <p className="text-gray-600 mb-4">
-                  {t.homepage?.sections?.taxi?.description || 'Thông tin chi tiết về các hãng taxi uy tín tại Nha Trang, giá cước từ 15.000 - 20.000đ/km, số điện thoại đặt xe và tuyến đường phổ biến.'}
-                </p>
-                <Link href="/taxi" className="text-yellow-600 font-medium hover:text-yellow-700">
-                  {t.homepage?.sections?.taxi?.link || 'Xem thông tin dịch vụ taxi →'}
-                </Link>
-              </div>
+              {tourismInfoList.map((item) => {
+                const IconComponent = item.icon;
+                return (
+                  <Link key={item.id} href={item.link} className="block group">
+                    <div className={`${item.bgColor} rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow cursor-pointer group-hover:scale-105 transform transition-transform duration-200`}>
+                      <div className={`w-14 h-14 ${item.iconBgColor} text-white rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-200`}>
+                        <IconComponent className="text-2xl" />
+                      </div>
+                      <h3 className={`text-xl font-semibold mb-3 ${item.textColor} group-hover:${item.hoverColor.replace('hover:', '')} transition-colors`}>{item.title}</h3>
+                      <p className="text-gray-600 mb-4 group-hover:text-gray-700 transition-colors">
+                        {item.description}
+                      </p>
+                      <span className={`${item.textColor} font-medium ${item.hoverColor} inline-flex items-center`}>
+                        {item.linkText}
+                        <svg className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>

@@ -6,6 +6,7 @@ import { CONTACT_INFO } from '../lib/contact-config';
 import Script from 'next/script';
 import { TRANSPORTATION_PAGE_SCHEMA } from '../lib/metadata';
 import { useLanguage } from '../contexts/LanguageContext';
+import ContactSection from '../components/ContactSection';
 
 export default function TransportationPage() {
   const { t, isLoading } = useLanguage();
@@ -33,6 +34,21 @@ export default function TransportationPage() {
               <p className="max-w-3xl mx-auto text-yellow-100 text-lg">
                 {t.transportation?.hero?.subtitle || 'Tìm hiểu các phương tiện di chuyển và dịch vụ vận chuyển tại Nha Trang, từ thuê xe máy, xe ô tô đến xe buýt công cộng'}
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="py-6 bg-white border-b">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <ContactSection 
+                title={t.transportation?.contactSection?.title || '📞 Liên hệ đặt dịch vụ vận chuyển'}
+                description={t.transportation?.contactSection?.description || 'Cần tư vấn thêm về các phương tiện di chuyển hoặc đặt dịch vụ xe đưa đón tại Nha Trang? Liên hệ với chúng tôi ngay!'}
+                bgColor="bg-gradient-to-r from-yellow-50 to-orange-50"
+                phoneNumber={CONTACT_INFO.phoneNumber}
+                showSecondPhone={true}
+              />
             </div>
           </div>
         </section>
@@ -260,42 +276,7 @@ export default function TransportationPage() {
           </div>
         </section>
         
-        {/* Contact */}
-        <section className="py-12 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Liên hệ đặt dịch vụ vận chuyển</h2>
-              <p className="text-gray-600 mb-8">
-                Cần tư vấn thêm về các phương tiện di chuyển hoặc đặt dịch vụ xe đưa đón tại Nha Trang? Liên hệ với chúng tôi ngay!
-              </p>
-              
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <a 
-                  href={`tel:${CONTACT_INFO.phoneNumber}`}
-                  className="inline-flex items-center justify-center bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-md transition-colors"
-                >
-                  <FaPhone className="mr-2" /> Gọi ngay: {CONTACT_INFO.phoneNumber}
-                </a>
-                <a 
-                  href={`https://zalo.me/${CONTACT_INFO.phoneNumber}`}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors"
-                >
-                  <FaWhatsapp className="mr-2" /> Nhắn tin qua Zalo
-                </a>
-                <a 
-                  href={`https://t.me/${CONTACT_INFO.telegramUsername}`}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md transition-colors"
-                >
-                  <FaTelegram className="mr-2" /> Nhắn tin qua Telegram
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+
       </div>
       
       {/* Schema.org JSON-LD */}

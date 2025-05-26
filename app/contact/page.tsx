@@ -18,8 +18,10 @@ import { CONTACT_INFO } from '../lib/contact-config';
 import { qrCodeUrl } from '../lib/utils';
 import Script from 'next/script';
 import { CONTACT_PAGE_SCHEMA } from '../lib/metadata';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function ContactPage() {
+  const { t, isLoading } = useLanguage();
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [formData, setFormData] = useState({
     name: '',
@@ -28,6 +30,17 @@ export default function ContactPage() {
     subject: '',
     message: ''
   });
+  
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
   
   // Xử lý thay đổi dữ liệu form
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -71,9 +84,9 @@ export default function ContactPage() {
         <section className="bg-gradient-to-r from-blue-600 to-blue-700 py-16">
           <div className="container mx-auto px-4">
             <div className="text-center text-white">
-              <h1 className="text-3xl md:text-4xl font-bold mb-4">Liên hệ với chúng tôi</h1>
+              <h1 className="text-3xl md:text-4xl font-bold mb-4">{t.contact?.hero?.title || 'Liên hệ với chúng tôi'}</h1>
               <p className="max-w-3xl mx-auto text-blue-100 text-lg">
-                Bạn có thắc mắc hoặc cần hỗ trợ? Liên hệ ngay với Nha Trang Insight để được phản hồi trong thời gian sớm nhất
+                {t.contact?.hero?.subtitle || 'Bạn có thắc mắc hoặc cần hỗ trợ? Liên hệ ngay với Nha Trang Insight để được phản hồi trong thời gian sớm nhất'}
               </p>
             </div>
           </div>
@@ -87,7 +100,7 @@ export default function ContactPage() {
                 {/* Contact Information */}
                 <div className="md:col-span-1">
                   <div className="bg-white rounded-lg shadow-sm p-6">
-                    <h2 className="text-xl font-bold text-gray-800 mb-6">Thông tin liên hệ</h2>
+                    <h2 className="text-xl font-bold text-gray-800 mb-6">{t.contact?.contactInfo?.title || 'Thông tin liên hệ'}</h2>
                     
                     <div className="space-y-4">
                       <div className="flex items-start">
@@ -95,7 +108,7 @@ export default function ContactPage() {
                           <FaPhone />
                         </div>
                         <div>
-                          <h3 className="font-medium text-gray-800">Điện thoại</h3>
+                          <h3 className="font-medium text-gray-800">{t.contact?.contactInfo?.phone || 'Điện thoại'}</h3>
                           <p className="text-gray-600 mt-1">
                             <a href={`tel:${CONTACT_INFO.phoneNumber}`} className="hover:text-blue-600">
                               {CONTACT_INFO.phoneNumber}
@@ -109,7 +122,7 @@ export default function ContactPage() {
                           <FaEnvelope />
                         </div>
                         <div>
-                          <h3 className="font-medium text-gray-800">Email</h3>
+                          <h3 className="font-medium text-gray-800">{t.contact?.contactInfo?.email || 'Email'}</h3>
                           <p className="text-gray-600 mt-1">
                             <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-blue-600">
                               {CONTACT_INFO.email}
@@ -123,7 +136,7 @@ export default function ContactPage() {
                           <FaMapMarkerAlt />
                         </div>
                         <div>
-                          <h3 className="font-medium text-gray-800">Địa chỉ</h3>
+                          <h3 className="font-medium text-gray-800">{t.contact?.contactInfo?.address || 'Địa chỉ'}</h3>
                           <p className="text-gray-600 mt-1">
                             {CONTACT_INFO.address}
                           </p>
@@ -133,7 +146,7 @@ export default function ContactPage() {
                     
                     {/* Social Media */}
                     <div className="mt-8">
-                      <h3 className="text-lg font-medium text-gray-800 mb-4">Kết nối với chúng tôi</h3>
+                      <h3 className="text-lg font-medium text-gray-800 mb-4">{t.contact?.socialMedia?.title || 'Kết nối với chúng tôi'}</h3>
                       <div className="flex space-x-4">
                         <a 
                           href={CONTACT_INFO.socialMedia.facebook} 
@@ -180,7 +193,7 @@ export default function ContactPage() {
                     
                     {/* Map */}
                     <div className="mt-8">
-                      <h3 className="text-lg font-medium text-gray-800 mb-4">Bản đồ</h3>
+                      <h3 className="text-lg font-medium text-gray-800 mb-4">{t.contact?.map?.title || 'Bản đồ'}</h3>
                       <div className="rounded-lg overflow-hidden h-48 bg-gray-200">
                         <iframe 
                           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d458.48380976669773!2d109.1958535366535!3d12.26732540245049!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3170678cc4569d75%3A0x6ed33e525d8da564!2sHD%20Nha%20Trang!5e1!3m2!1svi!2s!4v1741926655368!5m2!1svi!2s"
@@ -199,7 +212,7 @@ export default function ContactPage() {
                 {/* Contact Form */}
                 <div className="md:col-span-2">
                   <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
-                    <h2 className="text-xl font-bold text-gray-800 mb-6">Gửi thông tin liên hệ</h2>
+                    <h2 className="text-xl font-bold text-gray-800 mb-6">{t.contact?.form?.title || 'Gửi thông tin liên hệ'}</h2>
                     
                     {formStatus === 'success' ? (
                       <div className="bg-green-50 border-l-4 border-green-500 p-4 mb-6">
@@ -209,7 +222,7 @@ export default function ContactPage() {
                           </div>
                           <div className="ml-3">
                             <p className="text-green-700 font-medium">
-                              Cảm ơn bạn đã gửi thông tin! Chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.
+                              {t.contact?.form?.successMessage || 'Cảm ơn bạn đã gửi thông tin! Chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.'}
                             </p>
                           </div>
                         </div>
@@ -219,7 +232,7 @@ export default function ContactPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                           <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                              Họ và tên *
+                              {t.contact?.form?.fields?.name?.label || 'Họ và tên'} *
                             </label>
                             <input
                               type="text"
@@ -229,13 +242,13 @@ export default function ContactPage() {
                               onChange={handleChange}
                               required
                               className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                              placeholder="Nhập họ tên của bạn"
+                              placeholder={t.contact?.form?.fields?.name?.placeholder || "Nhập họ tên của bạn"}
                             />
                           </div>
                           
                           <div>
                             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                              Email *
+                              {t.contact?.form?.fields?.email?.label || 'Email'} *
                             </label>
                             <input
                               type="email"
@@ -245,7 +258,7 @@ export default function ContactPage() {
                               onChange={handleChange}
                               required
                               className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                              placeholder="Nhập địa chỉ email"
+                              placeholder={t.contact?.form?.fields?.email?.placeholder || "Nhập địa chỉ email"}
                             />
                           </div>
                         </div>
@@ -253,7 +266,7 @@ export default function ContactPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                           <div>
                             <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                              Số điện thoại
+                              {t.contact?.form?.fields?.phone?.label || 'Số điện thoại'}
                             </label>
                             <input
                               type="tel"
@@ -262,7 +275,7 @@ export default function ContactPage() {
                               value={formData.phone}
                               onChange={handleChange}
                               className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                              placeholder="Nhập số điện thoại của bạn"
+                              placeholder={t.contact?.form?.fields?.phone?.placeholder || "Nhập số điện thoại của bạn"}
                             />
                           </div>
                           
@@ -321,44 +334,44 @@ export default function ContactPage() {
                   <div className="bg-white rounded-lg shadow-sm p-6">
                     <h2 className="text-xl font-bold text-gray-800 mb-6 flex items-center">
                       <FaMoneyBillWave className="text-green-600 mr-2" /> 
-                      Thông tin thanh toán
+                      {t.contact?.payment?.title || 'Thông tin thanh toán'}
                     </h2>
                     
                     <div className="flex flex-col md:flex-row gap-8">
                       <div className="md:w-1/2">
-                        <h3 className="text-lg font-medium text-gray-800 mb-3">Thông tin chuyển khoản</h3>
+                        <h3 className="text-lg font-medium text-gray-800 mb-3">{t.contact?.payment?.bankInfo?.title || 'Thông tin chuyển khoản'}</h3>
                         <ul className="space-y-3 text-gray-700">
                           <li className="flex items-start">
-                            <span className="text-gray-500 mr-2">Ngân hàng:</span>
+                            <span className="text-gray-500 mr-2">{t.contact?.payment?.bankInfo?.bank || 'Ngân hàng'}:</span>
                             <span className="font-medium">{CONTACT_INFO.bankAccount.bankName}</span>
                           </li>
                           <li className="flex items-start">
-                            <span className="text-gray-500 mr-2">Chi nhánh:</span>
+                            <span className="text-gray-500 mr-2">{t.contact?.payment?.bankInfo?.branch || 'Chi nhánh'}:</span>
                             <span className="font-medium">{CONTACT_INFO.bankAccount.bankBranch}</span>
                           </li>
                           <li className="flex items-start">
-                            <span className="text-gray-500 mr-2">Số tài khoản:</span>
+                            <span className="text-gray-500 mr-2">{t.contact?.payment?.bankInfo?.accountNumber || 'Số tài khoản'}:</span>
                             <span className="font-medium">{CONTACT_INFO.bankAccount.accountNumber}</span>
                           </li>
                           <li className="flex items-start">
-                            <span className="text-gray-500 mr-2">Chủ tài khoản:</span>
+                            <span className="text-gray-500 mr-2">{t.contact?.payment?.bankInfo?.accountHolder || 'Chủ tài khoản'}:</span>
                             <span className="font-medium">{CONTACT_INFO.bankAccount.accountHolder}</span>
                           </li>
                           <li className="flex items-start">
-                            <span className="text-gray-500 mr-2">Nội dung CK:</span>
+                            <span className="text-gray-500 mr-2">{t.contact?.payment?.bankInfo?.transferContent || 'Nội dung CK'}:</span>
                             <span className="font-medium">[Họ tên] - [Dịch vụ]</span>
                           </li>
                         </ul>
                         
                         <div className="mt-4 bg-yellow-50 border-l-4 border-yellow-500 p-4">
                           <p className="text-sm text-yellow-700">
-                            Vui lòng ghi rõ tên và dịch vụ bạn đặt trong nội dung chuyển khoản để chúng tôi có thể xác nhận thanh toán của bạn.
+                            {t.contact?.payment?.note || 'Vui lòng ghi rõ tên và dịch vụ bạn đặt trong nội dung chuyển khoản để chúng tôi có thể xác nhận thanh toán của bạn.'}
                           </p>
                         </div>
                       </div>
                       
                       <div className="md:w-1/2 flex flex-col items-center">
-                        <h3 className="text-lg font-medium text-gray-800 mb-3 text-center">Quét mã QR để thanh toán</h3>
+                        <h3 className="text-lg font-medium text-gray-800 mb-3 text-center">{t.contact?.payment?.qrCode?.title || 'Quét mã QR để thanh toán'}</h3>
                         <div className="bg-white border border-gray-200 rounded-lg p-2 shadow-sm">
                           <img 
                             src={defaultQrCode} 
@@ -367,7 +380,7 @@ export default function ContactPage() {
                           />
                         </div>
                         <p className="text-sm text-gray-500 mt-3 text-center">
-                          Quét mã QR bằng ứng dụng ngân hàng hoặc ví điện tử
+                          {t.contact?.payment?.qrCode?.description || 'Quét mã QR bằng ứng dụng ngân hàng hoặc ví điện tử'}
                         </p>
                       </div>
                     </div>

@@ -151,6 +151,10 @@ export interface TranslationStructure {
       transferDescription: string;
       transferFeatures: string[];
     };
+    contactSection: {
+      title: string;
+      description: string;
+    };
   };
   moto: {
     hero: {
@@ -358,6 +362,20 @@ export interface TranslationStructure {
       operatingHours: string;
       fare: string;
       contact: string;
+      data: Array<{
+        name: string;
+        phone: string;
+        baseRate: string;
+        pricePerKm: string;
+        waitingRate: string;
+        color: string;
+        operatingHours: string;
+        website: string;
+        logo: string;
+        rating: number;
+        features: string[];
+        description: string;
+      }>;
     };
     types: {
       title: string;
@@ -389,6 +407,13 @@ export interface TranslationStructure {
         estimatedPrice: string;
         time: string;
       };
+      data: Array<{
+        from: string;
+        to: string;
+        distance: string;
+        estimatedPrice: string;
+        estimatedTime: string;
+      }>;
     };
     tips: {
       title: string;
@@ -571,6 +596,7 @@ export interface TranslationStructure {
     intro: {
       title: string;
       description: string;
+      warning: string;
     };
     types: {
       title: string;
@@ -591,15 +617,27 @@ export interface TranslationStructure {
     };
     apps: {
       title: string;
+      featuresTitle: string;
+      prosConsTitle: string;
       grab: {
         name: string;
         description: string;
         features: string[];
+        rating: string;
+        priceRange: string;
+        availability: string;
+        pros: string[];
+        cons: string[];
       };
       maxim: {
         name: string;
         description: string;
         features: string[];
+        rating: string;
+        priceRange: string;
+        availability: string;
+        pros: string[];
+        cons: string[];
       };
     };
     comparison: {
@@ -639,10 +677,35 @@ export interface TranslationStructure {
     };
     tips: {
       title: string;
-      items: string[];
+      appBased: {
+        title: string;
+        items: string[];
+      };
+      traditional: {
+        title: string;
+        items: string[];
+      };
+      importantNotes: {
+        title: string;
+        items: string[];
+      };
     };
     routes: {
       title: string;
+      headers: {
+        route: string;
+        distance: string;
+        appBased: string;
+        traditional: string;
+        time: string;
+      };
+      data: Array<{
+        route: string;
+        distance: string;
+        appBased: string;
+        traditional: string;
+        time: string;
+      }>;
       note: string;
     };
     alternatives: {
@@ -652,6 +715,31 @@ export interface TranslationStructure {
     contactSection: {
       title: string;
       description: string;
+    };
+    faq: {
+      title: string;
+      questions: {
+        popularApps: {
+          question: string;
+          answer: string;
+        };
+        pricing: {
+          question: string;
+          answer: string;
+        };
+        safety: {
+          question: string;
+          answer: string;
+        };
+        availability: {
+          question: string;
+          answer: string;
+        };
+        choice: {
+          question: string;
+          answer: string;
+        };
+      };
     };
   };
   contact: {

@@ -3,11 +3,11 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { FaBus, FaChevronLeft, FaMapMarkedAlt, FaInfoCircle, FaRoute, FaRegClock, FaExchangeAlt, FaSearch, FaRegDotCircle, FaRegCircle } from 'react-icons/fa';
-import { CONTACT_INFO } from '../lib/contact-config';
 import Script from 'next/script';
 import busStopsData from '../data/busStops.json';
 import busRoutesData from '../data/busRoutes.json';
 import { BUS_PAGE_SCHEMA } from '../lib/metadata';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Định nghĩa type cho Leaflet để TypeScript không báo lỗi
 declare global {
@@ -88,12 +88,24 @@ const FAQ_SCHEMA = {
 };
 
 export default function BusPage() {
+  const { t, isLoading } = useLanguage();
   const mapRef = useRef<any>(null);
   const leafletMapRef = useRef<any>(null);
   const [activeRoute, setActiveRoute] = useState<string | null>(null);
   const [selectedStop, setSelectedStop] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [mapReady, setMapReady] = useState(false);
+  
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
   
   // Load dữ liệu từ files JSON
   const busStops: BusStop[] = busStopsData;
@@ -265,9 +277,9 @@ export default function BusPage() {
         <div className="container mx-auto px-4">
           <div className="text-center text-white">
             <FaBus className="inline-block text-4xl mb-4" />
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">Xe Buýt Nha Trang</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">{t.bus?.hero?.title || 'Xe Buýt Nha Trang'}</h1>
             <p className="max-w-3xl mx-auto text-blue-100 text-lg">
-              Thông tin tuyến đường, lịch trình và bản đồ các tuyến xe buýt công cộng tại Nha Trang
+              {t.bus?.hero?.subtitle || 'Thông tin tuyến đường, lịch trình và bản đồ các tuyến xe buýt công cộng tại Nha Trang'}
             </p>
           </div>
         </div>
@@ -277,7 +289,7 @@ export default function BusPage() {
       <div className="bg-gray-50 py-3">
         <div className="container mx-auto px-4">
           <Link href="/transportation" className="inline-flex items-center text-blue-600 hover:text-blue-800">
-            <FaChevronLeft className="mr-1 text-sm" /> Quay lại trang Di chuyển
+            <FaChevronLeft className="mr-1 text-sm" /> {t.bus?.backToTransportation || 'Quay lại trang Di chuyển'}
           </Link>
         </div>
       </div>
@@ -293,7 +305,7 @@ export default function BusPage() {
                 <div className="relative">
                   <input
                     type="text"
-                    placeholder="Tìm trạm xe buýt..."
+                    placeholder={t.bus?.searchPlaceholder || "Tìm trạm xe buýt..."}
                     className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
@@ -303,7 +315,7 @@ export default function BusPage() {
                 
                 {searchTerm.trim() !== '' && (
                   <div className="mt-3">
-                    <h3 className="text-sm font-medium text-gray-500 mb-2">Kết quả ({filteredStops.length})</h3>
+                    <h3 className="text-sm font-medium text-gray-500 mb-2">{t.bus?.searchResults || 'Kết quả'} ({filteredStops.length})</h3>
                     {filteredStops.length > 0 ? (
                       <ul className="max-h-60 overflow-y-auto">
                         {filteredStops.map(stop => (
@@ -330,7 +342,7 @@ export default function BusPage() {
                       </ul>
                     ) : (
                       <div className="text-center py-3 text-gray-500">
-                        Không tìm thấy trạm xe buýt nào
+                        {t.bus?.noResults || 'Không tìm thấy trạm xe buýt nào'}
                       </div>
                     )}
                   </div>
@@ -340,7 +352,7 @@ export default function BusPage() {
               {/* Bus Routes List */}
               <div className="bg-white rounded-lg shadow-sm p-4">
                 <h2 className="text-lg font-semibold mb-4 flex items-center">
-                  <FaRoute className="mr-2 text-blue-600" /> Các tuyến xe buýt
+                  <FaRoute className="mr-2 text-blue-600" /> {t.bus?.routes?.title || 'Các tuyến xe buýt'}
                 </h2>
                 
                 <ul className="space-y-3">
@@ -362,7 +374,7 @@ export default function BusPage() {
                         <div>
                           <div className="font-medium">{route.name}</div>
                           <div className="text-sm text-gray-600 mt-1 flex items-center">
-                            <FaRegClock className="mr-1" /> {route.frequency.join(' - ')} phút/chuyến
+                            <FaRegClock className="mr-1" /> {route.frequency.join(' - ')} {t.bus?.routes?.frequency || 'phút/chuyến'}
                           </div>
                         </div>
                       </div>
@@ -375,44 +387,44 @@ export default function BusPage() {
               {selectedRoute && (
                 <div className="bg-white rounded-lg shadow-sm p-4">
                   <h2 className="text-lg font-semibold mb-3">
-                    Thông tin tuyến {selectedRoute.name.split(':')[0]}
+                    {t.bus?.routeInfo?.title || 'Thông tin tuyến'} {selectedRoute.name.split(':')[0]}
                   </h2>
                   
                   <div className="space-y-3">
                     <div>
-                      <div className="text-sm text-gray-500">Tên tuyến:</div>
+                      <div className="text-sm text-gray-500">{t.bus?.routeInfo?.routeName || 'Tên tuyến'}:</div>
                       <div className="font-medium">{selectedRoute.name}</div>
                     </div>
                     
                     <div>
-                      <div className="text-sm text-gray-500">Giờ hoạt động:</div>
+                      <div className="text-sm text-gray-500">{t.bus?.routeInfo?.operatingHours || 'Giờ hoạt động'}:</div>
                       <div>{selectedRoute.schedule[0]}</div>
                     </div>
                     
                     <div>
-                      <div className="text-sm text-gray-500">Tần suất:</div>
-                      <div>{selectedRoute.frequency.join(' - ')} phút/chuyến</div>
+                      <div className="text-sm text-gray-500">{t.bus?.routeInfo?.frequency || 'Tần suất'}:</div>
+                      <div>{selectedRoute.frequency.join(' - ')} {t.bus?.routes?.frequency || 'phút/chuyến'}</div>
                     </div>
                     
                     <div>
-                      <div className="text-sm text-gray-500">Giá vé:</div>
+                      <div className="text-sm text-gray-500">{t.bus?.routeInfo?.fare || 'Giá vé'}:</div>
                       <div>{selectedRoute.fare.toLocaleString()} VNĐ</div>
                     </div>
                     
                     <div>
-                      <div className="text-sm text-gray-500">Thông tin:</div>
+                      <div className="text-sm text-gray-500">{t.bus?.routeInfo?.information || 'Thông tin'}:</div>
                       <div className="text-sm">{selectedRoute.description}</div>
                     </div>
                     
                     {(selectedRoute as any).updated_at && (
-                      <div>
-                        <div className="text-sm text-gray-500">Cập nhật:</div>
-                        <div className="text-sm">{formatDate((selectedRoute as any).updated_at)}</div>
-                      </div>
+                                              <div>
+                          <div className="text-sm text-gray-500">{t.bus?.routeInfo?.lastUpdated || 'Cập nhật'}:</div>
+                          <div className="text-sm">{formatDate((selectedRoute as any).updated_at)}</div>
+                        </div>
                     )}
                     
-                    <div>
-                      <div className="text-sm text-gray-500 mb-2">Các trạm dừng:</div>
+                                          <div>
+                        <div className="text-sm text-gray-500 mb-2">{t.bus?.routeInfo?.stops || 'Các trạm dừng'}:</div>
                       <ul className="space-y-2 pl-2">
                         {selectedRoute.stops.map((stopId, index) => {
                           const stop = busStops.find(s => s.id === stopId);
@@ -441,19 +453,19 @@ export default function BusPage() {
               {selectedStop && (
                 <div className="bg-white rounded-lg shadow-sm p-4">
                   <h2 className="text-lg font-semibold mb-3">
-                    Trạm {busStops.find(s => s.id === selectedStop)?.name}
+                    {t.bus?.stopInfo?.title || 'Trạm'} {busStops.find(s => s.id === selectedStop)?.name}
                   </h2>
                   
                   <div className="space-y-3">
                     {busStops.find(s => s.id === selectedStop)?.description && (
                       <div>
-                        <div className="text-sm text-gray-500">Mô tả:</div>
+                        <div className="text-sm text-gray-500">{t.bus?.stopInfo?.description || 'Mô tả'}:</div>
                         <div>{busStops.find(s => s.id === selectedStop)?.description}</div>
                       </div>
                     )}
                     
                     <div>
-                      <div className="text-sm text-gray-500 mb-2">Các tuyến đi qua:</div>
+                      <div className="text-sm text-gray-500 mb-2">{t.bus?.stopInfo?.routesThrough || 'Các tuyến đi qua'}:</div>
                       {routesThroughSelectedStop.length > 0 ? (
                         <ul className="space-y-2">
                           {routesThroughSelectedStop.map(route => (
@@ -471,7 +483,7 @@ export default function BusPage() {
                           ))}
                         </ul>
                       ) : (
-                        <div className="text-gray-500">Không có tuyến nào đi qua trạm này</div>
+                        <div className="text-gray-500">{t.bus?.stopInfo?.noRoutes || 'Không có tuyến nào đi qua trạm này'}</div>
                       )}
                     </div>
                   </div>
@@ -487,124 +499,26 @@ export default function BusPage() {
               
               {/* Map Legend */}
               <div className="bg-white rounded-lg shadow-sm p-4 mt-4">
-                <h3 className="text-base font-medium mb-3">Chú thích bản đồ</h3>
+                <h3 className="text-base font-medium mb-3">{t.bus?.mapLegend?.title || 'Chú thích bản đồ'}</h3>
                 <div className="flex flex-wrap gap-4">
                   <div className="flex items-center">
                     <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-                    <span className="text-sm">Điểm bắt đầu</span>
+                    <span className="text-sm">{t.bus?.mapLegend?.startPoint || 'Điểm bắt đầu'}</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
-                    <span className="text-sm">Điểm kết thúc</span>
+                    <span className="text-sm">{t.bus?.mapLegend?.endPoint || 'Điểm kết thúc'}</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                    <span className="text-sm">Trạm dừng</span>
+                    <span className="text-sm">{t.bus?.mapLegend?.busStop || 'Trạm dừng'}</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-8 h-2 bg-blue-600 rounded-full mr-2"></div>
-                    <span className="text-sm">Tuyến xe buýt</span>
+                    <span className="text-sm">{t.bus?.mapLegend?.busRoute || 'Tuyến xe buýt'}</span>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          
-          {/* Bus Information */}
-          <div className="bg-white rounded-lg shadow-sm p-6 mt-6">
-            <h2 className="text-xl font-semibold mb-4">Thông tin xe buýt Nha Trang</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="text-lg font-medium mb-3">Giá vé</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">•</span>
-                    <div>
-                      <span className="font-medium">Tuyến nội thành:</span> 7.000đ/lượt
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">•</span>
-                    <div>
-                      <span className="font-medium">Tuyến Sân bay Cam Ranh:</span> 50.000đ/lượt
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">•</span>
-                    <div>
-                      <span className="font-medium">Vé tháng:</span> 200.000đ/tháng
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">•</span>
-                    <div>
-                      <span className="font-medium">Đối tượng ưu tiên:</span> Giảm 50% giá vé cho học sinh, sinh viên, người cao tuổi và người khuyết tật
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              
-              <div>
-                <h3 className="text-lg font-medium mb-3">Giờ hoạt động</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">•</span>
-                    <div>
-                      <span className="font-medium">Tuyến nội thành:</span> 05:00 - 19:00
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">•</span>
-                    <div>
-                      <span className="font-medium">Tuyến Sân bay Cam Ranh:</span> 04:00 - 21:00
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">•</span>
-                    <div>
-                      <span className="font-medium">Tần suất:</span> 15-30 phút/chuyến tùy tuyến
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            
-            <div className="mt-6">
-              <h3 className="text-lg font-medium mb-3">Lưu ý khi đi xe buýt</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-blue-50 p-4 rounded-lg">
-                  <div className="flex">
-                    <div className="flex-shrink-0">
-                      <FaInfoCircle className="h-5 w-5 text-blue-500" />
-                    </div>
-                    <div className="ml-3">
-                      <p className="text-blue-700">Chuẩn bị sẵn tiền mặt để mua vé. Một số tuyến chưa hỗ trợ thanh toán bằng thẻ.</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-blue-50 p-4 rounded-lg">
-                  <div className="flex">
-                    <div className="flex-shrink-0">
-                      <FaInfoCircle className="h-5 w-5 text-blue-500" />
-                    </div>
-                    <div className="ml-3">
-                      <p className="text-blue-700">Kiểm tra lịch trình xe buýt trước khi di chuyển, một số tuyến có thể thay đổi vào cuối tuần.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="mt-6">
-              <h3 className="text-lg font-medium mb-3">Liên hệ</h3>
-              <p className="text-gray-700">
-                Trung tâm Điều hành xe buýt Nha Trang: <span className="font-medium">0258.3810 810</span>
-              </p>
-              <p className="text-gray-700 mt-1">
-                Tổng đài hỗ trợ hành khách: <span className="font-medium">1900 8110</span>
-              </p>
             </div>
           </div>
         </div>
@@ -619,14 +533,14 @@ export default function BusPage() {
                 <div className="flex items-center">
                   <FaInfoCircle className="text-blue-500 mr-3 text-xl" />
                   <div>
-                    <h3 className="font-semibold text-gray-900">Thông tin cập nhật dữ liệu</h3>
+                    <h3 className="font-semibold text-gray-900">{t.bus?.dataUpdate?.title || 'Thông tin cập nhật dữ liệu'}</h3>
                     <p className="text-sm text-gray-600">
-                      Dữ liệu tuyến xe buýt được cập nhật thường xuyên để đảm bảo tính chính xác
+                      {t.bus?.dataUpdate?.description || 'Dữ liệu tuyến xe buýt được cập nhật thường xuyên để đảm bảo tính chính xác'}
                     </p>
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-sm text-gray-500">Cập nhật gần nhất</div>
+                  <div className="text-sm text-gray-500">{t.bus?.dataUpdate?.lastUpdate || 'Cập nhật gần nhất'}</div>
                   <div className="font-semibold text-blue-600">{formatDate(getLatestUpdateDate())}</div>
                 </div>
               </div>
@@ -635,15 +549,15 @@ export default function BusPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                   <div className="text-center">
                     <div className="font-medium text-gray-900">{busRoutes.length}</div>
-                    <div className="text-gray-600">Tuyến xe buýt</div>
+                    <div className="text-gray-600">{t.bus?.dataUpdate?.stats?.routes || 'Tuyến xe buýt'}</div>
                   </div>
                   <div className="text-center">
                     <div className="font-medium text-gray-900">{busStops.length}</div>
-                    <div className="text-gray-600">Trạm xe buýt</div>
+                    <div className="text-gray-600">{t.bus?.dataUpdate?.stats?.stops || 'Trạm xe buýt'}</div>
                   </div>
                   <div className="text-center">
                     <div className="font-medium text-gray-900">24/7</div>
-                    <div className="text-gray-600">Hỗ trợ thông tin</div>
+                    <div className="text-gray-600">{t.bus?.dataUpdate?.stats?.support || 'Hỗ trợ thông tin'}</div>
                   </div>
                 </div>
               </div>
@@ -655,52 +569,52 @@ export default function BusPage() {
       {/* FAQ Section */}
       <section className="py-8 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center mb-8">Câu hỏi thường gặp về xe buýt Nha Trang</h2>
+          <h2 className="text-2xl font-bold text-center mb-8">{t.bus?.faq?.title || 'Câu hỏi thường gặp về xe buýt Nha Trang'}</h2>
           
           <div className="max-w-4xl mx-auto">
             <div className="space-y-4">
               <details className="bg-gray-50 rounded-lg p-4">
                 <summary className="font-semibold cursor-pointer hover:text-blue-600">
-                  Giá vé xe buýt Nha Trang là bao nhiêu?
+                  {t.bus?.faq?.questions?.fare?.question || 'Giá vé xe buýt Nha Trang là bao nhiêu?'}
                 </summary>
                 <div className="mt-3 text-gray-700">
-                  <p>Giá vé xe buýt nội thành Nha Trang là <strong>7.000đ/lượt</strong>, xe buýt sân bay Cam Ranh là <strong>50.000đ/lượt</strong>, vé tháng là <strong>200.000đ</strong>. Học sinh, sinh viên, người cao tuổi và người khuyết tật được giảm 50% giá vé.</p>
+                  <p>{t.bus?.faq?.questions?.fare?.answer || 'Giá vé xe buýt nội thành Nha Trang là 7.000đ/lượt, xe buýt sân bay Cam Ranh là 50.000đ/lượt, vé tháng là 200.000đ. Học sinh, sinh viên, người cao tuổi và người khuyết tật được giảm 50% giá vé.'}</p>
                 </div>
               </details>
               
               <details className="bg-gray-50 rounded-lg p-4">
                 <summary className="font-semibold cursor-pointer hover:text-blue-600">
-                  Xe buýt Nha Trang hoạt động từ mấy giờ đến mấy giờ?
+                  {t.bus?.faq?.questions?.schedule?.question || 'Xe buýt Nha Trang hoạt động từ mấy giờ đến mấy giờ?'}
                 </summary>
                 <div className="mt-3 text-gray-700">
-                  <p>Xe buýt nội thành hoạt động từ <strong>05:00 - 19:00</strong> hàng ngày. Tuyến sân bay Cam Ranh hoạt động từ <strong>04:00 - 21:00</strong>. Tần suất xe buýt là 15-30 phút/chuyến tùy theo tuyến.</p>
+                  <p>{t.bus?.faq?.questions?.schedule?.answer || 'Xe buýt nội thành hoạt động từ 05:00 - 19:00 hàng ngày. Tuyến sân bay Cam Ranh hoạt động từ 04:00 - 21:00. Tần suất xe buýt là 15-30 phút/chuyến tùy theo tuyến.'}</p>
                 </div>
               </details>
               
               <details className="bg-gray-50 rounded-lg p-4">
                 <summary className="font-semibold cursor-pointer hover:text-blue-600">
-                  Có bao nhiêu tuyến xe buýt tại Nha Trang?
+                  {t.bus?.faq?.questions?.routes?.question || 'Có bao nhiêu tuyến xe buýt tại Nha Trang?'}
                 </summary>
                 <div className="mt-3 text-gray-700">
-                  <p>Hiện tại Nha Trang có <strong>4 tuyến xe buýt chính</strong>: Tuyến 23 (Ana Marina - Vinpearl), Tuyến 18 (Bình Hưng - Diên Khánh), Tuyến 9 (Bến xe - Sân bay Cam Ranh), và Tuyến 4 (Chợ Đầm - Bến xe Phía Nam).</p>
+                  <p>{t.bus?.faq?.questions?.routes?.answer || 'Hiện tại Nha Trang có 4 tuyến xe buýt chính: Tuyến 23 (Ana Marina - Vinpearl), Tuyến 18 (Bình Hưng - Diên Khánh), Tuyến 9 (Bến xe - Sân bay Cam Ranh), và Tuyến 4 (Chợ Đầm - Bến xe Phía Nam).'}</p>
                 </div>
               </details>
               
               <details className="bg-gray-50 rounded-lg p-4">
                 <summary className="font-semibold cursor-pointer hover:text-blue-600">
-                  Làm thế nào để đi từ sân bay Cam Ranh về trung tâm Nha Trang bằng xe buýt?
+                  {t.bus?.faq?.questions?.airport?.question || 'Làm thế nào để đi từ sân bay Cam Ranh về trung tâm Nha Trang bằng xe buýt?'}
                 </summary>
                 <div className="mt-3 text-gray-700">
-                  <p>Bạn có thể đi <strong>tuyến số 9</strong> từ sân bay Cam Ranh về bến xe phía Nam Nha Trang. Giá vé 50.000đ/lượt, thời gian di chuyển khoảng 45-60 phút, xe chạy từ 04:00 - 21:00 với tần suất 30 phút/chuyến.</p>
+                  <p>{t.bus?.faq?.questions?.airport?.answer || 'Bạn có thể đi tuyến số 9 từ sân bay Cam Ranh về bến xe phía Nam Nha Trang. Giá vé 50.000đ/lượt, thời gian di chuyển khoảng 45-60 phút, xe chạy từ 04:00 - 21:00 với tần suất 30 phút/chuyến.'}</p>
                 </div>
               </details>
               
               <details className="bg-gray-50 rounded-lg p-4">
                 <summary className="font-semibold cursor-pointer hover:text-blue-600">
-                  Xe buýt Nha Trang có chấp nhận thanh toán bằng thẻ không?
+                  {t.bus?.faq?.questions?.payment?.question || 'Xe buýt Nha Trang có chấp nhận thanh toán bằng thẻ không?'}
                 </summary>
                 <div className="mt-3 text-gray-700">
-                  <p>Hiện tại hầu hết các tuyến xe buýt Nha Trang chỉ chấp nhận <strong>thanh toán bằng tiền mặt</strong>. Bạn nên chuẩn bị sẵn tiền lẻ để mua vé. Một số tuyến đang thí điểm thanh toán không tiền mặt.</p>
+                  <p>{t.bus?.faq?.questions?.payment?.answer || 'Hiện tại hầu hết các tuyến xe buýt Nha Trang chỉ chấp nhận thanh toán bằng tiền mặt. Bạn nên chuẩn bị sẵn tiền lẻ để mua vé. Một số tuyến đang thí điểm thanh toán không tiền mặt.'}</p>
                 </div>
               </details>
             </div>

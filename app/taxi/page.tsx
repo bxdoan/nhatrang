@@ -5,12 +5,25 @@ import { FaTaxi, FaChevronLeft, FaPhone, FaMapMarkedAlt, FaInfoCircle, FaMoneyBi
 import { CONTACT_INFO } from '../lib/contact-config';
 import Script from 'next/script';
 import { TAXI_PAGE_SCHEMA } from '../lib/metadata';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function TaxiPage() {
+  const { t, isLoading } = useLanguage();
   const phoneNumber = CONTACT_INFO.phoneNumber;
   
-  // Danh sách các hãng taxi tại Nha Trang
-  const taxiCompanies = [
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-yellow-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+  
+  // Danh sách các hãng taxi tại Nha Trang - sử dụng translation
+  const getTaxiCompanies = () => t.taxi?.companies?.data || [
     {
         name: 'Mai Linh Taxi',
         phone: '025 83 83 8383',
@@ -97,33 +110,33 @@ export default function TaxiPage() {
     }
   ];
   
-  // Thông tin về các loại taxi phổ biến
-  const taxiTypes = [
+  // Thông tin về các loại taxi phổ biến - sử dụng translation
+  const getTaxiTypes = () => [
     {
-      type: 'Taxi 4 chỗ',
-      capacity: '4 người + hành lý vừa phải',
-      priceRange: '15.000đ - 17.000đ/km',
-      bestFor: 'Cá nhân, cặp đôi, gia đình nhỏ',
+      type: t.taxi?.types?.car4?.title || 'Taxi 4 chỗ',
+      capacity: t.taxi?.types?.car4?.capacity || '4 người + hành lý vừa phải',
+      priceRange: t.taxi?.types?.car4?.priceRange || '15.000đ - 17.000đ/km',
+      bestFor: t.taxi?.types?.car4?.bestFor || 'Cá nhân, cặp đôi, gia đình nhỏ',
       icon: 'FaCarSide'
     },
     {
-      type: 'Taxi 7 chỗ',
-      capacity: '7 người + hành lý nhiều',
-      priceRange: '17.000đ - 20.000đ/km',
-      bestFor: 'Gia đình lớn, nhóm bạn',
+      type: t.taxi?.types?.car7?.title || 'Taxi 7 chỗ',
+      capacity: t.taxi?.types?.car7?.capacity || '7 người + hành lý nhiều',
+      priceRange: t.taxi?.types?.car7?.priceRange || '17.000đ - 20.000đ/km',
+      bestFor: t.taxi?.types?.car7?.bestFor || 'Gia đình lớn, nhóm bạn',
       icon: 'FaTaxi'
     },
     {
-      type: 'Taxi VIP',
-      capacity: '4 người + dịch vụ cao cấp',
-      priceRange: '20.000đ - 25.000đ/km',
-      bestFor: 'Doanh nhân, khách VIP',
+      type: t.taxi?.types?.vip?.title || 'Taxi VIP',
+      capacity: t.taxi?.types?.vip?.capacity || '4 người + dịch vụ cao cấp',
+      priceRange: t.taxi?.types?.vip?.priceRange || '20.000đ - 25.000đ/km',
+      bestFor: t.taxi?.types?.vip?.bestFor || 'Doanh nhân, khách VIP',
       icon: 'FaCarSide'
     }
   ];
   
-  // Thông tin các tuyến taxi phổ biến
-  const popularRoutes = [
+  // Thông tin các tuyến taxi phổ biến - sử dụng translation
+  const getPopularRoutes = () => t.taxi?.routes?.data || [
     {
       from: 'Sân bay Cam Ranh',
       to: 'Trung tâm Nha Trang',
@@ -161,9 +174,9 @@ export default function TaxiPage() {
         <div className="container mx-auto px-4">
           <div className="text-center text-white">
             <FaTaxi className="inline-block text-4xl mb-4" />
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">Dịch vụ Taxi Nha Trang</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">{t.taxi?.hero?.title || 'Dịch vụ Taxi Nha Trang'}</h1>
             <p className="max-w-3xl mx-auto text-yellow-100 text-lg">
-              Thông tin chi tiết về các hãng taxi uy tín, giá cước và dịch vụ tại Nha Trang
+              {t.taxi?.hero?.subtitle || 'Thông tin chi tiết về các hãng taxi uy tín, giá cước và dịch vụ tại Nha Trang'}
             </p>
           </div>
         </div>
@@ -173,7 +186,7 @@ export default function TaxiPage() {
       <div className="bg-gray-50 py-3">
         <div className="container mx-auto px-4">
           <Link href="/transportation" className="inline-flex items-center text-yellow-600 hover:text-yellow-800">
-            <FaChevronLeft className="mr-1 text-sm" /> Quay lại trang Di chuyển
+            <FaChevronLeft className="mr-1 text-sm" /> {t.taxi?.backToTransportation || 'Quay lại trang Di chuyển'}
           </Link>
         </div>
       </div>
@@ -182,13 +195,45 @@ export default function TaxiPage() {
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
+            {/* Contact Section - Moved to top */}
+            <div className="bg-yellow-50 rounded-lg p-6 shadow-sm text-center mb-8">
+              <h2 className="text-xl font-bold mb-4">{t.taxi?.contactSection?.title || 'Cần tư vấn thêm về di chuyển tại Nha Trang?'}</h2>
+              <p className="text-gray-700 mb-6">
+                {t.taxi?.contactSection?.description || 'Liên hệ với chúng tôi để được tư vấn và hỗ trợ đặt dịch vụ vận chuyển tại Nha Trang'}
+              </p>
+              
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <a 
+                  href={`tel:${phoneNumber}`}
+                  className="inline-flex items-center justify-center bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-md transition-colors"
+                >
+                  <FaPhone className="mr-2" /> {t.common?.callNow || 'Gọi ngay'}: {phoneNumber}
+                </a>
+                <a 
+                  href={`https://zalo.me/${phoneNumber}`}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors"
+                >
+                  {t.common?.messageZalo || 'Nhắn tin qua Zalo'}
+                </a>
+                <a 
+                  href={`https://t.me/${CONTACT_INFO.telegramUsername}`}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md transition-colors"
+                >
+                  {t.common?.messageTelegram || 'Nhắn tin qua Telegram'}
+                </a>
+              </div>
+            </div>
+
             {/* Intro */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-8">
               <div className="p-6 md:p-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">Taxi tại Nha Trang</h2>
+                <h2 className="text-2xl font-bold text-gray-800 mb-4">{t.taxi?.intro?.title || 'Taxi tại Nha Trang'}</h2>
                 <p className="text-gray-700 mb-4">
-                  Taxi là phương tiện di chuyển phổ biến và thuận tiện tại Nha Trang. Với nhiều hãng taxi uy tín hoạt động trong khu vực, 
-                  du khách có thể dễ dàng bắt taxi tại các khu du lịch, khách sạn, nhà hàng và các điểm tham quan.
+                  {t.taxi?.intro?.description || 'Taxi là phương tiện di chuyển phổ biến và thuận tiện tại Nha Trang. Với nhiều hãng taxi uy tín hoạt động trong khu vực, du khách có thể dễ dàng bắt taxi tại các khu du lịch, khách sạn, nhà hàng và các điểm tham quan.'}
                 </p>
                 <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6">
                   <div className="flex">
@@ -196,7 +241,7 @@ export default function TaxiPage() {
                       <FaInfoCircle className="h-5 w-5 text-yellow-500" />
                     </div>
                     <div className="ml-3">
-                      <p className="text-yellow-700">Để tránh bị "chặt chém", bạn nên đi các hãng taxi uy tín và yêu cầu tài xế bật đồng hồ tính tiền khi lên xe.</p>
+                      <p className="text-yellow-700">{t.taxi?.intro?.warning || 'Để tránh bị "chặt chém", bạn nên đi các hãng taxi uy tín và yêu cầu tài xế bật đồng hồ tính tiền khi lên xe.'}</p>
                     </div>
                   </div>
                 </div>
@@ -206,10 +251,10 @@ export default function TaxiPage() {
             {/* Taxi companies */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-8">
               <div className="p-6 md:p-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">Các hãng taxi uy tín tại Nha Trang</h2>
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">{t.taxi?.companies?.title || 'Các hãng taxi uy tín tại Nha Trang'}</h2>
                 
                 <div className="space-y-6">
-                  {taxiCompanies.map((company, index) => (
+                  {getTaxiCompanies().map((company, index) => (
                     <div key={index} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
                       <div className="flex flex-col md:flex-row md:items-start">
                         <div className="md:w-1/4 mb-4 md:mb-0 md:mr-6">
@@ -231,7 +276,7 @@ export default function TaxiPage() {
                               <span className="text-yellow-500 mr-1">
                                 <FaStar />
                               </span>
-                              <span className="font-medium">{company.rating}/5</span>
+                              <span className="font-medium">{company.rating}/5 {t.taxi?.companies?.rating || 'Đánh giá'}</span>
                             </div>
                           </div>
                         </div>
@@ -248,16 +293,16 @@ export default function TaxiPage() {
                               </p>
                               <p className="flex items-center text-gray-700 mt-2">
                                 <FaMoneyBillWave className="mr-2 text-yellow-500" /> 
-                                <span>Giá: {company.pricePerKm}/km</span>
+                                <span>{t.taxi?.companies?.fare || 'Giá'}: {company.pricePerKm}/km</span>
                               </p>
                               <p className="flex items-center text-gray-700 mt-2">
                                 <FaClock className="mr-2 text-yellow-500" /> 
-                                <span>Hoạt động: {company.operatingHours}</span>
+                                <span>{t.taxi?.companies?.operatingHours || 'Hoạt động'}: {company.operatingHours}</span>
                               </p>
                             </div>
                             
                             <div>
-                              <p className="text-gray-700 font-medium">Đặc điểm nổi bật:</p>
+                              <p className="text-gray-700 font-medium">{t.taxi?.companies?.features || 'Đặc điểm nổi bật'}:</p>
                               <ul className="mt-1 space-y-1">
                                 {company.features.map((feature, idx) => (
                                   <li key={idx} className="flex items-start">
@@ -279,10 +324,10 @@ export default function TaxiPage() {
             {/* Taxi types */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-8">
               <div className="p-6 md:p-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">Các loại taxi phổ biến</h2>
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">{t.taxi?.types?.title || 'Các loại taxi phổ biến'}</h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {taxiTypes.map((type, index) => (
+                  {getTaxiTypes().map((type, index) => (
                     <div key={index} className="border border-gray-200 rounded-lg p-4">
                       <div className="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mb-4">
                         <FaCarSide className="text-xl" />
@@ -295,7 +340,7 @@ export default function TaxiPage() {
                         </li>
                         <li className="flex items-start">
                           <span className="text-yellow-500 mr-2">•</span>
-                          <span>Giá: {type.priceRange}</span>
+                          <span>{t.taxi?.companies?.fare || 'Giá'}: {type.priceRange}</span>
                         </li>
                         <li className="flex items-start">
                           <span className="text-yellow-500 mr-2">•</span>
@@ -311,20 +356,19 @@ export default function TaxiPage() {
             {/* Popular routes */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-8">
               <div className="p-6 md:p-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">Các tuyến taxi phổ biến và giá cước ước tính</h2>
-                
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">{t.taxi?.routes?.title || 'Các tuyến taxi phổ biến và giá cước ước tính'}</h2>
                 <div className="overflow-x-auto">
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-gray-50">
                       <tr>
-                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tuyến đường</th>
-                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Khoảng cách</th>
-                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Giá ước tính</th>
-                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Thời gian</th>
+                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{t.taxi?.routes?.headers?.route || 'Tuyến đường'}</th>
+                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{t.taxi?.routes?.headers?.distance || 'Khoảng cách'}</th>
+                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{t.taxi?.routes?.headers?.estimatedPrice || 'Giá ước tính'}</th>
+                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{t.taxi?.routes?.headers?.time || 'Thời gian'}</th>
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
-                      {popularRoutes.map((route, index) => (
+                      {getPopularRoutes().map((route, index) => (
                         <tr key={index}>
                           <td className="px-6 py-4 whitespace-nowrap">
                             <div className="flex items-center">
@@ -342,8 +386,7 @@ export default function TaxiPage() {
                 </div>
                 
                 <p className="mt-4 text-sm text-gray-500 italic">
-                  * Giá cước ước tính dựa trên bảng giá taxi 4 chỗ. Giá thực tế có thể thay đổi tùy thuộc vào hãng taxi, 
-                  thời điểm, tình trạng giao thông và các yếu tố khác.
+                  {t.taxi?.routes?.note || '* Giá cước ước tính dựa trên bảng giá taxi 4 chỗ. Giá thực tế có thể thay đổi tùy thuộc vào hãng taxi, thời điểm, tình trạng giao thông và các yếu tố khác.'}
                 </p>
               </div>
             </div>
@@ -351,7 +394,7 @@ export default function TaxiPage() {
             {/* Tips */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-8">
               <div className="p-6 md:p-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">Lời khuyên khi đi taxi tại Nha Trang</h2>
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">{t.taxi?.tips?.title || 'Lời khuyên khi đi taxi tại Nha Trang'}</h2>
                 
                 <div className="space-y-4">
                   <div className="flex items-start">
@@ -359,7 +402,7 @@ export default function TaxiPage() {
                       <FaCheckCircle className="text-green-500" />
                     </div>
                     <div className="ml-3">
-                      <p className="text-gray-700"><span className="font-medium">Chỉ đi các hãng taxi uy tín</span> - Ưu tiên các hãng taxi lớn như Mai Linh, Vinasun, Nha Trang Taxi để tránh bị "chặt chém".</p>
+                      <p className="text-gray-700">{t.taxi?.tips?.items?.reputableCompanies || 'Chỉ đi các hãng taxi uy tín - Ưu tiên các hãng taxi lớn như Mai Linh, Vinasun, Nha Trang Taxi để tránh bị "chặt chém".'}</p>
                     </div>
                   </div>
                   
@@ -368,7 +411,7 @@ export default function TaxiPage() {
                       <FaCheckCircle className="text-green-500" />
                     </div>
                     <div className="ml-3">
-                      <p className="text-gray-700"><span className="font-medium">Yêu cầu bật đồng hồ</span> - Luôn yêu cầu tài xế bật đồng hồ tính tiền khi lên xe.</p>
+                      <p className="text-gray-700">{t.taxi?.tips?.items?.useMeter || 'Yêu cầu bật đồng hồ - Luôn yêu cầu tài xế bật đồng hồ tính tiền khi lên xe.'}</p>
                     </div>
                   </div>
                   
@@ -377,7 +420,7 @@ export default function TaxiPage() {
                       <FaCheckCircle className="text-green-500" />
                     </div>
                     <div className="ml-3">
-                      <p className="text-gray-700"><span className="font-medium">Đặt xe qua tổng đài</span> - Nếu có thể, hãy đặt xe qua tổng đài của các hãng taxi để đảm bảo an toàn.</p>
+                      <p className="text-gray-700">{t.taxi?.tips?.items?.bookByPhone || 'Đặt xe qua tổng đài - Nếu có thể, hãy đặt xe qua tổng đài của các hãng taxi để đảm bảo an toàn.'}</p>
                     </div>
                   </div>
                   
@@ -386,7 +429,7 @@ export default function TaxiPage() {
                       <FaCheckCircle className="text-green-500" />
                     </div>
                     <div className="ml-3">
-                      <p className="text-gray-700"><span className="font-medium">Xác nhận giá trước</span> - Với các tuyến đường dài như từ sân bay về thành phố, hãy xác nhận giá trọn gói trước khi đi.</p>
+                      <p className="text-gray-700">{t.taxi?.tips?.items?.confirmPrice || 'Xác nhận giá trước - Với các tuyến đường dài như từ sân bay về thành phố, hãy xác nhận giá trọn gói trước khi đi.'}</p>
                     </div>
                   </div>
                   
@@ -395,7 +438,7 @@ export default function TaxiPage() {
                       <FaCheckCircle className="text-green-500" />
                     </div>
                     <div className="ml-3">
-                      <p className="text-gray-700"><span className="font-medium">Giữ hóa đơn</span> - Luôn yêu cầu hóa đơn sau khi trả tiền, nhất là khi cần thanh toán công tác phí.</p>
+                      <p className="text-gray-700">{t.taxi?.tips?.items?.keepReceipt || 'Giữ hóa đơn - Luôn yêu cầu hóa đơn sau khi trả tiền, nhất là khi cần thanh toán công tác phí.'}</p>
                     </div>
                   </div>
                 </div>
@@ -405,10 +448,10 @@ export default function TaxiPage() {
             {/* Alternative Transportation */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-8">
               <div className="p-6 md:p-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">Phương tiện di chuyển thay thế</h2>
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">{t.taxi?.alternatives?.title || 'Phương tiện di chuyển thay thế'}</h2>
                 
                 <p className="text-gray-700 mb-4">
-                  Ngoài taxi, Nha Trang còn có nhiều phương tiện di chuyển thay thế khác:
+                  {t.taxi?.alternatives?.description || 'Ngoài taxi, Nha Trang còn có nhiều phương tiện di chuyển thay thế khác:'}
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -419,8 +462,8 @@ export default function TaxiPage() {
                           <FaMotorcycle />
                         </div>
                         <div>
-                          <h3 className="font-medium text-gray-800 group-hover:text-blue-600 transition">Thuê xe máy</h3>
-                          <p className="text-sm text-gray-600">Từ 100.000đ/ngày, linh hoạt di chuyển</p>
+                          <h3 className="font-medium text-gray-800 group-hover:text-blue-600 transition">{t.taxi?.alternatives?.moto?.title || 'Thuê xe máy'}</h3>
+                          <p className="text-sm text-gray-600">{t.taxi?.alternatives?.moto?.description || 'Từ 100.000đ/ngày, linh hoạt di chuyển'}</p>
                         </div>
                       </div>
                     </div>
@@ -433,8 +476,8 @@ export default function TaxiPage() {
                           <FaCar />
                         </div>
                         <div>
-                          <h3 className="font-medium text-gray-800 group-hover:text-green-600 transition">Thuê xe ô tô</h3>
-                          <p className="text-sm text-gray-600">Thuê xe tự lái hoặc có tài xế</p>
+                          <h3 className="font-medium text-gray-800 group-hover:text-green-600 transition">{t.taxi?.alternatives?.car?.title || 'Thuê xe ô tô'}</h3>
+                          <p className="text-sm text-gray-600">{t.taxi?.alternatives?.car?.description || 'Thuê xe tự lái hoặc có tài xế'}</p>
                         </div>
                       </div>
                     </div>
@@ -443,38 +486,7 @@ export default function TaxiPage() {
               </div>
             </div>
             
-            {/* Contact */}
-            <div className="bg-yellow-50 rounded-lg p-6 shadow-sm text-center">
-              <h2 className="text-xl font-bold mb-4">Cần tư vấn thêm về di chuyển tại Nha Trang?</h2>
-              <p className="text-gray-700 mb-6">
-                Liên hệ với chúng tôi để được tư vấn và hỗ trợ đặt dịch vụ vận chuyển tại Nha Trang
-              </p>
-              
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <a 
-                  href={`tel:${phoneNumber}`}
-                  className="inline-flex items-center justify-center bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-md transition-colors"
-                >
-                  <FaPhone className="mr-2" /> Gọi ngay: {phoneNumber}
-                </a>
-                <a 
-                  href={`https://zalo.me/${phoneNumber}`}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors"
-                >
-                  Nhắn tin qua Zalo
-                </a>
-                <a 
-                  href={`https://t.me/${CONTACT_INFO.telegramUsername}`}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md transition-colors"
-                >
-                  Nhắn tin qua Telegram
-                </a>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
