@@ -95,6 +95,10 @@ export const DEFAULT_METADATA = {
     languages: {
       'vi-VN': SITE_URL,
       'en-US': `${SITE_URL}/en`,
+      'ko-KR': `${SITE_URL}/kr`,
+      'zh-CN': `${SITE_URL}/zh_CN`,
+      'zh-TW': `${SITE_URL}/zh_TW`,
+      'ru-RU': `${SITE_URL}/ru`,
     },
   },
 };

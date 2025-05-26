@@ -54,6 +54,10 @@ export const metadata: Metadata = {
     languages: {
       'vi-VN': `${SITE_URL}/car`,
       'en-US': `${SITE_URL}/en/car`,
+      'ko-KR': `${SITE_URL}/kr/car`,
+      'zh-CN': `${SITE_URL}/zh_CN/car`,
+      'zh-TW': `${SITE_URL}/zh_TW/car`,
+      'ru-RU': `${SITE_URL}/ru/car`,
     },
   },
   robots: {

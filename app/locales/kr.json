@@ -1,0 +1,1046 @@
+{
+  "common": {
+    "search": "검색",
+    "viewDetails": "자세히 보기",
+    "backToHome": "홈으로 돌아가기",
+    "loading": "로딩 중...",
+    "error": "오류",
+    "contact": "연락처",
+    "backToTransportation": "교통 페이지로 돌아가기",
+    "callNow": "지금 전화하기",
+    "messageZalo": "Zalo로 메시지 보내기",
+    "messageTelegram": "텔레그램으로 메시지 보내기",
+    "bookNow": "지금 예약하기",
+    "viewService": "서비스 보기",
+    "contactForBooking": "예약을 위해 연락하기",
+    "priceNote": "* 가격은 시기에 따라 변동될 수 있습니다. 서비스 예약 전에 확인해 주세요."
+  },
+  "header": {
+    "banner": "나트랑의 아름다운 해변과 섬 탐험 - 베트남의 휴양 천국",
+    "tagline1": "나트랑 여행 정보",
+    "tagline2": "전문 사이트",
+    "transportation": {
+      "overview": "교통 개요",
+      "overviewDesc": "모든 교통수단",
+      "car": "자동차 렌탈",
+      "carDesc": "렌탈 및 픽업 서비스",
+      "moto": "오토바이 렌탈",
+      "motoDesc": "오토바이 렌탈",
+      "bus": "버스",
+      "busDesc": "노선 및 시간표",
+      "taxi": "택시",
+      "taxiDesc": "택시 회사들",
+      "rideHailing": "바이크택시",
+      "rideHailingDesc": "Grab, Maxim"
+    }
+  },
+  "navigation": {
+    "home": "여행",
+    "transportation": "교통",
+    "bus": "버스",
+    "taxi": "택시",
+    "moto": "오토바이",
+    "car": "자동차",
+    "flights": "항공편",
+    "accommodations": "숙박",
+    "food": "음식",
+    "contact": "연락처"
+  },
+  "footer": {
+    "description": "나트랑 - 카인호아의 여행, 교통, 음식, 역사 정보를 제공하여 최고의 여행을 도와드립니다.",
+    "explore": "탐색",
+    "contact": "연락처",
+    "newsletter": "최신 소식 받기",
+    "newsletterDesc": "나트랑의 여행 정보, 프로모션, 최신 업데이트를 받아보세요.",
+    "emailPlaceholder": "이메일 주소",
+    "subscribe": "구독하기",
+    "copyright": "나트랑 인사이트 - 나트랑 여행 및 생활 정보"
+  },
+  "homepage": {
+    "hero": {
+      "title": "나트랑",
+      "highlightedTitle": "탐험하기",
+      "subtitle": "나트랑 해변 천국의 여행, 교통, 서비스 정보"
+    },
+    "sections": {
+      "exploreTitle": "나트랑 탐험하기",
+      "exploreSubtitle": "아름다운 해변 도시로의 완벽한 여행 계획을 세우는 데 도움이 되는 유용한 정보",
+      "transportation": {
+        "title": "교통 및 이동",
+        "description": "나트랑으로 가는 방법과 시내 교통수단에 대한 정보: 택시, 버스, 오토바이 렌탈 등 다양한 선택지.",
+        "link": "자세히 보기 →"
+      },
+      "moto": {
+        "title": "오토바이 렌탈",
+        "description": "신뢰할 수 있고 저렴한 오토바이 렌탈 서비스, 하루 100,000동 - 180,000동, 수동부터 고급 스쿠터까지 다양한 차종, 나트랑 내 무료 배송.",
+        "link": "오토바이 렌탈 서비스 보기 →"
+      },
+      "car": {
+        "title": "자동차 렌탈",
+        "description": "자가운전 또는 운전기사 포함 자동차 렌탈 서비스, 4-16인승 다양한 차종, 합리적인 가격, 간단한 절차, 공항 픽업 서비스.",
+        "link": "자동차 렌탈 서비스 보기 →"
+      },
+      "bus": {
+        "title": "나트랑 버스",
+        "description": "나트랑 공공버스의 노선, 시간표, 지도 정보. 회당 7,000 VND부터, 경제적이고 편리한 교통수단.",
+        "link": "버스 정보 보기 →"
+      },
+      "taxi": {
+        "title": "택시 서비스",
+        "description": "나트랑의 신뢰할 수 있는 택시 회사에 대한 자세한 정보, km당 15,000 - 20,000동, 예약 전화번호 및 인기 노선.",
+        "link": "택시 서비스 정보 보기 →"
+      }
+    }
+  },
+  "transportation": {
+    "hero": {
+      "title": "나트랑 교통",
+      "subtitle": "오토바이 렌탈부터 공공 버스까지 나트랑의 교통수단과 운송 서비스에 대해 알아보세요"
+    },
+    "intro": {
+      "title": "나트랑의 교통수단",
+      "description": "나트랑은 유명한 관광 도시로 관광객을 위한 다양한 교통수단이 있습니다. 필요, 예산, 일정에 따라 이 아름다운 해변 도시를 탐험하기에 적합한 교통수단을 선택할 수 있습니다."
+    },
+    "moto": {
+      "title": "오토바이 렌탈",
+      "description": "나트랑을 탐험하는 가장 인기 있고 유연한 교통수단. 렌탈 요금은 오토바이 종류에 따라 하루 100,000동 - 170,000동입니다.",
+      "features": [
+        "오토바이 종류: 수동, 스쿠터, 스포츠바이크",
+        "장점: 유연함, 경제적, 주차 용이",
+        "무료 배송 서비스, 무료 헬멧 제공"
+      ],
+      "link": "오토바이 렌탈 서비스 보기 →"
+    },
+    "car": {
+      "title": "자동차 렌탈",
+      "description": "가족이나 그룹에게 편리함. 4인승부터 16인승까지 다양한 차량. 특히 공항 픽업 서비스 제공.",
+      "features": [
+        "렌탈 요금: 차량 종류에 따라 하루 700,000동부터",
+        "운전기사 포함 또는 자가운전 서비스",
+        "간단한 절차, 신분증과 운전면허증 필요"
+      ],
+      "link": "자동차 렌탈 서비스 보기 →"
+    },
+    "taxi": {
+      "title": "택시 서비스",
+      "description": "시내 이동에 편리한 교통수단. Mai Linh, Vinasun, Nha Trang Taxi 등 신뢰할 수 있는 택시 회사들.",
+      "features": [
+        "요금: km당 15,000 - 20,000동",
+        "안전하고 편리하며 앱으로 호출 가능",
+        "관광지, 호텔에서 쉽게 찾을 수 있음"
+      ],
+      "link": "택시 서비스 정보 보기 →"
+    },
+    "bus": {
+      "title": "나트랑 버스",
+      "description": "시내 이동을 위한 저렴한 교통수단. 나트랑에는 관광지를 지나는 여러 버스 노선이 있습니다.",
+      "features": [
+        "요금: 회당 7,000 - 10,000동",
+        "인기 노선: 4번 (해변), 3번 (담 시장)",
+        "운행시간: 5:30 - 18:30"
+      ],
+      "link": "버스 정보 보기 →"
+    },
+    "boat": {
+      "title": "보트",
+      "description": "혼문, 혼땀, 혼못 등 나트랑 주변 섬들을 관광하기에 이상적인 교통수단.",
+      "features": [
+        "4개 섬 투어: 1인당 250,000 - 350,000동",
+        "전용 스피드보트: 1대당 1,200,000동부터",
+        "까우다 항구 또는 요트 부두에서 출발"
+      ]
+    },
+    "rideHailing": {
+      "title": "바이크택시 / 앱 기반 바이크택시",
+      "description": "단거리 이동을 위한 유연하고 빠른 교통수단. Grab, Maxim과 전통 바이크택시 비교.",
+      "features": [
+        "앱 기반 바이크택시: km당 12,000-18,000동",
+        "전통 바이크택시: km당 15,000-25,000동",
+        "Grab, Maxim 앱으로 호출 가능",
+        "1-2명이 빠르게 이동하기에 적합"
+      ],
+      "link": "바이크택시 가이드 보기 →"
+    },
+    "airport": {
+      "title": "깜란 공항에서 이동",
+      "description": "깜란 국제공항은 나트랑 시내에서 약 30km 떨어져 있습니다. 공항에서 시내로 이동하는 교통수단들입니다.",
+      "busTitle": "공항 버스",
+      "busDescription": "공항에서 나트랑 시내로 가는 18번 버스. 요금은 회당 약 50,000동입니다.",
+      "busFeatures": [
+        "이동시간: 약 60분",
+        "운행간격: 30분마다",
+        "비용 절약되지만 시간이 많이 걸림"
+      ],
+      "transferTitle": "전문 픽업 서비스",
+      "transferDescription": "운송 회사의 공항 픽업 서비스, 사전 예약하고 지정 장소에서 픽업.",
+      "transferFeatures": [
+        "4인승 차량: 회당 250,000동부터",
+        "7인승 차량: 회당 300,000동부터",
+        "16인승 차량: 회당 500,000동부터",
+        "이동시간: 약 40-45분"
+      ],
+      "transferLink": "전문 픽업 서비스 보기 →",
+      "note": "* 가격은 시간에 따라 변동될 수 있습니다. 서비스 예약 전에 확인해 주세요."
+    },
+    "contactSection": {
+      "title": "📞 운송 서비스 예약 연락",
+      "description": "교통수단에 대한 추가 상담이나 나트랑 픽업 서비스 예약이 필요하신가요? 지금 연락주세요!"
+    }
+  },
+  "moto": {
+    "hero": {
+      "title": "나트랑 오토바이 렌탈 서비스",
+      "subtitle": "신뢰할 수 있고 저렴하며 다양한 오토바이, 나트랑에서 무료 배송 서비스"
+    },
+    "backToTransportation": "교통 페이지로 돌아가기",
+    "serviceTitle": "나트랑 저렴한 오토바이 렌탈 서비스",
+    "serviceDescription": "새 차량, 아름답고 안전 - 무료 배송 - 간단한 절차",
+    "serviceNote": "오토바이 렌탈 예약을 위해 최소 2시간 전에 연락해 주세요",
+    "categories": {
+      "manual": {
+        "title": "수동 오토바이",
+        "price": "120,000동/일",
+        "description": "Wave, Sirius, Jupiter, Suzuki"
+      },
+      "scooter": {
+        "title": "일반 스쿠터",
+        "price": "150,000동/일",
+        "description": "Vision, Lead, Air Blade, Vario, Nmax"
+      },
+      "premium": {
+        "title": "고급 스쿠터",
+        "price": "180,000동/일",
+        "description": "SH Mode, Vespa, NVX, PCX"
+      }
+    },
+    "gallery": {
+      "title": "렌탈 오토바이 이미지",
+      "note": "* 이미지에 마우스를 올려 자세한 정보를 보고, 클릭하면 큰 이미지를 볼 수 있습니다. 이미지는 참고용입니다."
+    },
+    "procedures": {
+      "title": "렌탈 절차 및 조건:",
+      "description": "오토바이 렌탈 절차는 매우 간단하고 빠릅니다. 다음 서류 중 하나만 맡기시면 즉시 렌탈 가능합니다:",
+      "documents": {
+        "idCard": {
+          "title": "신분증 / 주민등록증",
+          "description": "유효한 신분증 또는 주민등록증"
+        },
+        "license": {
+          "title": "운전면허증",
+          "description": "유효한 오토바이 또는 자동차 운전면허증"
+        }
+      },
+      "deliveryNote": "나트랑 시내 지역 고객을 위한 무료 배송 서비스 (호텔, 기차역, 버스터미널)",
+      "conditions": {
+        "title": "렌탈 조건:",
+        "items": [
+          "신분증/주민등록증/여권 원본 또는 현금 500만동 보증금",
+          "3일 이상 렌탈 시 총 요금의 10% 할인",
+          "무료 포함: 헬멧, 우비, 무료 배송 (반경 3km 내)"
+        ]
+      },
+      "importantNotes": {
+        "title": "중요 사항:",
+        "items": [
+          "오토바이를 길가나 도로변에 주차하지 마세요. 안전한 주차장에 주차하세요",
+          "교통법규 준수: 신호위반 금지, 역주행 금지, 헬멧 착용",
+          "오토바이 렌탈 시간: 1일 = 24시간, 6시간 초과 시 반일 요금"
+        ]
+      }
+    },
+    "touring": {
+      "title": "오토바이로 나트랑 탐험",
+      "description": "오토바이 렌탈은 나트랑과 주변 지역을 탐험하는 가장 유연하고 편리한 방법입니다. 오토바이로 탐험하기 좋은 목적지들입니다:",
+      "destinations": {
+        "baiDai": {
+          "title": "바이다이와 바이독렛 해변",
+          "description": "나트랑 시내에서 북쪽으로 20-30km 떨어진 아름답고 원시적인 두 해변"
+        },
+        "ninhVan": {
+          "title": "닌반 만과 랑꼬 만",
+          "description": "나트랑에서 북쪽으로 약 60km 떨어진 원시적이고 평화로운 아름다운 경치"
+        },
+        "ponagar": {
+          "title": "포나가르 탑",
+          "description": "나트랑 시내에 위치한 고대 참파 역사 유적"
+        },
+        "daiLanh": {
+          "title": "다이란 해변과 무이디엔",
+          "description": "카인호아와 푸옌 경계에 위치한 아름다운 해안 도로"
+        }
+      },
+      "tips": {
+        "title": "오토바이 렌탈 시 주의사항",
+        "items": [
+          "운전 시 항상 개인 서류를 지니고 헬멧을 착용하세요",
+          "인수 전 오토바이를 꼼꼼히 점검하세요 (브레이크, 라이트, 경적, 연료)",
+          "분쟁을 피하기 위해 인수 전 오토바이 사진을 찍어두는 것이 좋습니다",
+          "교통법규를 준수하고 안전한 속도로 운전하세요"
+        ]
+      }
+    },
+    "benefits": {
+      "title": "나트랑 인사이트에서 렌탈하는 장점",
+      "newBikes": {
+        "title": "새 차량, 고품질",
+        "description": "모든 차량은 새 차량이며 정기적으로 정비되어 안전하고 잘 작동합니다"
+      },
+      "support": {
+        "title": "24/7 구조 지원",
+        "description": "차량 고장 시 나트랑 시내에서 무료 구조 서비스"
+      }
+    },
+    "contactSection": {
+      "title": "오늘 바로 연락하여 차량 예약하세요",
+      "description": "나트랑에서 오토바이 서비스 상담 및 예약을 위해 핫라인이나 소셜 미디어로 연락주세요"
+    },
+    "faq": {
+      "title": "나트랑 오토바이 렌탈 자주 묻는 질문",
+      "questions": {
+        "price": {
+          "question": "나트랑에서 오토바이 렌탈 요금은 얼마인가요?",
+          "answer": "나트랑에서 오토바이 렌탈 요금은 수동 오토바이(Wave, Sirius)는 하루 100,000동, 일반 스쿠터(Vision, Air Blade)는 하루 150,000동, 고급 스쿠터(PCX, SH Mode)는 하루 180,000동입니다."
+        },
+        "procedures": {
+          "question": "나트랑에서 오토바이 렌탈 절차는 어떻게 되나요?",
+          "answer": "절차는 매우 간단합니다. 신분증/주민등록증 또는 운전면허증 원본만 맡기시면 됩니다. 현금 500만동으로 대체 가능합니다. 3일 이상 렌탈 시 10% 할인됩니다."
+        },
+        "delivery": {
+          "question": "오토바이 배송 서비스가 있나요?",
+          "answer": "네, 나트랑 시내 반경 3km 내 호텔, 기차역, 버스터미널까지 무료 배송해드립니다. 차량 예약을 위해 2시간 전에 연락주세요."
+        },
+        "insurance": {
+          "question": "렌탈 오토바이에 보험이 있나요?",
+          "answer": "네, 모든 차량은 완전 보험에 가입되어 있습니다. 또한 차량 고장 시 나트랑 시내에서 24/7 무료 구조 서비스를 제공합니다."
+        },
+        "types": {
+          "question": "어떤 종류의 오토바이를 렌탈할 수 있나요?",
+          "answer": "다양한 종류의 오토바이가 있습니다: 수동 오토바이(Honda Wave, Yamaha Sirius, Jupiter), 일반 스쿠터(Honda Vision, Air Blade, Lead, Nmax), 고급 스쿠터(PCX, SH Mode, NVX, Vespa)."
+        }
+      }
+    }
+  },
+  "car": {
+    "hero": {
+      "title": "나트랑 자동차 픽업 및 렌탈 서비스",
+      "subtitle": "공항 픽업, 관광 투어를 위한 합리적인 가격의 서비스, 새 차량, 전문 운전기사"
+    },
+    "backToTransportation": "교통 페이지로 돌아가기",
+    "contactSection": {
+      "title": "📞 오늘 바로 자동차 예약 연락",
+      "description": "나트랑에서 자동차 서비스 상담 및 예약을 위해 핫라인이나 소셜 미디어로 연락주세요"
+    },
+    "airportService": {
+      "title": "깜란 공항 픽업 서비스",
+      "guarantee": "정시 픽업 보장 - 무료 대기 30분",
+      "categories": {
+        "car4": {
+          "title": "4인승 차량",
+          "price": "250,000동/편도",
+          "description": "개인, 커플, 소가족에게 적합"
+        },
+        "car7": {
+          "title": "7인승 차량",
+          "price": "300,000동/편도",
+          "description": "대가족, 친구 그룹에게 적합"
+        },
+        "car16": {
+          "title": "16인승 차량",
+          "price": "500,000동/편도",
+          "description": "대규모 그룹, 회사 여행에게 적합"
+        }
+      },
+      "gallery": {
+        "title": "렌탈 자동차 이미지",
+        "note": "* 이미지에 마우스를 올려 자세한 정보를 보고, 클릭하면 큰 이미지를 볼 수 있습니다. 이미지는 참고용입니다."
+      },
+      "notes": {
+        "title": "서비스 이용 시 주의사항:",
+        "items": [
+          "시내 중심가에서 먼 지역은 50,000동 추가 요금 (쩐푸 다리 너머)",
+          "오후 8시 이후 픽업은 50,000동 야간 요금",
+          "승객 합승 절대 없음, 문 앞까지 픽업",
+          "공항 픽업 예약을 위해 최소 2시간 전에 연락해 주세요"
+        ]
+      }
+    },
+    "tourService": {
+      "title": "주변 지역 탐험 관광 자동차 서비스",
+      "description": "공항 픽업 서비스 외에도 나트랑 주변 관광지로의 자동차 렌탈 서비스를 제공합니다:",
+      "destinations": {
+        "dalat": {
+          "title": "나트랑 - 달랏",
+          "description": "천 개의 꽃 도시 관광 투어, 이동 시간 약 3-4시간"
+        },
+        "vinhHy": {
+          "title": "나트랑 - 빈히",
+          "description": "중부 지역에서 가장 아름다운 만 탐험, 맑은 바다에서 수영하고 산호 감상"
+        },
+        "binhBa": {
+          "title": "나트랑 - 빈바 - 빈흥",
+          "description": "원시 해변이 있는 랍스터 섬 탐험, 해수욕과 해산물 요리"
+        },
+        "phanRang": {
+          "title": "나트랑 - 닌투안 - 판랑",
+          "description": "어촌 마을, 포도밭, 참 탑 관광 및 판랑 와인 시음"
+        }
+      },
+      "additionalRoutes": "또한 다음 노선도 서비스합니다:",
+      "routes": [
+        "나트랑 - 꾸이년",
+        "나트랑 - 푸옌"
+      ],
+      "commitment": {
+        "title": "서비스 약속",
+        "items": [
+          "신뢰성 - 전문성",
+          "새 차량, 깨끗하고 향기로운",
+          "열정적인 운전기사, 안전 운전"
+        ]
+      }
+    }
+  },
+  "taxi": {
+    "hero": {
+      "title": "나트랑 택시 서비스",
+      "subtitle": "나트랑의 신뢰할 수 있는 택시 회사, 요금, 서비스에 대한 자세한 정보"
+    },
+    "backToTransportation": "교통 페이지로 돌아가기",
+    "intro": {
+      "title": "나트랑의 택시",
+      "description": "택시는 나트랑에서 인기 있고 편리한 교통수단입니다. 지역에서 운영하는 많은 신뢰할 수 있는 택시 회사들이 있어 관광객들이 관광지, 호텔, 레스토랑, 관광 명소에서 쉽게 택시를 잡을 수 있습니다.",
+      "warning": "바가지를 피하려면 신뢰할 수 있는 택시 회사를 이용하고 탑승 시 운전기사에게 미터기를 켜달라고 요청하세요."
+    },
+    "companies": {
+      "title": "나트랑의 신뢰할 수 있는 택시 회사",
+      "features": "주요 특징",
+      "rating": "평점",
+      "operatingHours": "운영시간",
+      "fare": "요금",
+      "contact": "연락처",
+      "data": [
+        {
+          "name": "Mai Linh Taxi",
+          "phone": "025 83 83 8383",
+          "baseRate": "15,000동",
+          "pricePerKm": "15,000동 - 17,000동/km",
+          "waitingRate": "45,000동/시간",
+          "color": "초록색",
+          "operatingHours": "24/7",
+          "website": "https://mailinh.vn",
+          "logo": "/images/taxi/mailinh.png",
+          "rating": 4.5,
+          "features": ["대형 차량단", "전문 운전기사", "카드 결제 가능"],
+          "description": "Mai Linh은 나트랑에서 가장 크고 신뢰할 수 있는 택시 회사 중 하나로 많은 관광 노선을 서비스합니다."
+        },
+        {
+          "name": "Vinasun Taxi",
+          "phone": "0258 3827 272",
+          "baseRate": "15,000동",
+          "pricePerKm": "16,000동 - 18,000동/km",
+          "waitingRate": "47,000동/시간",
+          "color": "흰색-파란색",
+          "operatingHours": "24/7",
+          "website": "https://vinasuntaxi.com",
+          "logo": "/images/taxi/vinasun.png",
+          "rating": 4.3,
+          "features": ["택시 호출 앱", "앱 결제", "다양한 서비스", "VAT 영수증"],
+          "description": "Vinasun은 호치민시에서 온 신뢰할 수 있는 택시 회사로 관광객 서비스를 위해 나트랑으로 확장했습니다."
+        },
+        {
+          "name": "Taxi Xanh",
+          "phone": "1900 2088",
+          "baseRate": "15,000동",
+          "pricePerKm": "15,000동 - 16,500동/km",
+          "waitingRate": "40,000동/시간",
+          "color": "파란색",
+          "operatingHours": "5:00 - 24:00",
+          "website": "https://taxi-xanh.vn",
+          "logo": "/images/taxi/xanhsm.png",
+          "rating": 4.0,
+          "features": ["택시 호출 앱", "저렴한 요금", "친절한 서비스", "공항 픽업"],
+          "description": "Taxi Xanh는 합리적인 가격의 지역 택시 회사로 경제적으로 이동하고 싶은 관광객에게 적합합니다."
+        },
+        {
+          "name": "Sun Taxi",
+          "phone": "0258 3 89 89 89",
+          "baseRate": "16,000동",
+          "pricePerKm": "17,000동 - 18,000동/km",
+          "waitingRate": "45,000동/시간",
+          "color": "노란색",
+          "operatingHours": "24/7",
+          "website": "https://suntaxi.vn",
+          "logo": "/images/taxi/suntaxi.png",
+          "rating": 4.2,
+          "features": ["고급 차량", "VIP 서비스", "공항 픽업"],
+          "description": "Sun Taxi는 고급 차량으로 프리미엄 택시 서비스를 제공하며 단체 고객과 VIP 고객에게 적합합니다."
+        },
+        {
+          "name": "Maxim Taxi",
+          "phone": "1900 01585",
+          "baseRate": "15,000동",
+          "pricePerKm": "15,000동 - 16,000동/km",
+          "waitingRate": "42,000동/시간",
+          "color": "흰색-빨간색",
+          "operatingHours": "24/7",
+          "website": "https://maximtaxi.vn",
+          "logo": "/images/taxi/maxim.jpg",
+          "rating": 4.3,
+          "features": ["택시 호출 앱", "새 차량", "지역 정통 운전기사", "경쟁력 있는 요금"],
+          "description": "Maxim Taxi는 나트랑의 도로와 유명 관광지에 익숙한 지역 택시 회사입니다."
+        },
+        {
+          "name": "Grab",
+          "phone": "",
+          "baseRate": "15,000동",
+          "pricePerKm": "15,000동 - 16,000동/km",
+          "waitingRate": "42,000동/시간",
+          "color": "초록색",
+          "operatingHours": "24/7",
+          "website": "https://grab.com",
+          "logo": "/images/taxi/grab.jpg",
+          "rating": 4.3,
+          "features": ["택시 호출 앱", "새 차량", "지역 정통 운전기사", "경쟁력 있는 요금"],
+          "description": "Grab은 나트랑의 도로와 유명 관광지에 익숙한 지역 택시 회사입니다."
+        }
+      ]
+    },
+    "types": {
+      "title": "인기 택시 종류",
+      "car4": {
+        "title": "4인승 택시",
+        "capacity": "4명 + 적당한 짐",
+        "priceRange": "15,000동 - 17,000동/km",
+        "bestFor": "개인, 커플, 소가족"
+      },
+      "car7": {
+        "title": "7인승 택시",
+        "capacity": "7명 + 많은 짐",
+        "priceRange": "17,000동 - 20,000동/km",
+        "bestFor": "대가족, 친구 그룹"
+      },
+      "vip": {
+        "title": "VIP 택시",
+        "capacity": "4명 + 프리미엄 서비스",
+        "priceRange": "20,000동 - 25,000동/km",
+        "bestFor": "비즈니스맨, VIP 고객"
+      }
+    },
+    "routes": {
+      "title": "인기 노선 및 예상 요금",
+      "note": "* 요금은 시간, 교통 상황 및 기타 요인에 따라 변동될 수 있습니다. 앱 기반 바이크택시 요금은 모든 수수료 포함이며, 전통 바이크택시는 협상 가능합니다."
+    },
+    "tips": {
+      "title": "나트랑에서 택시 이용 시 조언",
+      "items": {
+        "reputableCompanies": "신뢰할 수 있는 택시 회사만 이용 - 바가지를 피하기 위해 Mai Linh, Vinasun, Nha Trang Taxi 같은 대형 택시 회사를 우선 이용하세요.",
+        "useMeter": "미터기 사용 요청 - 탑승 시 항상 운전기사에게 미터기를 켜달라고 요청하세요.",
+        "bookByPhone": "콜센터로 예약 - 가능하면 택시 회사 콜센터로 예약하여 안전을 보장하세요.",
+        "confirmPrice": "사전 요금 확인 - 공항에서 시내로 가는 장거리 노선의 경우 출발 전에 정액 요금을 확인하세요.",
+        "keepReceipt": "영수증 보관 - 결제 후 항상 영수증을 요청하세요. 특히 업무 경비 처리가 필요한 경우."
+      }
+    },
+    "alternatives": {
+      "title": "대체 교통수단",
+      "description": "택시 외에도 다른 교통수단을 고려할 수 있습니다:"
+    },
+    "contactSection": {
+      "title": "나트랑 교통에 대한 지원이 필요하신가요?",
+      "description": "여행에 가장 적합한 교통수단에 대한 상담을 위해 연락주세요"
+    },
+    "faq": {
+      "title": "나트랑 택시 자주 묻는 질문",
+      "questions": {
+        "fare": {
+          "question": "나트랑 택시 요금은 어떻게 계산되나요?",
+          "answer": "나트랑 택시 요금은 기본 요금과 거리에 따른 추가 요금으로 계산됩니다."
+        },
+        "safety": {
+          "question": "나트랑에서 택시를 안전하게 이용하는 방법은?",
+          "answer": "항상 헬멧을 착용하고 교통법규를 준수하세요."
+        },
+        "payment": {
+          "question": "나트랑에서 택시는 카드 결제를 받나요?",
+          "answer": "대부분의 택시는 카드 결제를 받습니다."
+        },
+        "reputableCompanies": {
+          "question": "신뢰할 수 있는 택시 회사는 어디에서 찾을 수 있나요?",
+          "answer": "신뢰할 수 있는 택시 회사는 인기 있는 택시 앱이나 온라인 플랫폼을 통해 쉽게 찾을 수 있습니다."
+        }
+      }
+    }
+  },
+  "bus": {
+    "hero": {
+      "title": "나트랑 버스",
+      "subtitle": "나트랑 공공 버스의 노선, 시간표, 지도 정보"
+    },
+    "backToTransportation": "교통 페이지로 돌아가기",
+    "searchPlaceholder": "버스 정류장 검색...",
+    "searchResults": "결과",
+    "noResults": "버스 정류장을 찾을 수 없습니다",
+    "routes": {
+      "title": "버스 노선",
+      "frequency": "분/회"
+    },
+    "routeInfo": {
+      "title": "노선 정보",
+      "routeName": "노선명",
+      "operatingHours": "운행시간",
+      "frequency": "운행간격",
+      "fare": "요금",
+      "information": "정보",
+      "lastUpdated": "업데이트",
+      "stops": "정류장"
+    },
+    "stopInfo": {
+      "title": "정류장",
+      "description": "설명",
+      "routesThrough": "경유 노선",
+      "noRoutes": "이 정류장을 지나는 노선이 없습니다"
+    },
+    "mapLegend": {
+      "title": "지도 범례",
+      "startPoint": "출발점",
+      "endPoint": "종점",
+      "busStop": "정류장",
+      "busRoute": "버스 노선"
+    },
+    "information": {
+      "title": "나트랑 버스 정보",
+      "fareSection": {
+        "title": "요금",
+        "cityRoute": "시내 노선: 7,000동/회",
+        "airportRoute": "깜란 공항 노선: 50,000동/회",
+        "monthlyPass": "월정기권: 200,000동/월",
+        "discount": "우대 대상: 학생, 대학생, 노인, 장애인 50% 할인"
+      },
+      "scheduleSection": {
+        "title": "운행시간",
+        "cityRoutes": "시내 노선: 05:00 - 19:00",
+        "airportRoute": "깜란 공항 노선: 04:00 - 21:00",
+        "frequency": "운행간격: 노선에 따라 15-30분"
+      },
+      "notesSection": {
+        "title": "버스 이용 시 주의사항",
+        "cashOnly": "표 구매를 위해 현금을 미리 준비하세요. 일부 노선은 아직 카드 결제를 지원하지 않습니다.",
+        "checkSchedule": "이동 전에 버스 시간표를 확인하세요. 일부 노선은 주말에 변경될 수 있습니다."
+      },
+      "contactSection": {
+        "title": "연락처",
+        "busCenter": "나트랑 버스 운영센터: 0258.3810 810",
+        "hotline": "승객 지원 콜센터: 1900 8110"
+      }
+    },
+    "dataUpdate": {
+      "title": "데이터 업데이트 정보",
+      "description": "버스 노선 데이터는 정확성을 보장하기 위해 정기적으로 업데이트됩니다",
+      "lastUpdate": "최근 업데이트",
+      "stats": {
+        "routes": "버스 노선",
+        "stops": "버스 정류장",
+        "support": "정보 지원"
+      }
+    },
+    "faq": {
+      "title": "나트랑 버스 자주 묻는 질문",
+      "questions": {
+        "fare": {
+          "question": "나트랑 버스 요금은 얼마인가요?",
+          "answer": "나트랑 시내 버스 요금은 회당 7,000동, 깜란 공항 노선은 회당 50,000동입니다."
+        },
+        "schedule": {
+          "question": "나트랑 버스는 몇 시부터 몇 시까지 운행하나요?",
+          "answer": "시내 버스는 매일 05:00 - 19:00 운행합니다. 깜란 공항 노선은 04:00 - 21:00 운행합니다. 버스 운행간격은 노선에 따라 15-30분입니다."
+        },
+        "routes": {
+          "question": "나트랑에는 몇 개의 버스 노선이 있나요?",
+          "answer": "현재 나트랑에는 4개의 주요 버스 노선이 있습니다: 23번 노선 (Ana Marina - Vinpearl), 18번 노선 (Binh Hung - Dien Khanh), 9번 노선 (버스터미널 - 깜란 공항), 4번 노선 (Dam 시장 - 남부 버스터미널)."
+        },
+        "airport": {
+          "question": "깜란 공항에서 나트랑 시내까지 버스로 어떻게 가나요?",
+          "answer": "깜란 공항에서 나트랑 남부 버스터미널까지 9번 노선을 이용할 수 있습니다. 요금은 회당 50,000동, 이동시간은 약 45-60분, 04:00 - 21:00 운행하며 30분마다 운행합니다."
+        },
+        "payment": {
+          "question": "나트랑 버스는 카드 결제가 가능한가요?",
+          "answer": "현재 대부분의 나트랑 버스 노선은 현금 결제만 가능합니다. 잔돈을 미리 준비하여 표를 구매하세요. 일부 노선에서 무현금 결제를 시범 운영하고 있습니다."
+        }
+      }
+    }
+  },
+  "flights": {
+    "hero": {
+      "title": "깜란 공항 (CXR) 도착 항공편",
+      "subtitle": "깜란 공항 도착 예정 항공편의 시간, 상태, 세부 정보를 확인하세요 - 나트랑 해변 도시의 항공 관문"
+    },
+    "airportInfo": {
+      "title": "깜란 공항 (CXR) 정보",
+      "intro": {
+        "title": "소개",
+        "description1": "깜란 국제공항은 나트랑 시내에서 남쪽으로 약 30km 떨어져 있습니다. 나트랑과 카인호아성 주변 지역을 방문하는 관광객들의 주요 항공 관문입니다.",
+        "description2": "공항은 Vietnam Airlines, Bamboo Airways, VietJet Air, Pacific Airlines 및 기타 많은 국제 항공사와 함께 국내선과 국제선을 모두 서비스합니다."
+      },
+      "contact": {
+        "title": "연락처 정보",
+        "address": "주소: Nguyễn Tất Thành, Cam Hải Đông, Cam Lâm, Khánh Hòa",
+        "phone": "전화: +84 258 3983 375",
+        "email": "이메일: info@chra.vn",
+        "website": "웹사이트:"
+      },
+      "transportation": {
+        "title": "공항에서 교통편",
+        "taxi": "택시: 터미널 밖에서 이용 가능, 나트랑 시내까지 약 40-45분 소요.",
+        "bus": "버스: 공항에서 시내까지 18번 버스 노선 이용 가능.",
+        "shuttle": "셔틀: 많은 호텔에서 공항 픽업 서비스를 제공하니 예약 시 확인하세요.",
+        "rental": "렌탈: 공항에 렌터카 회사들이 있습니다."
+      },
+      "facilities": {
+        "title": "공항 시설",
+        "items": [
+          "면세점",
+          "레스토랑과 카페",
+          "환전소와 ATM",
+          "무료 Wi-Fi",
+          "승객 특별 지원 서비스",
+          "어린이 돌봄 서비스",
+          "VIP 라운지"
+        ]
+      }
+    },
+    "rentalServices": {
+      "title": "나트랑 렌탈 서비스",
+      "moto": {
+        "title": "오토바이 렌탈 서비스",
+        "description": "오토바이로 나트랑을 유연하게 탐험하세요. 신뢰할 수 있는 오토바이 렌탈 서비스를 제공합니다:",
+        "features": [
+          "• 다양한 오토바이: 수동부터 고급 스쿠터까지",
+          "• 렌탈 요금 100,000동 - 180,000동/일",
+          "• 간단한 절차, 무료 배송",
+          "• 보험 및 24/7 지원"
+        ],
+        "link": "오토바이 렌탈 서비스 보기"
+      },
+      "car": {
+        "title": "자동차 렌탈 서비스",
+        "description": "가족이나 친구 그룹과 편안하게 이동할 수 있는 고품질 자동차 렌탈 서비스:",
+        "features": [
+          "• 4-16인승 다양한 차량",
+          "• 자가운전 또는 운전기사 포함 선택",
+          "• 깜란 공항 픽업/배송 서비스",
+          "• 온라인 또는 전화 예약"
+        ],
+        "link": "자동차 렌탈 서비스 보기"
+      }
+    }
+  },
+  "rideHailing": {
+    "hero": {
+      "title": "나트랑 바이크택시 및 앱 기반 바이크택시",
+      "subtitle": "Grab, Maxim과 전통 바이크택시 비교 - 사용 가이드 및 요금"
+    },
+    "backToTransportation": "교통 페이지로 돌아가기",
+    "intro": {
+      "title": "나트랑의 바이크택시",
+      "description": "바이크택시는 나트랑에서 인기 있고 편리한 교통수단으로, 특히 단거리 이동에 적합합니다. 현재 전통 바이크택시와 앱을 통한 바이크택시 두 가지 주요 유형이 있습니다."
+    },
+    "types": {
+      "title": "나트랑의 바이크택시 종류",
+      "traditional": {
+        "title": "전통 바이크택시",
+        "description": "전통 바이크택시는 보통 시장, 버스터미널, 호텔 앞, 레스토랑 등 고정된 지점에 집중되어 있습니다.",
+        "priceRange": "15,000 - 25,000동/km",
+        "advantages": [
+          "어디서나 쉽게 찾을 수 있음",
+          "앱 없이 직접 예약 가능",
+          "지역 사정에 밝은 운전기사",
+          "장거리 요금 협상 가능"
+        ],
+        "disadvantages": [
+          "요금이 고정되지 않을 수 있음",
+          "출발 전 요금 협상 필요",
+          "차량 및 서비스 품질이 균일하지 않음",
+          "안전 통제 어려움"
+        ]
+      },
+      "app": {
+        "title": "앱 기반 바이크택시 (Grab, Maxim)",
+        "description": "모바일 앱을 통해 운영되는 바이크택시로 편리하고 투명한 서비스를 제공합니다.",
+        "priceRange": "12,000 - 18,000동/km",
+        "advantages": [
+          "투명한 요금, 앱에서 미리 계산",
+          "이동 경로 추적 가능",
+          "편리한 결제 (현금 또는 카드)",
+          "운전기사 및 서비스 품질 평가",
+          "24/7 고객 지원"
+        ],
+        "disadvantages": [
+          "앱 설치 필요",
+          "인터넷 연결 필요",
+          "대기 시간이 길 수 있음",
+          "일부 기능 부족"
+        ]
+      }
+    },
+    "apps": {
+      "title": "앱 기반 바이크택시 비교",
+      "featuresTitle": "주요 기능:",
+      "prosConsTitle": "장단점:",
+      "grab": {
+        "name": "Grab",
+        "description": "동남아시아 최고의 차량 호출 앱으로 나트랑에서 GrabBike 서비스를 제공합니다.",
+        "features": [
+          "실시간 GPS 추적",
+          "다양한 결제 방법",
+          "정기적인 프로모션 프로그램",
+          "다양한 서비스: GrabBike, GrabCar"
+        ],
+        "rating": "4.5/5",
+        "priceRange": "12,000-18,000동/km",
+        "availability": "24/7 운영",
+        "pros": [
+          "가장 넓은 운전기사 네트워크",
+          "많은 프로모션 프로그램",
+          "다양한 서비스 (GrabBike, GrabCar)",
+          "유연한 결제"
+        ],
+        "cons": [
+          "러시아워에 요금 인상 가능",
+          "피크 타임에 대기 시간 길어질 수 있음"
+        ]
+      },
+      "maxim": {
+        "name": "Maxim",
+        "description": "베트남의 지역 차량 호출 앱으로 경쟁력 있는 요금을 제공합니다.",
+        "features": [
+          "저렴한 요금",
+          "현금 및 카드 결제",
+          "지역 운전기사",
+          "간단한 인터페이스"
+        ],
+        "rating": "4.2/5",
+        "priceRange": "11,000-16,000동/km",
+        "availability": "24/7 운영",
+        "pros": [
+          "Grab보다 저렴함",
+          "지역 운전기사들이 도로에 익숙함",
+          "빠른 호출",
+          "현금 결제 편리"
+        ],
+        "cons": [
+          "Grab보다 적은 운전기사",
+          "영어 지원 제한",
+          "일부 기능 부족"
+        ]
+      }
+    },
+    "comparison": {
+      "title": "전통 vs 앱 기반 바이크택시 비교",
+      "headers": {
+        "criteria": "기준",
+        "traditional": "전통 바이크택시",
+        "app": "앱 기반"
+      },
+      "rows": {
+        "price": {
+          "criteria": "요금",
+          "traditional": "15,000-25,000동/km (협상 가능)",
+          "app": "12,000-18,000동/km (고정)"
+        },
+        "convenience": {
+          "criteria": "편의성",
+          "traditional": "집중 지점 찾기 필요",
+          "app": "언제 어디서나 예약"
+        },
+        "safety": {
+          "criteria": "안전성",
+          "traditional": "통제 어려움",
+          "app": "경로 추적, 운전기사 평가"
+        },
+        "availability": {
+          "criteria": "이용 가능성",
+          "traditional": "고정 지점에서",
+          "app": "온라인 운전기사 수에 의존"
+        },
+        "payment": {
+          "criteria": "결제",
+          "traditional": "현금만",
+          "app": "현금, 카드"
+        }
+      }
+    },
+    "tips": {
+      "title": "나트랑에서 안전한 바이크택시 이용 팁",
+      "appBased": {
+        "title": "앱 기반 바이크택시",
+        "items": [
+          "출발 전에 앱을 다운로드하고 계정을 설정하세요",
+          "정확한 픽업 위치를 설정하세요",
+          "운전기사의 번호판과 사진을 확인하세요",
+          "여행 후 운전기사를 평가하세요"
+        ]
+      },
+      "traditional": {
+        "title": "전통 바이크택시",
+        "items": [
+          "출발 전 요금 명확히 협상",
+          "공식 대기 지점의 운전기사 선택",
+          "헬멧이 깨끗하고 안전한지 확인하세요",
+          "차량 번호 기억하고 가족에게 알림",
+          "필요하지 않으면 야간 이용 피하기"
+        ]
+      },
+      "importantNotes": {
+        "title": "중요 사항",
+        "items": [
+          "항상 헬멧을 착용하세요",
+          "가방과 개인 소지품 단단히 잡기",
+          "결제용 잔돈 준비",
+          "운전기사가 술에 취했거나 이상하면 거부"
+        ]
+      }
+    },
+    "routes": {
+      "title": "인기 노선 및 예상 요금",
+      "headers": {
+        "route": "노선",
+        "distance": "거리",
+        "appBased": "앱 기반",
+        "traditional": "전통",
+        "time": "시간"
+      },
+      "data": [
+        {
+          "route": "시내 → 빈펄",
+          "distance": "~5km",
+          "appBased": "60,000-90,000동",
+          "traditional": "75,000-125,000동",
+          "time": "15-20분"
+        },
+        {
+          "route": "깜란 공항 → 시내",
+          "distance": "~30km",
+          "appBased": "360,000-540,000동",
+          "traditional": "450,000-750,000동",
+          "time": "40-50분"
+        },
+        {
+          "route": "시내 → 바탑",
+          "distance": "~4km",
+          "appBased": "48,000-72,000동",
+          "traditional": "60,000-100,000동",
+          "time": "12-18분"
+        },
+        {
+          "route": "시내 → 바이다이",
+          "distance": "~25km",
+          "appBased": "300,000-450,000동",
+          "traditional": "375,000-625,000동",
+          "time": "35-45분"
+        }
+      ],
+      "note": "* 요금은 교통 상황, 시간에 따라 달라질 수 있습니다. 가격은 참고용입니다."
+    },
+    "alternatives": {
+      "title": "대체 교통수단",
+      "description": "바이크택시 외에도 다른 교통수단을 고려할 수 있습니다:"
+    },
+    "contactSection": {
+      "title": "나트랑 교통에 대한 지원이 필요하신가요?",
+      "description": "여행에 가장 적합한 교통수단에 대한 상담을 위해 연락주세요"
+    },
+    "faq": {
+      "title": "나트랑 바이크택시 자주 묻는 질문",
+      "questions": {
+        "popularApps": {
+          "question": "나트랑에서 인기 있는 바이크택시 앱은 무엇인가요?",
+          "answer": "Grab과 Maxim이 나트랑의 두 주요 바이크택시 앱입니다."
+        },
+        "pricing": {
+          "question": "나트랑 바이크택시 요금은 어떻게 계산되나요?",
+          "answer": "앱 기반 바이크택시는 거리에 따라 고정 요금이 있습니다."
+        },
+        "safety": {
+          "question": "나트랑에서 바이크택시를 안전하게 이용하는 방법은?",
+          "answer": "항상 헬멧을 착용하세요."
+        },
+        "availability": {
+          "question": "바이크택시는 24/7 운영하나요?",
+          "answer": "전통 바이크택시는 보통 6:00-23:00 이용 가능합니다."
+        },
+        "choice": {
+          "question": "전통 바이크택시와 앱 기반 중 어느 것을 선택해야 하나요?",
+          "answer": "안전과 투명한 요금을 원한다면 전통 바이크택시를 선택하세요."
+        }
+      }
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "연락처",
+      "subtitle": "궁금한 점이나 도움이 필요하신가요? 나트랑 인사이트에 연락하시면 가장 빠른 시간 내에 답변드리겠습니다"
+    },
+    "contactInfo": {
+      "title": "연락처 정보",
+      "phone": "전화",
+      "email": "이메일",
+      "address": "주소"
+    },
+    "socialMedia": {
+      "title": "소셜 미디어로 연결"
+    },
+    "map": {
+      "title": "지도"
+    },
+    "form": {
+      "title": "연락처 정보 보내기",
+      "successMessage": "정보를 보내주셔서 감사합니다! 가장 빠른 시간 내에 연락드리겠습니다.",
+      "fields": {
+        "name": {
+          "label": "성명",
+          "placeholder": "성명을 입력하세요"
+        },
+        "email": {
+          "label": "이메일",
+          "placeholder": "이메일 주소를 입력하세요"
+        },
+        "phone": {
+          "label": "전화번호",
+          "placeholder": "전화번호를 입력하세요"
+        },
+        "subject": {
+          "label": "주제",
+          "placeholder": "주제를 선택하세요",
+          "options": {
+            "tourism": "관광 정보",
+            "rental": "렌탈 서비스",
+            "tour": "투어 예약",
+            "accommodation": "숙박 지원",
+            "other": "기타"
+          }
+        },
+        "message": {
+          "label": "메시지 내용",
+          "placeholder": "요청사항을 자세히 설명해주세요..."
+        }
+      },
+      "submitButton": "메시지 보내기",
+      "submittingButton": "보내는 중..."
+    },
+    "payment": {
+      "title": "결제 정보",
+      "bankInfo": {
+        "title": "계좌이체 정보",
+        "bank": "은행",
+        "branch": "지점",
+        "accountNumber": "계좌번호",
+        "accountHolder": "예금주",
+        "transferContent": "이체 내용"
+      },
+      "qrCode": {
+        "title": "QR 코드로 결제",
+        "description": "은행 앱이나 전자지갑으로 QR 코드를 스캔하세요"
+      },
+      "note": "이체 내용에 성명과 예약하신 서비스를 명확히 기재해주시면 결제 확인이 가능합니다."
+    }
+  }
+} 

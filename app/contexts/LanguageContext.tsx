@@ -26,13 +26,13 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     const loadTranslations = async () => {
       setIsLoading(true);
       try {
-        const response = await import(`../locals/${locale}.json`);
+        const response = await import(`../locales/${locale}.json`);
         setTranslations(response.default);
       } catch (error) {
         console.error('Error loading translations:', error);
         // Fallback to default locale
         if (locale !== defaultLocale) {
-          const fallbackResponse = await import(`../locals/${defaultLocale}.json`);
+          const fallbackResponse = await import(`../locales/${defaultLocale}.json`);
           setTranslations(fallbackResponse.default);
         }
       } finally {

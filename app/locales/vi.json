@@ -175,8 +175,12 @@
       "transferDescription": "Dịch vụ xe đưa đón sân bay của các công ty vận chuyển, đặt trước và được đón tận nơi.",
       "transferFeatures": [
         "Xe 4 chỗ: từ 250.000đ/lượt",
-        "Xe 7 chỗ: từ 300.000đ/lượt"
-      ]
+        "Xe 7 chỗ: từ 300.000đ/lượt",
+        "Xe 16 chỗ: từ 500.000đ/lượt",
+        "Thời gian di chuyển: 40-45 phút"
+      ],
+      "transferLink": "Xem dịch vụ xe đưa đón sân bay →",
+      "note": "* Giá có thể thay đổi theo thời điểm. Vui lòng kiểm tra trước khi đặt dịch vụ."
     },
     "contactSection": {
       "title": "📞 Liên hệ đặt dịch vụ vận chuyển",

@@ -255,21 +255,24 @@ export default function TransportationPage() {
                   <ul className="text-gray-600 space-y-1 text-sm">
                     {(t.transportation?.airport?.transferFeatures || [
                       'Xe 4 chỗ: từ 250.000đ/lượt',
-                      'Xe 7 chỗ: từ 300.000đ/lượt'
+                      'Xe 7 chỗ: từ 300.000đ/lượt',
+                      'Xe 16 chỗ: từ 500.000đ/lượt',
+                      'Thời gian di chuyển: 40-45 phút'
                     ]).map((feature, index) => (
                       <li key={index}>• {feature}</li>
                     ))}
-                    <li>• Xe 16 chỗ: từ 500.000đ/lượt</li>
-                    <li>• Thời gian di chuyển: 40-45 phút</li>
                   </ul>
                   <div className="mt-4">
-                    <Link href="/car" className="text-blue-600 font-medium hover:underline flex items-center">                      <FaPhone className="mr-2" /> Xem dịch vụ xe đưa đón sân bay                    </Link>                  </div>
+                    <Link href="/car" className="text-blue-600 font-medium hover:underline flex items-center">
+                      <FaPhone className="mr-2" /> {t.transportation?.airport?.transferLink || 'Xem dịch vụ xe đưa đón sân bay'}
+                    </Link>
+                  </div>
                 </div>
               </div>
               
               <div className="mt-6 text-center">
                 <p className="text-gray-500 text-sm">
-                  * Giá có thể thay đổi theo thời điểm. Vui lòng kiểm tra trước khi đặt dịch vụ.
+                  {t.transportation?.airport?.note || '* Giá có thể thay đổi theo thời điểm. Vui lòng kiểm tra trước khi đặt dịch vụ.'}
                 </p>
               </div>
             </div>

@@ -175,8 +175,12 @@
       "transferDescription": "Airport transfer service by transport companies, pre-booked with door-to-door pickup.",
       "transferFeatures": [
         "4-seater car: from 250,000đ/trip",
-        "7-seater car: from 300,000đ/trip"
-      ]
+        "7-seater car: from 300,000đ/trip",
+        "16-seater van: from 500,000đ/trip",
+        "Transfer time: about 40-45 minutes"
+      ],
+      "transferLink": "View transfer service →",
+      "note": "* Prices may vary depending on time. Please check before booking service."
     },
     "contactSection": {
       "title": "📞 Contact for Transportation Services",

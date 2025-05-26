@@ -1,0 +1,1045 @@
+{
+  "common": {
+    "search": "搜尋",
+    "viewDetails": "查看詳情",
+    "backToHome": "返回首頁",
+    "loading": "載入中...",
+    "error": "錯誤",
+    "contact": "聯絡方式",
+    "backToTransportation": "返回交通頁面",
+    "callNow": "立即致電",
+    "messageZalo": "透過Zalo發訊息",
+    "messageTelegram": "透過Telegram發訊息",
+    "bookNow": "立即預訂",
+    "viewService": "查看服務",
+    "contactForBooking": "聯絡預訂",
+    "priceNote": "價格可能有所變動"
+  },
+  "header": {
+    "banner": "芽莊洞察",
+    "tagline1": "芽莊旅遊指南",
+    "tagline2": "交通、住宿、美食資訊",
+    "transportation": {
+      "overview": "交通概覽",
+      "overviewDesc": "芽莊所有交通方式",
+      "car": "汽車租賃",
+      "carDesc": "自駕或帶司機",
+      "moto": "機車租賃",
+      "motoDesc": "靈活經濟的出行",
+      "bus": "公車",
+      "busDesc": "公共巴士路線",
+      "taxi": "計程車",
+      "taxiDesc": "便捷的計程車服務",
+      "rideHailing": "機車計程車",
+      "rideHailingDesc": "快速機車計程車服務"
+    }
+  },
+  "navigation": {
+    "home": "首頁",
+    "transportation": "交通",
+    "bus": "公車",
+    "taxi": "計程車",
+    "moto": "機車",
+    "car": "汽車",
+    "flights": "航班",
+    "accommodations": "住宿",
+    "food": "美食",
+    "contact": "聯絡我們"
+  },
+  "footer": {
+    "description": "芽莊旅遊完美指南",
+    "explore": "探索",
+    "contact": "聯絡方式",
+    "newsletter": "訂閱資訊",
+    "newsletterDesc": "獲取最新旅遊資訊",
+    "emailPlaceholder": "請輸入電子郵件地址",
+    "subscribe": "訂閱",
+    "copyright": "© 2024 芽莊洞察。保留所有權利。"
+  },
+  "homepage": {
+    "hero": {
+      "title": "芽莊旅遊",
+      "highlightedTitle": "完美指南",
+      "subtitle": "為您提供越南芽莊交通、住宿、美食的詳細資訊"
+    },
+    "sections": {
+      "exploreTitle": "探索芽莊",
+      "exploreSubtitle": "美麗海濱城市芽莊的所有必需資訊",
+      "transportation": {
+        "title": "交通資訊",
+        "description": "芽莊所有交通方式的完整指南",
+        "link": "查看交通資訊"
+      },
+      "moto": {
+        "title": "機車租賃",
+        "description": "自由探索芽莊的機車租賃服務",
+        "link": "查看機車租賃"
+      },
+      "car": {
+        "title": "汽車租賃",
+        "description": "適合家庭或團體旅行的汽車租賃服務",
+        "link": "查看汽車租賃"
+      },
+      "bus": {
+        "title": "公車資訊",
+        "description": "芽莊公共巴士路線和時刻表資訊",
+        "link": "查看公車資訊"
+      },
+      "taxi": {
+        "title": "計程車服務",
+        "description": "可靠的計程車公司和價格資訊",
+        "link": "查看計程車資訊"
+      }
+    }
+  },
+  "transportation": {
+    "hero": {
+      "title": "芽莊交通",
+      "subtitle": "了解芽莊的交通方式和運輸服務，從機車租賃到公共巴士"
+    },
+    "intro": {
+      "title": "芽莊的交通方式",
+      "description": "芽莊是著名的旅遊城市，為遊客提供多樣化的交通方式。根據需求、預算和行程，您可以選擇適合的交通方式來探索這座美麗的海濱城市。"
+    },
+    "moto": {
+      "title": "機車租賃",
+      "description": "探索芽莊最受歡迎和靈活的交通方式。租賃費用根據機車類型每天100,000越南盾 - 170,000越南盾。",
+      "features": [
+        "機車類型：手排、速克達、跑車",
+        "優點：靈活、經濟、停車方便",
+        "免費送車服務，免費提供安全帽"
+      ],
+      "link": "查看機車租賃服務 →"
+    },
+    "car": {
+      "title": "汽車租賃",
+      "description": "適合家庭或團體。從4座到16座的各種車型。特別提供機場接送服務。",
+      "features": [
+        "租賃費用：根據車型每天700,000越南盾起",
+        "帶司機或自駕服務",
+        "手續簡單，需要身分證和駕駛執照"
+      ],
+      "link": "查看汽車租賃服務 →"
+    },
+    "taxi": {
+      "title": "計程車服務",
+      "description": "市內出行的便捷交通方式。有Mai Linh、Vinasun、Nha Trang Taxi等可靠的計程車公司。",
+      "features": [
+        "費用：每公里15,000 - 20,000越南盾",
+        "安全便捷，可透過應用程式叫車",
+        "在旅遊景點、飯店容易找到"
+      ],
+      "link": "查看計程車服務資訊 →"
+    },
+    "bus": {
+      "title": "芽莊公車",
+      "description": "市內出行的經濟交通方式。芽莊有多條經過旅遊景點的公車路線。",
+      "features": [
+        "票價：每次7,000 - 10,000越南盾",
+        "熱門路線：4號線（海灘）、3號線（Dam市場）",
+        "營運時間：5:30 - 18:30"
+      ],
+      "link": "查看公車資訊 →"
+    },
+    "boat": {
+      "title": "船隻",
+      "description": "遊覽芽莊周邊島嶼如Hon Mun、Hon Tam、Hon Mot的理想交通方式。",
+      "features": [
+        "四島遊：每人250,000 - 350,000越南盾",
+        "私人快艇：每艘1,200,000越南盾起",
+        "從Cau Da港口或遊艇碼頭出發"
+      ]
+    },
+    "rideHailing": {
+      "title": "機車計程車 / 網約機車計程車",
+      "description": "短距離出行的靈活快速交通方式。比較Grab、Maxim和傳統機車計程車。",
+      "features": [
+        "網約機車計程車：每公里12,000-18,000越南盾",
+        "傳統機車計程車：每公里15,000-25,000越南盾",
+        "可透過Grab、Maxim應用程式叫車",
+        "適合1-2人快速出行"
+      ],
+      "link": "查看機車計程車指南 →"
+    },
+    "airport": {
+      "title": "從金蘭機場出行",
+      "description": "金蘭國際機場距離芽莊市中心約30公里。以下是從機場到市區的交通方式。",
+      "busTitle": "機場巴士",
+      "busDescription": "從機場到芽莊市中心的18號巴士。票價約每次50,000越南盾。",
+      "busFeatures": [
+        "行程時間：約60分鐘",
+        "發車間隔：每30分鐘",
+        "節省費用但耗時較長"
+      ],
+      "transferTitle": "專業接送服務",
+      "transferDescription": "運輸公司的機場接送服務，提前預訂並在指定地點接送。",
+      "transferFeatures": [
+        "4座車：每次250,000越南盾起",
+        "7座車：每次300,000越南盾起",
+        "16座車：每次500,000越南盾起",
+        "移動時間：約40-45分鐘"
+      ],
+      "transferLink": "查看專業接送服務 →",
+      "note": "* 價格可能因時間而異。請在預訂服務前檢查。"
+    },
+    "contactSection": {
+      "title": "📞 聯絡預訂運輸服務",
+      "description": "需要更多交通方式諮詢或預訂芽莊接送服務嗎？立即聯絡我們！"
+    }
+  },
+  "moto": {
+    "hero": {
+      "title": "芽莊機車租賃服務",
+      "subtitle": "可靠、便宜、多樣化的機車，芽莊免費送車服務"
+    },
+    "backToTransportation": "返回交通頁面",
+    "serviceTitle": "芽莊便宜機車租賃服務",
+    "serviceDescription": "在芽莊租賃機車自由出行",
+    "serviceNote": "新車、美觀安全 - 免費送車 - 手續簡單",
+    "categories": {
+      "manual": {
+        "title": "手排機車",
+        "price": "120,000越南盾/天",
+        "description": "Wave、Sirius、Jupiter、Suzuki"
+      },
+      "scooter": {
+        "title": "普通速克達",
+        "price": "150,000越南盾/天",
+        "description": "Vision、Lead、Air Blade、Vario、Nmax"
+      },
+      "premium": {
+        "title": "高檔速克達",
+        "price": "180,000越南盾/天",
+        "description": "SH Mode、Vespa、NVX、PCX"
+      }
+    },
+    "gallery": {
+      "title": "租賃機車圖片",
+      "note": "* 滑鼠懸停查看詳細資訊，點擊查看大圖。圖片僅供參考。"
+    },
+    "procedures": {
+      "title": "租賃手續和條件：",
+      "description": "機車租賃手續非常簡單快捷。您只需提供以下證件之一即可立即租車：",
+      "documents": {
+        "idCard": {
+          "title": "身分證 / 戶口名簿",
+          "description": "有效的身分證或戶口名簿"
+        },
+        "license": {
+          "title": "駕駛執照",
+          "description": "有效的機車或汽車駕駛執照"
+        }
+      },
+      "deliveryNote": "為芽莊市區客戶提供免費送車服務（飯店、火車站、汽車站）",
+      "conditions": {
+        "title": "租賃條件：",
+        "items": [
+          "抵押身分證/戶口名簿/護照正本或現金500萬越南盾押金",
+          "租賃3天以上總費用優惠10%",
+          "免費包含：安全帽、雨衣、免費送車（3公里範圍內）"
+        ]
+      },
+      "importantNotes": {
+        "title": "重要注意事項：",
+        "items": [
+          "不要將機車停在路邊或道路上。請停在安全的停車場",
+          "遵守交通法規：不闖紅燈、不逆行、佩戴安全帽",
+          "機車租賃時間：1天 = 24小時，超過6小時按半天計費"
+        ]
+      }
+    },
+    "touring": {
+      "title": "騎機車探索芽莊",
+      "description": "機車租賃是探索芽莊及周邊地區最靈活便捷的方式。以下是騎機車探索的理想目的地：",
+      "destinations": {
+        "baiDai": {
+          "title": "白岱海灘和白獨列海灘",
+          "description": "距離芽莊市中心北部20-30公里的兩個美麗原始海灘"
+        },
+        "ninhVan": {
+          "title": "寧凡灣和朗科灣",
+          "description": "距離芽莊北部約60公里的原始寧靜美麗景色"
+        },
+        "ponagar": {
+          "title": "婆那加塔",
+          "description": "位於芽莊市內的古代占婆歷史遺跡"
+        },
+        "daiLanh": {
+          "title": "大嶺海灘和美電角",
+          "description": "位於慶和省和富安省邊界的美麗海岸公路"
+        }
+      },
+      "tips": {
+        "title": "機車租賃注意事項",
+        "items": [
+          "駕駛時始終攜帶個人證件並佩戴安全帽",
+          "取車前仔細檢查機車（煞車、燈光、喇叭、燃油）",
+          "建議取車前拍照以避免糾紛",
+          "遵守交通法規，安全駕駛"
+        ]
+      }
+    },
+    "benefits": {
+      "title": "在芽莊洞察租車的優勢",
+      "newBikes": {
+        "title": "新車、高品質",
+        "description": "所有車輛都是新車，定期保養，確保安全和良好運行"
+      },
+      "support": {
+        "title": "24/7救援支援",
+        "description": "車輛故障時在芽莊市內提供免費救援服務"
+      }
+    },
+    "contactSection": {
+      "title": "今天就聯絡預訂車輛",
+      "description": "請透過熱線或社群媒體聯絡我們，獲得芽莊機車服務諮詢和預訂"
+    },
+    "faq": {
+      "title": "芽莊機車租賃常見問題",
+      "questions": {
+        "price": {
+          "question": "芽莊機車租賃費用是多少？",
+          "answer": "芽莊機車租賃費用為手排機車（Wave、Sirius）每天100,000越南盾，普通速克達（Vision、Air Blade）每天150,000越南盾，高檔速克達（PCX、SH Mode）每天180,000越南盾。"
+        },
+        "procedures": {
+          "question": "芽莊機車租賃手續如何？",
+          "answer": "手續非常簡單，您只需抵押身分證/戶口名簿或駕駛執照正本即可。可用現金500萬越南盾替代。租賃3天以上優惠10%。"
+        },
+        "delivery": {
+          "question": "有機車送車服務嗎？",
+          "answer": "有，我們在芽莊市中心3公里範圍內免費送車到飯店、火車站、汽車站。請提前2小時聯絡預訂車輛。"
+        },
+        "insurance": {
+          "question": "租賃機車有保險嗎？",
+          "answer": "有，所有車輛都有全額保險。此外，我們還提供車輛故障時在芽莊市內24/7免費救援服務。"
+        },
+        "types": {
+          "question": "有哪些類型的機車可以租賃？",
+          "answer": "我們有多種類型的機車：手排機車（Honda Wave、Yamaha Sirius、Jupiter）、普通速克達（Honda Vision、Air Blade、Lead、Nmax）、高檔速克達（PCX、SH Mode、NVX、Vespa）。"
+        }
+      }
+    }
+  },
+  "car": {
+    "hero": {
+      "title": "芽莊汽車租賃服務",
+      "subtitle": "從機場接送到觀光旅遊的專業安全汽車租賃服務"
+    },
+    "backToTransportation": "返回交通頁面",
+    "contactSection": {
+      "title": "預訂汽車租賃服務",
+      "description": "需要在芽莊租車或機場接送服務嗎？立即聯絡獲得最佳服務！"
+    },
+    "airportService": {
+      "title": "機場接送服務",
+      "guarantee": "✅ 保證準時接送 - 免費等待30分鐘",
+      "categories": {
+        "car4": {
+          "title": "4座車",
+          "price": "250,000越南盾/單程",
+          "description": "適合個人、情侶、小家庭"
+        },
+        "car7": {
+          "title": "7座車",
+          "price": "300,000越南盾/單程",
+          "description": "適合大家庭、朋友團體"
+        },
+        "car16": {
+          "title": "16座車",
+          "price": "500,000越南盾/單程",
+          "description": "適合大團體、公司旅行"
+        }
+      },
+      "gallery": {
+        "title": "車輛圖片",
+        "note": "* 所有車輛都配備冷氣、舒適座椅，定期保養"
+      },
+      "notes": {
+        "title": "重要事項",
+        "items": [
+          "需要提前預訂（至少提前2小時）",
+          "航班延誤時免費等待30分鐘",
+          "從金蘭機場到芽莊市中心約45分鐘",
+          "24小時服務"
+        ]
+      }
+    },
+    "tourService": {
+      "title": "觀光旅遊服務",
+      "description": "舒適地探索芽莊周邊美麗目的地。與專業司機一起安全旅行：",
+      "destinations": {
+        "dalat": {
+          "title": "大叻旅遊",
+          "description": "花城大叻一日遊（約140公里，3小時）"
+        },
+        "vinhHy": {
+          "title": "永海灣",
+          "description": "美麗的永海灣和白門海灘（約60公里，1.5小時）"
+        },
+        "binhBa": {
+          "title": "平巴島",
+          "description": "以龍蝦島聞名的平巴島旅遊"
+        },
+        "phanRang": {
+          "title": "潘朗 - 塔占",
+          "description": "占婆文化和葡萄園探訪（約100公里，2小時）"
+        }
+      },
+      "additionalRoutes": "其他熱門路線：",
+      "routes": [
+        "芽莊 - 美奈（沙漠旅遊）",
+        "芽莊 - 會安（古城）",
+        "芽莊 - 西貢（胡志明市）"
+      ],
+      "commitment": {
+        "title": "服務承諾",
+        "items": [
+          "經驗豐富的專業司機",
+          "配備冷氣的舒適車輛",
+          "靈活的行程安排",
+          "景點基本介紹"
+        ]
+      }
+    }
+  },
+  "taxi": {
+    "hero": {
+      "title": "芽莊計程車服務",
+      "subtitle": "芽莊可靠計程車公司、價格和服務的詳細資訊"
+    },
+    "backToTransportation": "返回交通頁面",
+    "intro": {
+      "title": "芽莊的計程車",
+      "description": "計程車是芽莊受歡迎且便捷的交通方式。該地區有許多可靠的計程車公司營運，遊客可以在旅遊景點、飯店、餐廳和觀光景點輕鬆搭到計程車。",
+      "warning": "為避免被宰客，應使用可靠的計程車公司，上車時要求司機跳錶。"
+    },
+    "companies": {
+      "title": "芽莊可靠的計程車公司",
+      "features": "主要特色",
+      "rating": "評分",
+      "operatingHours": "營業時間",
+      "fare": "價格",
+      "contact": "聯絡方式",
+      "data": [
+        {
+          "name": "Mai Linh Taxi",
+          "phone": "025 83 83 8383",
+          "baseRate": "15,000越南盾",
+          "pricePerKm": "15,000越南盾 - 17,000越南盾/公里",
+          "waitingRate": "45,000越南盾/小時",
+          "color": "綠色",
+          "operatingHours": "24/7",
+          "website": "https://mailinh.vn",
+          "logo": "/images/taxi/mailinh.png",
+          "rating": 4.5,
+          "features": ["大型車隊", "專業司機", "可刷卡支付"],
+          "description": "Mai Linh是芽莊最大最可靠的計程車公司之一，服務眾多旅遊路線。"
+        },
+        {
+          "name": "Vinasun Taxi",
+          "phone": "0258 3827 272",
+          "baseRate": "15,000越南盾",
+          "pricePerKm": "16,000越南盾 - 18,000越南盾/公里",
+          "waitingRate": "47,000越南盾/小時",
+          "color": "白藍色",
+          "operatingHours": "24/7",
+          "website": "https://vinasuntaxi.com",
+          "logo": "/images/taxi/vinasun.png",
+          "rating": 4.3,
+          "features": ["叫車應用程式", "應用程式支付", "多樣化服務", "VAT發票"],
+          "description": "Vinasun是來自胡志明市的可靠計程車公司，已擴展到芽莊為遊客服務。"
+        },
+        {
+          "name": "Taxi Xanh",
+          "phone": "1900 2088",
+          "baseRate": "15,000越南盾",
+          "pricePerKm": "15,000越南盾 - 16,500越南盾/公里",
+          "waitingRate": "40,000越南盾/小時",
+          "color": "藍色",
+          "operatingHours": "5:00 - 24:00",
+          "website": "https://taxi-xanh.vn",
+          "logo": "/images/taxi/xanhsm.png",
+          "rating": 4.0,
+          "features": ["叫車應用程式", "便宜價格", "貼心服務", "機場接送"],
+          "description": "Taxi Xanh是價格合理的本地計程車公司，適合想要經濟出行的遊客。"
+        },
+        {
+          "name": "Sun Taxi",
+          "phone": "0258 3 89 89 89",
+          "baseRate": "16,000越南盾",
+          "pricePerKm": "17,000越南盾 - 18,000越南盾/公里",
+          "waitingRate": "45,000越南盾/小時",
+          "color": "黃色",
+          "operatingHours": "24/7",
+          "website": "https://suntaxi.vn",
+          "logo": "/images/taxi/suntaxi.png",
+          "rating": 4.2,
+          "features": ["豪華車輛", "VIP服務", "機場接送"],
+          "description": "Sun Taxi提供豪華車輛的高端計程車服務，適合團體客戶和VIP客戶。"
+        },
+        {
+          "name": "Maxim Taxi",
+          "phone": "1900 01585",
+          "baseRate": "15,000越南盾",
+          "pricePerKm": "15,000越南盾 - 16,000越南盾/公里",
+          "waitingRate": "42,000越南盾/小時",
+          "color": "白紅色",
+          "operatingHours": "24/7",
+          "website": "https://maximtaxi.vn",
+          "logo": "/images/taxi/maxim.jpg",
+          "rating": 4.3,
+          "features": ["叫車應用程式", "新車輛", "熟悉當地的司機", "競爭性價格"],
+          "description": "Maxim Taxi是熟悉芽莊道路和著名旅遊景點的本地計程車公司。"
+        },
+        {
+          "name": "Grab",
+          "phone": "",
+          "baseRate": "15,000越南盾",
+          "pricePerKm": "15,000越南盾 - 16,000越南盾/公里",
+          "waitingRate": "42,000越南盾/小時",
+          "color": "綠色",
+          "operatingHours": "24/7",
+          "website": "https://grab.com",
+          "logo": "/images/taxi/grab.jpg",
+          "rating": 4.3,
+          "features": ["叫車應用程式", "新車輛", "熟悉當地的司機", "競爭性價格"],
+          "description": "Grab是熟悉芽莊道路和著名旅遊景點的本地計程車公司。"
+        }
+      ]
+    },
+    "types": {
+      "title": "熱門計程車類型",
+      "car4": {
+        "title": "4座計程車",
+        "capacity": "4人 + 適量行李",
+        "priceRange": "15,000越南盾 - 17,000越南盾/公里",
+        "bestFor": "個人、情侶、小家庭"
+      },
+      "car7": {
+        "title": "7座計程車",
+        "capacity": "7人 + 大量行李",
+        "priceRange": "17,000越南盾 - 20,000越南盾/公里",
+        "bestFor": "大家庭、朋友團體"
+      },
+      "vip": {
+        "title": "VIP計程車",
+        "capacity": "4人 + 高端服務",
+        "priceRange": "20,000越南盾 - 25,000越南盾/公里",
+        "bestFor": "商務人士、VIP客戶"
+      }
+    },
+    "routes": {
+      "title": "熱門計程車路線和預估價格",
+      "note": "* 預估價格基於4座計程車價格表。實際價格可能因計程車公司、時間、交通狀況和其他因素而有所不同。",
+      "headers": {
+        "route": "路線",
+        "distance": "距離",
+        "estimatedPrice": "預估價格",
+        "time": "時間"
+      },
+      "data": [
+        {
+          "from": "金蘭機場",
+          "to": "芽莊市中心",
+          "distance": "~30公里",
+          "estimatedPrice": "350,000越南盾 - 400,000越南盾",
+          "estimatedTime": "40-45分鐘"
+        },
+        {
+          "from": "芽莊市中心",
+          "to": "珍珠島",
+          "distance": "~5公里",
+          "estimatedPrice": "80,000越南盾 - 100,000越南盾",
+          "estimatedTime": "15-20分鐘"
+        },
+        {
+          "from": "芽莊市中心",
+          "to": "I-Resort",
+          "distance": "~7公里",
+          "estimatedPrice": "120,000越南盾 - 140,000越南盾",
+          "estimatedTime": "20-25分鐘"
+        },
+        {
+          "from": "芽莊市中心",
+          "to": "婆那加塔",
+          "distance": "~4公里",
+          "estimatedPrice": "70,000越南盾 - 90,000越南盾",
+          "estimatedTime": "10-15分鐘"
+        }
+      ]
+    },
+    "tips": {
+      "title": "在芽莊搭乘計程車的建議",
+      "items": {
+        "reputableCompanies": "只使用可靠的計程車公司 - 優先使用Mai Linh、Vinasun、Nha Trang Taxi等大型計程車公司以避免被宰客。",
+        "useMeter": "要求跳錶 - 上車時始終要求司機跳錶計費。",
+        "bookByPhone": "透過電話預訂 - 如果可能，透過計程車公司電話預訂以確保安全。",
+        "confirmPrice": "提前確認價格 - 對於機場到市區等長途路線，出發前確認包價。",
+        "keepReceipt": "保留收據 - 付款後始終要求收據，特別是需要報銷時。"
+      }
+    },
+    "alternatives": {
+      "title": "替代交通方式",
+      "description": "除了計程車，芽莊還有許多其他替代交通方式：",
+      "moto": {
+        "title": "機車租賃",
+        "description": "每天100,000越南盾起，靈活出行"
+      },
+      "car": {
+        "title": "汽車租賃",
+        "description": "自駕或帶司機租賃"
+      }
+    },
+    "contactSection": {
+      "title": "需要更多芽莊交通諮詢嗎？",
+      "description": "請聯絡我們獲得芽莊交通服務諮詢和預訂"
+    }
+  },
+  "bus": {
+    "hero": {
+      "title": "芽莊公車",
+      "subtitle": "芽莊公共巴士的路線、時刻表和地圖資訊"
+    },
+    "backToTransportation": "返回交通頁面",
+    "searchPlaceholder": "搜尋公車站...",
+    "searchResults": "結果",
+    "noResults": "未找到公車站",
+    "routes": {
+      "title": "公車路線",
+      "frequency": "分鐘/班"
+    },
+    "routeInfo": {
+      "title": "路線資訊",
+      "routeName": "路線名稱",
+      "operatingHours": "營運時間",
+      "frequency": "發車間隔",
+      "fare": "票價",
+      "information": "資訊",
+      "lastUpdated": "更新",
+      "stops": "站點"
+    },
+    "stopInfo": {
+      "title": "站點",
+      "description": "描述",
+      "routesThrough": "經過路線",
+      "noRoutes": "沒有路線經過此站點"
+    },
+    "mapLegend": {
+      "title": "地圖圖例",
+      "startPoint": "起點",
+      "endPoint": "終點",
+      "busStop": "公車站",
+      "busRoute": "公車路線"
+    },
+    "dataUpdate": {
+      "title": "資料更新資訊",
+      "description": "公車路線資料定期更新以確保準確性",
+      "lastUpdate": "最近更新",
+      "stats": {
+        "routes": "公車路線",
+        "stops": "公車站點",
+        "support": "資訊支援"
+      }
+    },
+    "faq": {
+      "title": "芽莊公車常見問題",
+      "questions": {
+        "fare": {
+          "question": "芽莊公車票價是多少？",
+          "answer": "芽莊市內公車票價每次7,000越南盾，金蘭機場公車每次50,000越南盾，月票200,000越南盾。學生、大學生、老人和身障人士享受50%折扣。"
+        },
+        "schedule": {
+          "question": "芽莊公車幾點到幾點營運？",
+          "answer": "市內公車每天05:00 - 19:00營運。金蘭機場路線04:00 - 21:00營運。公車發車間隔根據路線15-30分鐘。"
+        },
+        "routes": {
+          "question": "芽莊有多少條公車路線？",
+          "answer": "目前芽莊有4條主要公車路線：23號線（Ana Marina - Vinpearl）、18號線（Binh Hung - Dien Khanh）、9號線（汽車站 - 金蘭機場）、4號線（Dam市場 - 南部汽車站）。"
+        },
+        "airport": {
+          "question": "如何從金蘭機場搭公車到芽莊市中心？",
+          "answer": "您可以搭乘9號線從金蘭機場到芽莊南部汽車站。票價每次50,000越南盾，行程時間約45-60分鐘，04:00 - 21:00營運，每30分鐘一班。"
+        },
+        "payment": {
+          "question": "芽莊公車可以刷卡支付嗎？",
+          "answer": "目前大部分芽莊公車路線只接受現金支付。您應該準備零錢購票。一些路線正在試點無現金支付。"
+        }
+      }
+    }
+  },
+  "flights": {
+    "hero": {
+      "title": "金蘭機場 (CXR) 到達航班",
+      "subtitle": "查看到達金蘭機場的航班時間、狀態和詳細資訊 - 芽莊海濱城市的航空門戶"
+    },
+    "airportInfo": {
+      "title": "金蘭機場 (CXR) 資訊",
+      "intro": {
+        "title": "介紹",
+        "description1": "金蘭國際機場位於芽莊市中心南部約30公里處。這是遊客前往芽莊和慶和省周邊地區的主要航空門戶。",
+        "description2": "機場服務國內和國際航班，包括Vietnam Airlines、Bamboo Airways、VietJet Air、Pacific Airlines和許多其他國際航空公司。"
+      },
+      "contact": {
+        "title": "聯絡資訊",
+        "address": "地址",
+        "phone": "電話",
+        "email": "電子郵件",
+        "website": "網站"
+      },
+      "transportation": {
+        "title": "機場交通",
+        "taxi": "計程車：航廈外可用，到芽莊市中心約40-45分鐘。",
+        "bus": "公車：有18號公車路線從機場到市中心。",
+        "shuttle": "接駁車：許多飯店提供機場接送服務，預訂時請確認。",
+        "rental": "租車：機場有租車公司。"
+      },
+      "facilities": {
+        "title": "機場設施",
+        "items": [
+          "免稅店",
+          "餐廳和咖啡廳",
+          "貨幣兌換和ATM",
+          "免費Wi-Fi",
+          "乘客特殊協助服務",
+          "兒童看護服務",
+          "VIP休息室"
+        ]
+      }
+    },
+    "rentalServices": {
+      "title": "芽莊租賃服務",
+      "moto": {
+        "title": "機車租賃服務",
+        "description": "用機車靈活探索芽莊。我們提供可靠的機車租賃服務：",
+        "features": [
+          "多樣化機車：從手排到高檔速克達",
+          "租賃費用100,000越南盾 - 180,000越南盾/天",
+          "手續簡單，免費送車",
+          "保險和24/7支援"
+        ],
+        "link": "查看機車租賃服務"
+      },
+      "car": {
+        "title": "汽車租賃服務",
+        "description": "與家人或朋友團體舒適出行的高品質汽車租賃服務：",
+        "features": [
+          "4-16座多樣化車輛",
+          "自駕或帶司機選擇",
+          "金蘭機場接送服務",
+          "線上或電話預訂"
+        ],
+        "link": "查看汽車租賃服務"
+      }
+    }
+  },
+  "rideHailing": {
+    "hero": {
+      "title": "芽莊機車計程車 / 網約機車計程車",
+      "subtitle": "比較Grab、Maxim和傳統機車計程車 - 芽莊快速經濟的出行方式"
+    },
+    "backToTransportation": "返回交通頁面",
+    "intro": {
+      "title": "芽莊的機車計程車",
+      "description": "機車計程車是芽莊受歡迎且便捷的交通方式，特別適合短距離出行或交通壅塞時。主要有兩種類型：傳統機車計程車和Grab、Maxim等網約服務。",
+      "warning": "為了安全，請始終佩戴安全帽並選擇可靠的司機。"
+    },
+    "types": {
+      "title": "機車計程車類型",
+      "traditional": {
+        "title": "傳統機車計程車",
+        "description": "在街角、市場、旅遊景點等候的本地機車計程車司機",
+        "priceRange": "15,000越南盾 - 25,000越南盾/公里",
+        "advantages": [
+          "隨處可見",
+          "熟悉當地道路",
+          "可議價",
+          "現金支付"
+        ],
+        "disadvantages": [
+          "沒有固定價格",
+          "語言障礙",
+          "被宰客風險",
+          "無安全保障"
+        ]
+      },
+      "app": {
+        "title": "網約機車計程車",
+        "description": "透過Grab、Maxim等應用程式叫車的機車計程車服務",
+        "priceRange": "12,000越南盾 - 18,000越南盾/公里",
+        "advantages": [
+          "透明價格",
+          "GPS追蹤",
+          "司機資訊",
+          "多種支付方式"
+        ],
+        "disadvantages": [
+          "需要安裝應用程式",
+          "需要網路連接",
+          "等待時間",
+          "部分地區服務受限"
+        ]
+      }
+    },
+    "apps": {
+      "title": "熱門機車計程車應用程式",
+      "featuresTitle": "主要功能",
+      "prosConsTitle": "優缺點",
+      "grab": {
+        "name": "Grab",
+        "description": "東南亞最受歡迎的叫車應用程式，在芽莊也廣泛使用。",
+        "features": [
+          "即時GPS追蹤",
+          "多種支付方式",
+          "司機評分系統",
+          "24/7客戶支援"
+        ],
+        "rating": "4.2/5",
+        "priceRange": "12,000越南盾 - 16,000越南盾/公里",
+        "availability": "芽莊市中心大部分地區",
+        "pros": [
+          "透明價格",
+          "安全可靠",
+          "介面易用",
+          "促銷活動多"
+        ],
+        "cons": [
+          "尖峰時段漲價",
+          "部分郊區服務受限",
+          "等待時間可能較長"
+        ]
+      },
+      "maxim": {
+        "name": "Maxim",
+        "description": "越南本地叫車應用程式，提供競爭性價格。",
+        "features": [
+          "便宜價格",
+          "現金和卡支付",
+          "本地司機",
+          "簡單介面"
+        ],
+        "rating": "4.0/5",
+        "priceRange": "11,000越南盾 - 15,000越南盾/公里",
+        "availability": "芽莊主要地區",
+        "pros": [
+          "比Grab便宜",
+          "本地司機熟悉道路",
+          "叫車快速",
+          "現金支付方便"
+        ],
+        "cons": [
+          "司機比Grab少",
+          "英語支援有限",
+          "功能較少"
+        ]
+      }
+    },
+    "comparison": {
+      "title": "傳統 vs 網約機車計程車比較",
+      "headers": {
+        "criteria": "標準",
+        "traditional": "傳統機車計程車",
+        "app": "網約"
+      },
+      "rows": {
+        "price": {
+          "criteria": "價格",
+          "traditional": "15,000-25,000越南盾/公里（可議價）",
+          "app": "12,000-18,000越南盾/公里（固定）"
+        },
+        "convenience": {
+          "criteria": "便利性",
+          "traditional": "立即可用",
+          "app": "應用程式叫車，需等待"
+        },
+        "safety": {
+          "criteria": "安全性",
+          "traditional": "無保障",
+          "app": "司機資訊，GPS追蹤"
+        },
+        "availability": {
+          "criteria": "可用性",
+          "traditional": "隨處可見",
+          "app": "服務區域內"
+        },
+        "payment": {
+          "criteria": "支付",
+          "traditional": "僅現金",
+          "app": "現金、卡、電子錢包"
+        }
+      }
+    },
+    "tips": {
+      "title": "機車計程車使用技巧",
+      "appBased": {
+        "title": "網約機車計程車",
+        "items": [
+          "出行前下載應用程式並設定帳戶",
+          "設定準確的接送位置",
+          "確認司機車牌號和照片",
+          "行程後為司機評分"
+        ]
+      },
+      "traditional": {
+        "title": "傳統機車計程車",
+        "items": [
+          "上車前協商價格",
+          "明確目的地",
+          "確認安全帽乾淨安全",
+          "妥善保管貴重物品"
+        ]
+      },
+      "importantNotes": {
+        "title": "重要事項",
+        "items": [
+          "始終佩戴安全帽",
+          "遵守交通法規",
+          "雨天避免搭乘機車計程車",
+          "長途旅行考慮其他交通方式"
+        ]
+      }
+    },
+    "routes": {
+      "title": "熱門路線和預估價格",
+      "headers": {
+        "route": "路線",
+        "distance": "距離",
+        "appBased": "網約",
+        "traditional": "傳統",
+        "time": "時間"
+      },
+      "data": [
+        {
+          "route": "芽莊市中心 → 珍珠島",
+          "distance": "~5公里",
+          "appBased": "60,000越南盾 - 80,000越南盾",
+          "traditional": "75,000越南盾 - 100,000越南盾",
+          "time": "15-20分鐘"
+        },
+        {
+          "route": "芽莊市中心 → 婆那加塔",
+          "distance": "~3公里",
+          "appBased": "36,000越南盾 - 50,000越南盾",
+          "traditional": "45,000越南盾 - 60,000越南盾",
+          "time": "10-15分鐘"
+        },
+        {
+          "route": "芽莊市中心 → 龍山寺",
+          "distance": "~4公里",
+          "appBased": "48,000越南盾 - 65,000越南盾",
+          "traditional": "60,000越南盾 - 80,000越南盾",
+          "time": "12-18分鐘"
+        },
+        {
+          "route": "芽莊市中心 → Dam市場",
+          "distance": "~2公里",
+          "appBased": "24,000越南盾 - 35,000越南盾",
+          "traditional": "30,000越南盾 - 45,000越南盾",
+          "time": "8-12分鐘"
+        }
+      ],
+      "note": "* 價格可能因交通狀況、時間、天氣而有所不同。價格僅供參考。"
+    },
+    "alternatives": {
+      "title": "替代交通方式",
+      "description": "除了機車計程車，芽莊還有許多其他交通方式：機車租賃、汽車租賃、計程車、公共巴士。"
+    },
+    "contactSection": {
+      "title": "需要芽莊交通諮詢嗎？",
+      "description": "請聯絡我們獲得芽莊交通服務諮詢和支援"
+    },
+    "faq": {
+      "title": "芽莊機車計程車常見問題",
+      "questions": {
+        "popularApps": {
+          "question": "芽莊最受歡迎的機車計程車應用程式是什麼？",
+          "answer": "芽莊最受歡迎的兩個應用程式是Grab和Maxim。Grab提供更多功能和安全性，Maxim提供更便宜的價格。"
+        },
+        "pricing": {
+          "question": "機車計程車價格如何計算？",
+          "answer": "網約機車計程車根據距離和時間有固定價格（每公里12,000-18,000越南盾）。傳統機車計程車可以議價（每公里15,000-25,000越南盾）。"
+        },
+        "safety": {
+          "question": "機車計程車安全嗎？",
+          "answer": "網約機車計程車透過司機資訊、GPS追蹤、評分系統更安全。始終佩戴安全帽並遵守交通法規。"
+        },
+        "availability": {
+          "question": "機車計程車什麼時候可用？",
+          "answer": "傳統機車計程車通常6:00-22:00可用。Grab和Maxim等網約服務24小時可用，但夜間司機可能較少。"
+        },
+        "choice": {
+          "question": "應該選擇傳統機車計程車還是網約？",
+          "answer": "如果要安全和透明價格選擇網約，如果要立即使用和議價選擇傳統機車計程車。"
+        }
+      }
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "聯絡我們",
+      "subtitle": "有疑問或需要幫助嗎？聯絡芽莊洞察，我們將在最短時間內回覆您"
+    },
+    "contactInfo": {
+      "title": "聯絡資訊",
+      "phone": "電話",
+      "email": "電子郵件",
+      "address": "地址"
+    },
+    "socialMedia": {
+      "title": "關注我們"
+    },
+    "map": {
+      "title": "地圖"
+    },
+    "form": {
+      "title": "發送聯絡資訊",
+      "successMessage": "感謝您發送資訊！我們將在最短時間內聯絡您。",
+      "fields": {
+        "name": {
+          "label": "姓名",
+          "placeholder": "請輸入您的姓名"
+        },
+        "email": {
+          "label": "電子郵件",
+          "placeholder": "請輸入電子郵件地址"
+        },
+        "phone": {
+          "label": "電話號碼",
+          "placeholder": "請輸入您的電話號碼"
+        },
+        "subject": {
+          "label": "主題",
+          "placeholder": "選擇主題",
+          "options": {
+            "tourism": "旅遊資訊",
+            "rental": "租賃服務",
+            "tour": "預訂旅遊",
+            "accommodation": "住宿支援",
+            "other": "其他"
+          }
+        },
+        "message": {
+          "label": "訊息內容",
+          "placeholder": "請詳細描述您的需求..."
+        }
+      },
+      "submitButton": "發送訊息",
+      "submittingButton": "發送中..."
+    },
+    "payment": {
+      "title": "支付資訊",
+      "bankInfo": {
+        "title": "銀行轉帳資訊",
+        "bank": "銀行",
+        "branch": "分行",
+        "accountNumber": "帳號",
+        "accountHolder": "戶名",
+        "transferContent": "轉帳備註"
+      },
+      "qrCode": {
+        "title": "掃碼支付",
+        "description": "用銀行應用程式或電子錢包掃描QR碼"
+      },
+      "note": "請在轉帳備註中清楚註明姓名和預訂的服務，以便我們確認您的付款。"
+    }
+  }
+} 

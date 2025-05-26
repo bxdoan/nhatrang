@@ -1,4 +1,4 @@
-export const locales = ['vi', 'en'] as const;
+export const locales = ['vi', 'en', 'kr', 'zh_CN', 'zh_TW', 'ru'] as const;
 export type Locale = typeof locales[number];
 
 export const defaultLocale: Locale = 'vi';
@@ -150,6 +150,8 @@ export interface TranslationStructure {
       transferTitle: string;
       transferDescription: string;
       transferFeatures: string[];
+      transferLink: string;
+      note: string;
     };
     contactSection: {
       title: string;

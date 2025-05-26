@@ -15,6 +15,14 @@ export default function LanguageSwitcher() {
         return 'Tiếng Việt';
       case 'en':
         return 'English';
+      case 'kr':
+        return '한국어';
+      case 'zh_CN':
+        return '简体中文';
+      case 'zh_TW':
+        return '繁體中文';
+      case 'ru':
+        return 'Русский';
       default:
         return lang;
     }
@@ -35,6 +43,38 @@ export default function LanguageSwitcher() {
           <img 
             src="https://flagcdn.com/w40/us.png" 
             alt="United States" 
+            className="w-6 h-4 object-cover rounded-sm"
+          />
+        );
+      case 'kr':
+        return (
+          <img 
+            src="https://flagcdn.com/w40/kr.png" 
+            alt="대한민국" 
+            className="w-6 h-4 object-cover rounded-sm"
+          />
+        );
+      case 'zh_CN':
+        return (
+          <img 
+            src="https://flagcdn.com/w40/cn.png" 
+            alt="中华人民共和国" 
+            className="w-6 h-4 object-cover rounded-sm"
+          />
+        );
+      case 'zh_TW':
+        return (
+          <img 
+            src="https://flagcdn.com/w40/tw.png" 
+            alt="中華民國" 
+            className="w-6 h-4 object-cover rounded-sm"
+          />
+        );
+      case 'ru':
+        return (
+          <img 
+            src="https://flagcdn.com/w40/ru.png" 
+            alt="Россия" 
             className="w-6 h-4 object-cover rounded-sm"
           />
         );

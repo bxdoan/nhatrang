@@ -1,0 +1,1045 @@
+{
+  "common": {
+    "search": "搜索",
+    "viewDetails": "查看详情",
+    "backToHome": "返回首页",
+    "loading": "加载中...",
+    "error": "错误",
+    "contact": "联系方式",
+    "backToTransportation": "返回交通页面",
+    "callNow": "立即致电",
+    "messageZalo": "通过Zalo发消息",
+    "messageTelegram": "通过Telegram发消息",
+    "bookNow": "立即预订",
+    "viewService": "查看服务",
+    "contactForBooking": "联系预订",
+    "priceNote": "价格可能有所变动"
+  },
+  "header": {
+    "banner": "芽庄洞察",
+    "tagline1": "芽庄旅游指南",
+    "tagline2": "交通、住宿、美食信息",
+    "transportation": {
+      "overview": "交通概览",
+      "overviewDesc": "芽庄所有交通方式",
+      "car": "汽车租赁",
+      "carDesc": "自驾或带司机",
+      "moto": "摩托车租赁",
+      "motoDesc": "灵活经济的出行",
+      "bus": "公交车",
+      "busDesc": "公共巴士路线",
+      "taxi": "出租车",
+      "taxiDesc": "便捷的出租车服务",
+      "rideHailing": "摩的",
+      "rideHailingDesc": "快速摩的服务"
+    }
+  },
+  "navigation": {
+    "home": "首页",
+    "transportation": "交通",
+    "bus": "公交车",
+    "taxi": "出租车",
+    "moto": "摩托车",
+    "car": "汽车",
+    "flights": "航班",
+    "accommodations": "住宿",
+    "food": "美食",
+    "contact": "联系我们"
+  },
+  "footer": {
+    "description": "芽庄旅游完美指南",
+    "explore": "探索",
+    "contact": "联系方式",
+    "newsletter": "订阅资讯",
+    "newsletterDesc": "获取最新旅游信息",
+    "emailPlaceholder": "请输入邮箱地址",
+    "subscribe": "订阅",
+    "copyright": "© 2024 芽庄洞察。保留所有权利。"
+  },
+  "homepage": {
+    "hero": {
+      "title": "芽庄旅游",
+      "highlightedTitle": "完美指南",
+      "subtitle": "为您提供越南芽庄交通、住宿、美食的详细信息"
+    },
+    "sections": {
+      "exploreTitle": "探索芽庄",
+      "exploreSubtitle": "美丽海滨城市芽庄的所有必需信息",
+      "transportation": {
+        "title": "交通信息",
+        "description": "芽庄所有交通方式的完整指南",
+        "link": "查看交通信息"
+      },
+      "moto": {
+        "title": "摩托车租赁",
+        "description": "自由探索芽庄的摩托车租赁服务",
+        "link": "查看摩托车租赁"
+      },
+      "car": {
+        "title": "汽车租赁",
+        "description": "适合家庭或团体旅行的汽车租赁服务",
+        "link": "查看汽车租赁"
+      },
+      "bus": {
+        "title": "公交信息",
+        "description": "芽庄公共巴士路线和时刻表信息",
+        "link": "查看公交信息"
+      },
+      "taxi": {
+        "title": "出租车服务",
+        "description": "可靠的出租车公司和价格信息",
+        "link": "查看出租车信息"
+      }
+    }
+  },
+  "transportation": {
+    "hero": {
+      "title": "芽庄交通",
+      "subtitle": "了解芽庄的交通方式和运输服务，从摩托车租赁到公共巴士"
+    },
+    "intro": {
+      "title": "芽庄的交通方式",
+      "description": "芽庄是著名的旅游城市，为游客提供多样化的交通方式。根据需求、预算和行程，您可以选择适合的交通方式来探索这座美丽的海滨城市。"
+    },
+    "moto": {
+      "title": "摩托车租赁",
+      "description": "探索芽庄最受欢迎和灵活的交通方式。租赁费用根据摩托车类型每天100,000越南盾 - 170,000越南盾。",
+      "features": [
+        "摩托车类型：手动挡、踏板车、跑车",
+        "优点：灵活、经济、停车方便",
+        "免费送车服务，免费提供头盔"
+      ],
+      "link": "查看摩托车租赁服务 →"
+    },
+    "car": {
+      "title": "汽车租赁",
+      "description": "适合家庭或团体。从4座到16座的各种车型。特别提供机场接送服务。",
+      "features": [
+        "租赁费用：根据车型每天700,000越南盾起",
+        "带司机或自驾服务",
+        "手续简单，需要身份证和驾驶证"
+      ],
+      "link": "查看汽车租赁服务 →"
+    },
+    "taxi": {
+      "title": "出租车服务",
+      "description": "市内出行的便捷交通方式。有Mai Linh、Vinasun、Nha Trang Taxi等可靠的出租车公司。",
+      "features": [
+        "费用：每公里15,000 - 20,000越南盾",
+        "安全便捷，可通过应用叫车",
+        "在旅游景点、酒店容易找到"
+      ],
+      "link": "查看出租车服务信息 →"
+    },
+    "bus": {
+      "title": "芽庄公交车",
+      "description": "市内出行的经济交通方式。芽庄有多条经过旅游景点的公交线路。",
+      "features": [
+        "票价：每次7,000 - 10,000越南盾",
+        "热门线路：4号线（海滩）、3号线（Dam市场）",
+        "运营时间：5:30 - 18:30"
+      ],
+      "link": "查看公交信息 →"
+    },
+    "boat": {
+      "title": "船只",
+      "description": "游览芽庄周边岛屿如Hon Mun、Hon Tam、Hon Mot的理想交通方式。",
+      "features": [
+        "四岛游：每人250,000 - 350,000越南盾",
+        "私人快艇：每艘1,200,000越南盾起",
+        "从Cau Da港口或游艇码头出发"
+      ]
+    },
+    "rideHailing": {
+      "title": "摩的 / 网约摩的",
+      "description": "短距离出行的灵活快速交通方式。比较Grab、Maxim和传统摩的。",
+      "features": [
+        "网约摩的：每公里12,000-18,000越南盾",
+        "传统摩的：每公里15,000-25,000越南盾",
+        "可通过Grab、Maxim应用叫车",
+        "适合1-2人快速出行"
+      ],
+      "link": "查看摩的指南 →"
+    },
+    "airport": {
+      "title": "从金兰机场出行",
+      "description": "金兰国际机场距离芽庄市中心约30公里。以下是从机场到市区的交通方式。",
+      "busTitle": "机场巴士",
+      "busDescription": "从机场到芽庄市中心的18号巴士。票价约每次50,000越南盾。",
+      "busFeatures": [
+        "行程时间：约60分钟",
+        "发车间隔：每30分钟",
+        "节省费用但耗时较长"
+      ],
+      "transferTitle": "专业接送服务",
+      "transferDescription": "运输公司的机场接送服务，提前预订并在指定地点接送。",
+      "transferFeatures": [
+        "4座车：每次250,000越南盾起",
+        "7座车：每次300,000越南盾起",
+        "16座车：每次500,000越南盾起",
+        "移动时间：约40-45分钟"
+      ],
+      "transferLink": "查看专业接送服务 →",
+      "note": "* 价格可能因时间而异。请在预订服务前检查。"
+    },
+    "contactSection": {
+      "title": "📞 联系预订运输服务",
+      "description": "需要更多交通方式咨询或预订芽庄接送服务吗？立即联系我们！"
+    }
+  },
+  "moto": {
+    "hero": {
+      "title": "芽庄摩托车租赁服务",
+      "subtitle": "可靠、便宜、多样化的摩托车，芽庄免费送车服务"
+    },
+    "backToTransportation": "返回交通页面",
+    "serviceTitle": "芽庄便宜摩托车租赁服务",
+    "serviceDescription": "在芽庄租赁摩托车自由出行",
+    "serviceNote": "新车、美观安全 - 免费送车 - 手续简单",
+    "categories": {
+      "manual": {
+        "title": "手动摩托车",
+        "price": "120,000越南盾/天",
+        "description": "Wave、Sirius、Jupiter、Suzuki"
+      },
+      "scooter": {
+        "title": "普通踏板车",
+        "price": "150,000越南盾/天",
+        "description": "Vision、Lead、Air Blade、Vario、Nmax"
+      },
+      "premium": {
+        "title": "高档踏板车",
+        "price": "180,000越南盾/天",
+        "description": "SH Mode、Vespa、NVX、PCX"
+      }
+    },
+    "gallery": {
+      "title": "租赁摩托车图片",
+      "note": "* 鼠标悬停查看详细信息，点击查看大图。图片仅供参考。"
+    },
+    "procedures": {
+      "title": "租赁手续和条件：",
+      "description": "摩托车租赁手续非常简单快捷。您只需提供以下证件之一即可立即租车：",
+      "documents": {
+        "idCard": {
+          "title": "身份证 / 户口本",
+          "description": "有效的身份证或户口本"
+        },
+        "license": {
+          "title": "驾驶证",
+          "description": "有效的摩托车或汽车驾驶证"
+        }
+      },
+      "deliveryNote": "为芽庄市区客户提供免费送车服务（酒店、火车站、汽车站）",
+      "conditions": {
+        "title": "租赁条件：",
+        "items": [
+          "抵押身份证/户口本/护照原件或现金500万越南盾押金",
+          "租赁3天以上总费用优惠10%",
+          "免费包含：头盔、雨衣、免费送车（3公里范围内）"
+        ]
+      },
+      "importantNotes": {
+        "title": "重要注意事项：",
+        "items": [
+          "不要将摩托车停在路边或道路上。请停在安全的停车场",
+          "遵守交通法规：不闯红灯、不逆行、佩戴头盔",
+          "摩托车租赁时间：1天 = 24小时，超过6小时按半天计费"
+        ]
+      }
+    },
+    "touring": {
+      "title": "骑摩托车探索芽庄",
+      "description": "摩托车租赁是探索芽庄及周边地区最灵活便捷的方式。以下是骑摩托车探索的理想目的地：",
+      "destinations": {
+        "baiDai": {
+          "title": "白岱海滩和白独列海滩",
+          "description": "距离芽庄市中心北部20-30公里的两个美丽原始海滩"
+        },
+        "ninhVan": {
+          "title": "宁凡湾和朗科湾",
+          "description": "距离芽庄北部约60公里的原始宁静美丽景色"
+        },
+        "ponagar": {
+          "title": "婆那加塔",
+          "description": "位于芽庄市内的古代占婆历史遗迹"
+        },
+        "daiLanh": {
+          "title": "大岭海滩和美电角",
+          "description": "位于庆和省和富安省边界的美丽海岸公路"
+        }
+      },
+      "tips": {
+        "title": "摩托车租赁注意事项",
+        "items": [
+          "驾驶时始终携带个人证件并佩戴头盔",
+          "取车前仔细检查摩托车（刹车、灯光、喇叭、燃油）",
+          "建议取车前拍照以避免纠纷",
+          "遵守交通法规，安全驾驶"
+        ]
+      }
+    },
+    "benefits": {
+      "title": "在芽庄洞察租车的优势",
+      "newBikes": {
+        "title": "新车、高质量",
+        "description": "所有车辆都是新车，定期保养，确保安全和良好运行"
+      },
+      "support": {
+        "title": "24/7救援支持",
+        "description": "车辆故障时在芽庄市内提供免费救援服务"
+      }
+    },
+    "contactSection": {
+      "title": "今天就联系预订车辆",
+      "description": "请通过热线或社交媒体联系我们，获得芽庄摩托车服务咨询和预订"
+    },
+    "faq": {
+      "title": "芽庄摩托车租赁常见问题",
+      "questions": {
+        "price": {
+          "question": "芽庄摩托车租赁费用是多少？",
+          "answer": "芽庄摩托车租赁费用为手动摩托车（Wave、Sirius）每天100,000越南盾，普通踏板车（Vision、Air Blade）每天150,000越南盾，高档踏板车（PCX、SH Mode）每天180,000越南盾。"
+        },
+        "procedures": {
+          "question": "芽庄摩托车租赁手续如何？",
+          "answer": "手续非常简单，您只需抵押身份证/户口本或驾驶证原件即可。可用现金500万越南盾替代。租赁3天以上优惠10%。"
+        },
+        "delivery": {
+          "question": "有摩托车送车服务吗？",
+          "answer": "有，我们在芽庄市中心3公里范围内免费送车到酒店、火车站、汽车站。请提前2小时联系预订车辆。"
+        },
+        "insurance": {
+          "question": "租赁摩托车有保险吗？",
+          "answer": "有，所有车辆都有全额保险。此外，我们还提供车辆故障时在芽庄市内24/7免费救援服务。"
+        },
+        "types": {
+          "question": "有哪些类型的摩托车可以租赁？",
+          "answer": "我们有多种类型的摩托车：手动摩托车（Honda Wave、Yamaha Sirius、Jupiter）、普通踏板车（Honda Vision、Air Blade、Lead、Nmax）、高档踏板车（PCX、SH Mode、NVX、Vespa）。"
+        }
+      }
+    }
+  },
+  "car": {
+    "hero": {
+      "title": "芽庄汽车租赁服务",
+      "subtitle": "从机场接送到观光旅游的专业安全汽车租赁服务"
+    },
+    "backToTransportation": "返回交通页面",
+    "contactSection": {
+      "title": "预订汽车租赁服务",
+      "description": "需要在芽庄租车或机场接送服务吗？立即联系获得最佳服务！"
+    },
+    "airportService": {
+      "title": "机场接送服务",
+      "guarantee": "✅ 保证准时接送 - 免费等待30分钟",
+      "categories": {
+        "car4": {
+          "title": "4座车",
+          "price": "250,000越南盾/单程",
+          "description": "适合个人、情侣、小家庭"
+        },
+        "car7": {
+          "title": "7座车",
+          "price": "300,000越南盾/单程",
+          "description": "适合大家庭、朋友团体"
+        },
+        "car16": {
+          "title": "16座车",
+          "price": "500,000越南盾/单程",
+          "description": "适合大团体、公司旅行"
+        }
+      },
+      "gallery": {
+        "title": "车辆图片",
+        "note": "* 所有车辆都配备空调、舒适座椅，定期保养"
+      },
+      "notes": {
+        "title": "重要事项",
+        "items": [
+          "需要提前预订（至少提前2小时）",
+          "航班延误时免费等待30分钟",
+          "从金兰机场到芽庄市中心约45分钟",
+          "24小时服务"
+        ]
+      }
+    },
+    "tourService": {
+      "title": "观光旅游服务",
+      "description": "舒适地探索芽庄周边美丽目的地。与专业司机一起安全旅行：",
+      "destinations": {
+        "dalat": {
+          "title": "大叻旅游",
+          "description": "花城大叻一日游（约140公里，3小时）"
+        },
+        "vinhHy": {
+          "title": "永海湾",
+          "description": "美丽的永海湾和白门海滩（约60公里，1.5小时）"
+        },
+        "binhBa": {
+          "title": "平巴岛",
+          "description": "以龙虾岛闻名的平巴岛旅游"
+        },
+        "phanRang": {
+          "title": "潘朗 - 塔占",
+          "description": "占婆文化和葡萄园探访（约100公里，2小时）"
+        }
+      },
+      "additionalRoutes": "其他热门路线：",
+      "routes": [
+        "芽庄 - 美奈（沙漠旅游）",
+        "芽庄 - 会安（古城）",
+        "芽庄 - 西贡（胡志明市）"
+      ],
+      "commitment": {
+        "title": "服务承诺",
+        "items": [
+          "经验丰富的专业司机",
+          "配备空调的舒适车辆",
+          "灵活的行程安排",
+          "景点基本介绍"
+        ]
+      }
+    }
+  },
+  "taxi": {
+    "hero": {
+      "title": "芽庄出租车服务",
+      "subtitle": "芽庄可靠出租车公司、价格和服务的详细信息"
+    },
+    "backToTransportation": "返回交通页面",
+    "intro": {
+      "title": "芽庄的出租车",
+      "description": "出租车是芽庄受欢迎且便捷的交通方式。该地区有许多可靠的出租车公司运营，游客可以在旅游景点、酒店、餐厅和观光景点轻松打到出租车。",
+      "warning": "为避免被宰客，应使用可靠的出租车公司，上车时要求司机打表。"
+    },
+    "companies": {
+      "title": "芽庄可靠的出租车公司",
+      "features": "主要特色",
+      "rating": "评分",
+      "operatingHours": "营业时间",
+      "fare": "价格",
+      "contact": "联系方式",
+      "data": [
+        {
+          "name": "Mai Linh Taxi",
+          "phone": "025 83 83 8383",
+          "baseRate": "15,000越南盾",
+          "pricePerKm": "15,000越南盾 - 17,000越南盾/公里",
+          "waitingRate": "45,000越南盾/小时",
+          "color": "绿色",
+          "operatingHours": "24/7",
+          "website": "https://mailinh.vn",
+          "logo": "/images/taxi/mailinh.png",
+          "rating": 4.5,
+          "features": ["大型车队", "专业司机", "可刷卡支付"],
+          "description": "Mai Linh是芽庄最大最可靠的出租车公司之一，服务众多旅游线路。"
+        },
+        {
+          "name": "Vinasun Taxi",
+          "phone": "0258 3827 272",
+          "baseRate": "15,000越南盾",
+          "pricePerKm": "16,000越南盾 - 18,000越南盾/公里",
+          "waitingRate": "47,000越南盾/小时",
+          "color": "白蓝色",
+          "operatingHours": "24/7",
+          "website": "https://vinasuntaxi.com",
+          "logo": "/images/taxi/vinasun.png",
+          "rating": 4.3,
+          "features": ["叫车应用", "应用支付", "多样化服务", "VAT发票"],
+          "description": "Vinasun是来自胡志明市的可靠出租车公司，已扩展到芽庄为游客服务。"
+        },
+        {
+          "name": "Taxi Xanh",
+          "phone": "1900 2088",
+          "baseRate": "15,000越南盾",
+          "pricePerKm": "15,000越南盾 - 16,500越南盾/公里",
+          "waitingRate": "40,000越南盾/小时",
+          "color": "蓝色",
+          "operatingHours": "5:00 - 24:00",
+          "website": "https://taxi-xanh.vn",
+          "logo": "/images/taxi/xanhsm.png",
+          "rating": 4.0,
+          "features": ["叫车应用", "便宜价格", "贴心服务", "机场接送"],
+          "description": "Taxi Xanh是价格合理的本地出租车公司，适合想要经济出行的游客。"
+        },
+        {
+          "name": "Sun Taxi",
+          "phone": "0258 3 89 89 89",
+          "baseRate": "16,000越南盾",
+          "pricePerKm": "17,000越南盾 - 18,000越南盾/公里",
+          "waitingRate": "45,000越南盾/小时",
+          "color": "黄色",
+          "operatingHours": "24/7",
+          "website": "https://suntaxi.vn",
+          "logo": "/images/taxi/suntaxi.png",
+          "rating": 4.2,
+          "features": ["豪华车辆", "VIP服务", "机场接送"],
+          "description": "Sun Taxi提供豪华车辆的高端出租车服务，适合团体客户和VIP客户。"
+        },
+        {
+          "name": "Maxim Taxi",
+          "phone": "1900 01585",
+          "baseRate": "15,000越南盾",
+          "pricePerKm": "15,000越南盾 - 16,000越南盾/公里",
+          "waitingRate": "42,000越南盾/小时",
+          "color": "白红色",
+          "operatingHours": "24/7",
+          "website": "https://maximtaxi.vn",
+          "logo": "/images/taxi/maxim.jpg",
+          "rating": 4.3,
+          "features": ["叫车应用", "新车辆", "熟悉当地的司机", "竞争性价格"],
+          "description": "Maxim Taxi是熟悉芽庄道路和著名旅游景点的本地出租车公司。"
+        },
+        {
+          "name": "Grab",
+          "phone": "",
+          "baseRate": "15,000越南盾",
+          "pricePerKm": "15,000越南盾 - 16,000越南盾/公里",
+          "waitingRate": "42,000越南盾/小时",
+          "color": "绿色",
+          "operatingHours": "24/7",
+          "website": "https://grab.com",
+          "logo": "/images/taxi/grab.jpg",
+          "rating": 4.3,
+          "features": ["叫车应用", "新车辆", "熟悉当地的司机", "竞争性价格"],
+          "description": "Grab是熟悉芽庄道路和著名旅游景点的本地出租车公司。"
+        }
+      ]
+    },
+    "types": {
+      "title": "热门出租车类型",
+      "car4": {
+        "title": "4座出租车",
+        "capacity": "4人 + 适量行李",
+        "priceRange": "15,000越南盾 - 17,000越南盾/公里",
+        "bestFor": "个人、情侣、小家庭"
+      },
+      "car7": {
+        "title": "7座出租车",
+        "capacity": "7人 + 大量行李",
+        "priceRange": "17,000越南盾 - 20,000越南盾/公里",
+        "bestFor": "大家庭、朋友团体"
+      },
+      "vip": {
+        "title": "VIP出租车",
+        "capacity": "4人 + 高端服务",
+        "priceRange": "20,000越南盾 - 25,000越南盾/公里",
+        "bestFor": "商务人士、VIP客户"
+      }
+    },
+    "routes": {
+      "title": "热门出租车路线和预估价格",
+      "note": "* 预估价格基于4座出租车价格表。实际价格可能因出租车公司、时间、交通状况和其他因素而有所不同。",
+      "headers": {
+        "route": "路线",
+        "distance": "距离",
+        "estimatedPrice": "预估价格",
+        "time": "时间"
+      },
+      "data": [
+        {
+          "from": "金兰机场",
+          "to": "芽庄市中心",
+          "distance": "~30公里",
+          "estimatedPrice": "350,000越南盾 - 400,000越南盾",
+          "estimatedTime": "40-45分钟"
+        },
+        {
+          "from": "芽庄市中心",
+          "to": "珍珠岛",
+          "distance": "~5公里",
+          "estimatedPrice": "80,000越南盾 - 100,000越南盾",
+          "estimatedTime": "15-20分钟"
+        },
+        {
+          "from": "芽庄市中心",
+          "to": "I-Resort",
+          "distance": "~7公里",
+          "estimatedPrice": "120,000越南盾 - 140,000越南盾",
+          "estimatedTime": "20-25分钟"
+        },
+        {
+          "from": "芽庄市中心",
+          "to": "婆那加塔",
+          "distance": "~4公里",
+          "estimatedPrice": "70,000越南盾 - 90,000越南盾",
+          "estimatedTime": "10-15分钟"
+        }
+      ]
+    },
+    "tips": {
+      "title": "在芽庄乘坐出租车的建议",
+      "items": {
+        "reputableCompanies": "只使用可靠的出租车公司 - 优先使用Mai Linh、Vinasun、Nha Trang Taxi等大型出租车公司以避免被宰客。",
+        "useMeter": "要求打表 - 上车时始终要求司机打表计费。",
+        "bookByPhone": "通过电话预订 - 如果可能，通过出租车公司电话预订以确保安全。",
+        "confirmPrice": "提前确认价格 - 对于机场到市区等长途路线，出发前确认包价。",
+        "keepReceipt": "保留收据 - 付款后始终要求收据，特别是需要报销时。"
+      }
+    },
+    "alternatives": {
+      "title": "替代交通方式",
+      "description": "除了出租车，芽庄还有许多其他替代交通方式：",
+      "moto": {
+        "title": "摩托车租赁",
+        "description": "每天100,000越南盾起，灵活出行"
+      },
+      "car": {
+        "title": "汽车租赁",
+        "description": "自驾或带司机租赁"
+      }
+    },
+    "contactSection": {
+      "title": "需要更多芽庄交通咨询吗？",
+      "description": "请联系我们获得芽庄交通服务咨询和预订"
+    }
+  },
+  "bus": {
+    "hero": {
+      "title": "芽庄公交车",
+      "subtitle": "芽庄公共巴士的路线、时刻表和地图信息"
+    },
+    "backToTransportation": "返回交通页面",
+    "searchPlaceholder": "搜索公交站...",
+    "searchResults": "结果",
+    "noResults": "未找到公交站",
+    "routes": {
+      "title": "公交线路",
+      "frequency": "分钟/班"
+    },
+    "routeInfo": {
+      "title": "线路信息",
+      "routeName": "线路名称",
+      "operatingHours": "运营时间",
+      "frequency": "发车间隔",
+      "fare": "票价",
+      "information": "信息",
+      "lastUpdated": "更新",
+      "stops": "站点"
+    },
+    "stopInfo": {
+      "title": "站点",
+      "description": "描述",
+      "routesThrough": "经过线路",
+      "noRoutes": "没有线路经过此站点"
+    },
+    "mapLegend": {
+      "title": "地图图例",
+      "startPoint": "起点",
+      "endPoint": "终点",
+      "busStop": "公交站",
+      "busRoute": "公交线路"
+    },
+    "dataUpdate": {
+      "title": "数据更新信息",
+      "description": "公交线路数据定期更新以确保准确性",
+      "lastUpdate": "最近更新",
+      "stats": {
+        "routes": "公交线路",
+        "stops": "公交站点",
+        "support": "信息支持"
+      }
+    },
+    "faq": {
+      "title": "芽庄公交车常见问题",
+      "questions": {
+        "fare": {
+          "question": "芽庄公交车票价是多少？",
+          "answer": "芽庄市内公交车票价每次7,000越南盾，金兰机场公交车每次50,000越南盾，月票200,000越南盾。学生、大学生、老人和残疾人享受50%折扣。"
+        },
+        "schedule": {
+          "question": "芽庄公交车几点到几点运营？",
+          "answer": "市内公交车每天05:00 - 19:00运营。金兰机场线路04:00 - 21:00运营。公交车发车间隔根据线路15-30分钟。"
+        },
+        "routes": {
+          "question": "芽庄有多少条公交线路？",
+          "answer": "目前芽庄有4条主要公交线路：23号线（Ana Marina - Vinpearl）、18号线（Binh Hung - Dien Khanh）、9号线（汽车站 - 金兰机场）、4号线（Dam市场 - 南部汽车站）。"
+        },
+        "airport": {
+          "question": "如何从金兰机场乘公交车到芽庄市中心？",
+          "answer": "您可以乘坐9号线从金兰机场到芽庄南部汽车站。票价每次50,000越南盾，行程时间约45-60分钟，04:00 - 21:00运营，每30分钟一班。"
+        },
+        "payment": {
+          "question": "芽庄公交车可以刷卡支付吗？",
+          "answer": "目前大部分芽庄公交线路只接受现金支付。您应该准备零钱购票。一些线路正在试点无现金支付。"
+        }
+      }
+    }
+  },
+  "flights": {
+    "hero": {
+      "title": "金兰机场 (CXR) 到达航班",
+      "subtitle": "查看到达金兰机场的航班时间、状态和详细信息 - 芽庄海滨城市的航空门户"
+    },
+    "airportInfo": {
+      "title": "金兰机场 (CXR) 信息",
+      "intro": {
+        "title": "介绍",
+        "description1": "金兰国际机场位于芽庄市中心南部约30公里处。这是游客前往芽庄和庆和省周边地区的主要航空门户。",
+        "description2": "机场服务国内和国际航班，包括Vietnam Airlines、Bamboo Airways、VietJet Air、Pacific Airlines和许多其他国际航空公司。"
+      },
+      "contact": {
+        "title": "联系信息",
+        "address": "地址",
+        "phone": "电话",
+        "email": "邮箱",
+        "website": "网站"
+      },
+      "transportation": {
+        "title": "机场交通",
+        "taxi": "出租车：航站楼外可用，到芽庄市中心约40-45分钟。",
+        "bus": "公交车：有18号公交线路从机场到市中心。",
+        "shuttle": "班车：许多酒店提供机场接送服务，预订时请确认。",
+        "rental": "租车：机场有租车公司。"
+      },
+      "facilities": {
+        "title": "机场设施",
+        "items": [
+          "免税店",
+          "餐厅和咖啡厅",
+          "货币兑换和ATM",
+          "免费Wi-Fi",
+          "乘客特殊协助服务",
+          "儿童看护服务",
+          "VIP休息室"
+        ]
+      }
+    },
+    "rentalServices": {
+      "title": "芽庄租赁服务",
+      "moto": {
+        "title": "摩托车租赁服务",
+        "description": "用摩托车灵活探索芽庄。我们提供可靠的摩托车租赁服务：",
+        "features": [
+          "多样化摩托车：从手动到高档踏板车",
+          "租赁费用100,000越南盾 - 180,000越南盾/天",
+          "手续简单，免费送车",
+          "保险和24/7支持"
+        ],
+        "link": "查看摩托车租赁服务"
+      },
+      "car": {
+        "title": "汽车租赁服务",
+        "description": "与家人或朋友团体舒适出行的高质量汽车租赁服务：",
+        "features": [
+          "4-16座多样化车辆",
+          "自驾或带司机选择",
+          "金兰机场接送服务",
+          "在线或电话预订"
+        ],
+        "link": "查看汽车租赁服务"
+      }
+    }
+  },
+  "rideHailing": {
+    "hero": {
+      "title": "芽庄摩的 / 网约摩的",
+      "subtitle": "比较Grab、Maxim和传统摩的 - 芽庄快速经济的出行方式"
+    },
+    "backToTransportation": "返回交通页面",
+    "intro": {
+      "title": "芽庄的摩的",
+      "description": "摩的是芽庄受欢迎且便捷的交通方式，特别适合短距离出行或交通拥堵时。主要有两种类型：传统摩的和Grab、Maxim等网约服务。",
+      "warning": "为了安全，请始终佩戴头盔并选择可靠的司机。"
+    },
+    "types": {
+      "title": "摩的类型",
+      "traditional": {
+        "title": "传统摩的",
+        "description": "在街角、市场、旅游景点等候的本地摩的司机",
+        "priceRange": "15,000越南盾 - 25,000越南盾/公里",
+        "advantages": [
+          "随处可见",
+          "熟悉当地道路",
+          "可议价",
+          "现金支付"
+        ],
+        "disadvantages": [
+          "没有固定价格",
+          "语言障碍",
+          "被宰客风险",
+          "无安全保障"
+        ]
+      },
+      "app": {
+        "title": "网约摩的",
+        "description": "通过Grab、Maxim等应用叫车的摩的服务",
+        "priceRange": "12,000越南盾 - 18,000越南盾/公里",
+        "advantages": [
+          "透明价格",
+          "GPS追踪",
+          "司机信息",
+          "多种支付方式"
+        ],
+        "disadvantages": [
+          "需要安装应用",
+          "需要网络连接",
+          "等待时间",
+          "部分地区服务受限"
+        ]
+      }
+    },
+    "apps": {
+      "title": "热门摩的应用",
+      "featuresTitle": "主要功能",
+      "prosConsTitle": "优缺点",
+      "grab": {
+        "name": "Grab",
+        "description": "东南亚最受欢迎的叫车应用，在芽庄也广泛使用。",
+        "features": [
+          "实时GPS追踪",
+          "多种支付方式",
+          "司机评分系统",
+          "24/7客户支持"
+        ],
+        "rating": "4.2/5",
+        "priceRange": "12,000越南盾 - 16,000越南盾/公里",
+        "availability": "芽庄市中心大部分地区",
+        "pros": [
+          "透明价格",
+          "安全可靠",
+          "界面易用",
+          "促销活动多"
+        ],
+        "cons": [
+          "高峰时段涨价",
+          "部分郊区服务受限",
+          "等待时间可能较长"
+        ]
+      },
+      "maxim": {
+        "name": "Maxim",
+        "description": "越南本地叫车应用，提供竞争性价格。",
+        "features": [
+          "便宜价格",
+          "现金和卡支付",
+          "本地司机",
+          "简单界面"
+        ],
+        "rating": "4.0/5",
+        "priceRange": "11,000越南盾 - 15,000越南盾/公里",
+        "availability": "芽庄主要地区",
+        "pros": [
+          "比Grab便宜",
+          "本地司机熟悉道路",
+          "叫车快速",
+          "现金支付方便"
+        ],
+        "cons": [
+          "司机比Grab少",
+          "英语支持有限",
+          "功能较少"
+        ]
+      }
+    },
+    "comparison": {
+      "title": "传统 vs 网约摩的比较",
+      "headers": {
+        "criteria": "标准",
+        "traditional": "传统摩的",
+        "app": "网约"
+      },
+      "rows": {
+        "price": {
+          "criteria": "价格",
+          "traditional": "15,000-25,000越南盾/公里（可议价）",
+          "app": "12,000-18,000越南盾/公里（固定）"
+        },
+        "convenience": {
+          "criteria": "便利性",
+          "traditional": "立即可用",
+          "app": "应用叫车，需等待"
+        },
+        "safety": {
+          "criteria": "安全性",
+          "traditional": "无保障",
+          "app": "司机信息，GPS追踪"
+        },
+        "availability": {
+          "criteria": "可用性",
+          "traditional": "随处可见",
+          "app": "服务区域内"
+        },
+        "payment": {
+          "criteria": "支付",
+          "traditional": "仅现金",
+          "app": "现金、卡、电子钱包"
+        }
+      }
+    },
+    "tips": {
+      "title": "摩的使用技巧",
+      "appBased": {
+        "title": "网约摩的",
+        "items": [
+          "出行前下载应用并设置账户",
+          "设置准确的接送位置",
+          "确认司机车牌号和照片",
+          "行程后为司机评分"
+        ]
+      },
+      "traditional": {
+        "title": "传统摩的",
+        "items": [
+          "上车前协商价格",
+          "明确目的地",
+          "确认头盔干净安全",
+          "妥善保管贵重物品"
+        ]
+      },
+      "importantNotes": {
+        "title": "重要事项",
+        "items": [
+          "始终佩戴头盔",
+          "遵守交通法规",
+          "雨天避免乘坐摩的",
+          "长途旅行考虑其他交通方式"
+        ]
+      }
+    },
+    "routes": {
+      "title": "热门路线和预估价格",
+      "headers": {
+        "route": "路线",
+        "distance": "距离",
+        "appBased": "网约",
+        "traditional": "传统",
+        "time": "时间"
+      },
+      "data": [
+        {
+          "route": "芽庄市中心 → 珍珠岛",
+          "distance": "~5公里",
+          "appBased": "60,000越南盾 - 80,000越南盾",
+          "traditional": "75,000越南盾 - 100,000越南盾",
+          "time": "15-20分钟"
+        },
+        {
+          "route": "芽庄市中心 → 婆那加塔",
+          "distance": "~3公里",
+          "appBased": "36,000越南盾 - 50,000越南盾",
+          "traditional": "45,000越南盾 - 60,000越南盾",
+          "time": "10-15分钟"
+        },
+        {
+          "route": "芽庄市中心 → 龙山寺",
+          "distance": "~4公里",
+          "appBased": "48,000越南盾 - 65,000越南盾",
+          "traditional": "60,000越南盾 - 80,000越南盾",
+          "time": "12-18分钟"
+        },
+        {
+          "route": "芽庄市中心 → Dam市场",
+          "distance": "~2公里",
+          "appBased": "24,000越南盾 - 35,000越南盾",
+          "traditional": "30,000越南盾 - 45,000越南盾",
+          "time": "8-12分钟"
+        }
+      ],
+      "note": "* 价格可能因交通状况、时间、天气而有所不同。价格仅供参考。"
+    },
+    "alternatives": {
+      "title": "替代交通方式",
+      "description": "除了摩的，芽庄还有许多其他交通方式：摩托车租赁、汽车租赁、出租车、公共巴士。"
+    },
+    "contactSection": {
+      "title": "需要芽庄交通咨询吗？",
+      "description": "请联系我们获得芽庄交通服务咨询和支持"
+    },
+    "faq": {
+      "title": "芽庄摩的常见问题",
+      "questions": {
+        "popularApps": {
+          "question": "芽庄最受欢迎的摩的应用是什么？",
+          "answer": "芽庄最受欢迎的两个应用是Grab和Maxim。Grab提供更多功能和安全性，Maxim提供更便宜的价格。"
+        },
+        "pricing": {
+          "question": "摩的价格如何计算？",
+          "answer": "网约摩的根据距离和时间有固定价格（每公里12,000-18,000越南盾）。传统摩的可以议价（每公里15,000-25,000越南盾）。"
+        },
+        "safety": {
+          "question": "摩的安全吗？",
+          "answer": "网约摩的通过司机信息、GPS追踪、评分系统更安全。始终佩戴头盔并遵守交通法规。"
+        },
+        "availability": {
+          "question": "摩的什么时候可用？",
+          "answer": "传统摩的通常6:00-22:00可用。Grab和Maxim等网约服务24小时可用，但夜间司机可能较少。"
+        },
+        "choice": {
+          "question": "应该选择传统摩的还是网约？",
+          "answer": "如果要安全和透明价格选择网约，如果要立即使用和议价选择传统摩的。"
+        }
+      }
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "联系我们",
+      "subtitle": "有疑问或需要帮助吗？联系芽庄洞察，我们将在最短时间内回复您"
+    },
+    "contactInfo": {
+      "title": "联系信息",
+      "phone": "电话",
+      "email": "邮箱",
+      "address": "地址"
+    },
+    "socialMedia": {
+      "title": "关注我们"
+    },
+    "map": {
+      "title": "地图"
+    },
+    "form": {
+      "title": "发送联系信息",
+      "successMessage": "感谢您发送信息！我们将在最短时间内联系您。",
+      "fields": {
+        "name": {
+          "label": "姓名",
+          "placeholder": "请输入您的姓名"
+        },
+        "email": {
+          "label": "邮箱",
+          "placeholder": "请输入邮箱地址"
+        },
+        "phone": {
+          "label": "电话号码",
+          "placeholder": "请输入您的电话号码"
+        },
+        "subject": {
+          "label": "主题",
+          "placeholder": "选择主题",
+          "options": {
+            "tourism": "旅游信息",
+            "rental": "租赁服务",
+            "tour": "预订旅游",
+            "accommodation": "住宿支持",
+            "other": "其他"
+          }
+        },
+        "message": {
+          "label": "消息内容",
+          "placeholder": "请详细描述您的需求..."
+        }
+      },
+      "submitButton": "发送消息",
+      "submittingButton": "发送中..."
+    },
+    "payment": {
+      "title": "支付信息",
+      "bankInfo": {
+        "title": "银行转账信息",
+        "bank": "银行",
+        "branch": "分行",
+        "accountNumber": "账号",
+        "accountHolder": "户名",
+        "transferContent": "转账备注"
+      },
+      "qrCode": {
+        "title": "扫码支付",
+        "description": "用银行应用或电子钱包扫描二维码"
+      },
+      "note": "请在转账备注中清楚注明姓名和预订的服务，以便我们确认您的付款。"
+    }
+  }
+} 

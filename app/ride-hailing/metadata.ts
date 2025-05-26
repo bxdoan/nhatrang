@@ -63,6 +63,10 @@ export const metadata: Metadata = {
     languages: {
       'vi-VN': 'https://nhatranginsight.com/ride-hailing',
       'en-US': 'https://nhatranginsight.com/en/ride-hailing',
+      'ko-KR': 'https://nhatranginsight.com/kr/ride-hailing',
+      'zh-CN': 'https://nhatranginsight.com/zh_CN/ride-hailing',
+      'zh-TW': 'https://nhatranginsight.com/zh_TW/ride-hailing',
+      'ru-RU': 'https://nhatranginsight.com/ru/ride-hailing',
     },
   },
   other: {
