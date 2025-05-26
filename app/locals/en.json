@@ -1,0 +1,87 @@
+{
+  "common": {
+    "search": "Search",
+    "viewDetails": "View details",
+    "backToHome": "Back to Home",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "contact": "Contact"
+  },
+  "header": {
+    "banner": "Discover the beauty of Nha Trang beaches - Vietnam's coastal paradise",
+    "tagline1": "Tourism information",
+    "tagline2": "& lifestyle in Nha Trang",
+    "transportation": {
+      "overview": "Overview",
+      "overviewDesc": "All transportation",
+      "car": "Car",
+      "carDesc": "Car rental & transfer",
+      "moto": "Motorbike",
+      "motoDesc": "Motorbike rental",
+      "bus": "Bus",
+      "busDesc": "Routes & schedules",
+      "taxi": "Taxi",
+      "taxiDesc": "Taxi companies",
+      "rideHailing": "Ride-hailing",
+      "rideHailingDesc": "Grab, Maxim"
+    }
+  },
+  "navigation": {
+    "home": "Tourism",
+    "transportation": "Transportation",
+    "bus": "Bus",
+    "taxi": "Taxi",
+    "moto": "Motorbike",
+    "car": "Car",
+    "flights": "Flights",
+    "accommodations": "Accommodations",
+    "food": "Food",
+    "contact": "Contact"
+  },
+  "footer": {
+    "description": "Providing tourism information, transportation, cuisine and history of Nha Trang - Khanh Hoa to help you have the best trip.",
+    "explore": "Explore",
+    "contact": "Contact",
+    "newsletter": "Get Latest News",
+    "newsletterDesc": "Subscribe to receive tourism information, promotions and latest updates about Nha Trang.",
+    "emailPlaceholder": "Your email",
+    "subscribe": "Subscribe",
+    "copyright": "Nha Trang Insight - Tourism & Lifestyle Information in Nha Trang"
+  },
+  "homepage": {
+    "hero": {
+      "title": "Discover",
+      "highlightedTitle": "Nha Trang",
+      "subtitle": "Tourism information, transportation and services in the beautiful coastal paradise of Nha Trang"
+    },
+    "sections": {
+      "exploreTitle": "Discover Nha Trang",
+      "exploreSubtitle": "Useful information to help you plan your perfect trip to this beautiful coastal city",
+      "transportation": {
+        "title": "Transportation & Getting Around",
+        "description": "Information about getting to Nha Trang and transportation within the city: taxi, bus, motorbike rental and many other options.",
+        "link": "View details →"
+      },
+      "moto": {
+        "title": "Motorbike Rental",
+        "description": "Reliable and affordable motorbike rental service from 100,000đ - 180,000đ/day, diverse range of bikes from manual to premium scooters, delivery available in Nha Trang.",
+        "link": "View motorbike rental service →"
+      },
+      "car": {
+        "title": "Car Rental",
+        "description": "Self-drive or chauffeur car rental service, diverse vehicle range from 4-16 seats, reasonable prices, simple procedures, airport transfer service available.",
+        "link": "View car rental service →"
+      },
+      "bus": {
+        "title": "Nha Trang Bus",
+        "description": "Route information, schedules and maps of public bus routes in Nha Trang. Tickets from only 7,000 VND/trip, economical and convenient transportation.",
+        "link": "View bus information →"
+      },
+      "taxi": {
+        "title": "Taxi Service",
+        "description": "Detailed information about reputable taxi companies in Nha Trang, fares from 15,000 - 20,000đ/km, booking phone numbers and popular routes.",
+        "link": "View taxi service information →"
+      }
+    }
+  }
+} 

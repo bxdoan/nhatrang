@@ -4,9 +4,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FaPlane, FaBus, FaUmbrellaBeach, FaHistory, FaHotel, FaUtensils, FaComments, FaChevronDown, FaCar, FaMotorcycle, FaTaxi } from 'react-icons/fa';
 import { useState, useRef, useEffect } from 'react';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Header() {
   const pathname = usePathname();
+  const { t } = useLanguage();
   const [isTransportDropdownOpen, setIsTransportDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   
@@ -40,38 +43,38 @@ export default function Header() {
     {
       href: '/transportation',
       icon: FaBus,
-      title: 'Tổng quan',
-      description: 'Tất cả phương tiện'
+      title: t.header?.transportation?.overview || 'Tổng quan',
+      description: t.header?.transportation?.overviewDesc || 'Tất cả phương tiện'
     },
     {
       href: '/oto',
       icon: FaCar,
-      title: 'Xe ô tô',
-      description: 'Thuê xe & đưa đón'
+      title: t.header?.transportation?.car || 'Xe ô tô',
+      description: t.header?.transportation?.carDesc || 'Thuê xe & đưa đón'
     },
     {
       href: '/moto',
       icon: FaMotorcycle,
-      title: 'Xe máy',
-      description: 'Thuê xe máy'
+      title: t.header?.transportation?.moto || 'Xe máy',
+      description: t.header?.transportation?.motoDesc || 'Thuê xe máy'
     },
     {
       href: '/bus',
       icon: FaBus,
-      title: 'Xe buýt',
-      description: 'Tuyến & lịch trình'
+      title: t.header?.transportation?.bus || 'Xe buýt',
+      description: t.header?.transportation?.busDesc || 'Tuyến & lịch trình'
     },
     {
       href: '/taxi',
       icon: FaTaxi,
-      title: 'Taxi',
-      description: 'Các hãng taxi'
+      title: t.header?.transportation?.taxi || 'Taxi',
+      description: t.header?.transportation?.taxiDesc || 'Các hãng taxi'
     },
     {
       href: '/ride-hailing',
       icon: FaMotorcycle,
-      title: 'Xe ôm',
-      description: 'Grab, Maxim'
+      title: t.header?.transportation?.rideHailing || 'Xe ôm',
+      description: t.header?.transportation?.rideHailingDesc || 'Grab, Maxim'
     }
   ];
 
@@ -79,7 +82,7 @@ export default function Header() {
     <header className="bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-md">
       {/* Banner trên cùng */}
       <div className="bg-blue-700 py-1 px-4 text-center text-sm">
-        <span className="animate-pulse">🌴</span> Khám phá vẻ đẹp biển đảo Nha Trang - Thiên đường nghỉ dưỡng của Việt Nam <span className="animate-pulse">🌴</span>
+        <span className="animate-pulse">🌴</span> {t.header?.banner || 'Khám phá vẻ đẹp biển đảo Nha Trang - Thiên đường nghỉ dưỡng của Việt Nam'} <span className="animate-pulse">🌴</span>
       </div>
       
       {/* Logo và Navigation */}
@@ -94,18 +97,19 @@ export default function Header() {
               />
             </Link>
             <div className="ml-3 text-blue-100">
-              <p className="text-sm leading-tight">Chuyên trang thông tin</p>
-              <p className="text-sm leading-tight">du lịch & đời sống Nha Trang</p>
+              <p className="text-sm leading-tight">{t.header?.tagline1 || 'Chuyên trang thông tin'}</p>
+              <p className="text-sm leading-tight">{t.header?.tagline2 || 'du lịch & đời sống Nha Trang'}</p>
             </div>
           </div>
           
-          <nav className="flex flex-wrap gap-2 md:gap-5 justify-center">
+          <div className="flex items-center gap-4">
+            <nav className="flex flex-wrap gap-2 md:gap-5 justify-center">
             <Link 
               href="/" 
               className={`group flex items-center text-sm px-3 py-2 rounded-full transition-all ${pathname === '/' ? 'bg-white text-blue-600 font-medium' : 'text-white hover:bg-blue-400'}`}
             >
               <FaUmbrellaBeach className="mr-1.5 group-hover:animate-pulse" /> 
-              <span>Du lịch</span>
+              <span>{t.navigation?.home || 'Du lịch'}</span>
             </Link>
             
             <Link 
@@ -113,7 +117,7 @@ export default function Header() {
               className={`group flex items-center text-sm px-3 py-2 rounded-full transition-all ${pathname === '/flights' ? 'bg-white text-blue-600 font-medium' : 'text-white hover:bg-blue-400'}`}
             >
               <FaPlane className="mr-1.5 group-hover:animate-pulse" /> 
-              <span>Chuyến bay</span>
+              <span>{t.navigation?.flights || 'Chuyến bay'}</span>
             </Link>
             
             {/* Transportation Dropdown */}
@@ -124,7 +128,7 @@ export default function Header() {
               >
                 <div className="flex items-center">
                   <FaBus className="mr-1.5 group-hover:animate-pulse" /> 
-                  <span>Di chuyển</span>
+                  <span>{t.navigation?.transportation || 'Di chuyển'}</span>
                   <FaChevronDown className={`ml-1 text-xs transition-transform ${isTransportDropdownOpen ? 'rotate-180' : ''}`} />
                 </div>
               </button>
@@ -178,7 +182,7 @@ export default function Header() {
               className={`group flex items-center text-sm px-3 py-2 rounded-full transition-all ${pathname === '/contact' ? 'bg-white text-blue-600 font-medium' : 'text-white hover:bg-blue-400'}`}
             >
               <FaComments className="mr-1.5 group-hover:animate-pulse" /> 
-              <span>Liên hệ</span>
+              <span>{t.navigation?.contact || 'Liên hệ'}</span>
             </Link>
             
             {/* Ẩn liên kết đến trang cache, chỉ hiển thị cho admin */}
@@ -191,6 +195,8 @@ export default function Header() {
               </Link>
             )}
           </nav>
+          <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </header>

@@ -19,8 +19,11 @@ import {
 } from 'react-icons/fa';
 import Link from 'next/link';
 import { CONTACT_INFO } from '../lib/contact-config';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
+  
   return (
     <footer className="bg-gradient-to-r from-blue-800 to-blue-900 text-white pt-12">
       <div className="container mx-auto px-4">
@@ -44,8 +47,7 @@ export default function Footer() {
               </Link>
             </div>
             <p className="text-sm text-blue-200 mb-4">
-              Cung cấp thông tin du lịch, giao thông, ẩm thực và lịch sử Nha Trang - Khánh Hòa 
-              giúp bạn có chuyến đi tuyệt vời nhất.
+              {t.footer?.description || 'Cung cấp thông tin du lịch, giao thông, ẩm thực và lịch sử Nha Trang - Khánh Hòa giúp bạn có chuyến đi tuyệt vời nhất.'}
             </p>
             <div className="flex space-x-3 mt-4">
               <a href={CONTACT_INFO.socialMedia.facebook} target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-300 transition-colors">
@@ -68,36 +70,36 @@ export default function Footer() {
           
           {/* Danh mục */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Khám phá</h3>
+            <h3 className="text-lg font-semibold mb-4">{t.footer?.explore || 'Khám phá'}</h3>
             <ul className="text-sm text-blue-200 space-y-2">
               <li>
                 <Link href="/" className="hover:text-white flex items-center">
-                  <FaUmbrellaBeach className="mr-2" /> Du lịch
+                  <FaUmbrellaBeach className="mr-2" /> {t.navigation?.home || 'Du lịch'}
                 </Link>
               </li>
               <li>
                 <Link href="/flights" className="hover:text-white flex items-center">
-                  <FaPlane className="mr-2" /> Chuyến bay
+                  <FaPlane className="mr-2" /> {t.navigation?.flights || 'Chuyến bay'}
                 </Link>
               </li>
               <li>
                 <Link href="/transportation" className="hover:text-white flex items-center">
-                  <FaBus className="mr-2" /> Di chuyển
+                  <FaBus className="mr-2" /> {t.navigation?.transportation || 'Di chuyển'}
                 </Link>
               </li>
               <li>
                 <Link href="/accommodations" className="hover:text-white flex items-center">
-                  <FaHotel className="mr-2" /> Lưu trú
+                  <FaHotel className="mr-2" /> {t.navigation?.accommodations || 'Lưu trú'}
                 </Link>
               </li>
               <li>
                 <Link href="/food" className="hover:text-white flex items-center">
-                  <FaUtensils className="mr-2" /> Ẩm thực
+                  <FaUtensils className="mr-2" /> {t.navigation?.food || 'Ẩm thực'}
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-white flex items-center">
-                  <FaComments className="mr-2" /> Liên hệ
+                  <FaComments className="mr-2" /> {t.navigation?.contact || 'Liên hệ'}
                 </Link>
               </li>
             </ul>
@@ -105,7 +107,7 @@ export default function Footer() {
           
           {/* Liên hệ */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Liên hệ</h3>
+            <h3 className="text-lg font-semibold mb-4">{t.footer?.contact || 'Liên hệ'}</h3>
             <ul className="text-sm text-blue-200 space-y-3">
               <li className="flex items-start">
                 <FaMapMarkerAlt className="mr-2 mt-1 text-blue-300" />
@@ -124,18 +126,18 @@ export default function Footer() {
           
           {/* Đăng ký nhận tin */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Nhận tin mới nhất</h3>
+            <h3 className="text-lg font-semibold mb-4">{t.footer?.newsletter || 'Nhận tin mới nhất'}</h3>
             <p className="text-sm text-blue-200 mb-3">
-              Đăng ký nhận thông tin du lịch, khuyến mãi và cập nhật mới nhất về Nha Trang.
+              {t.footer?.newsletterDesc || 'Đăng ký nhận thông tin du lịch, khuyến mãi và cập nhật mới nhất về Nha Trang.'}
             </p>
             <div className="flex mt-3">
               <input 
                 type="email" 
-                placeholder="Email của bạn" 
+                placeholder={t.footer?.emailPlaceholder || 'Email của bạn'}
                 className="bg-blue-700 text-white py-2 px-3 rounded-l-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
               />
               <button className="bg-yellow-500 hover:bg-yellow-400 text-blue-900 py-2 px-4 rounded-r-md text-sm font-medium transition-colors">
-                Đăng ký
+                {t.footer?.subscribe || 'Đăng ký'}
               </button>
             </div>
           </div>
@@ -143,7 +145,7 @@ export default function Footer() {
         
         {/* Copyright */}
         <div className="border-t border-blue-700 py-6 text-center text-sm text-blue-300">
-          <p>© {new Date().getFullYear()} Nha Trang Insight - Thông tin du lịch & đời sống Nha Trang</p>
+          <p>© {new Date().getFullYear()} {t.footer?.copyright || 'Nha Trang Insight - Thông tin du lịch & đời sống Nha Trang'}</p>
         </div>
       </div>
     </footer>

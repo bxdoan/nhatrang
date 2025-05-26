@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import FloatingButtons from './components/FloatingButtons'
 import AnalyticsProvider from './components/AnalyticsProvider'
+import { LanguageProvider } from './contexts/LanguageContext'
 import { DEFAULT_METADATA, HOMEPAGE_SCHEMA } from './lib/metadata'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
@@ -22,16 +23,18 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body className={inter.className}>
-        <AnalyticsProvider>
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-grow">
-              {children}
-            </main>
-            <Footer />
-            <FloatingButtons />
-          </div>
-        </AnalyticsProvider>
+        <LanguageProvider>
+          <AnalyticsProvider>
+            <div className="flex flex-col min-h-screen">
+              <Header />
+              <main className="flex-grow">
+                {children}
+              </main>
+              <Footer />
+              <FloatingButtons />
+            </div>
+          </AnalyticsProvider>
+        </LanguageProvider>
         
         {/* Schema.org JSON-LD */}
         <Script

@@ -6,8 +6,22 @@ import { FaSearch, FaPlane, FaInfoCircle, FaUmbrellaBeach, FaHotel, FaBus, FaMot
 import Link from 'next/link';
 import Script from 'next/script';
 import { HOMEPAGE_SCHEMA } from './lib/metadata';
+import { useLanguage } from './contexts/LanguageContext';
 
 export default function Home() {
+  const { t, isLoading } = useLanguage();
+  
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
       <div>
@@ -24,10 +38,10 @@ export default function Home() {
           
           <div className="container mx-auto px-4 py-20 relative z-10 text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Khám phá <span className="text-yellow-300">Nha Trang</span>
+              {t.homepage?.hero?.title || 'Khám phá'} <span className="text-yellow-300">{t.homepage?.hero?.highlightedTitle || 'Nha Trang'}</span>
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10">
-              Thông tin du lịch, giao thông và các dịch vụ tại thiên đường biển Nha Trang
+              {t.homepage?.hero?.subtitle || 'Thông tin du lịch, giao thông và các dịch vụ tại thiên đường biển Nha Trang'}
             </p>
           </div>
         </section>
@@ -36,9 +50,9 @@ export default function Home() {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-3">Khám phá Nha Trang</h2>
+              <h2 className="text-3xl font-bold text-gray-800 mb-3">{t.homepage?.sections?.exploreTitle || 'Khám phá Nha Trang'}</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Thông tin hữu ích giúp bạn lên kế hoạch cho chuyến du lịch hoàn hảo tới thành phố biển xinh đẹp
+                {t.homepage?.sections?.exploreSubtitle || 'Thông tin hữu ích giúp bạn lên kế hoạch cho chuyến du lịch hoàn hảo tới thành phố biển xinh đẹp'}
               </p>
             </div>
             
@@ -78,13 +92,12 @@ export default function Home() {
                 <div className="w-14 h-14 bg-yellow-500 text-white rounded-full flex items-center justify-center mb-4">
                   <FaBus className="text-2xl" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Di chuyển & Giao thông</h3>
+                <h3 className="text-xl font-semibold mb-3">{t.homepage?.sections?.transportation?.title || 'Di chuyển & Giao thông'}</h3>
                 <p className="text-gray-600 mb-4">
-                  Thông tin về cách di chuyển đến Nha Trang và phương tiện đi lại trong thành phố: taxi, xe buýt, 
-                  thuê xe máy và nhiều lựa chọn khác.
+                  {t.homepage?.sections?.transportation?.description || 'Thông tin về cách di chuyển đến Nha Trang và phương tiện đi lại trong thành phố: taxi, xe buýt, thuê xe máy và nhiều lựa chọn khác.'}
                 </p>
                 <Link href="/transportation" className="text-yellow-600 font-medium hover:text-yellow-700">
-                  Xem chi tiết →
+                  {t.homepage?.sections?.transportation?.link || 'Xem chi tiết →'}
                 </Link>
               </div>
               
@@ -93,13 +106,12 @@ export default function Home() {
                 <div className="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center mb-4">
                   <FaMotorcycle className="text-2xl" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Thuê xe máy</h3>
+                <h3 className="text-xl font-semibold mb-3">{t.homepage?.sections?.moto?.title || 'Thuê xe máy'}</h3>
                 <p className="text-gray-600 mb-4">
-                  Dịch vụ cho thuê xe máy uy tín, giá rẻ từ 100.000đ - 180.000đ/ngày, đa dạng loại xe từ xe số đến xe ga cao cấp,
-                  giao xe tận nơi tại Nha Trang.
+                  {t.homepage?.sections?.moto?.description || 'Dịch vụ cho thuê xe máy uy tín, giá rẻ từ 100.000đ - 180.000đ/ngày, đa dạng loại xe từ xe số đến xe ga cao cấp, giao xe tận nơi tại Nha Trang.'}
                 </p>
                 <Link href="/moto" className="text-blue-600 font-medium hover:text-blue-700">
-                  Xem dịch vụ thuê xe máy →
+                  {t.homepage?.sections?.moto?.link || 'Xem dịch vụ thuê xe máy →'}
                 </Link>
               </div>
               
@@ -108,13 +120,12 @@ export default function Home() {
                 <div className="w-14 h-14 bg-green-600 text-white rounded-full flex items-center justify-center mb-4">
                   <FaCar className="text-2xl" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Thuê xe ô tô</h3>
+                <h3 className="text-xl font-semibold mb-3">{t.homepage?.sections?.car?.title || 'Thuê xe ô tô'}</h3>
                 <p className="text-gray-600 mb-4">
-                  Dịch vụ thuê xe ô tô tự lái hoặc có tài, đa dạng dòng xe từ 4-16 chỗ, giá cả hợp lý, thủ tục đơn giản,
-                  phục vụ đưa đón sân bay.
+                  {t.homepage?.sections?.car?.description || 'Dịch vụ thuê xe ô tô tự lái hoặc có tài, đa dạng dòng xe từ 4-16 chỗ, giá cả hợp lý, thủ tục đơn giản, phục vụ đưa đón sân bay.'}
                 </p>
                 <Link href="/oto" className="text-green-600 font-medium hover:text-green-700">
-                  Xem dịch vụ thuê xe ô tô →
+                  {t.homepage?.sections?.car?.link || 'Xem dịch vụ thuê xe ô tô →'}
                 </Link>
               </div>
               
@@ -123,13 +134,12 @@ export default function Home() {
                 <div className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4">
                   <FaBus className="text-2xl" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Xe Buýt Nha Trang</h3>
+                <h3 className="text-xl font-semibold mb-3">{t.homepage?.sections?.bus?.title || 'Xe Buýt Nha Trang'}</h3>
                 <p className="text-gray-600 mb-4">
-                  Thông tin tuyến đường, lịch trình và bản đồ các tuyến xe buýt công cộng tại Nha Trang. Giá vé chỉ từ 7.000 VNĐ/lượt, 
-                  phương tiện tiết kiệm và thuận tiện.
+                  {t.homepage?.sections?.bus?.description || 'Thông tin tuyến đường, lịch trình và bản đồ các tuyến xe buýt công cộng tại Nha Trang. Giá vé chỉ từ 7.000 VNĐ/lượt, phương tiện tiết kiệm và thuận tiện.'}
                 </p>
                 <Link href="/bus" className="text-blue-600 font-medium hover:text-blue-700">
-                  Xem thông tin xe buýt →
+                  {t.homepage?.sections?.bus?.link || 'Xem thông tin xe buýt →'}
                 </Link>
               </div>
               
@@ -138,13 +148,12 @@ export default function Home() {
                 <div className="w-14 h-14 bg-yellow-500 text-white rounded-full flex items-center justify-center mb-4">
                   <FaTaxi className="text-2xl" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Dịch vụ Taxi</h3>
+                <h3 className="text-xl font-semibold mb-3">{t.homepage?.sections?.taxi?.title || 'Dịch vụ Taxi'}</h3>
                 <p className="text-gray-600 mb-4">
-                  Thông tin chi tiết về các hãng taxi uy tín tại Nha Trang, giá cước từ 15.000 - 20.000đ/km, 
-                  số điện thoại đặt xe và tuyến đường phổ biến.
+                  {t.homepage?.sections?.taxi?.description || 'Thông tin chi tiết về các hãng taxi uy tín tại Nha Trang, giá cước từ 15.000 - 20.000đ/km, số điện thoại đặt xe và tuyến đường phổ biến.'}
                 </p>
                 <Link href="/taxi" className="text-yellow-600 font-medium hover:text-yellow-700">
-                  Xem thông tin dịch vụ taxi →
+                  {t.homepage?.sections?.taxi?.link || 'Xem thông tin dịch vụ taxi →'}
                 </Link>
               </div>
             </div>

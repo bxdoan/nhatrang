@@ -1,0 +1,87 @@
+{
+  "common": {
+    "search": "Tìm kiếm",
+    "viewDetails": "Xem chi tiết",
+    "backToHome": "Về trang chủ",
+    "loading": "Đang tải...",
+    "error": "Có lỗi xảy ra",
+    "contact": "Liên hệ"
+  },
+  "header": {
+    "banner": "Khám phá vẻ đẹp biển đảo Nha Trang - Thiên đường nghỉ dưỡng của Việt Nam",
+    "tagline1": "Chuyên trang thông tin",
+    "tagline2": "du lịch & đời sống Nha Trang",
+    "transportation": {
+      "overview": "Tổng quan",
+      "overviewDesc": "Tất cả phương tiện",
+      "car": "Xe ô tô",
+      "carDesc": "Thuê xe & đưa đón",
+      "moto": "Xe máy",
+      "motoDesc": "Thuê xe máy",
+      "bus": "Xe buýt",
+      "busDesc": "Tuyến & lịch trình",
+      "taxi": "Taxi",
+      "taxiDesc": "Các hãng taxi",
+      "rideHailing": "Xe ôm",
+      "rideHailingDesc": "Grab, Maxim"
+    }
+  },
+  "navigation": {
+    "home": "Du lịch",
+    "transportation": "Di chuyển",
+    "bus": "Xe buýt",
+    "taxi": "Taxi",
+    "moto": "Xe máy",
+    "car": "Xe ô tô",
+    "flights": "Chuyến bay",
+    "accommodations": "Lưu trú",
+    "food": "Ẩm thực",
+    "contact": "Liên hệ"
+  },
+  "footer": {
+    "description": "Cung cấp thông tin du lịch, giao thông, ẩm thực và lịch sử Nha Trang - Khánh Hòa giúp bạn có chuyến đi tuyệt vời nhất.",
+    "explore": "Khám phá",
+    "contact": "Liên hệ",
+    "newsletter": "Nhận tin mới nhất",
+    "newsletterDesc": "Đăng ký nhận thông tin du lịch, khuyến mãi và cập nhật mới nhất về Nha Trang.",
+    "emailPlaceholder": "Email của bạn",
+    "subscribe": "Đăng ký",
+    "copyright": "Nha Trang Insight - Thông tin du lịch & đời sống Nha Trang"
+  },
+  "homepage": {
+    "hero": {
+      "title": "Khám phá",
+      "highlightedTitle": "Nha Trang",
+      "subtitle": "Thông tin du lịch, giao thông và các dịch vụ tại thiên đường biển Nha Trang"
+    },
+    "sections": {
+      "exploreTitle": "Khám phá Nha Trang",
+      "exploreSubtitle": "Thông tin hữu ích giúp bạn lên kế hoạch cho chuyến du lịch hoàn hảo tới thành phố biển xinh đẹp",
+      "transportation": {
+        "title": "Di chuyển & Giao thông",
+        "description": "Thông tin về cách di chuyển đến Nha Trang và phương tiện đi lại trong thành phố: taxi, xe buýt, thuê xe máy và nhiều lựa chọn khác.",
+        "link": "Xem chi tiết →"
+      },
+      "moto": {
+        "title": "Thuê xe máy",
+        "description": "Dịch vụ cho thuê xe máy uy tín, giá rẻ từ 100.000đ - 180.000đ/ngày, đa dạng loại xe từ xe số đến xe ga cao cấp, giao xe tận nơi tại Nha Trang.",
+        "link": "Xem dịch vụ thuê xe máy →"
+      },
+      "car": {
+        "title": "Thuê xe ô tô",
+        "description": "Dịch vụ thuê xe ô tô tự lái hoặc có tài, đa dạng dòng xe từ 4-16 chỗ, giá cả hợp lý, thủ tục đơn giản, phục vụ đưa đón sân bay.",
+        "link": "Xem dịch vụ thuê xe ô tô →"
+      },
+      "bus": {
+        "title": "Xe Buýt Nha Trang",
+        "description": "Thông tin tuyến đường, lịch trình và bản đồ các tuyến xe buýt công cộng tại Nha Trang. Giá vé chỉ từ 7.000 VNĐ/lượt, phương tiện tiết kiệm và thuận tiện.",
+        "link": "Xem thông tin xe buýt →"
+      },
+      "taxi": {
+        "title": "Dịch vụ Taxi",
+        "description": "Thông tin chi tiết về các hãng taxi uy tín tại Nha Trang, giá cước từ 15.000 - 20.000đ/km, số điện thoại đặt xe và tuyến đường phổ biến.",
+        "link": "Xem thông tin dịch vụ taxi →"
+      }
+    }
+  }
+} 
