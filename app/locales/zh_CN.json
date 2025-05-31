@@ -90,6 +90,11 @@
         "title": "出租车服务",
         "description": "可靠的出租车公司和价格信息",
         "link": "查看出租车信息"
+      },
+      "services": {
+        "title": "高级服务",
+        "description": "探索芽庄的高级服务，包括Netflix、Spotify、YouTube和AI工具如ChatGPT、Gemini Ultra等。",
+        "link": "查看高级服务 →"
       }
     }
   },

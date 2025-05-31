@@ -90,6 +90,11 @@
         "title": "Taxi Service",
         "description": "Detailed information about reputable taxi companies in Nha Trang, fares from 15,000 - 20,000đ/km, booking phone numbers and popular routes.",
         "link": "View taxi service information →"
+      },
+      "services": {
+        "title": "Premium Services",
+        "description": "Explore a wide range of premium services, including Netflix, Spotify, YouTube, and AI tools like ChatGPT, Gemini Ultra, and more.",
+        "link": "View premium services →"
       }
     }
   },

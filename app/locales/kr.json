@@ -90,6 +90,11 @@
         "title": "택시 서비스",
         "description": "나트랑의 신뢰할 수 있는 택시 회사에 대한 자세한 정보, km당 15,000 - 20,000동, 예약 전화번호 및 인기 노선.",
         "link": "택시 서비스 정보 보기 →"
+      },
+      "services": {
+        "title": "Premium Services",
+        "description": "Explore a wide range of premium services, including Netflix, Spotify, YouTube, and AI tools like ChatGPT, Gemini Ultra, and more.",
+        "link": "View premium services →"
       }
     }
   },

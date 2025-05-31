@@ -90,6 +90,11 @@
         "title": "Услуги такси",
         "description": "Надежные компании такси и информация о ценах",
         "link": "Посмотреть такси"
+      },
+      "services": {
+        "title": "Premium Services",
+        "description": "Explore a wide range of premium services, including Netflix, Spotify, YouTube, and AI tools like ChatGPT, Gemini Ultra, and more.",
+        "link": "View premium services →"
       }
     }
   },

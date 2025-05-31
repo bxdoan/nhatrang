@@ -15,7 +15,8 @@ import {
   FaUtensils,
   FaHistory,
   FaComments,
-  FaGithub
+  FaGithub,
+  FaShoppingCart
 } from 'react-icons/fa';
 import Link from 'next/link';
 import { CONTACT_INFO } from '../lib/contact-config';
@@ -77,6 +78,11 @@ export default function Footer() {
               <li>
                 <Link href={createLink('/')} className="hover:text-white flex items-center">
                   <FaUmbrellaBeach className="mr-2" /> {t.navigation?.home || 'Du lịch'}
+                </Link>
+              </li>
+              <li>
+                <Link href={createLink('/services')} className="hover:text-white flex items-center">
+                  <FaShoppingCart className="mr-2" /> {t.navigation?.services || 'Dịch vụ Premium'}
                 </Link>
               </li>
               <li>

@@ -96,6 +96,11 @@ export interface TranslationStructure {
         description: string;
         link: string;
       };
+      services: {
+        title: string;
+        description: string;
+        link: string;
+      };
     };
   };
   transportation: {

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
-import { FaSearch, FaPlane, FaInfoCircle, FaUmbrellaBeach, FaHotel, FaBus, FaMotorcycle, FaCar, FaTaxi } from 'react-icons/fa';
+import { FaSearch, FaPlane, FaInfoCircle, FaUmbrellaBeach, FaHotel, FaBus, FaMotorcycle, FaCar, FaTaxi, FaShoppingCart } from 'react-icons/fa';
 import Link from 'next/link';
 import Script from 'next/script';
 import { HOMEPAGE_SCHEMA } from './lib/metadata';
@@ -26,6 +26,18 @@ export default function Home() {
 
   // Danh sách thông tin du lịch
   const tourismInfoList = [
+    {
+      id: 'services',
+      icon: FaShoppingCart,
+      bgColor: 'bg-purple-50',
+      iconBgColor: 'bg-purple-600',
+      textColor: 'text-purple-600',
+      hoverColor: 'hover:text-purple-700',
+      title: t.homepage?.sections?.services?.title || 'Dịch vụ số Premium',
+      description: t.homepage?.sections?.services?.description || 'Marketplace dịch vụ số cao cấp với các gói subscription, tài khoản premium từ Netflix, Spotify, YouTube đến AI tools như ChatGPT, Gemini Ultra với giá ưu đãi.',
+      link: createLink('/services'),
+      linkText: t.homepage?.sections?.services?.link || 'Xem dịch vụ premium →'
+    },
     {
       id: 'transportation',
       icon: FaBus,

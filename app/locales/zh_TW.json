@@ -90,6 +90,11 @@
         "title": "計程車服務",
         "description": "可靠的計程車公司和價格資訊",
         "link": "查看計程車資訊"
+      },
+      "services": {
+        "title": "高級服務",
+        "description": "探索芽莊的高級服務，包括Netflix、Spotify、YouTube和AI工具如ChatGPT、Gemini Ultra等。",
+        "link": "查看高級服務 →"
       }
     }
   },
