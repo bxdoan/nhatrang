@@ -85,14 +85,16 @@ export default function ServiceDetailPage() {
     return Math.round(((originalPrice - price) / originalPrice) * 100);
   };
 
-  // Hàm lấy văn bản theo ngôn ngữ
+  // Hàm lấy văn bản theo ngôn ngữ với fallback đầy đủ
   const getText = (textObj: { vi: string; en: string; zh_TW: string; zh_CN?: string; ru?: string; kr?: string }) => {
-    return textObj[locale as keyof typeof textObj] || textObj.vi;
+    const currentLocale = locale as keyof typeof textObj;
+    return textObj[currentLocale] || textObj.zh_CN || textObj.ru || textObj.kr || textObj.en || textObj.vi;
   };
 
-  // Hàm lấy features array theo ngôn ngữ
+  // Hàm lấy features array theo ngôn ngữ với fallback đầy đủ
   const getFeatures = (featuresObj: { vi: string[]; en: string[]; zh_TW: string[]; zh_CN?: string[]; ru?: string[]; kr?: string[] }) => {
-    return featuresObj[locale as keyof typeof featuresObj] || featuresObj.vi;
+    const currentLocale = locale as keyof typeof featuresObj;
+    return featuresObj[currentLocale] || featuresObj.zh_CN || featuresObj.ru || featuresObj.kr || featuresObj.en || featuresObj.vi;
   };
 
   const handleZaloClick = () => {
@@ -120,7 +122,14 @@ export default function ServiceDetailPage() {
         <div className="text-center">
           <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-purple-600 mx-auto"></div>
           <p className="mt-4 text-gray-600">
-            {getText({ vi: 'Đang tải...', en: 'Loading...', zh_TW: '載入中...' })}
+            {getText({ 
+              vi: 'Đang tải...', 
+              en: 'Loading...', 
+              zh_TW: '載入中...',
+              zh_CN: '加载中...',
+              ru: 'Загрузка...',
+              kr: '로딩 중...'
+            })}
           </p>
         </div>
       </div>
@@ -133,17 +142,38 @@ export default function ServiceDetailPage() {
         <div className="text-center">
           <div className="text-6xl mb-4">❌</div>
           <h1 className="text-2xl font-bold mb-4">
-            {getText({ vi: 'Không tìm thấy dịch vụ', en: 'Service not found', zh_TW: '找不到服務' })}
+            {getText({ 
+              vi: 'Không tìm thấy dịch vụ', 
+              en: 'Service not found', 
+              zh_TW: '找不到服務',
+              zh_CN: '未找到服务',
+              ru: 'Услуга не найдена',
+              kr: '서비스를 찾을 수 없습니다'
+            })}
           </h1>
           <p className="text-gray-600 mb-6">
-            {getText({ vi: 'Dịch vụ bạn tìm kiếm không tồn tại hoặc đã bị xóa.', en: 'The service you are looking for does not exist or has been removed.', zh_TW: '您尋找的服務不存在或已被刪除。' })}
+            {getText({ 
+              vi: 'Dịch vụ bạn tìm kiếm không tồn tại hoặc đã bị xóa.', 
+              en: 'The service you are looking for does not exist or has been removed.',
+              zh_TW: '您尋找的服務不存在或已被刪除。',
+              zh_CN: '您寻找的服务不存在或已被删除。',
+              ru: 'Услуга, которую вы ищете, не существует или была удалена.',
+              kr: '찾고 있는 서비스가 존재하지 않거나 삭제되었습니다.'
+            })}
           </p>
           <Link 
             href={createLink('/services')}
             className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md inline-flex items-center"
           >
             <FaArrowLeft className="mr-2" />
-            {getText({ vi: 'Quay lại dịch vụ', en: 'Back to services', zh_TW: '返回服務' })}
+            {getText({ 
+              vi: 'Quay lại dịch vụ', 
+              en: 'Back to services', 
+              zh_TW: '返回服務',
+              zh_CN: '返回服务',
+              ru: 'Вернуться к услугам',
+              kr: '서비스로 돌아가기'
+            })}
           </Link>
         </div>
       </div>
@@ -157,11 +187,25 @@ export default function ServiceDetailPage() {
         <div className="container mx-auto px-4">
           <div className="flex items-center text-sm">
             <Link href={createLink('/')} className="text-purple-600 hover:text-purple-800">
-              {getText({ vi: 'Trang chủ', en: 'Home', zh_TW: '首頁' })}
+              {getText({ 
+                vi: 'Trang chủ', 
+                en: 'Home', 
+                zh_TW: '首頁',
+                zh_CN: '首页',
+                ru: 'Главная',
+                kr: '홈'
+              })}
             </Link>
             <span className="mx-2 text-gray-500">/</span>
             <Link href={createLink('/services')} className="text-purple-600 hover:text-purple-800">
-              {getText({ vi: 'Dịch vụ', en: 'Services', zh_TW: '服務' })}
+              {getText({ 
+                vi: 'Dịch vụ', 
+                en: 'Services', 
+                zh_TW: '服務',
+                zh_CN: '服务',
+                ru: 'Услуги',
+                kr: '서비스'
+              })}
             </Link>
             <span className="mx-2 text-gray-500">/</span>
             <span className="text-gray-700">{getText(service.name)}</span>
@@ -200,13 +244,27 @@ export default function ServiceDetailPage() {
                   {service.auto_delivery && (
                     <span className="bg-green-500 text-white text-sm px-3 py-1 rounded-full flex items-center">
                       <FaRocket className="mr-2" />
-                      {getText({ vi: 'Giao hàng tự động', en: 'Auto Delivery', zh_TW: '自動交付' })}
+                      {getText({ 
+                        vi: 'Giao hàng tự động', 
+                        en: 'Auto Delivery', 
+                        zh_TW: '自動交付',
+                        zh_CN: '自动交付',
+                        ru: 'Автодоставка',
+                        kr: '자동 배송'
+                      })}
                     </span>
                   )}
                   {calculateDiscount(service.price, service.price_original) > 0 && (
                     <span className="bg-red-500 text-white text-sm px-3 py-1 rounded-full flex items-center">
                       <FaFire className="mr-2" />
-                      {getText({ vi: 'Giảm giá', en: 'Sale', zh_TW: '促銷' })} -{calculateDiscount(service.price, service.price_original)}%
+                      {getText({ 
+                        vi: 'Giảm giá', 
+                        en: 'Sale', 
+                        zh_TW: '促銷',
+                        zh_CN: '促销',
+                        ru: 'Скидка',
+                        kr: '할인'
+                      })} -{calculateDiscount(service.price, service.price_original)}%
                     </span>
                   )}
                 </div>
@@ -223,7 +281,14 @@ export default function ServiceDetailPage() {
               {/* Features List */}
               <div className="bg-white rounded-lg p-6 shadow-sm">
                 <h3 className="text-lg font-semibold mb-4">
-                  {getText({ vi: 'Tính năng nổi bật', en: 'Key Features', zh_TW: '主要功能' })}
+                  {getText({ 
+                    vi: 'Tính năng nổi bật', 
+                    en: 'Key Features', 
+                    zh_TW: '主要功能',
+                    zh_CN: '主要功能',
+                    ru: 'Основные функции',
+                    kr: '주요 기능'
+                  })}
                 </h3>
                 <ul className="space-y-3">
                   {getFeatures(service.features).map((feature, index) => (
@@ -258,7 +323,14 @@ export default function ServiceDetailPage() {
                   </div>
                   {service.price_original > service.price && (
                     <p className="text-green-600 font-medium">
-                      {getText({ vi: 'Tiết kiệm', en: 'Save', zh_TW: '節省' })}: {formatPrice(service.price_original - service.price)} (-{calculateDiscount(service.price, service.price_original)}%)
+                      {getText({ 
+                        vi: 'Tiết kiệm', 
+                        en: 'Save', 
+                        zh_TW: '節省',
+                        zh_CN: '节省',
+                        ru: 'Экономия',
+                        kr: '절약'
+                      })}: {formatPrice(service.price_original - service.price)} (-{calculateDiscount(service.price, service.price_original)}%)
                     </p>
                   )}
                 </div>
@@ -269,21 +341,42 @@ export default function ServiceDetailPage() {
                     <FaUsers className="text-purple-600 text-xl mb-2 mx-auto" />
                     <div className="font-semibold">{service.sold}</div>
                     <div className="text-xs text-gray-600">
-                      {getText({ vi: 'Đã bán', en: 'Sold', zh_TW: '已售' })}
+                      {getText({ 
+                        vi: 'Đã bán', 
+                        en: 'Sold', 
+                        zh_TW: '已售',
+                        zh_CN: '已售',
+                        ru: 'Продано',
+                        kr: '판매됨'
+                      })}
                     </div>
                   </div>
                   <div className="text-center p-3 bg-gray-50 rounded-lg">
                     <FaShieldAlt className="text-green-600 text-xl mb-2 mx-auto" />
                     <div className="font-semibold">{service.warranty}</div>
                     <div className="text-xs text-gray-600">
-                      {getText({ vi: 'Ngày bảo hành', en: 'Days warranty', zh_TW: '天保固' })}
+                      {getText({ 
+                        vi: 'Ngày bảo hành', 
+                        en: 'Days warranty', 
+                        zh_TW: '天保固',
+                        zh_CN: '天保修',
+                        ru: 'Дней гарантии',
+                        kr: '일 보증'
+                      })}
                     </div>
                   </div>
                   <div className="text-center p-3 bg-gray-50 rounded-lg">
                     <FaClock className="text-blue-600 text-xl mb-2 mx-auto" />
                     <div className="font-semibold">24/7</div>
                     <div className="text-xs text-gray-600">
-                      {getText({ vi: 'Hỗ trợ', en: 'Support', zh_TW: '支援' })}
+                      {getText({ 
+                        vi: 'Hỗ trợ', 
+                        en: 'Support', 
+                        zh_TW: '支援',
+                        zh_CN: '支持',
+                        ru: 'Поддержка',
+                        kr: '지원'
+                      })}
                     </div>
                   </div>
                 </div>
@@ -297,14 +390,24 @@ export default function ServiceDetailPage() {
                   className="w-full bg-green-600 hover:bg-green-700 text-white py-4 px-6 rounded-lg flex items-center justify-center text-lg font-semibold transition-colors mb-4"
                 >
                   <FaWhatsapp className="mr-3 text-xl" />
-                  {getText({ vi: 'Đặt mua qua Zalo', en: 'Order via Zalo', zh_TW: '透過Zalo訂購' })}
+                  {getText({ 
+                    vi: 'Đặt mua qua Zalo', 
+                    en: 'Order via Zalo', 
+                    zh_TW: '透過Zalo訂購',
+                    zh_CN: '通过Zalo订购',
+                    ru: 'Заказать через Zalo',
+                    kr: 'Zalo로 주문하기'
+                  })}
                 </a>
 
                 <p className="text-center text-sm text-gray-600">
                   {getText({ 
                     vi: 'Bấm để mở Zalo và nhắn tin trực tiếp cho chúng tôi', 
                     en: 'Click to open Zalo and message us directly', 
-                    zh_TW: '點擊打開Zalo並直接給我們發消息' 
+                    zh_TW: '點擊打開Zalo並直接給我們發消息',
+                    zh_CN: '点击打开Zalo并直接给我们发消息',
+                    ru: 'Нажмите, чтобы открыть Zalo и написать нам напрямую',
+                    kr: 'Zalo를 열고 직접 메시지를 보내려면 클릭하세요'
                   })}
                 </p>
               </div>
@@ -312,20 +415,48 @@ export default function ServiceDetailPage() {
               {/* Additional Info */}
               <div className="bg-blue-50 rounded-lg p-6">
                 <h3 className="font-semibold mb-3 text-blue-900">
-                  {getText({ vi: 'Thông tin quan trọng', en: 'Important Information', zh_TW: '重要資訊' })}
+                  {getText({ 
+                    vi: 'Thông tin quan trọng', 
+                    en: 'Important Information', 
+                    zh_TW: '重要資訊',
+                    zh_CN: '重要信息',
+                    ru: 'Важная информация',
+                    kr: '중요한 정보'
+                  })}
                 </h3>
                 <ul className="space-y-2 text-sm text-blue-800">
                   <li className="flex items-start">
                     <FaGift className="mr-2 mt-1 flex-shrink-0" />
-                    {getText({ vi: 'Tài khoản chính hãng, không chia sẻ', en: 'Genuine account, not shared', zh_TW: '正版帳戶，不共享' })}
+                    {getText({ 
+                      vi: 'Tài khoản chính hãng, không chia sẻ', 
+                      en: 'Genuine account, not shared', 
+                      zh_TW: '正版帳戶，不共享',
+                      zh_CN: '正版账户，不共享',
+                      ru: 'Подлинный аккаунт, не общий',
+                      kr: '정품 계정, 공유되지 않음'
+                    })}
                   </li>
                   <li className="flex items-start">
                     <FaShieldAlt className="mr-2 mt-1 flex-shrink-0" />
-                    {getText({ vi: 'Bảo hành đổi mới khi có lỗi từ nhà cung cấp', en: 'Warranty replacement for provider errors', zh_TW: '供應商錯誤保固更換' })}
+                    {getText({ 
+                      vi: 'Bảo hành đổi mới khi có lỗi từ nhà cung cấp', 
+                      en: 'Warranty replacement for provider errors', 
+                      zh_TW: '供應商錯誤保固更換',
+                      zh_CN: '供应商错误保修更换',
+                      ru: 'Гарантийная замена при ошибках поставщика',
+                      kr: '공급업체 오류 시 보증 교체'
+                    })}
                   </li>
                   <li className="flex items-start">
                     <FaRocket className="mr-2 mt-1 flex-shrink-0" />
-                    {getText({ vi: 'Giao hàng tự động 24/7 sau khi thanh toán', en: 'Automatic delivery 24/7 after payment', zh_TW: '付款後24/7自動交付' })}
+                    {getText({ 
+                      vi: 'Giao hàng tự động 24/7 sau khi thanh toán', 
+                      en: 'Automatic delivery 24/7 after payment', 
+                      zh_TW: '付款後24/7自動交付',
+                      zh_CN: '付款后24/7自动交付',
+                      ru: 'Автоматическая доставка 24/7 после оплаты',
+                      kr: '결제 후 24/7 자동 배송'
+                    })}
                   </li>
                 </ul>
               </div>
@@ -341,12 +472,18 @@ export default function ServiceDetailPage() {
             title={getText({ 
               vi: 'Cần hỗ trợ thêm?', 
               en: 'Need additional support?', 
-              zh_TW: '需要額外支援？' 
+              zh_TW: '需要額外支援？',
+              zh_CN: '需要额外支持？',
+              ru: 'Нужна дополнительная поддержка?',
+              kr: '추가 지원이 필요하신가요?'
             })}
             description={getText({ 
               vi: 'Liên hệ với chúng tôi để được tư vấn chi tiết về dịch vụ', 
               en: 'Contact us for detailed consultation about the service',
-              zh_TW: '聯繫我們獲得服務的詳細諮詢'
+              zh_TW: '聯繫我們獲得服務的詳細諮詢',
+              zh_CN: '联系我们获得服务的详细咨询',
+              ru: 'Свяжитесь с нами для подробной консультации по услуге',
+              kr: '서비스에 대한 자세한 상담을 위해 저희에게 연락하세요'
             })}
             bgColor="bg-purple-50"
           />
