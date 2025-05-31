@@ -2,21 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { 
+import {
   FaShoppingCart, 
   FaChevronLeft, 
   FaSearch, 
-  FaFilter, 
-  FaStar, 
-  FaCheck, 
-  FaCrown, 
-  FaFire, 
   FaShieldAlt,
   FaRocket,
-  FaGift,
   FaTags,
-  FaWhatsapp
 } from 'react-icons/fa';
 import Script from 'next/script';
 import servicesData from '../data/services.json';
@@ -63,42 +55,6 @@ interface Service {
   warranty: number;
   auto_delivery: boolean;
 }
-
-// Categories cho filter
-const CATEGORIES = [
-  { id: 'all', name: { vi: 'Tất cả', en: 'All', zh_TW: '全部' } },
-  { id: 'entertainment', name: { vi: 'Giải trí', en: 'Entertainment', zh_TW: '娛樂' } },
-  { id: 'storage', name: { vi: 'Lưu trữ', en: 'Storage', zh_TW: '儲存' } },
-  { id: 'marketing', name: { vi: 'Marketing', en: 'Marketing', zh_TW: '行銷' } },
-  { id: 'design', name: { vi: 'Thiết kế', en: 'Design', zh_TW: '設計' } }
-];
-
-// Schema.org JSON-LD
-const SERVICES_PAGE_SCHEMA = {
-  '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: 'Dịch vụ tài khoản Premium - Nha Trang Digital Services',
-  description: 'Bán tài khoản premium cho YouTube, Netflix, Spotify, Google Drive và các dịch vụ khác với giá ưu đãi',
-  url: 'https://nhatrang.com/services',
-  mainEntity: {
-    '@type': 'ItemList',
-    name: 'Premium Account Services',
-    numberOfItems: servicesData.length,
-    itemListElement: servicesData.map((service, index) => ({
-      '@type': 'Product',
-      position: index + 1,
-      name: service.name.vi,
-      description: service.description.vi,
-      image: service.image,
-      offers: {
-        '@type': 'Offer',
-        price: service.price,
-        priceCurrency: 'VND',
-        availability: 'https://schema.org/InStock'
-      }
-    }))
-  }
-};
 
 export default function ServicesPage() {
   const { t, locale } = useLanguage();
@@ -240,25 +196,9 @@ export default function ServicesPage() {
       kr: 'Instagram'
     }
   };
-
-  // Hàm format giá
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('vi-VN').format(price) + 'đ';
-  };
-
-  // Hàm tính phần trăm giảm giá
-  const calculateDiscount = (price: number, originalPrice: number) => {
-    return Math.round(((originalPrice - price) / originalPrice) * 100);
-  };
-
   // Hàm lấy văn bản theo ngôn ngữ
   const getText = (textObj: { vi: string; en: string; zh_TW: string; zh_CN?: string; ru?: string; kr?: string }) => {
     return textObj[locale as keyof typeof textObj] || textObj.vi;
-  };
-
-  // Hàm lấy features array theo ngôn ngữ
-  const getFeatures = (featuresObj: { vi: string[]; en: string[]; zh_TW: string[]; zh_CN?: string[]; ru?: string[]; kr?: string[] }) => {
-    return featuresObj[locale as keyof typeof featuresObj] || featuresObj.vi;
   };
 
   const handleZaloClick = (serviceName: string) => {
