@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { FaPlane, FaBus, FaUmbrellaBeach, FaHistory, FaHotel, FaUtensils, FaComments, FaChevronDown, FaCar, FaMotorcycle, FaTaxi } from 'react-icons/fa';
+import { FaPlane, FaBus, FaUmbrellaBeach, FaHistory, FaHotel, FaUtensils, FaComments, FaChevronDown, FaCar, FaMotorcycle, FaTaxi, FaShoppingCart } from 'react-icons/fa';
 import { useState, useRef, useEffect } from 'react';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -162,6 +162,14 @@ export default function Header() {
                 </div>
               )}
             </div>
+            
+            <Link 
+              href={createLink('/services')} 
+              className={`group flex items-center text-sm px-3 py-2 rounded-full transition-all ${pathname === '/services' ? 'bg-white text-blue-600 font-medium' : 'text-white hover:bg-blue-400'}`}
+            >
+              <FaShoppingCart className="mr-1.5 group-hover:animate-pulse" /> 
+              <span>{t.navigation?.services || 'Dịch vụ'}</span>
+            </Link>
             
             {/*             <Link 
               href={createLink('/accommodations')} 

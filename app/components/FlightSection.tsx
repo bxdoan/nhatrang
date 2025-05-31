@@ -73,7 +73,7 @@ export default function FlightSection({ showTitle = true }) {
             {pagination.hasMore && (
               <div className="mt-10 text-center">
                 <p className="text-sm text-gray-500 mb-3">
-                  Hiển thị {flights.length} / {pagination.total} chuyến bay
+                 <strong>{flights.length} / {pagination.total} Flight</strong>
                 </p>
                 <button
                   onClick={loadMore}

@@ -1,0 +1,398 @@
+[
+  {
+    "id": "youtube-premium-1m",
+    "slug": "youtube-premium-1-month",
+    "name": {
+      "vi": "YouTube Premium 1 Tháng",
+      "en": "YouTube Premium 1 Month",
+      "zh_TW": "YouTube Premium 1個月",
+      "zh_CN": "YouTube Premium 1个月",
+      "ru": "YouTube Premium 1 месяц",
+      "kr": "YouTube Premium 1개월"
+    },
+    "description": {
+      "vi": "Tài khoản YouTube Premium chính hãng, xem video không quảng cáo, tải offline",
+      "en": "Genuine YouTube Premium account, ad-free videos, offline download",
+      "zh_TW": "正版YouTube Premium帳戶，無廣告影片，離線下載",
+      "zh_CN": "正版YouTube Premium账户，无广告视频，离线下载",
+      "ru": "Подлинный аккаунт YouTube Premium, видео без рекламы, загрузка офлайн",
+      "kr": "정품 YouTube Premium 계정, 광고 없는 동영상, 오프라인 다운로드"
+    },
+    "features": {
+      "vi": ["Xem video không quảng cáo", "Tải video để xem offline", "YouTube Music Premium", "Phát video nền"],
+      "en": ["Ad-free video viewing", "Download videos for offline", "YouTube Music Premium", "Background video play"],
+      "zh_TW": ["無廣告觀看影片", "下載影片離線觀看", "YouTube Music Premium", "背景播放影片"],
+      "zh_CN": ["无广告观看视频", "下载视频离线观看", "YouTube Music Premium", "后台播放视频"],
+      "ru": ["Просмотр видео без рекламы", "Загрузка видео для офлайн", "YouTube Music Premium", "Фоновое воспроизведение"],
+      "kr": ["광고 없는 동영상 시청", "오프라인 동영상 다운로드", "YouTube Music Premium", "백그라운드 재생"]
+    },
+    "price": 45000,
+    "price_original": 59000,
+    "categories": ["entertainment", "youtube"],
+    "image": "/images/services/youtube-premium.jpg",
+    "rating": 4.9,
+    "sold": 1240,
+    "warranty": 30,
+    "auto_delivery": true
+  },
+  {
+    "id": "youtube-premium-3m",
+    "slug": "youtube-premium-3-months",
+    "name": {
+      "vi": "YouTube Premium 3 Tháng",
+      "en": "YouTube Premium 3 Months",
+      "zh_TW": "YouTube Premium 3個月",
+      "zh_CN": "YouTube Premium 3个月",
+      "ru": "YouTube Premium 3 месяца",
+      "kr": "YouTube Premium 3개월"
+    },
+    "description": {
+      "vi": "Gói YouTube Premium 3 tháng với giá ưu đãi, tiết kiệm hơn so với mua lẻ",
+      "en": "3-month YouTube Premium package with special price, more savings than individual purchase",
+      "zh_TW": "3個月YouTube Premium套餐特價，比單獨購買更優惠",
+      "zh_CN": "3个月YouTube Premium套餐特价，比单独购买更优惠",
+      "ru": "3-месячный пакет YouTube Premium по специальной цене, больше экономии чем при покупке по отдельности",
+      "kr": "3개월 YouTube Premium 패키지 특별 가격, 개별 구매보다 더 많은 절약"
+    },
+    "features": {
+      "vi": ["Xem video không quảng cáo", "Tải video để xem offline", "YouTube Music Premium", "Phát video nền"],
+      "en": ["Ad-free video viewing", "Download videos for offline", "YouTube Music Premium", "Background video play"],
+      "zh_TW": ["無廣告觀看影片", "下載影片離線觀看", "YouTube Music Premium", "背景播放影片"],
+      "zh_CN": ["无广告观看视频", "下载视频离线观看", "YouTube Music Premium", "后台播放视频"],
+      "ru": ["Просмотр видео без рекламы", "Загрузка видео для офлайн", "YouTube Music Premium", "Фоновое воспроизведение"],
+      "kr": ["광고 없는 동영상 시청", "오프라인 동영상 다운로드", "YouTube Music Premium", "백그라운드 재생"]
+    },
+    "price": 120000,
+    "price_original": 177000,
+    "categories": ["entertainment", "youtube"],
+    "image": "/images/services/youtube-premium.jpg",
+    "rating": 4.8,
+    "sold": 856,
+    "warranty": 90,
+    "auto_delivery": true
+  },
+  {
+    "id": "youtube-premium-1y",
+    "slug": "youtube-premium-1-year",
+    "name": {
+      "vi": "YouTube Premium 1 Năm",
+      "en": "YouTube Premium 1 Year",
+      "zh_TW": "YouTube Premium 1年",
+      "zh_CN": "YouTube Premium 1年",
+      "ru": "YouTube Premium 1 год",
+      "kr": "YouTube Premium 1년"
+    },
+    "description": {
+      "vi": "Gói YouTube Premium 1 năm siêu tiết kiệm, giá tốt nhất cho người dùng lâu dài",
+      "en": "1-year YouTube Premium super value package, best price for long-term users",
+      "zh_TW": "1年YouTube Premium超值套餐，長期用戶最優惠價格",
+      "zh_CN": "1年YouTube Premium超值套餐，长期用户最优惠价格",
+      "ru": "1-летний пакет YouTube Premium супер выгода, лучшая цена для долгосрочных пользователей",
+      "kr": "1년 YouTube Premium 슈퍼 절약 패키지, 장기 사용자를 위한 최고의 가격"
+    },
+    "features": {
+      "vi": ["Xem video không quảng cáo", "Tải video để xem offline", "YouTube Music Premium", "Phát video nền", "Tiết kiệm 39% so với mua hàng tháng"],
+      "en": ["Ad-free video viewing", "Download videos for offline", "YouTube Music Premium", "Background video play", "Save 39% compared to monthly purchase"],
+      "zh_TW": ["無廣告觀看影片", "下載影片離線觀看", "YouTube Music Premium", "背景播放影片", "比按月購買節省39%"],
+      "zh_CN": ["无广告观看视频", "下载视频离线观看", "YouTube Music Premium", "后台播放视频", "比按月购买节省39%"],
+      "ru": ["Просмотр видео без рекламы", "Загрузка видео для офлайн", "YouTube Music Premium", "Фоновое воспроизведение", "Экономия 39% по сравнению с ежемесячной покупкой"],
+      "kr": ["광고 없는 동영상 시청", "오프라인 동영상 다운로드", "YouTube Music Premium", "백그라운드 재생", "월별 구매 대비 39% 절약"]
+    },
+    "price": 360000,
+    "price_original": 590000,
+    "categories": ["entertainment", "youtube"],
+    "image": "/images/services/youtube-premium.jpg",
+    "rating": 4.9,
+    "sold": 320,
+    "warranty": 365,
+    "auto_delivery": true
+  },
+  {
+    "id": "google-drive-1tb",
+    "slug": "google-drive-1tb-storage",
+    "name": {
+      "vi": "Google Drive 1TB Lưu Trữ",
+      "en": "Google Drive 1TB Storage",
+      "zh_TW": "Google Drive 1TB儲存空間",
+      "zh_CN": "Google Drive 1TB存储空间",
+      "ru": "Google Drive 1TB хранилище",
+      "kr": "Google Drive 1TB 저장공간"
+    },
+    "description": {
+      "vi": "Tài khoản Google Drive với 1TB dung lượng lưu trữ, đồng bộ tệp an toàn",
+      "en": "Google Drive account with 1TB storage space, secure file synchronization",
+      "zh_TW": "Google Drive帳戶，1TB儲存空間，安全檔案同步",
+      "zh_CN": "Google Drive账户，1TB存储空间，安全文件同步",
+      "ru": "Аккаунт Google Drive с 1TB пространства хранения, безопасная синхронизация файлов",
+      "kr": "1TB 저장 공간이 있는 Google Drive 계정, 안전한 파일 동기화"
+    },
+    "features": {
+      "vi": ["1TB dung lượng lưu trữ", "Đồng bộ đa thiết bị", "Chia sẻ tệp dễ dàng", "Backup tự động"],
+      "en": ["1TB storage capacity", "Multi-device sync", "Easy file sharing", "Automatic backup"],
+      "zh_TW": ["1TB儲存容量", "多設備同步", "輕鬆分享檔案", "自動備份"],
+      "zh_CN": ["1TB存储容量", "多设备同步", "轻松分享文件", "自动备份"],
+      "ru": ["1TB объем хранилища", "Синхронизация между устройствами", "Легкий обмен файлами", "Автоматическое резервное копирование"],
+      "kr": ["1TB 저장 용량", "다중 기기 동기화", "쉬운 파일 공유", "자동 백업"]
+    },
+    "price": 55000,
+    "price_original": 75000,
+    "categories": ["storage", "google"],
+    "image": "/images/services/google-drive.jpg",
+    "rating": 4.7,
+    "sold": 2100,
+    "warranty": 365,
+    "auto_delivery": true
+  },
+  {
+    "id": "netflix-4k-1m",
+    "slug": "netflix-premium-4k-1-month",
+    "name": {
+      "vi": "Netflix Premium 4K 1 Tháng",
+      "en": "Netflix Premium 4K 1 Month",
+      "zh_TW": "Netflix Premium 4K 1個月",
+      "zh_CN": "Netflix Premium 4K 1个月",
+      "ru": "Netflix Premium 4K 1 месяц",
+      "kr": "Netflix Premium 4K 1개월"
+    },
+    "description": {
+      "vi": "Tài khoản Netflix Premium hỗ trợ 4K UHD, xem trên 4 thiết bị cùng lúc",
+      "en": "Netflix Premium account with 4K UHD support, watch on 4 devices simultaneously",
+      "zh_TW": "Netflix Premium帳戶支援4K UHD，同時在4個設備上觀看",
+      "zh_CN": "Netflix Premium账户支持4K UHD，同时在4个设备上观看",
+      "ru": "Аккаунт Netflix Premium с поддержкой 4K UHD, просмотр на 4 устройствах одновременно",
+      "kr": "4K UHD 지원 Netflix Premium 계정, 4개 기기에서 동시 시청"
+    },
+    "features": {
+      "vi": ["Chất lượng 4K UHD", "Xem trên 4 thiết bị", "Không quảng cáo", "Thư viện phim đầy đủ"],
+      "en": ["4K UHD quality", "Watch on 4 devices", "No advertisements", "Full movie library"],
+      "zh_TW": ["4K UHD畫質", "4個設備觀看", "無廣告", "完整電影庫"],
+      "zh_CN": ["4K UHD画质", "4个设备观看", "无广告", "完整电影库"],
+      "ru": ["Качество 4K UHD", "Просмотр на 4 устройствах", "Без рекламы", "Полная библиотека фильмов"],
+      "kr": ["4K UHD 화질", "4개 기기에서 시청", "광고 없음", "전체 영화 라이브러리"]
+    },
+    "price": 95000,
+    "price_original": 120000,
+    "categories": ["entertainment", "netflix"],
+    "image": "/images/services/netflix-premium.jpg",
+    "rating": 4.8,
+    "sold": 890,
+    "warranty": 30,
+    "auto_delivery": true
+  },
+  {
+    "id": "spotify-premium-1m",
+    "slug": "spotify-premium-1-month",
+    "name": {
+      "vi": "Spotify Premium 1 Tháng",
+      "en": "Spotify Premium 1 Month",
+      "zh_TW": "Spotify Premium 1個月",
+      "zh_CN": "Spotify Premium 1个月",
+      "ru": "Spotify Premium 1 месяц",
+      "kr": "Spotify Premium 1개월"
+    },
+    "description": {
+      "vi": "Tài khoản Spotify Premium nghe nhạc không quảng cáo, chất lượng cao",
+      "en": "Spotify Premium account for ad-free music streaming in high quality",
+      "zh_TW": "Spotify Premium帳戶，無廣告高品質音樂串流",
+      "zh_CN": "Spotify Premium账户，无广告高品质音乐流媒体",
+      "ru": "Аккаунт Spotify Premium для стриминга музыки без рекламы в высоком качестве",
+      "kr": "광고 없는 고품질 음악 스트리밍을 위한 Spotify Premium 계정"
+    },
+    "features": {
+      "vi": ["Nghe nhạc không quảng cáo", "Tải nhạc offline", "Chất lượng cao 320kbps", "Không giới hạn skip"],
+      "en": ["Ad-free music", "Offline download", "High quality 320kbps", "Unlimited skips"],
+      "zh_TW": ["無廣告音樂", "離線下載", "高品質320kbps", "無限制跳過"],
+      "zh_CN": ["无广告音乐", "离线下载", "高品质320kbps", "无限制跳过"],
+      "ru": ["Музыка без рекламы", "Офлайн загрузка", "Высокое качество 320kbps", "Неограниченные пропуски"],
+      "kr": ["광고 없는 음악", "오프라인 다운로드", "고품질 320kbps", "무제한 건너뛰기"]
+    },
+    "price": 35000,
+    "price_original": 45000,
+    "categories": ["entertainment", "spotify"],
+    "image": "/images/services/spotify-premium.jpg",
+    "rating": 4.9,
+    "sold": 1540,
+    "warranty": 30,
+    "auto_delivery": true
+  },
+  {
+    "id": "canva-pro-1m",
+    "slug": "canva-pro-1-month",
+    "name": {
+      "vi": "Canva Pro 1 Tháng",
+      "en": "Canva Pro 1 Month",
+      "zh_TW": "Canva Pro 1個月",
+      "zh_CN": "Canva Pro 1个月",
+      "ru": "Canva Pro 1 месяц",
+      "kr": "Canva Pro 1개월"
+    },
+    "description": {
+      "vi": "Tài khoản Canva Pro với hàng triệu template premium và tính năng nâng cao",
+      "en": "Canva Pro account with millions of premium templates and advanced features",
+      "zh_TW": "Canva Pro帳戶，擁有數百萬優質模板和進階功能",
+      "zh_CN": "Canva Pro账户，拥有数百万优质模板和高级功能",
+      "ru": "Аккаунт Canva Pro с миллионами премиум шаблонов и расширенными функциями",
+      "kr": "수백만 개의 프리미엄 템플릿과 고급 기능을 갖춘 Canva Pro 계정"
+    },
+    "features": {
+      "vi": ["Hàng triệu template premium", "Remove background 1-click", "Brand kit chuyên nghiệp", "Export chất lượng cao"],
+      "en": ["Millions of premium templates", "1-click background removal", "Professional brand kit", "High-quality export"],
+      "zh_TW": ["數百萬優質模板", "一鍵去背", "專業品牌套件", "高品質匯出"],
+      "zh_CN": ["数百万优质模板", "一键去背", "专业品牌套件", "高品质导出"],
+      "ru": ["Миллионы премиум шаблонов", "Удаление фона одним кликом", "Профессиональный брендинг-кит", "Экспорт высокого качества"],
+      "kr": ["수백만 개의 프리미엄 템플릿", "원클릭 배경 제거", "전문 브랜드 키트", "고품질 내보내기"]
+    },
+    "price": 65000,
+    "price_original": 85000,
+    "categories": ["design", "canva"],
+    "image": "/images/services/canva-pro.jpg",
+    "rating": 4.7,
+    "sold": 670,
+    "warranty": 30,
+    "auto_delivery": true
+  },
+  {
+    "id": "gemini-ultra-1m-basic",
+    "slug": "gemini-ultra-1-month-basic",
+    "name": {
+      "vi": "Google Gemini Ultra 1 Tháng - Cơ Bản",
+      "en": "Google Gemini Ultra 1 Month - Basic",
+      "zh_TW": "Google Gemini Ultra 1個月 - 基本版",
+      "zh_CN": "Google Gemini Ultra 1个月 - 基础版",
+      "ru": "Google Gemini Ultra 1 месяц - Базовый",
+      "kr": "Google Gemini Ultra 1개월 - 기본"
+    },
+    "description": {
+      "vi": "Tài khoản Google Gemini Ultra - AI thông minh nhất từ Google, phiên bản cơ bản không bảo hành",
+      "en": "Google Gemini Ultra account - Google's most advanced AI, basic version without warranty",
+      "zh_TW": "Google Gemini Ultra帳戶 - Google最先進的AI，基本版無保固",
+      "zh_CN": "Google Gemini Ultra账户 - Google最先进的AI，基础版无保修",
+      "ru": "Аккаунт Google Gemini Ultra - самый продвинутый ИИ от Google, базовая версия без гарантии",
+      "kr": "Google Gemini Ultra 계정 - Google의 가장 고급 AI, 보증 없는 기본 버전"
+    },
+    "features": {
+      "vi": ["Truy cập Gemini Ultra model", "Xử lý văn bản nâng cao", "Phân tích hình ảnh", "Coding assistant"],
+      "en": ["Access to Gemini Ultra model", "Advanced text processing", "Image analysis", "Coding assistant"],
+      "zh_TW": ["存取Gemini Ultra模型", "進階文字處理", "圖像分析", "程式設計助手"],
+      "zh_CN": ["访问Gemini Ultra模型", "高级文本处理", "图像分析", "编程助手"],
+      "ru": ["Доступ к модели Gemini Ultra", "Расширенная обработка текста", "Анализ изображений", "Помощник программиста"],
+      "kr": ["Gemini Ultra 모델 액세스", "고급 텍스트 처리", "이미지 분석", "코딩 어시스턴트"]
+    },
+    "price": 80000,
+    "price_original": 120000,
+    "categories": ["ai", "productivity"],
+    "image": "/images/services/gemini-ultra.jpg",
+    "rating": 4.8,
+    "sold": 450,
+    "warranty": 0,
+    "auto_delivery": true
+  },
+  {
+    "id": "gemini-ultra-1m-premium",
+    "slug": "gemini-ultra-1-month-premium",
+    "name": {
+      "vi": "Google Gemini Ultra 1 Tháng - Premium",
+      "en": "Google Gemini Ultra 1 Month - Premium",
+      "zh_TW": "Google Gemini Ultra 1個月 - 高級版",
+      "zh_CN": "Google Gemini Ultra 1个月 - 高级版",
+      "ru": "Google Gemini Ultra 1 месяц - Премиум",
+      "kr": "Google Gemini Ultra 1개월 - 프리미엄"
+    },
+    "description": {
+      "vi": "Tài khoản Google Gemini Ultra - AI thông minh nhất từ Google, phiên bản premium có bảo hành",
+      "en": "Google Gemini Ultra account - Google's most advanced AI, premium version with warranty",
+      "zh_TW": "Google Gemini Ultra帳戶 - Google最先進的AI，高級版含保固",
+      "zh_CN": "Google Gemini Ultra账户 - Google最先进的AI，高级版含保修",
+      "ru": "Аккаунт Google Gemini Ultra - самый продвинутый ИИ от Google, премиум версия с гарантией",
+      "kr": "Google Gemini Ultra 계정 - Google의 가장 고급 AI, 보증 포함 프리미엄 버전"
+    },
+    "features": {
+      "vi": ["Truy cập Gemini Ultra model", "Xử lý văn bản nâng cao", "Phân tích hình ảnh", "Coding assistant", "Hỗ trợ 24/7"],
+      "en": ["Access to Gemini Ultra model", "Advanced text processing", "Image analysis", "Coding assistant", "24/7 Support"],
+      "zh_TW": ["存取Gemini Ultra模型", "進階文字處理", "圖像分析", "程式設計助手", "24/7客服"],
+      "zh_CN": ["访问Gemini Ultra模型", "高级文本处理", "图像分析", "编程助手", "24/7客服"],
+      "ru": ["Доступ к модели Gemini Ultra", "Расширенная обработка текста", "Анализ изображений", "Помощник программиста", "Поддержка 24/7"],
+      "kr": ["Gemini Ultra 모델 액세스", "고급 텍스트 처리", "이미지 분석", "코딩 어시스턴트", "24/7 지원"]
+    },
+    "price": 150000,
+    "price_original": 200000,
+    "categories": ["ai", "productivity"],
+    "image": "/images/services/gemini-ultra.jpg",
+    "rating": 4.9,
+    "sold": 280,
+    "warranty": 30,
+    "auto_delivery": true
+  },
+  {
+    "id": "chatgpt-plus-1m-basic",
+    "slug": "chatgpt-plus-1-month-basic",
+    "name": {
+      "vi": "ChatGPT Plus 1 Tháng - Cơ Bản",
+      "en": "ChatGPT Plus 1 Month - Basic",
+      "zh_TW": "ChatGPT Plus 1個月 - 基本版",
+      "zh_CN": "ChatGPT Plus 1个月 - 基础版",
+      "ru": "ChatGPT Plus 1 месяц - Базовый",
+      "kr": "ChatGPT Plus 1개월 - 기본"
+    },
+    "description": {
+      "vi": "Tài khoản ChatGPT Plus - AI chatbot mạnh mẽ từ OpenAI, phiên bản cơ bản không bảo hành",
+      "en": "ChatGPT Plus account - Powerful AI chatbot from OpenAI, basic version without warranty",
+      "zh_TW": "ChatGPT Plus帳戶 - OpenAI強大的AI聊天機器人，基本版無保固",
+      "zh_CN": "ChatGPT Plus账户 - OpenAI强大的AI聊天机器人，基础版无保修",
+      "ru": "Аккаунт ChatGPT Plus - мощный ИИ-чатбот от OpenAI, базовая версия без гарантии",
+      "kr": "ChatGPT Plus 계정 - OpenAI의 강력한 AI 챗봇, 보증 없는 기본 버전"
+    },
+    "features": {
+      "vi": ["Truy cập GPT-4", "Ưu tiên trong giờ cao điểm", "Phản hồi nhanh hơn", "Plugin và web browsing"],
+      "en": ["Access to GPT-4", "Priority during peak hours", "Faster response", "Plugins and web browsing"],
+      "zh_TW": ["存取GPT-4", "高峰時段優先", "更快回應", "外掛程式和網路瀏覽"],
+      "zh_CN": ["访问GPT-4", "高峰时段优先", "更快响应", "插件和网络浏览"],
+      "ru": ["Доступ к GPT-4", "Приоритет в пиковые часы", "Более быстрый ответ", "Плагины и веб-браузинг"],
+      "kr": ["GPT-4 액세스", "피크 시간 우선권", "빠른 응답", "플러그인 및 웹 브라우징"]
+    },
+    "price": 80000,
+    "price_original": 110000,
+    "categories": ["ai", "productivity"],
+    "image": "/images/services/chatgpt-plus.jpg",
+    "rating": 4.7,
+    "sold": 520,
+    "warranty": 0,
+    "auto_delivery": true
+  },
+  {
+    "id": "chatgpt-plus-1m-premium",
+    "slug": "chatgpt-plus-1-month-premium",
+    "name": {
+      "vi": "ChatGPT Plus 1 Tháng - Premium",
+      "en": "ChatGPT Plus 1 Month - Premium",
+      "zh_TW": "ChatGPT Plus 1個月 - 高級版",
+      "zh_CN": "ChatGPT Plus 1个月 - 高级版",
+      "ru": "ChatGPT Plus 1 месяц - Премиум",
+      "kr": "ChatGPT Plus 1개월 - 프리미엄"
+    },
+    "description": {
+      "vi": "Tài khoản ChatGPT Plus - AI chatbot mạnh mẽ từ OpenAI, phiên bản premium có bảo hành",
+      "en": "ChatGPT Plus account - Powerful AI chatbot from OpenAI, premium version with warranty",
+      "zh_TW": "ChatGPT Plus帳戶 - OpenAI強大的AI聊天機器人，高級版含保固",
+      "zh_CN": "ChatGPT Plus账户 - OpenAI强大的AI聊天机器人，高级版含保修",
+      "ru": "Аккаунт ChatGPT Plus - мощный ИИ-чатбот от OpenAI, премиум версия с гарантией",
+      "kr": "ChatGPT Plus 계정 - OpenAI의 강력한 AI 챗봇, 보증 포함 프리미엄 버전"
+    },
+    "features": {
+      "vi": ["Truy cập GPT-4", "Ưu tiên trong giờ cao điểm", "Phản hồi nhanh hơn", "Plugin và web browsing", "Hỗ trợ 24/7"],
+      "en": ["Access to GPT-4", "Priority during peak hours", "Faster response", "Plugins and web browsing", "24/7 Support"],
+      "zh_TW": ["存取GPT-4", "高峰時段優先", "更快回應", "外掛程式和網路瀏覽", "24/7客服"],
+      "zh_CN": ["访问GPT-4", "高峰时段优先", "更快响应", "插件和网络浏览", "24/7客服"],
+      "ru": ["Доступ к GPT-4", "Приоритет в пиковые часы", "Более быстрый ответ", "Плагины и веб-браузинг", "Поддержка 24/7"],
+      "kr": ["GPT-4 액세스", "피크 시간 우선권", "빠른 응답", "플러그인 및 웹 브라우징", "24/7 지원"]
+    },
+    "price": 150000,
+    "price_original": 190000,
+    "categories": ["ai", "productivity"],
+    "image": "/images/services/chatgpt-plus.jpg",
+    "rating": 4.8,
+    "sold": 320,
+    "warranty": 30,
+    "auto_delivery": true
+  }
+] 
