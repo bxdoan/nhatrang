@@ -66,6 +66,14 @@ export default function ServicesPage() {
   const [priceFilter, setPriceFilter] = useState('all');
   const [sortBy, setSortBy] = useState('popular'); // popular, price-low, price-high, newest
 
+  // Tự động chọn category "ai" khi trang load lần đầu nếu có sản phẩm AI
+  useEffect(() => {
+    const hasAIProducts = services.some(service => service.categories.includes('ai'));
+    if (hasAIProducts) {
+      setSelectedCategory('ai');
+    }
+  }, []); // Chỉ chạy một lần khi component mount
+
   // Lọc và sắp xếp services
   useEffect(() => {
     let filtered = services;
@@ -120,6 +128,13 @@ export default function ServicesPage() {
 
   // Danh sách categories - lấy tất cả categories unique từ services
   const categories = Array.from(new Set(services.flatMap(service => service.categories)));
+  
+  // Ưu tiên category "ai" lên đầu tiên nếu có
+  const sortedCategories = categories.sort((a, b) => {
+    if (a === 'ai') return -1;
+    if (b === 'ai') return 1;
+    return 0;
+  });
   
   // Category labels với đa ngôn ngữ
   const categoryLabels: Record<string, { vi: string; en: string; zh_TW: string; zh_CN?: string; ru?: string; kr?: string }> = {
@@ -214,13 +229,23 @@ export default function ServicesPage() {
           <div className="text-center text-white">
             <FaShoppingCart className="inline-block text-4xl mb-4" />
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              {getText({ vi: 'Dịch vụ số uy tín', en: 'Trusted Digital Services', zh_TW: '可信的數位服務' })}
+              {getText({
+                vi: 'Dịch vụ số uy tín', 
+                en: 'Trusted Digital Services', 
+                zh_TW: '可信的數位服務',
+                zh_CN: '可信的数字服务',
+                ru: 'Надежные цифровые услуги',
+                kr: '신뢰할 수 있는 디지털 서비스'
+              })}
             </h1>
             <p className="max-w-3xl mx-auto text-purple-100 text-lg">
               {getText({ 
                 vi: 'Tài khoản và dịch vụ chính hãng YouTube, Google, TikTok với giá tốt nhất', 
                 en: 'Genuine YouTube, Google, TikTok accounts and services at the best prices',
-                zh_TW: '正版YouTube、Google、TikTok帳戶和服務，價格最優惠'
+                zh_TW: '正版YouTube、Google、TikTok帳戶和服務，價格最優惠',
+                zh_CN: '正版YouTube、Google、TikTok账户和服务，价格最优惠',
+                ru: 'Надежные учетные записи YouTube, Google, TikTok и услуги по лучшим ценам',
+                kr: '신뢰할 수 있는 YouTube, Google, TikTok 계정 및 서비스, 최고의 가격'
               })}
             </p>
           </div>
@@ -232,7 +257,7 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           <Link href={createLink('/')} className="inline-flex items-center text-blue-600 hover:text-blue-800">
             <FaChevronLeft className="mr-1 text-sm" /> 
-            {getText({ vi: 'Quay lại trang chủ', en: 'Back to homepage', zh_TW: '返回首頁' })}
+            {getText({ vi: 'Quay lại trang chủ', en: 'Back to homepage', zh_TW: '返回首頁', zh_CN: '返回首页', ru: 'Вернуться на главную страницу', kr: '홈페이지로 돌아가기' })}
           </Link>
         </div>
       </div>
@@ -244,12 +269,18 @@ export default function ServicesPage() {
             title={getText({ 
               vi: 'Liên hệ để đặt dịch vụ', 
               en: 'Contact for service booking', 
-              zh_TW: '聯繫預訂服務' 
+              zh_TW: '聯繫預訂服務',
+              zh_CN: '联系预订服务',
+              ru: 'Свяжитесь с нами для бронирования услуг',
+              kr: '서비스 예약을 위해 우리에게 연락하세요'
             })}
             description={getText({ 
               vi: 'Liên hệ với chúng tôi để được tư vấn và hỗ trợ dịch vụ tài khoản số tại Nha Trang', 
               en: 'Contact us for consultation and support for digital account services in Nha Trang',
-              zh_TW: '聯繫我們諮詢和支持芽莊的數位帳戶服務'
+              zh_TW: '聯繫我們諮詢和支持芽莊的數位帳戶服務',
+              zh_CN: '联系我们咨询和支持芽庄的数字账户服务',
+              ru: 'Свяжитесь с нами для консультации и поддержки услуг учетной записи в Нха Трэнг',
+              kr: '우리에게 문의하여 나홀 수준의 수位 계정 서비스에 대한 상담 및 지원을 받으세요'
             })}
             bgColor="bg-purple-50"
           />
@@ -267,7 +298,7 @@ export default function ServicesPage() {
                 <div className="relative">
                   <input
                     type="text"
-                    placeholder={getText({ vi: 'Tìm kiếm dịch vụ...', en: 'Search services...', zh_TW: '搜尋服務...' })}
+                    placeholder={getText({ vi: 'Tìm kiếm dịch vụ...', en: 'Search services...', zh_TW: '搜尋服務...', zh_CN: '搜索服务...', ru: 'Поиск услуг...', kr: '서비스 검색...' })}
                     className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
@@ -283,10 +314,10 @@ export default function ServicesPage() {
                   onChange={(e) => setPriceFilter(e.target.value)}
                   className="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                 >
-                  <option value="all">{getText({ vi: 'Tất cả giá', en: 'All prices', zh_TW: '所有價格' })}</option>
-                  <option value="under-100k">{getText({ vi: 'Dưới 100k', en: 'Under 100k', zh_TW: '低於10萬' })}</option>
-                  <option value="100k-500k">{getText({ vi: '100k - 500k', en: '100k - 500k', zh_TW: '10萬至50萬' })}</option>
-                  <option value="over-500k">{getText({ vi: 'Trên 500k', en: 'Over 500k', zh_TW: '超過50萬' })}</option>
+                  <option value="all">{getText({ vi: 'Tất cả giá', en: 'All prices', zh_TW: '所有價格', zh_CN: '所有价格', ru: 'Все цены', kr: '모든 가격' })}</option>
+                  <option value="under-100k">{getText({ vi: 'Dưới 100k', en: 'Under 100k', zh_TW: '低於10萬', zh_CN: '低于10万', ru: 'Менее 100 тысяч', kr: '10만 미만' })}</option>
+                  <option value="100k-500k">{getText({ vi: '100k - 500k', en: '100k - 500k', zh_TW: '10萬至50萬', zh_CN: '10万至50万', ru: '100 тысяч - 500 тысяч', kr: '10만 - 50만' })}</option>
+                  <option value="over-500k">{getText({ vi: 'Trên 500k', en: 'Over 500k', zh_TW: '超過50萬', zh_CN: '超过50万', ru: 'Более 500 тысяч', kr: '50만 이상' })}</option>
                 </select>
               </div>
 
@@ -297,10 +328,10 @@ export default function ServicesPage() {
                   onChange={(e) => setSortBy(e.target.value)}
                   className="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                 >
-                  <option value="popular">{getText({ vi: 'Phổ biến nhất', en: 'Most popular', zh_TW: '最受歡迎' })}</option>
-                  <option value="price-low">{getText({ vi: 'Giá thấp đến cao', en: 'Price low to high', zh_TW: '價格由低到高' })}</option>
-                  <option value="price-high">{getText({ vi: 'Giá cao đến thấp', en: 'Price high to low', zh_TW: '價格由高到低' })}</option>
-                  <option value="rating">{getText({ vi: 'Đánh giá cao nhất', en: 'Highest rated', zh_TW: '評分最高' })}</option>
+                  <option value="popular">{getText({ vi: 'Phổ biến nhất', en: 'Most popular', zh_TW: '最受歡迎', zh_CN: '最受欢迎', ru: 'Самый популярный', kr: '가장 인기 있는' })}</option>
+                  <option value="price-low">{getText({ vi: 'Giá thấp đến cao', en: 'Price low to high', zh_TW: '價格由低到高', zh_CN: '价格由低到高', ru: 'Цена от низкой до высокой', kr: '가격이 낮은 것부터 높은 것까지' })}</option>
+                  <option value="price-high">{getText({ vi: 'Giá cao đến thấp', en: 'Price high to low', zh_TW: '價格由高到低', zh_CN: '价格由高到低', ru: 'Цена от высокой до низкой', kr: '가격이 높은 것부터 낮은 것까지' })}</option>
+                  <option value="rating">{getText({ vi: 'Đánh giá cao nhất', en: 'Highest rated', zh_TW: '評分最高', zh_CN: '评分最高', ru: 'Самый высокий рейтинг', kr: '가장 높은 평점' })}</option>
                 </select>
               </div>
             </div>
@@ -309,19 +340,25 @@ export default function ServicesPage() {
           {/* Category Tabs */}
           <div className="bg-white rounded-lg shadow-sm p-4 mb-6">
             <div className="flex flex-wrap gap-2">
-              {['all', ...categories].map(category => (
+              {['all', ...sortedCategories].map(category => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                     selectedCategory === category 
-                      ? 'bg-purple-600 text-white' 
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      ? category === 'ai'
+                        ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg'
+                        : 'bg-purple-600 text-white'
+                      : category === 'ai'
+                        ? 'bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 hover:from-purple-200 hover:to-indigo-200 border border-purple-300'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
                   {category === 'all' 
                     ? getText({ vi: 'Tất cả', en: 'All', zh_TW: '全部', zh_CN: '全部', ru: 'Все', kr: '모든' })
-                    : getText(categoryLabels[category] || { vi: category, en: category, zh_TW: category })
+                    : category === 'ai'
+                      ? `🤖 ${getText(categoryLabels[category] || { vi: category, en: category, zh_TW: category })}`
+                      : getText(categoryLabels[category] || { vi: category, en: category, zh_TW: category })
                   }
                 </button>
               ))}
@@ -340,7 +377,7 @@ export default function ServicesPage() {
       <section className="py-8 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold text-center mb-8">
-            {getText({ vi: 'Tại sao chọn chúng tôi?', en: 'Why choose us?', zh_TW: '為什麼選擇我們？' })}
+            {getText({ vi: 'Tại sao chọn chúng tôi?', en: 'Why choose us?', zh_TW: '為什麼選擇我們？', zh_CN: '为什么选择我们？', ru: 'Почему выбрать нас?', kr: '왜 우리를 선택해야 하는가?' })}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -349,10 +386,10 @@ export default function ServicesPage() {
                 <FaShieldAlt className="text-blue-600 text-2xl" />
               </div>
               <h3 className="font-semibold mb-2">
-                {getText({ vi: 'Uy tín đảm bảo', en: 'Guaranteed reliability', zh_TW: '保證可靠' })}
+                {getText({ vi: 'Uy tín đảm bảo', en: 'Guaranteed reliability', zh_TW: '保證可靠', zh_CN: '保证可靠', ru: 'Гарантируем надежность', kr: '신뢰성 보장' })}
               </h3>
               <p className="text-gray-600 text-sm">
-                {getText({ vi: 'Tài khoản chính hãng, bảo hành dài hạn', en: 'Genuine accounts, long-term warranty', zh_TW: '正版帳戶，長期保固' })}
+                {getText({ vi: 'Tài khoản chính hãng, bảo hành dài hạn', en: 'Genuine accounts, long-term warranty', zh_TW: '正版帳戶，長期保固', zh_CN: '正版账户，长期保固', ru: 'Надежные учетные записи, долгосрочная гарантия', kr: '신뢰할 수 있는 계정, 장기 보증' })}
               </p>
             </div>
             
@@ -361,10 +398,10 @@ export default function ServicesPage() {
                 <FaRocket className="text-green-600 text-2xl" />
               </div>
               <h3 className="font-semibold mb-2">
-                {getText({ vi: 'Giao hàng nhanh', en: 'Fast delivery', zh_TW: '快速交付' })}
+                {getText({ vi: 'Giao hàng nhanh', en: 'Fast delivery', zh_TW: '快速交付', zh_CN: '快速交付', ru: 'Быстрая доставка', kr: '빠른 배송' })}
               </h3>
               <p className="text-gray-600 text-sm">
-                {getText({ vi: 'Giao tài khoản tự động 24/7', en: 'Automatic account delivery 24/7', zh_TW: '24/7自動帳戶交付' })}
+                {getText({ vi: 'Giao tài khoản tự động 24/7', en: 'Automatic account delivery 24/7', zh_TW: '24/7自動帳戶交付', zh_CN: '24/7自动账户交付', ru: 'Автоматическая доставка учетной записи 24/7', kr: '24/7 자동 계정 전송' })}
               </p>
             </div>
             
@@ -373,10 +410,10 @@ export default function ServicesPage() {
                 <FaTags className="text-purple-600 text-2xl" />
               </div>
               <h3 className="font-semibold mb-2">
-                {getText({ vi: 'Giá tốt nhất', en: 'Best prices', zh_TW: '最優價格' })}
+                {getText({ vi: 'Giá tốt nhất', en: 'Best prices', zh_TW: '最優價格', zh_CN: '最优价格', ru: 'Лучшие цены', kr: '최저 가격' })}
               </h3>
               <p className="text-gray-600 text-sm">
-                {getText({ vi: 'Cam kết giá rẻ nhất thị trường', en: 'Committed to the lowest market prices', zh_TW: '承諾市場最低價格' })}
+                {getText({ vi: 'Cam kết giá rẻ nhất thị trường', en: 'Committed to the lowest market prices', zh_TW: '承諾市場最低價格', zh_CN: '承诺市场最低价格', ru: 'Гарантируем самые низкие цены на рынке', kr: '최저 시장 가격 보장' })}
               </p>
             </div>
           </div>

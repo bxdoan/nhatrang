@@ -1,5 +1,221 @@
 [
   {
+    "id": "gemini-ultra-1m-basic",
+    "slug": "gemini-ultra-1-month-basic",
+    "name": {
+      "vi": "Google Gemini Ultra 1 Tháng - Cơ Bản",
+      "en": "Google Gemini Ultra 1 Month - Basic",
+      "zh_TW": "Google Gemini Ultra 1個月 - 基本版",
+      "zh_CN": "Google Gemini Ultra 1个月 - 基础版",
+      "ru": "Google Gemini Ultra 1 месяц - Базовый",
+      "kr": "Google Gemini Ultra 1개월 - 기본"
+    },
+    "description": {
+      "vi": "Tài khoản Google Gemini Ultra Pro - AI thông minh nhất từ Google với tất cả tính năng premium, phiên bản cơ bản không bảo hành",
+      "en": "Google Gemini Ultra Pro account - Google's most advanced AI with all premium features, basic version without warranty",
+      "zh_TW": "Google Gemini Ultra Pro帳戶 - Google最先進的AI含所有高級功能，基本版無保固",
+      "zh_CN": "Google Gemini Ultra Pro账户 - Google最先进的AI含所有高级功能，基础版无保修",
+      "ru": "Аккаунт Google Gemini Ultra Pro - самый продвинутый ИИ от Google со всеми премиум функциями, базовая версия без гарантии",
+      "kr": "Google Gemini Ultra Pro 계정 - 모든 프리미엄 기능을 갖춘 Google의 가장 고급 AI, 보증 없는 기본 버전"
+    },
+    "features": {
+      "vi": ["Gemini 2.5 Pro + Deep Think (sắp ra mắt)", "Veo 3 video generation không giới hạn", "Flow - AI filmmaking với Veo 3 + premium features", "Whisk - Image-to-video cao cấp với Veo 2", "12,000 AI credits hàng tháng", "NotebookLM với highest limits", "Gemini trong Gmail, Docs với highest limits", "Project Mariner early access", "YouTube Premium individual plan", "30TB storage cho Photos, Drive, Gmail"],
+      "en": ["Gemini 2.5 Pro + Deep Think (coming soon)", "Veo 3 video generation unlimited", "Flow - AI filmmaking with Veo 3 + premium features", "Whisk - Premium image-to-video with Veo 2", "12,000 monthly AI credits", "NotebookLM with highest limits", "Gemini in Gmail, Docs with highest limits", "Project Mariner early access", "YouTube Premium individual plan", "30TB storage for Photos, Drive, Gmail"],
+      "zh_TW": ["Gemini 2.5 Pro + Deep Think (即將推出)", "Veo 3無限影片生成", "Flow - 含Veo 3的AI電影製作+高級功能", "Whisk - Veo 2高級圖像轉影片", "每月12,000 AI點數", "NotebookLM最高限制", "Gmail、Docs中Gemini最高限制", "Project Mariner搶先體驗", "YouTube Premium個人方案", "Photos、Drive、Gmail 30TB儲存"],
+      "zh_CN": ["Gemini 2.5 Pro + Deep Think (即将推出)", "Veo 3无限视频生成", "Flow - 含Veo 3的AI电影制作+高级功能", "Whisk - Veo 2高级图像转视频", "每月12,000 AI积分", "NotebookLM最高限制", "Gmail、Docs中Gemini最高限制", "Project Mariner抢先体验", "YouTube Premium个人方案", "Photos、Drive、Gmail 30TB存储"],
+      "ru": ["Gemini 2.5 Pro + Deep Think (скоро)", "Неограниченная генерация видео Veo 3", "Flow - создание фильмов ИИ с Veo 3 + премиум функциями", "Whisk - премиум изображение в видео с Veo 2", "12,000 ИИ кредитов в месяц", "NotebookLM с максимальными лимитами", "Gemini в Gmail, Docs с максимальными лимитами", "Ранний доступ к Project Mariner", "Индивидуальный план YouTube Premium", "30TB хранилища для Photos, Drive, Gmail"],
+      "kr": ["Gemini 2.5 Pro + Deep Think (출시 예정)", "Veo 3 무제한 동영상 생성", "Flow - Veo 3 AI 영화 제작 + 프리미엄 기능", "Whisk - Veo 2 프리미엄 이미지-동영상 변환", "월 12,000 AI 크레딧", "NotebookLM 최고 한도", "Gmail, Docs의 Gemini 최고 한도", "Project Mariner 얼리 액세스", "YouTube Premium 개인 플랜", "Photos, Drive, Gmail용 30TB 저장소"]
+    },
+    "price": 80000,
+    "price_original": 120000,
+    "categories": ["ai", "productivity"],
+    "image": "/images/services/gemini-ultra.jpg",
+    "rating": 4.8,
+    "sold": 450,
+    "warranty": 0,
+    "auto_delivery": true
+  },
+  {
+    "id": "gemini-ultra-1m-premium",
+    "slug": "gemini-ultra-1-month-premium",
+    "name": {
+      "vi": "Google Gemini Ultra 1 Tháng - Premium",
+      "en": "Google Gemini Ultra 1 Month - Premium",
+      "zh_TW": "Google Gemini Ultra 1個月 - 高級版",
+      "zh_CN": "Google Gemini Ultra 1个月 - 高级版",
+      "ru": "Google Gemini Ultra 1 месяц - Премиум",
+      "kr": "Google Gemini Ultra 1개월 - 프리미엄"
+    },
+    "description": {
+      "vi": "Tài khoản Google Gemini Ultra Pro - AI thông minh nhất từ Google với tất cả tính năng premium, phiên bản premium có bảo hành",
+      "en": "Google Gemini Ultra Pro account - Google's most advanced AI with all premium features, premium version with warranty",
+      "zh_TW": "Google Gemini Ultra Pro帳戶 - Google最先進的AI含所有高級功能，高級版含保固",
+      "zh_CN": "Google Gemini Ultra Pro账户 - Google最先进的AI含所有高级功能，高级版含保修",
+      "ru": "Аккаунт Google Gemini Ultra Pro - самый продвинутый ИИ от Google со всеми премиум функциями, премиум версия с гарантией",
+      "kr": "Google Gemini Ultra Pro 계정 - 모든 프리미엄 기능을 갖춘 Google의 가장 고급 AI, 보증 포함 프리미엄 버전"
+    },
+    "features": {
+      "vi": ["Gemini 2.5 Pro + Deep Think (sắp ra mắt)", "Veo 3 video generation không giới hạn", "Flow - AI filmmaking với Veo 3 + premium features", "Whisk - Image-to-video cao cấp với Veo 2", "12,000 AI credits hàng tháng", "NotebookLM với highest limits + 5x Audio Overviews", "Gemini trong Gmail, Docs với highest limits", "Project Mariner early access", "YouTube Premium individual plan", "30TB storage cho Photos, Drive, Gmail", "Hỗ trợ 24/7"],
+      "en": ["Gemini 2.5 Pro + Deep Think (coming soon)", "Veo 3 video generation unlimited", "Flow - AI filmmaking with Veo 3 + premium features", "Whisk - Premium image-to-video with Veo 2", "12,000 monthly AI credits", "NotebookLM with highest limits + 5x Audio Overviews", "Gemini in Gmail, Docs with highest limits", "Project Mariner early access", "YouTube Premium individual plan", "30TB storage for Photos, Drive, Gmail", "24/7 Support"],
+      "zh_TW": ["Gemini 2.5 Pro + Deep Think (即將推出)", "Veo 3無限影片生成", "Flow - 含Veo 3的AI電影製作+高級功能", "Whisk - Veo 2高級圖像轉影片", "每月12,000 AI點數", "NotebookLM最高限制+5倍音頻概述", "Gmail、Docs中Gemini最高限制", "Project Mariner搶先體驗", "YouTube Premium個人方案", "Photos、Drive、Gmail 30TB儲存", "24/7客服"],
+      "zh_CN": ["Gemini 2.5 Pro + Deep Think (即将推出)", "Veo 3无限视频生成", "Flow - 含Veo 3的AI电影制作+高级功能", "Whisk - Veo 2高级图像转视频", "每月12,000 AI积分", "NotebookLM最高限制+5倍音频概述", "Gmail、Docs中Gemini最高限制", "Project Mariner抢先体验", "YouTube Premium个人方案", "Photos、Drive、Gmail 30TB存储", "24/7客服"],
+      "ru": ["Gemini 2.5 Pro + Deep Think (скоро)", "Неограниченная генерация видео Veo 3", "Flow - создание фильмов ИИ с Veo 3 + премиум функциями", "Whisk - премиум изображение в видео с Veo 2", "12,000 ИИ кредитов в месяц", "NotebookLM с максимальными лимитами + 5x аудио-обзоры", "Gemini в Gmail, Docs с максимальными лимитами", "Ранний доступ к Project Mariner", "Индивидуальный план YouTube Premium", "30TB хранилища для Photos, Drive, Gmail", "Поддержка 24/7"],
+      "kr": ["Gemini 2.5 Pro + Deep Think (출시 예정)", "Veo 3 무제한 동영상 생성", "Flow - Veo 3 AI 영화 제작 + 프리미엄 기능", "Whisk - Veo 2 프리미엄 이미지-동영상 변환", "월 12,000 AI 크레딧", "NotebookLM 최고 한도 + 5배 오디오 개요", "Gmail, Docs의 Gemini 최고 한도", "Project Mariner 얼리 액세스", "YouTube Premium 개인 플랜", "Photos, Drive, Gmail용 30TB 저장소", "24/7 지원"]
+    },
+    "price": 150000,
+    "price_original": 200000,
+    "categories": ["ai", "productivity"],
+    "image": "/images/services/gemini-ultra.jpg",
+    "rating": 4.9,
+    "sold": 280,
+    "warranty": 30,
+    "auto_delivery": true
+  },
+  {
+    "id": "gemini-ultra-1m-private",
+    "slug": "gemini-ultra-1-month-private",
+    "name": {
+      "vi": "Google Gemini Ultra 1 Tháng - Tài Khoản Dùng Riêng",
+      "en": "Google Gemini Ultra 1 Month - Private Account",
+      "zh_TW": "Google Gemini Ultra 1個月 - 私人帳戶",
+      "zh_CN": "Google Gemini Ultra 1个月 - 私人账户",
+      "ru": "Google Gemini Ultra 1 месяц - Личный аккаунт",
+      "kr": "Google Gemini Ultra 1개월 - 개인 계정"
+    },
+    "description": {
+      "vi": "Tài khoản Google Gemini Ultra Pro dùng riêng hoàn toàn - Bảo mật tuyệt đối, không chia sẻ với ai, đầy đủ tính năng Ultra Pro",
+      "en": "Completely private Google Gemini Ultra Pro account - Absolute security, not shared with anyone, full Ultra Pro features",
+      "zh_TW": "完全私人的Google Gemini Ultra Pro帳戶 - 絕對安全，不與任何人共享，完整Ultra Pro功能",
+      "zh_CN": "完全私人的Google Gemini Ultra Pro账户 - 绝对安全，不与任何人共享，完整Ultra Pro功能",
+      "ru": "Полностью личный аккаунт Google Gemini Ultra Pro - Абсолютная безопасность, не делится ни с кем, полные функции Ultra Pro",
+      "kr": "완전히 개인적인 Google Gemini Ultra Pro 계정 - 절대적인 보안, 누구와도 공유하지 않음, 전체 Ultra Pro 기능"
+    },
+    "features": {
+      "vi": ["Tài khoản dùng riêng 100%", "Gemini 2.5 Pro + Deep Think unlimited", "Veo 3 video generation không giới hạn", "Flow - AI filmmaking với Veo 3 + premium features", "Whisk - Image-to-video cao cấp với Veo 2", "20,000 AI credits hàng tháng", "NotebookLM với highest limits + 10x Audio Overviews", "Gemini trong Gmail, Docs với highest limits", "Project Mariner early access", "YouTube Premium individual plan", "50TB storage cho Photos, Drive, Gmail", "Bảo mật tuyệt đối", "Hỗ trợ VIP 24/7"],
+      "en": ["100% private account", "Unlimited Gemini 2.5 Pro + Deep Think", "Veo 3 video generation unlimited", "Flow - AI filmmaking with Veo 3 + premium features", "Whisk - Premium image-to-video with Veo 2", "20,000 monthly AI credits", "NotebookLM with highest limits + 10x Audio Overviews", "Gemini in Gmail, Docs with highest limits", "Project Mariner early access", "YouTube Premium individual plan", "50TB storage for Photos, Drive, Gmail", "Absolute security", "VIP 24/7 support"],
+      "zh_TW": ["100%私人帳戶", "無限制Gemini 2.5 Pro + Deep Think", "Veo 3無限影片生成", "Flow - 含Veo 3的AI電影製作+高級功能", "Whisk - Veo 2高級圖像轉影片", "每月20,000 AI點數", "NotebookLM最高限制+10倍音頻概述", "Gmail、Docs中Gemini最高限制", "Project Mariner搶先體驗", "YouTube Premium個人方案", "Photos、Drive、Gmail 50TB儲存", "絕對安全", "VIP 24/7客服"],
+      "zh_CN": ["100%私人账户", "无限制Gemini 2.5 Pro + Deep Think", "Veo 3无限视频生成", "Flow - 含Veo 3的AI电影制作+高级功能", "Whisk - Veo 2高级图像转视频", "每月20,000 AI积分", "NotebookLM最高限制+10倍音频概述", "Gmail、Docs中Gemini最高限制", "Project Mariner抢先体验", "YouTube Premium个人方案", "Photos、Drive、Gmail 50TB存储", "绝对安全", "VIP 24/7客服"],
+      "ru": ["100% личный аккаунт", "Неограниченный Gemini 2.5 Pro + Deep Think", "Неограниченная генерация видео Veo 3", "Flow - создание фильмов ИИ с Veo 3 + премиум функциями", "Whisk - премиум изображение в видео с Veo 2", "20,000 ИИ кредитов в месяц", "NotebookLM с максимальными лимитами + 10x аудио-обзоры", "Gemini в Gmail, Docs с максимальными лимитами", "Ранний доступ к Project Mariner", "Индивидуальный план YouTube Premium", "50TB хранилища для Photos, Drive, Gmail", "Абсолютная безопасность", "VIP поддержка 24/7"],
+      "kr": ["100% 개인 계정", "무제한 Gemini 2.5 Pro + Deep Think", "Veo 3 무제한 동영상 생성", "Flow - Veo 3 AI 영화 제작 + 프리미엄 기능", "Whisk - Veo 2 프리미엄 이미지-동영상 변환", "월 20,000 AI 크레딧", "NotebookLM 최고 한도 + 10배 오디오 개요", "Gmail, Docs의 Gemini 최고 한도", "Project Mariner 얼리 액세스", "YouTube Premium 개인 플랜", "Photos, Drive, Gmail용 50TB 저장소", "절대적인 보안", "VIP 24/7 지원"]
+    },
+    "price": 420000,
+    "price_original": 550000,
+    "categories": ["ai", "productivity"],
+    "image": "/images/services/gemini-ultra.jpg",
+    "rating": 5.0,
+    "sold": 65,
+    "warranty": 30,
+    "auto_delivery": true
+  },
+  {
+    "id": "chatgpt-plus-1m-basic",
+    "slug": "chatgpt-plus-1-month-basic",
+    "name": {
+      "vi": "ChatGPT Plus 1 Tháng - Cơ Bản",
+      "en": "ChatGPT Plus 1 Month - Basic",
+      "zh_TW": "ChatGPT Plus 1個月 - 基本版",
+      "zh_CN": "ChatGPT Plus 1个月 - 基础版",
+      "ru": "ChatGPT Plus 1 месяц - Базовый",
+      "kr": "ChatGPT Plus 1개월 - 기본"
+    },
+    "description": {
+      "vi": "Tài khoản ChatGPT Plus - AI chatbot mạnh mẽ từ OpenAI, phiên bản cơ bản không bảo hành",
+      "en": "ChatGPT Plus account - Powerful AI chatbot from OpenAI, basic version without warranty",
+      "zh_TW": "ChatGPT Plus帳戶 - OpenAI強大的AI聊天機器人，基本版無保固",
+      "zh_CN": "ChatGPT Plus账户 - OpenAI强大的AI聊天机器人，基础版无保修",
+      "ru": "Аккаунт ChatGPT Plus - мощный ИИ-чатбот от OpenAI, базовая версия без гарантии",
+      "kr": "ChatGPT Plus 계정 - OpenAI의 강력한 AI 챗봇, 보증 없는 기본 버전"
+    },
+    "features": {
+      "vi": ["Truy cập GPT-4", "Ưu tiên trong giờ cao điểm", "Phản hồi nhanh hơn", "Plugin và web browsing"],
+      "en": ["Access to GPT-4", "Priority during peak hours", "Faster response", "Plugins and web browsing"],
+      "zh_TW": ["存取GPT-4", "高峰時段優先", "更快回應", "外掛程式和網路瀏覽"],
+      "zh_CN": ["访问GPT-4", "高峰时段优先", "更快响应", "插件和网络浏览"],
+      "ru": ["Доступ к GPT-4", "Приоритет в пиковые часы", "Более быстрый ответ", "Плагины и веб-браузинг"],
+      "kr": ["GPT-4 액세스", "피크 시간 우선권", "빠른 응답", "플러그인 및 웹 브라우징"]
+    },
+    "price": 80000,
+    "price_original": 110000,
+    "categories": ["ai", "productivity"],
+    "image": "/images/services/chatgpt-plus.jpg",
+    "rating": 4.7,
+    "sold": 520,
+    "warranty": 0,
+    "auto_delivery": true
+  },
+  {
+    "id": "chatgpt-plus-1m-premium",
+    "slug": "chatgpt-plus-1-month-premium",
+    "name": {
+      "vi": "ChatGPT Plus 1 Tháng - Premium",
+      "en": "ChatGPT Plus 1 Month - Premium",
+      "zh_TW": "ChatGPT Plus 1個月 - 高級版",
+      "zh_CN": "ChatGPT Plus 1个月 - 高级版",
+      "ru": "ChatGPT Plus 1 месяц - Премиум",
+      "kr": "ChatGPT Plus 1개월 - 프리미엄"
+    },
+    "description": {
+      "vi": "Tài khoản ChatGPT Plus - AI chatbot mạnh mẽ từ OpenAI, phiên bản premium có bảo hành",
+      "en": "ChatGPT Plus account - Powerful AI chatbot from OpenAI, premium version with warranty",
+      "zh_TW": "ChatGPT Plus帳戶 - OpenAI強大的AI聊天機器人，高級版含保固",
+      "zh_CN": "ChatGPT Plus账户 - OpenAI强大的AI聊天机器人，高级版含保修",
+      "ru": "Аккаунт ChatGPT Plus - мощный ИИ-чатбот от OpenAI, премиум версия с гарантией",
+      "kr": "ChatGPT Plus 계정 - OpenAI의 강력한 AI 챗봇, 보증 포함 프리미엄 버전"
+    },
+    "features": {
+      "vi": ["Truy cập GPT-4", "Ưu tiên trong giờ cao điểm", "Phản hồi nhanh hơn", "Plugin và web browsing", "Hỗ trợ 24/7"],
+      "en": ["Access to GPT-4", "Priority during peak hours", "Faster response", "Plugins and web browsing", "24/7 Support"],
+      "zh_TW": ["存取GPT-4", "高峰時段優先", "更快回應", "外掛程式和網路瀏覽", "24/7客服"],
+      "zh_CN": ["访问GPT-4", "高峰时段优先", "更快响应", "插件和网络浏览", "24/7客服"],
+      "ru": ["Доступ к GPT-4", "Приоритет в пиковые часы", "Более быстрый ответ", "Плагины и веб-браузинг", "Поддержка 24/7"],
+      "kr": ["GPT-4 액세스", "피크 시간 우선권", "빠른 응답", "플러그인 및 웹 브라우징", "24/7 지원"]
+    },
+    "price": 150000,
+    "price_original": 190000,
+    "categories": ["ai", "productivity"],
+    "image": "/images/services/chatgpt-plus.jpg",
+    "rating": 4.8,
+    "sold": 320,
+    "warranty": 30,
+    "auto_delivery": true
+  },
+  {
+    "id": "chatgpt-plus-1m-private",
+    "slug": "chatgpt-plus-1-month-private",
+    "name": {
+      "vi": "ChatGPT Plus 1 Tháng - Tài Khoản Dùng Riêng",
+      "en": "ChatGPT Plus 1 Month - Private Account",
+      "zh_TW": "ChatGPT Plus 1個月 - 私人帳戶",
+      "zh_CN": "ChatGPT Plus 1个月 - 私人账户",
+      "ru": "ChatGPT Plus 1 месяц - Личный аккаунт",
+      "kr": "ChatGPT Plus 1개월 - 개인 계정"
+    },
+    "description": {
+      "vi": "Tài khoản ChatGPT Plus dùng riêng hoàn toàn - Bảo mật tuyệt đối, không chia sẻ với ai",
+      "en": "Completely private ChatGPT Plus account - Absolute security, not shared with anyone",
+      "zh_TW": "完全私人的ChatGPT Plus帳戶 - 絕對安全，不與任何人共享",
+      "zh_CN": "完全私人的ChatGPT Plus账户 - 绝对安全，不与任何人共享",
+      "ru": "Полностью личный аккаунт ChatGPT Plus - Абсолютная безопасность, не делится ни с кем",
+      "kr": "완전히 개인적인 ChatGPT Plus 계정 - 절대적인 보안, 누구와도 공유하지 않음"
+    },
+    "features": {
+      "vi": ["Tài khoản dùng riêng 100%", "Truy cập GPT-4 unlimited", "Ưu tiên cao nhất", "Phản hồi siêu nhanh", "Plugin và web browsing", "Custom GPTs", "DALL-E 3 image generation", "Advanced data analysis", "Bảo mật tuyệt đối", "Hỗ trợ VIP 24/7"],
+      "en": ["100% private account", "Unlimited GPT-4 access", "Highest priority", "Super fast response", "Plugins and web browsing", "Custom GPTs", "DALL-E 3 image generation", "Advanced data analysis", "Absolute security", "VIP 24/7 support"],
+      "zh_TW": ["100%私人帳戶", "無限制GPT-4存取", "最高優先級", "超快回應", "外掛程式和網路瀏覽", "自訂GPT", "DALL-E 3圖像生成", "進階資料分析", "絕對安全", "VIP 24/7客服"],
+      "zh_CN": ["100%私人账户", "无限制GPT-4访问", "最高优先级", "超快响应", "插件和网络浏览", "自定义GPT", "DALL-E 3图像生成", "高级数据分析", "绝对安全", "VIP 24/7客服"],
+      "ru": ["100% личный аккаунт", "Неограниченный доступ к GPT-4", "Наивысший приоритет", "Сверхбыстрый ответ", "Плагины и веб-браузинг", "Пользовательские GPT", "Генерация изображений DALL-E 3", "Продвинутый анализ данных", "Абсолютная безопасность", "VIP поддержка 24/7"],
+      "kr": ["100% 개인 계정", "무제한 GPT-4 액세스", "최고 우선순위", "초고속 응답", "플러그인 및 웹 브라우징", "커스텀 GPT", "DALL-E 3 이미지 생성", "고급 데이터 분석", "절대적인 보안", "VIP 24/7 지원"]
+    },
+    "price": 420000,
+    "price_original": 550000,
+    "categories": ["ai", "productivity"],
+    "image": "/images/services/chatgpt-plus.jpg",
+    "rating": 5.0,
+    "sold": 85,
+    "warranty": 30,
+    "auto_delivery": true
+  },
+  {
     "id": "youtube-premium-1m",
     "slug": "youtube-premium-1-month",
     "name": {
@@ -248,150 +464,6 @@
     "image": "/images/services/canva-pro.jpg",
     "rating": 4.7,
     "sold": 670,
-    "warranty": 30,
-    "auto_delivery": true
-  },
-  {
-    "id": "gemini-ultra-1m-basic",
-    "slug": "gemini-ultra-1-month-basic",
-    "name": {
-      "vi": "Google Gemini Ultra 1 Tháng - Cơ Bản",
-      "en": "Google Gemini Ultra 1 Month - Basic",
-      "zh_TW": "Google Gemini Ultra 1個月 - 基本版",
-      "zh_CN": "Google Gemini Ultra 1个月 - 基础版",
-      "ru": "Google Gemini Ultra 1 месяц - Базовый",
-      "kr": "Google Gemini Ultra 1개월 - 기본"
-    },
-    "description": {
-      "vi": "Tài khoản Google Gemini Ultra - AI thông minh nhất từ Google, phiên bản cơ bản không bảo hành",
-      "en": "Google Gemini Ultra account - Google's most advanced AI, basic version without warranty",
-      "zh_TW": "Google Gemini Ultra帳戶 - Google最先進的AI，基本版無保固",
-      "zh_CN": "Google Gemini Ultra账户 - Google最先进的AI，基础版无保修",
-      "ru": "Аккаунт Google Gemini Ultra - самый продвинутый ИИ от Google, базовая версия без гарантии",
-      "kr": "Google Gemini Ultra 계정 - Google의 가장 고급 AI, 보증 없는 기본 버전"
-    },
-    "features": {
-      "vi": ["Truy cập Gemini Ultra model", "Xử lý văn bản nâng cao", "Phân tích hình ảnh", "Coding assistant"],
-      "en": ["Access to Gemini Ultra model", "Advanced text processing", "Image analysis", "Coding assistant"],
-      "zh_TW": ["存取Gemini Ultra模型", "進階文字處理", "圖像分析", "程式設計助手"],
-      "zh_CN": ["访问Gemini Ultra模型", "高级文本处理", "图像分析", "编程助手"],
-      "ru": ["Доступ к модели Gemini Ultra", "Расширенная обработка текста", "Анализ изображений", "Помощник программиста"],
-      "kr": ["Gemini Ultra 모델 액세스", "고급 텍스트 처리", "이미지 분석", "코딩 어시스턴트"]
-    },
-    "price": 80000,
-    "price_original": 120000,
-    "categories": ["ai", "productivity"],
-    "image": "/images/services/gemini-ultra.jpg",
-    "rating": 4.8,
-    "sold": 450,
-    "warranty": 0,
-    "auto_delivery": true
-  },
-  {
-    "id": "gemini-ultra-1m-premium",
-    "slug": "gemini-ultra-1-month-premium",
-    "name": {
-      "vi": "Google Gemini Ultra 1 Tháng - Premium",
-      "en": "Google Gemini Ultra 1 Month - Premium",
-      "zh_TW": "Google Gemini Ultra 1個月 - 高級版",
-      "zh_CN": "Google Gemini Ultra 1个月 - 高级版",
-      "ru": "Google Gemini Ultra 1 месяц - Премиум",
-      "kr": "Google Gemini Ultra 1개월 - 프리미엄"
-    },
-    "description": {
-      "vi": "Tài khoản Google Gemini Ultra - AI thông minh nhất từ Google, phiên bản premium có bảo hành",
-      "en": "Google Gemini Ultra account - Google's most advanced AI, premium version with warranty",
-      "zh_TW": "Google Gemini Ultra帳戶 - Google最先進的AI，高級版含保固",
-      "zh_CN": "Google Gemini Ultra账户 - Google最先进的AI，高级版含保修",
-      "ru": "Аккаунт Google Gemini Ultra - самый продвинутый ИИ от Google, премиум версия с гарантией",
-      "kr": "Google Gemini Ultra 계정 - Google의 가장 고급 AI, 보증 포함 프리미엄 버전"
-    },
-    "features": {
-      "vi": ["Truy cập Gemini Ultra model", "Xử lý văn bản nâng cao", "Phân tích hình ảnh", "Coding assistant", "Hỗ trợ 24/7"],
-      "en": ["Access to Gemini Ultra model", "Advanced text processing", "Image analysis", "Coding assistant", "24/7 Support"],
-      "zh_TW": ["存取Gemini Ultra模型", "進階文字處理", "圖像分析", "程式設計助手", "24/7客服"],
-      "zh_CN": ["访问Gemini Ultra模型", "高级文本处理", "图像分析", "编程助手", "24/7客服"],
-      "ru": ["Доступ к модели Gemini Ultra", "Расширенная обработка текста", "Анализ изображений", "Помощник программиста", "Поддержка 24/7"],
-      "kr": ["Gemini Ultra 모델 액세스", "고급 텍스트 처리", "이미지 분석", "코딩 어시스턴트", "24/7 지원"]
-    },
-    "price": 150000,
-    "price_original": 200000,
-    "categories": ["ai", "productivity"],
-    "image": "/images/services/gemini-ultra.jpg",
-    "rating": 4.9,
-    "sold": 280,
-    "warranty": 30,
-    "auto_delivery": true
-  },
-  {
-    "id": "chatgpt-plus-1m-basic",
-    "slug": "chatgpt-plus-1-month-basic",
-    "name": {
-      "vi": "ChatGPT Plus 1 Tháng - Cơ Bản",
-      "en": "ChatGPT Plus 1 Month - Basic",
-      "zh_TW": "ChatGPT Plus 1個月 - 基本版",
-      "zh_CN": "ChatGPT Plus 1个月 - 基础版",
-      "ru": "ChatGPT Plus 1 месяц - Базовый",
-      "kr": "ChatGPT Plus 1개월 - 기본"
-    },
-    "description": {
-      "vi": "Tài khoản ChatGPT Plus - AI chatbot mạnh mẽ từ OpenAI, phiên bản cơ bản không bảo hành",
-      "en": "ChatGPT Plus account - Powerful AI chatbot from OpenAI, basic version without warranty",
-      "zh_TW": "ChatGPT Plus帳戶 - OpenAI強大的AI聊天機器人，基本版無保固",
-      "zh_CN": "ChatGPT Plus账户 - OpenAI强大的AI聊天机器人，基础版无保修",
-      "ru": "Аккаунт ChatGPT Plus - мощный ИИ-чатбот от OpenAI, базовая версия без гарантии",
-      "kr": "ChatGPT Plus 계정 - OpenAI의 강력한 AI 챗봇, 보증 없는 기본 버전"
-    },
-    "features": {
-      "vi": ["Truy cập GPT-4", "Ưu tiên trong giờ cao điểm", "Phản hồi nhanh hơn", "Plugin và web browsing"],
-      "en": ["Access to GPT-4", "Priority during peak hours", "Faster response", "Plugins and web browsing"],
-      "zh_TW": ["存取GPT-4", "高峰時段優先", "更快回應", "外掛程式和網路瀏覽"],
-      "zh_CN": ["访问GPT-4", "高峰时段优先", "更快响应", "插件和网络浏览"],
-      "ru": ["Доступ к GPT-4", "Приоритет в пиковые часы", "Более быстрый ответ", "Плагины и веб-браузинг"],
-      "kr": ["GPT-4 액세스", "피크 시간 우선권", "빠른 응답", "플러그인 및 웹 브라우징"]
-    },
-    "price": 80000,
-    "price_original": 110000,
-    "categories": ["ai", "productivity"],
-    "image": "/images/services/chatgpt-plus.jpg",
-    "rating": 4.7,
-    "sold": 520,
-    "warranty": 0,
-    "auto_delivery": true
-  },
-  {
-    "id": "chatgpt-plus-1m-premium",
-    "slug": "chatgpt-plus-1-month-premium",
-    "name": {
-      "vi": "ChatGPT Plus 1 Tháng - Premium",
-      "en": "ChatGPT Plus 1 Month - Premium",
-      "zh_TW": "ChatGPT Plus 1個月 - 高級版",
-      "zh_CN": "ChatGPT Plus 1个月 - 高级版",
-      "ru": "ChatGPT Plus 1 месяц - Премиум",
-      "kr": "ChatGPT Plus 1개월 - 프리미엄"
-    },
-    "description": {
-      "vi": "Tài khoản ChatGPT Plus - AI chatbot mạnh mẽ từ OpenAI, phiên bản premium có bảo hành",
-      "en": "ChatGPT Plus account - Powerful AI chatbot from OpenAI, premium version with warranty",
-      "zh_TW": "ChatGPT Plus帳戶 - OpenAI強大的AI聊天機器人，高級版含保固",
-      "zh_CN": "ChatGPT Plus账户 - OpenAI强大的AI聊天机器人，高级版含保修",
-      "ru": "Аккаунт ChatGPT Plus - мощный ИИ-чатбот от OpenAI, премиум версия с гарантией",
-      "kr": "ChatGPT Plus 계정 - OpenAI의 강력한 AI 챗봇, 보증 포함 프리미엄 버전"
-    },
-    "features": {
-      "vi": ["Truy cập GPT-4", "Ưu tiên trong giờ cao điểm", "Phản hồi nhanh hơn", "Plugin và web browsing", "Hỗ trợ 24/7"],
-      "en": ["Access to GPT-4", "Priority during peak hours", "Faster response", "Plugins and web browsing", "24/7 Support"],
-      "zh_TW": ["存取GPT-4", "高峰時段優先", "更快回應", "外掛程式和網路瀏覽", "24/7客服"],
-      "zh_CN": ["访问GPT-4", "高峰时段优先", "更快响应", "插件和网络浏览", "24/7客服"],
-      "ru": ["Доступ к GPT-4", "Приоритет в пиковые часы", "Более быстрый ответ", "Плагины и веб-браузинг", "Поддержка 24/7"],
-      "kr": ["GPT-4 액세스", "피크 시간 우선권", "빠른 응답", "플러그인 및 웹 브라우징", "24/7 지원"]
-    },
-    "price": 150000,
-    "price_original": 190000,
-    "categories": ["ai", "productivity"],
-    "image": "/images/services/chatgpt-plus.jpg",
-    "rating": 4.8,
-    "sold": 320,
     "warranty": 30,
     "auto_delivery": true
   }

@@ -190,10 +190,10 @@ export default function ServiceCard({ service, onZaloClick }: ServiceCardProps) 
             {/* Stats */}
             <div className="flex items-center justify-between text-xs text-gray-500 mt-2">
               <span>
-                {getText({ vi: 'Đã bán', en: 'Sold', zh_TW: '已售' })}: {service.sold}
+                {getText({ vi: 'Đã bán', en: 'Sold', zh_TW: '已售', zh_CN: '已售', ru: 'Продано', kr: '판매됨' })}: {service.sold}
               </span>
               <span>
-                {getText({ vi: 'Bảo hành', en: 'Warranty', zh_TW: '保固' })}: {service.warranty} {getText({ vi: 'ngày', en: 'days', zh_TW: '天' })}
+                {getText({ vi: 'Bảo hành', en: 'Warranty', zh_TW: '保固', zh_CN: '保固', ru: 'Гарантия', kr: '보증' })}: {service.warranty} {getText({ vi: 'ngày', en: 'days', zh_TW: '天', zh_CN: '天', ru: 'дней', kr: '일' })}
               </span>
             </div>
           </div>
