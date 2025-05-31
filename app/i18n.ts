@@ -49,6 +49,7 @@ export interface TranslationStructure {
     flights: string;
     accommodations: string;
     food: string;
+    services: string;
     contact: string;
   };
   footer: {
