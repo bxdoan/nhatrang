@@ -9,6 +9,10 @@ import { redis,
   NO_LIMIT
 } from './redis-config';
 
+// Global flag để ngăn multiple API calls cùng lúc
+let isApiCallInProgress = false;
+const apiCallQueue = new Map<string, Promise<any>>();
+
 // Kiểm tra xem dữ liệu cache có khả dụng và còn mới không
 export async function getCachedFlightData(cacheKey = 'default') {
   try {
@@ -73,13 +77,19 @@ export async function cacheFlightData(data: any, cacheKey = 'default') {
   }
 }
 
-// Kiểm tra và cập nhật số lần gọi API trong ngày
+// Kiểm tra và cập nhật số lần gọi API trong ngày với debounce
 export async function checkAndUpdateApiCallLimit() {
   try {
     // Nếu NO_LIMIT=true, bỏ qua giới hạn API
     if (NO_LIMIT) {
       console.log('Bỏ qua kiểm tra giới hạn API do NO_LIMIT=true');
       return true;
+    }
+    
+    // Kiểm tra nếu đang có API call khác đang thực hiện
+    if (isApiCallInProgress) {
+      console.log('API call đang trong tiến trình, từ chối request mới');
+      return false;
     }
     
     const today = format(new Date(), 'yyyy-MM-dd');
@@ -90,6 +100,7 @@ export async function checkAndUpdateApiCallLimit() {
       await redis.set(API_CALL_COUNT_KEY, '1');
       await redis.set(API_CALL_DATE_KEY, today);
       console.log(`Bắt đầu đếm API call cho ngày mới: ${today}`);
+      isApiCallInProgress = true;
       return true;
     }
     
@@ -105,6 +116,7 @@ export async function checkAndUpdateApiCallLimit() {
     // Tăng số lần gọi API
     await redis.set(API_CALL_COUNT_KEY, (callCount + 1).toString());
     console.log(`Đã sử dụng ${callCount + 1}/${MAX_API_CALLS_PER_DAY} lần gọi API trong ngày`);
+    isApiCallInProgress = true;
     return true;
   } catch (error) {
     console.error('Lỗi khi kiểm tra giới hạn API:', error);
@@ -113,10 +125,57 @@ export async function checkAndUpdateApiCallLimit() {
   }
 }
 
-// Lấy thông tin về số lần gọi API và thời gian cache
-export async function getCacheStats() {
+// Reset API call flag sau khi hoàn thành
+export function resetApiCallFlag() {
+  isApiCallInProgress = false;
+}
+
+// Debounced API call để tránh multiple calls
+export async function debouncedApiCall<T>(
+  key: string, 
+  apiCallFunction: () => Promise<T>,
+  debounceMs: number = 1000
+): Promise<T> {
+  // Kiểm tra xem có API call nào đang pending cho cùng key không
+  if (apiCallQueue.has(key)) {
+    console.log(`API call cho key ${key} đang pending, sử dụng promise hiện tại`);
+    return apiCallQueue.get(key)!;
+  }
+  
+  // Tạo promise mới cho API call
+  const apiPromise = new Promise<T>(async (resolve, reject) => {
+    try {
+      // Debounce delay
+      await new Promise(r => setTimeout(r, debounceMs));
+      
+      // Kiểm tra lại xem có API call khác đã hoàn thành không
+      if (apiCallQueue.has(key)) {
+        const result = await apiCallFunction();
+        resolve(result);
+      } else {
+        resolve(await apiCallFunction());
+      }
+    } catch (error) {
+      reject(error);
+    } finally {
+      // Cleanup
+      apiCallQueue.delete(key);
+      resetApiCallFlag();
+    }
+  });
+  
+  // Lưu promise vào queue
+  apiCallQueue.set(key, apiPromise);
+  
+  return apiPromise;
+}
+
+// Lấy thông tin về số lần gọi API và thời gian cache với cache key mặc định
+export async function getCacheStats(cacheKey = 'flights_100_0') {
   try {
-    const timestampStr = await redis.get(CACHE_TIMESTAMP_KEY);
+    // Sử dụng cacheKey giống như trong các function khác
+    const timestampKey = `${CACHE_TIMESTAMP_KEY}:${cacheKey}`;
+    const timestampStr = await redis.get(timestampKey);
     const callCountStr = await redis.get(API_CALL_COUNT_KEY);
     const callDate = await redis.get(API_CALL_DATE_KEY) || format(new Date(), 'yyyy-MM-dd');
     

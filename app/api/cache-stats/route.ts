@@ -8,7 +8,11 @@ export const dynamic = 'force-dynamic';
 // API route để xem thông tin về cache
 export async function GET(request: Request) {
   try {
-    const stats = await getCacheStats();
+    // Sử dụng cache key mặc định giống như trong flights API
+    const { searchParams } = new URL(request.url);
+    const cacheKey = searchParams.get('cacheKey') || 'flights_100_0';
+    
+    const stats = await getCacheStats(cacheKey);
     
     return NextResponse.json({
       cache: {

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import axios from 'axios';
 
 // Types
@@ -96,6 +96,11 @@ export default function useFlights() {
     hasMore: false
   });
 
+  // Refs để track API calls và tránh multiple calls
+  const isLoadingRef = useRef(false);
+  const abortControllerRef = useRef<AbortController | null>(null);
+  const lastFetchParamsRef = useRef<string>('');
+
   // Hàm loại bỏ chuyến bay trùng lặp
   const removeDuplicateFlights = (flights: Flight[]): Flight[] => {
     const uniqueFlights = new Map<string, Flight>();
@@ -154,14 +159,54 @@ export default function useFlights() {
     });
   };
 
-  // Hàm fetch dữ liệu với tham số phân trang
-  const fetchFlights = useCallback(async (limit = 100, offset = 0) => {
+  // Hàm fetch dữ liệu với tham số phân trang và debounce
+  const fetchFlights = useCallback(async (limit = 100, offset = 0, forceRefresh = false) => {
+    const fetchKey = `${limit}_${offset}_${forceRefresh}`;
+    
+    // Tránh duplicate calls với cùng params
+    if (lastFetchParamsRef.current === fetchKey && !forceRefresh) {
+      console.log('Bỏ qua fetch vì params giống nhau:', fetchKey);
+      return;
+    }
+    
+    // Tránh multiple concurrent calls
+    if (isLoadingRef.current && !forceRefresh) {
+      console.log('Bỏ qua fetch vì đang có call khác đang thực hiện');
+      return;
+    }
+
     try {
+      // Cancel previous request if any
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+      
+      // Create new abort controller
+      abortControllerRef.current = new AbortController();
+      
+      isLoadingRef.current = true;
       setLoading(true);
       setError(null);
+      lastFetchParamsRef.current = fetchKey;
+      
+      // Build URL with params
+      const params = new URLSearchParams({
+        limit: limit.toString(),
+        offset: offset.toString()
+      });
+      
+      if (forceRefresh) {
+        params.append('refresh', 'true');
+      }
       
       // Call our API route with pagination params
-      const response = await axios.get<FlightsResponse>(`/api/flights?limit=${limit}&offset=${offset}`);
+      const response = await axios.get<FlightsResponse>(
+        `/api/flights?${params.toString()}`,
+        {
+          signal: abortControllerRef.current.signal,
+          timeout: 30000  // 30 seconds timeout
+        }
+      );
       
       // Extract cache info
       if (response.data.cache) {
@@ -194,6 +239,12 @@ export default function useFlights() {
         setFlights([]);
       }
     } catch (err: any) {
+      // Ignore aborted requests
+      if (err.name === 'AbortError' || err.code === 'ERR_CANCELED') {
+        console.log('Request bị hủy');
+        return;
+      }
+      
       console.error('Error fetching flights:', err);
       
       // Nếu lỗi liên quan đến giới hạn API
@@ -204,32 +255,60 @@ export default function useFlights() {
         if (err.response?.data?.cache) {
           setCacheInfo(err.response.data.cache);
         }
+      } else if (err.code === 'ECONNABORTED' || err.message.includes('timeout')) {
+        setError('Timeout khi tải dữ liệu. Vui lòng thử lại.');
       } else {
         setError('Không thể tải dữ liệu chuyến bay. Vui lòng thử lại sau.');
       }
       
       setFlights([]);
     } finally {
+      isLoadingRef.current = false;
       setLoading(false);
     }
-  }, []);
+  }, []); // Empty dependencies để tránh re-render
 
-  // Hàm tải thêm dữ liệu
+  // Hàm tải thêm dữ liệu với debounce
   const loadMore = useCallback(async () => {
-    if (!pagination.hasMore || loading) return;
+    if (!pagination.hasMore || loading || isLoadingRef.current) {
+      console.log('Không thể load more:', { hasMore: pagination.hasMore, loading, isLoading: isLoadingRef.current });
+      return;
+    }
     
     const nextOffset = pagination.offset + pagination.limit;
     await fetchFlights(pagination.limit, nextOffset);
-  }, [pagination, loading, fetchFlights]);
+  }, [pagination.hasMore, pagination.offset, pagination.limit, loading, fetchFlights]);
 
-  // Hàm tải lại dữ liệu từ đầu
+  // Hàm tải lại dữ liệu từ đầu với debounce
   const refreshData = useCallback(async () => {
-    await fetchFlights(pagination.limit, 0);
+    if (isLoadingRef.current) {
+      console.log('Đang có refresh khác, bỏ qua');
+      return;
+    }
+    
+    await fetchFlights(pagination.limit, 0, true);
   }, [pagination.limit, fetchFlights]);
 
+  // Effect để fetch data lần đầu, chỉ chạy 1 lần
   useEffect(() => {
-    fetchFlights();
-  }, [fetchFlights]);
+    let mounted = true;
+    
+    const initialFetch = async () => {
+      if (mounted && !isLoadingRef.current) {
+        await fetchFlights();
+      }
+    };
+    
+    initialFetch();
+    
+    return () => {
+      mounted = false;
+      // Cleanup abort controller
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+    };
+  }, []); // Chỉ chạy 1 lần khi component mount
 
   return { 
     flights, 

@@ -4,11 +4,27 @@ import { FaInfoCircle, FaPlane } from 'react-icons/fa';
 import FlightCard from './FlightCard';
 import useFlights from '../hooks/useFlights';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useCallback, useRef } from 'react';
 
 export default function FlightSection({ showTitle = true }) {
   const { t } = useLanguage();
   // Fetch flights data using custom hook
   const { flights, loading, error, pagination, loadMore, refreshData } = useFlights();
+  
+  // Throttle refresh để tránh spam clicks
+  const lastRefreshRef = useRef<number>(0);
+  const REFRESH_THROTTLE_MS = 3000; // 3 giây
+  
+  const handleRefresh = useCallback(() => {
+    const now = Date.now();
+    if (now - lastRefreshRef.current < REFRESH_THROTTLE_MS) {
+      console.log('Refresh bị throttle, vui lòng đợi');
+      return;
+    }
+    
+    lastRefreshRef.current = now;
+    refreshData();
+  }, [refreshData]);
   
   return (
     <section className="py-12 bg-gray-50">
@@ -49,17 +65,20 @@ export default function FlightSection({ showTitle = true }) {
         {flights.length > 0 && (
           <div>
             <div className="flex flex-col md:flex-row justify-between items-center mb-6">
-              <p className="text-gray-700 mb-4 md:mb-0">{t.flights?.hero?.subtitle || 'Hiển thị {flights.length} chuyến bay đến sân bay Cam Ranh (CXR)'}</p>
+              <p className="text-gray-700 mb-4 md:mb-0">
+                Hiển thị {flights.length} chuyến bay đến sân bay Cam Ranh (CXR)
+              </p>
               <button 
-                onClick={refreshData}
+                onClick={handleRefresh}
                 disabled={loading}
-                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 flex items-center"
+                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 flex items-center disabled:cursor-not-allowed"
+                title={loading ? 'Đang cập nhật...' : 'Làm mới dữ liệu'}
               >
                 <svg className={`mr-2 h-4 w-4 ${loading ? 'animate-spin' : ''}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                {loading && (t.common?.loading || 'Đang cập nhật...')}
+                {loading ? 'Đang cập nhật...' : 'Làm mới'}
               </button>
             </div>
             
@@ -73,12 +92,12 @@ export default function FlightSection({ showTitle = true }) {
             {pagination.hasMore && (
               <div className="mt-10 text-center">
                 <p className="text-sm text-gray-500 mb-3">
-                 <strong>{flights.length} / {pagination.total} Flight</strong>
+                  Hiển thị <strong>{flights.length} / {pagination.total}</strong> chuyến bay
                 </p>
                 <button
                   onClick={loadMore}
                   disabled={loading}
-                  className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 inline-flex items-center"
+                  className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 inline-flex items-center disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <>
@@ -86,10 +105,10 @@ export default function FlightSection({ showTitle = true }) {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
-                      {t.common?.loading || 'Đang tải...'}
+                      Đang tải...
                     </>
                   ) : (
-                    t.flights?.hero?.subtitle || 'Xem thêm chuyến bay'
+                    'Xem thêm chuyến bay'
                   )}
                 </button>
               </div>

@@ -5,7 +5,9 @@ import {
   getCachedFlightData, 
   cacheFlightData, 
   checkAndUpdateApiCallLimit,
-  getCacheStats 
+  getCacheStats,
+  resetApiCallFlag,
+  debouncedApiCall
 } from '../../lib/cache-utils';
 
 // Đánh dấu route này là động
@@ -51,7 +53,7 @@ export async function GET(request: Request) {
         };
         
         try {
-          const cacheStats = await getCacheStats();
+          const cacheStats = await getCacheStats(cacheKey);
           if (cacheStats) {
             stats = cacheStats;
           }
@@ -71,17 +73,68 @@ export async function GET(request: Request) {
       }
     }
     
-    // Kiểm tra xem còn lượt gọi API không
-    let canCallApi = true;
-    try {
-      canCallApi = await checkAndUpdateApiCallLimit();
-    } catch (limitError) {
-      console.error('Lỗi khi kiểm tra giới hạn API:', limitError);
-      // Nếu không kiểm tra được, vẫn cho phép gọi API
-    }
+    // Sử dụng debounced API call để tránh multiple calls
+    const apiCallResult = await debouncedApiCall(
+      `flight_api_${cacheKey}`,
+      async () => {
+        // Kiểm tra xem còn lượt gọi API không
+        let canCallApi = true;
+        try {
+          canCallApi = await checkAndUpdateApiCallLimit();
+        } catch (limitError) {
+          console.error('Lỗi khi kiểm tra giới hạn API:', limitError);
+          // Nếu không kiểm tra được, vẫn cho phép gọi API
+        }
+        
+        if (!canCallApi) {
+          // Nếu hết lượt gọi API, trả về lỗi
+          let stats = { 
+            lastUpdate: '',
+            cacheAgeMinutes: 0,
+            cacheExpiryMinutes: 0, 
+            apiCallCount: 0,
+            apiCallDate: '',
+            maxApiCalls: MAX_API_CALLS_PER_DAY
+          };
+          
+          try {
+            const cacheStats = await getCacheStats(cacheKey);
+            if (cacheStats) {
+              stats = cacheStats;
+            }
+          } catch (statsError) {
+            console.error('Lỗi khi lấy thông tin cache:', statsError);
+          }
+          
+          throw new Error('API_LIMIT_REACHED');
+        }
+        
+        // Set up request parameters
+        const params = {
+          access_key: API_KEY,
+          arr_iata: AIRPORT_CODE,
+          limit: limit,
+          offset: offset
+        };
+
+        // Make request to AviationStack API
+        const response = await axios.get(BASE_URL, { params });
+        
+        // Lưu dữ liệu vào cache
+        try {
+          await cacheFlightData(response.data, cacheKey);
+        } catch (cacheError) {
+          console.error('Lỗi khi lưu cache:', cacheError);
+          // Tiếp tục mà không dừng nếu cache không hoạt động
+        }
+        
+        return response.data;
+      },
+      500  // 500ms debounce
+    );
     
-    if (!canCallApi) {
-      // Nếu hết lượt gọi API, trả về lỗi
+    // Kiểm tra nếu là lỗi giới hạn API
+    if (apiCallResult instanceof Error && apiCallResult.message === 'API_LIMIT_REACHED') {
       let stats = { 
         lastUpdate: '',
         cacheAgeMinutes: 0,
@@ -92,7 +145,7 @@ export async function GET(request: Request) {
       };
       
       try {
-        const cacheStats = await getCacheStats();
+        const cacheStats = await getCacheStats(cacheKey);
         if (cacheStats) {
           stats = cacheStats;
         }
@@ -103,7 +156,7 @@ export async function GET(request: Request) {
       return NextResponse.json({
         error: {
           message: 'Đã đạt giới hạn gọi API cho ngày hôm nay',
-          details: 'API chỉ được gọi 3 lần mỗi ngày'
+          details: `API chỉ được gọi ${MAX_API_CALLS_PER_DAY} lần mỗi ngày`
         },
         cache: {
           source: 'error',
@@ -111,25 +164,6 @@ export async function GET(request: Request) {
           noLimit: NO_LIMIT
         }
       }, { status: 429 });
-    }
-    
-    // Set up request parameters
-    const params = {
-      access_key: API_KEY,
-      arr_iata: AIRPORT_CODE,
-      limit: limit,
-      offset: offset
-    };
-
-    // Make request to AviationStack API
-    const response = await axios.get(BASE_URL, { params });
-    
-    // Lưu dữ liệu vào cache
-    try {
-      await cacheFlightData(response.data, cacheKey);
-    } catch (cacheError) {
-      console.error('Lỗi khi lưu cache:', cacheError);
-      // Tiếp tục mà không dừng nếu cache không hoạt động
     }
     
     // Lấy thông tin về cache cho client
@@ -143,7 +177,7 @@ export async function GET(request: Request) {
     };
     
     try {
-      const cacheStats = await getCacheStats();
+      const cacheStats = await getCacheStats(cacheKey);
       if (cacheStats) {
         stats = cacheStats;
       }
@@ -153,7 +187,7 @@ export async function GET(request: Request) {
     
     // Return the API response with cache info
     return NextResponse.json({
-      ...response.data,
+      ...apiCallResult,
       cache: {
         source: 'api',
         ...stats,
@@ -162,6 +196,9 @@ export async function GET(request: Request) {
     });
   } catch (error: any) {
     console.error('Error fetching flight data:', error);
+    
+    // Reset API call flag trong trường hợp lỗi
+    resetApiCallFlag();
     
     // Handle error
     return NextResponse.json(
@@ -177,7 +214,12 @@ export async function GET(request: Request) {
 // Endpoint để lấy thông tin cache
 export async function HEAD(request: Request) {
   try {
-    const stats = await getCacheStats();
+    const { searchParams } = new URL(request.url);
+    const limit = parseInt(searchParams.get('limit') || '100');
+    const offset = parseInt(searchParams.get('offset') || '0');
+    const cacheKey = `flights_${limit}_${offset}`;
+    
+    const stats = await getCacheStats(cacheKey);
     
     return NextResponse.json({ cache: stats });
   } catch (error) {
