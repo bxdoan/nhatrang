@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     locale: 'vi_VN',
     images: [
       {
-        url: `${SITE_URL}/images/car/nhatrang-car-rental-og.jpg`,
+        url: `${SITE_URL}/images/car/inova.jpg`,
         width: 1200,
         height: 630,
         alt: 'Thuê Xe Ô Tô Nha Trang - Dịch vụ đưa đón sân bay',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: `Thuê Xe Ô Tô Nha Trang - Đưa Đón Sân Bay`,
     description: 'Dịch vụ thuê xe ô tô và đưa đón sân bay Cam Ranh với tài xế chuyên nghiệp, xe đời mới.',
     images: [{
-      url: `${SITE_URL}/images/car/nhatrang-car-rental-og.jpg`,
+      url: `${SITE_URL}/images/car/inova.jpg`,
       alt: 'Thuê Xe Ô Tô Nha Trang',
     }],
   },
@@ -53,11 +53,11 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/car`,
     languages: {
       'vi-VN': `${SITE_URL}/car`,
-      'en-US': `${SITE_URL}/en/car`,
-      'ko-KR': `${SITE_URL}/kr/car`,
-      'zh-CN': `${SITE_URL}/zh_CN/car`,
-      'zh-TW': `${SITE_URL}/zh_TW/car`,
-      'ru-RU': `${SITE_URL}/ru/car`,
+      'en-US': `${SITE_URL}/car?lang=en`,
+      'ko-KR': `${SITE_URL}/car?lang=kr`,
+      'zh-CN': `${SITE_URL}/car?lang=zh_CN`,
+      'zh-TW': `${SITE_URL}/car?lang=zh_TW`,
+      'ru-RU': `${SITE_URL}/car?lang=ru`,
     },
   },
   robots: {

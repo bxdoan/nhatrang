@@ -424,6 +424,115 @@ export const BUS_PAGE_SCHEMA = {
   ]
 };
 
+// Schema.org structured data cho trang Services
+export const SERVICES_PAGE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': ['WebPage', 'Service'],
+  name: `Dịch vụ số uy tín tại Nha Trang | ${SITE_NAME}`,
+  url: `${SITE_URL}/services`,
+  description: 'Cung cấp tài khoản và dịch vụ số chính hãng: YouTube Premium, Google Drive, Netflix, TikTok, Facebook, Instagram với giá tốt nhất tại Nha Trang.',
+  provider: {
+    '@type': 'Organization',
+    name: SITE_NAME,
+    url: SITE_URL,
+    telephone: CONTACT_INFO.phone,
+    email: CONTACT_INFO.email,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Nha Trang',
+      addressRegion: 'Khánh Hòa',
+      addressCountry: 'VN'
+    }
+  },
+  serviceArea: {
+    '@type': 'City',
+    name: 'Nha Trang',
+    containedInPlace: {
+      '@type': 'AdministrativeArea',
+      name: 'Khánh Hòa'
+    }
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Danh mục dịch vụ số',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: 'YouTube Premium',
+        description: 'Tài khoản YouTube Premium chính hãng, không quảng cáo',
+        category: 'Entertainment',
+        availability: 'https://schema.org/InStock',
+        priceRange: '50000-200000',
+        priceCurrency: 'VND'
+      },
+      {
+        '@type': 'Offer', 
+        name: 'Google Drive Storage',
+        description: 'Dung lượng Google Drive unlimited, bảo hành dài hạn',
+        category: 'Storage',
+        availability: 'https://schema.org/InStock',
+        priceRange: '100000-500000',
+        priceCurrency: 'VND'
+      },
+      {
+        '@type': 'Offer',
+        name: 'AI Services',
+        description: 'Dịch vụ trí tuệ nhân tạo: ChatGPT, Claude, Midjourney',
+        category: 'AI',
+        availability: 'https://schema.org/InStock',
+        priceRange: '200000-1000000',
+        priceCurrency: 'VND'
+      }
+    ]
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.8',
+    reviewCount: '150',
+    bestRating: '5',
+    worstRating: '1'
+  }
+};
+
+// Function để tạo schema cho service detail
+export const createServiceDetailSchema = (service: any) => ({
+  '@context': 'https://schema.org',
+  '@type': ['WebPage', 'Product', 'Service'],
+  name: `${service.name.vi} | ${SITE_NAME}`,
+  url: `${SITE_URL}/services/${service.slug}`,
+  description: service.description.vi,
+  image: service.image,
+  offers: {
+    '@type': 'Offer',
+    name: service.name.vi,
+    description: service.description.vi,
+    price: service.price,
+    priceCurrency: 'VND',
+    availability: service.auto_delivery ? 'https://schema.org/InStock' : 'https://schema.org/PreOrder',
+    seller: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+      telephone: CONTACT_INFO.phone,
+      email: CONTACT_INFO.email
+    },
+    warranty: service.warranty ? `${service.warranty} tháng` : undefined,
+    deliveryMethod: service.auto_delivery ? 'Tự động' : 'Thủ công'
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: service.rating.toString(),
+    reviewCount: service.sold.toString(),
+    bestRating: '5',
+    worstRating: '1'
+  },
+  category: service.categories.join(', '),
+  brand: {
+    '@type': 'Brand',
+    name: service.categories[0] // Lấy category đầu tiên làm brand
+  }
+});
+
 // Schema.org structured data cho trang Taxi
 export const TAXI_PAGE_SCHEMA = {
   '@context': 'https://schema.org',
@@ -952,4 +1061,52 @@ export const RIDE_HAILING_PAGE_SCHEMA = {
       value: '24/7 với ứng dụng, 05:00-23:00 xe ôm truyền thống'
     }
   ]
-}; 
+};
+
+// Function để tạo metadata cho service detail page
+export function generateServiceMetadata(service: any) {
+  const serviceName = service.name.vi;
+  const serviceDescription = service.description.vi;
+  const title = `${serviceName} - Giá ${service.price.toLocaleString()}đ | ${SITE_NAME}`;
+  const description = `${serviceDescription} Giá chỉ ${service.price.toLocaleString()}đ. ${service.auto_delivery ? 'Giao tự động 24/7' : 'Hỗ trợ tận tình'}. Bảo hành ${service.warranty} tháng.`;
+  
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_URL}/services/${service.slug}`,
+      type: 'website',
+      images: [
+        {
+          url: service.image,
+          width: 800,
+          height: 600,
+          alt: serviceName,
+        },
+      ],
+      siteName: SITE_NAME,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [service.image],
+    },
+    alternates: {
+      canonical: `${SITE_URL}/services/${service.slug}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+  };
+} 

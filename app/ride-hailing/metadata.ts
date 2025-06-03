@@ -19,7 +19,9 @@ export const metadata: Metadata = {
     'so sánh app xe ôm',
     'xe ôm du lịch Nha Trang',
     'transportation Nha Trang',
-    'di chuyển bằng xe ôm'
+    'di chuyển bằng xe ôm',
+    'ride-hailing Nha Trang',
+    'ride-hailing Vietnam',
   ],
   authors: [{ name: 'Nha Trang Insight' }],
   creator: 'Nha Trang Insight',
@@ -44,7 +46,7 @@ export const metadata: Metadata = {
     description: 'Hướng dẫn đầy đủ về dịch vụ xe ôm truyền thống và xe ôm công nghệ tại Nha Trang. So sánh giá cước Grab, Maxim.',
     images: [
       {
-        url: 'https://nhatranginsight.com/images/ride-hailing/xe-om-nha-trang-og.jpg',
+        url: 'https://nhatranginsight.com/images/ride-hailing/maxim.jpg',
         width: 1200,
         height: 630,
         alt: 'Xe ôm và xe ôm công nghệ tại Nha Trang',
@@ -55,18 +57,18 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Xe Ôm & Xe Ôm Công Nghệ Nha Trang - Grab, Maxim',
     description: 'Hướng dẫn đầy đủ về dịch vụ xe ôm truyền thống và xe ôm công nghệ tại Nha Trang. So sánh giá cước và tips an toàn.',
-    images: ['https://nhatranginsight.com/images/ride-hailing/xe-om-nha-trang-twitter.jpg'],
+    images: ['https://nhatranginsight.com/images/ride-hailing/maxim.jpg'],
     creator: '@nhatranginsight',
   },
   alternates: {
     canonical: 'https://nhatranginsight.com/ride-hailing',
     languages: {
       'vi-VN': 'https://nhatranginsight.com/ride-hailing',
-      'en-US': 'https://nhatranginsight.com/en/ride-hailing',
-      'ko-KR': 'https://nhatranginsight.com/kr/ride-hailing',
-      'zh-CN': 'https://nhatranginsight.com/zh_CN/ride-hailing',
-      'zh-TW': 'https://nhatranginsight.com/zh_TW/ride-hailing',
-      'ru-RU': 'https://nhatranginsight.com/ru/ride-hailing',
+      'en-US': 'https://nhatranginsight.com/ride-hailing?lang=en',
+      'ko-KR': 'https://nhatranginsight.com/ride-hailing?lang=kr',
+      'zh-CN': 'https://nhatranginsight.com/ride-hailing?lang=zh_CN',
+      'zh-TW': 'https://nhatranginsight.com/ride-hailing?lang=zh_TW',
+      'ru-RU': 'https://nhatranginsight.com/ride-hailing?lang=ru',
     },
   },
   other: {

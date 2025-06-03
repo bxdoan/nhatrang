@@ -1,9 +1,10 @@
 import { SITE_URL } from './lib/metadata';
+import servicesData from './data/services.json';
 
 export default function sitemap() {
   const currentDate = new Date().toISOString();
 
-  const routes = [
+  const staticRoutes = [
     {
       url: `${SITE_URL}`,
       lastModified: currentDate,
@@ -14,6 +15,18 @@ export default function sitemap() {
       url: `${SITE_URL}/flights`,
       lastModified: currentDate,
       changeFrequency: 'hourly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/services`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/bus`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
       priority: 0.9,
     },
     {
@@ -54,5 +67,13 @@ export default function sitemap() {
     },
   ];
 
-  return routes;
+  // Thêm các service detail pages
+  const serviceRoutes = servicesData.map(service => ({
+    url: `${SITE_URL}/services/${service.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes];
 } 

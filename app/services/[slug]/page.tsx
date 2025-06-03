@@ -13,7 +13,12 @@ import {
   FaShieldAlt,
   FaGift,
   FaUsers,
-  FaClock
+  FaClock,
+  FaShoppingCart,
+  FaChevronLeft,
+  FaCheckCircle,
+  FaTag,
+  FaPhoneAlt
 } from 'react-icons/fa';
 import { useParams } from 'next/navigation';
 import servicesData from '../../data/services.json';
@@ -21,6 +26,8 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { useLocalizedLink } from '../../hooks/useLocalizedLink';
 import ContactSection from '../../components/ContactSection';
 import { CONTACT_INFO } from '../../lib/contact-config';
+import { createServiceDetailSchema } from '../../lib/metadata';
+import Script from 'next/script';
 
 // Định nghĩa kiểu dữ liệu cho service
 interface Service {
@@ -65,6 +72,7 @@ export default function ServiceDetailPage() {
   const { t, locale } = useLanguage();
   const { createLink } = useLocalizedLink();
   const [service, setService] = useState<Service | null>(null);
+  const [relatedServices, setRelatedServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
   const [imageError, setImageError] = useState(false);
 
@@ -73,6 +81,16 @@ export default function ServiceDetailPage() {
     const foundService = servicesData.find((s: any) => s.slug === slug);
     setService(foundService || null);
     setLoading(false);
+
+    if (foundService) {
+      const related = servicesData
+        .filter(s => 
+          s.slug !== slug && 
+          s.categories.some(cat => foundService.categories.includes(cat))
+        )
+        .slice(0, 3);
+      setRelatedServices(related);
+    }
   }, [params.slug]);
 
   // Hàm format giá
@@ -97,8 +115,12 @@ export default function ServiceDetailPage() {
     return featuresObj[currentLocale] || featuresObj.zh_CN || featuresObj.ru || featuresObj.kr || featuresObj.en || featuresObj.vi;
   };
 
-  const handleZaloClick = () => {
-    console.log('Zalo clicked for service:', service ? getText(service.name) : '');
+  const handleOrderClick = () => {
+    // Analytics tracking
+    console.log('Order clicked for service:', service?.name.vi);
+    
+    // Redirect to Telegram or contact
+    window.open(CONTACT_INFO.socialMedia.telegram, '_blank');
   };
 
   // Function để lấy icon theo categories
@@ -179,6 +201,8 @@ export default function ServiceDetailPage() {
       </div>
     );
   }
+
+  const discountPercentage = Math.round(((service.price_original - service.price) / service.price_original) * 100);
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -278,26 +302,14 @@ export default function ServiceDetailPage() {
                 </div>
               </div>
 
-              {/* Features List */}
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="text-lg font-semibold mb-4">
-                  {getText({ 
-                    vi: 'Tính năng nổi bật', 
-                    en: 'Key Features', 
-                    zh_TW: '主要功能',
-                    zh_CN: '主要功能',
-                    ru: 'Основные функции',
-                    kr: '주요 기능'
-                  })}
-                </h3>
-                <ul className="space-y-3">
-                  {getFeatures(service.features).map((feature, index) => (
-                    <li key={index} className="flex items-start">
-                      <FaCheck className="text-green-500 mr-3 mt-1 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+              {/* Features */}
+              <div className="space-y-2 mb-6">
+                {(service.features[locale as keyof typeof service.features] || service.features.vi).slice(0, 3).map((feature: string, index: number) => (
+                  <div key={index} className="flex items-center gap-2">
+                    <FaCheckCircle className="text-green-400 flex-shrink-0" />
+                    <span className="text-purple-100">{feature}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -382,23 +394,23 @@ export default function ServiceDetailPage() {
                 </div>
 
                 {/* Order Button */}
-                <a
-                  href={`https://zalo.me/${CONTACT_INFO.phoneNumber}?text=${encodeURIComponent(`Tôi muốn mua dịch vụ: ${getText(service.name)} - Giá: ${formatPrice(service.price)}`)}`}
-                  onClick={handleZaloClick}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-green-600 hover:bg-green-700 text-white py-4 px-6 rounded-lg flex items-center justify-center text-lg font-semibold transition-colors mb-4"
-                >
-                  <FaWhatsapp className="mr-3 text-xl" />
-                  {getText({ 
-                    vi: 'Đặt mua qua Zalo', 
-                    en: 'Order via Zalo', 
-                    zh_TW: '透過Zalo訂購',
-                    zh_CN: '通过Zalo订购',
-                    ru: 'Заказать через Zalo',
-                    kr: 'Zalo로 주문하기'
-                  })}
-                </a>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    onClick={handleOrderClick}
+                    className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all flex items-center gap-2"
+                  >
+                    <FaShoppingCart />
+                    Đặt ngay
+                  </button>
+                  
+                  <a
+                    href={`tel:${CONTACT_INFO.phoneNumber}`}
+                    className="bg-white border-2 border-purple-600 text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-all flex items-center gap-2"
+                  >
+                    <FaPhoneAlt />
+                    Gọi ngay
+                  </a>
+                </div>
 
                 <p className="text-center text-sm text-gray-600">
                   {getText({ 
@@ -465,6 +477,70 @@ export default function ServiceDetailPage() {
         </div>
       </section>
 
+      {/* Features Detail */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-center mb-8">Tính năng chi tiết</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {(service.features[locale as keyof typeof service.features] || service.features.vi).map((feature: string, index: number) => (
+                <div key={index} className="bg-white rounded-lg p-6 shadow-sm border">
+                  <div className="flex items-start gap-3">
+                    <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="text-gray-800">{feature}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      {relatedServices.length > 0 && (
+        <section className="py-12 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl font-bold text-center mb-8">Dịch vụ liên quan</h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {relatedServices.map(relatedService => (
+                  <Link 
+                    key={relatedService.id}
+                    href={createLink(`/services/${relatedService.slug}`)}
+                    className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    <div className="p-6">
+                      <img 
+                        src={relatedService.image} 
+                        alt={getText(relatedService.name)}
+                        className="w-full h-32 object-cover rounded-lg mb-4"
+                      />
+                      
+                      <h3 className="font-semibold mb-2">{getText(relatedService.name)}</h3>
+                      
+                      <div className="flex items-center justify-between">
+                        <span className="text-purple-600 font-bold">
+                          {relatedService.price.toLocaleString()} đ
+                        </span>
+                        
+                        <div className="flex items-center gap-1">
+                          <FaStar className="text-yellow-400 text-sm" />
+                          <span className="text-sm text-gray-600">{relatedService.rating}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Contact Section */}
       <section className="py-8 bg-white">
         <div className="container mx-auto px-4">
@@ -489,6 +565,43 @@ export default function ServiceDetailPage() {
           />
         </div>
       </section>
+
+      {/* Schema.org JSON-LD cho Service Detail */}
+      <Script
+        id="schema-service-detail"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(createServiceDetailSchema(service)) }}
+      />
+
+      {/* Breadcrumb Schema */}
+      <Script
+        id="schema-breadcrumb"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Trang chủ',
+              item: 'https://yourwebsite.com'
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Dịch vụ',
+              item: 'https://yourwebsite.com/services'
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: getText(service.name),
+              item: `https://yourwebsite.com/services/${service.slug}`
+            }
+          ]
+        }) }}
+      />
     </div>
   );
 } 

@@ -1,8 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { format } from 'date-fns';
-import { FaSearch, FaPlane, FaInfoCircle, FaUmbrellaBeach, FaHotel, FaBus, FaMotorcycle, FaCar, FaTaxi, FaShoppingCart } from 'react-icons/fa';
+import {
+  FaBus,
+  FaMotorcycle,
+  FaCar,
+  FaTaxi,
+  FaShoppingCart
+} from 'react-icons/fa';
 import Link from 'next/link';
 import Script from 'next/script';
 import { HOMEPAGE_SCHEMA } from './lib/metadata';

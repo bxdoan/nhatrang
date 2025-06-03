@@ -17,6 +17,7 @@ import { useLocalizedLink } from '../hooks/useLocalizedLink';
 import ContactSection from '../components/ContactSection';
 import ServicesGrid from '../components/ServicesGrid';
 import { CONTACT_INFO } from '../lib/contact-config';
+import { SERVICES_PAGE_SCHEMA } from '../lib/metadata';
 
 // Định nghĩa kiểu dữ liệu cho service
 interface Service {
@@ -280,7 +281,7 @@ export default function ServicesPage() {
               zh_TW: '聯繫我們諮詢和支持芽莊的數位帳戶服務',
               zh_CN: '联系我们咨询和支持芽庄的数字账户服务',
               ru: 'Свяжитесь с нами для консультации и поддержки услуг учетной записи в Нха Трэнг',
-              kr: '우리에게 문의하여 나홀 수준의 수位 계정 서비스에 대한 상담 및 지원을 받으세요'
+              kr: '우리에게 문의하여 나홀 수준의 수위 계정 서비스에 대한 상담 및 지원을 받으세요'
             })}
             bgColor="bg-purple-50"
           />
@@ -420,38 +421,44 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Schema.org JSON-LD */}
+      {/* Schema.org JSON-LD cho Services Page */}
       <Script
-        id="schema-services"
+        id="schema-services-page"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICES_PAGE_SCHEMA) }}
+      />
+
+      {/* Schema.org JSON-LD cho danh sách services */}
+      <Script
+        id="schema-services-list"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
           '@context': 'https://schema.org',
-          '@type': 'WebPage',
-          name: getText({ vi: 'Dịch vụ số uy tín', en: 'Trusted Digital Services', zh_TW: '可信的數位服務' }),
-          description: getText({ 
-            vi: 'Tài khoản và dịch vụ chính hãng YouTube, Google, TikTok với giá tốt nhất', 
-            en: 'Genuine YouTube, Google, TikTok accounts and services at the best prices',
-            zh_TW: '正版YouTube、Google、TikTok帳戶和服務，價格最優惠'
-          }),
-          url: `https://yourwebsite.com/services`,
-          mainEntity: {
-            '@type': 'ItemList',
-            numberOfItems: services.length,
-            itemListElement: services.map((service, index) => ({
-              '@type': 'ListItem',
-              position: index + 1,
-              item: {
-                '@type': 'Service',
-                name: getText(service.name),
-                description: getText(service.description),
-                offers: {
-                  '@type': 'Offer',
-                  price: service.price,
-                  priceCurrency: 'VND'
-                }
+          '@type': 'ItemList',
+          name: getText({ vi: 'Danh sách dịch vụ số', en: 'Digital Services List', zh_TW: '數位服務清單' }),
+          numberOfItems: services.length,
+          itemListElement: services.map((service, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            item: {
+              '@type': 'Service',
+              '@id': `${getText({ vi: 'https://yourwebsite.com', en: 'https://yourwebsite.com', zh_TW: 'https://yourwebsite.com' })}/services/${service.slug}`,
+              name: getText(service.name),
+              description: getText(service.description),
+              image: service.image,
+              offers: {
+                '@type': 'Offer',
+                price: service.price,
+                priceCurrency: 'VND',
+                availability: service.auto_delivery ? 'https://schema.org/InStock' : 'https://schema.org/PreOrder'
+              },
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: service.rating,
+                reviewCount: service.sold
               }
-            }))
-          }
+            }
+          }))
         }) }}
       />
     </div>
