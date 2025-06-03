@@ -6175,7 +6175,10 @@
     "name_en": "Route 2: Binh Tan - Le Hong Phong - Thanh",
     "color": "#FFD700",
     "hotline": "0583551699",
-    "stops": [ "stop34", "stop35", "stop36", "stop37" ],
+    "stops": [
+      "stop34", "stop35", "stop36", "stop37", "stop38", "stop39", "stop40", "stop41", "stop42", 
+      "stop11", "stop12", "stop15", "stop16", "stop43"
+    ],
     "schedule": ["5:25 - 19:10", "Mỗi 25 phút/chuyến"],
     "fare": 7000,
     "fare_monthly": 220000,
@@ -6553,8 +6556,8 @@
         12.22205
       ],
       [
-        109.20215,
-        12.22305
+        109.20207,
+        12.22302
       ],
       [
         109.20173,
@@ -6917,8 +6920,8 @@
         12.24501
       ],
       [
-        109.19158,
-        12.24591
+        109.191635,
+        12.245352
       ],
       [
         109.19156,

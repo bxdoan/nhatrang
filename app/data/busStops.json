@@ -101,8 +101,8 @@
     "id": "stop12",
     "name": "Ana Beach House",
     "name_en": "Ana Beach House",
-    "lat": 12.22466,
-    "lng": 109.20123,
+    "lat": 12.22302,
+    "lng": 109.20207,
     "description": "Ana Beach House",
     "description_en": "Ana Beach House"
   },
@@ -357,5 +357,32 @@
     "lng": 109.191045,
     "description": "Quang Trung - Sacombank",
     "description_en": "Quang Trung - Sacombank"
+  },
+  {
+    "id": "stop41",
+    "name": "Vong xoay ngã 7 - Quang Trung",
+    "name_en": "Roundabout 7 - Quang Trung",
+    "lat": 12.245352,
+    "lng": 109.191635,
+    "description": "Vong xoay ngã 7 - Quang Trung",
+    "description_en": "Roundabout 7 - Quang Trung"
+  },
+  {
+    "id": "stop42",
+    "name": "Galina Hotel",
+    "name_en": "Galina Hotel",
+    "lat": 12.23754,
+    "lng": 109.19528,
+    "description": "Galina Hotel",
+    "description_en": "Galina Hotel"
+  },
+  {
+    "id": "stop43",
+    "name": "Cổng KDT An Bình Tân",
+    "name_en": "An Binh Tan Gate",
+    "lat": 12.20901,
+    "lng": 109.18776,
+    "description": "Cổng KDT An Bình Tân",
+    "description_en": "An Binh Tan Gate"
   }
 ] 
