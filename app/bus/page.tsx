@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { FaBus, FaChevronLeft, FaMapMarkedAlt, FaInfoCircle, FaRoute, FaRegClock, FaExchangeAlt, FaSearch, FaRegDotCircle, FaRegCircle } from 'react-icons/fa';
 import Script from 'next/script';
 import BusPlanner from '../components/BusPlanner';
+import ApproximatePlanner from '../components/ApproximatePlanner';
 import ProvincialRoutes from '../components/ProvincialRoutes';
 import busStopsData from '../data/busStops.json';
 import busRoutesData from '../data/busRoutes.json';
@@ -243,8 +244,10 @@ export default function BusPage() {
       {/* Main Content */}
       <section className="flex-grow py-6 bg-gray-50">
         <div className="container mx-auto px-4">
+          <ApproximatePlanner />
           <BusPlanner />
           <ProvincialRoutes />
+          <div className="mb-4 rounded-lg bg-amber-50 p-4 text-sm text-amber-900">Bản đồ và danh sách bên dưới là dữ liệu cũ, chưa xác minh tọa độ, giá, lịch hoặc tình trạng hoạt động. Không dùng để xác định điểm đón hay lên kế hoạch chuyến đi.</div>
           <div className="flex flex-col lg:flex-row gap-6">
             {/* Sidebar */}
             <div className="lg:w-1/3 flex flex-col gap-4">

@@ -1,0 +1,6 @@
+route_id,min_km_inclusive,max_km_exclusive,fare_vnd,fare_type,source_url,document_part,verified_at
+KH-BUS-11,0,20,15000,single_ride_distance_band,https://sxd.khanhhoa.gov.vn/Portals/0/QD%20du%20chnh%20Tuyn%20s%2011%20%20Nha%20Trang%20di%20Phan%20Rang-Thap%20Cham%20va%20nguc%20li_signed_signed_signed.pdf,Phụ lục 1 PDF trang 3,2026-10-29
+KH-BUS-11,20,40,25000,single_ride_distance_band,https://sxd.khanhhoa.gov.vn/Portals/0/QD%20du%20chnh%20Tuyn%20s%2011%20%20Nha%20Trang%20di%20Phan%20Rang-Thap%20Cham%20va%20nguc%20li_signed_signed_signed.pdf,Phụ lục 1 PDF trang 3,2026-10-29
+KH-BUS-11,40,65,35000,single_ride_distance_band,https://sxd.khanhhoa.gov.vn/Portals/0/QD%20du%20chnh%20Tuyn%20s%2011%20%20Nha%20Trang%20di%20Phan%20Rang-Thap%20Cham%20va%20nguc%20li_signed_signed_signed.pdf,Phụ lục 1 PDF trang 3,2026-10-29
+KH-BUS-11,65,85,50000,single_ride_distance_band,https://sxd.khanhhoa.gov.vn/Portals/0/QD%20du%20chnh%20Tuyn%20s%2011%20%20Nha%20Trang%20di%20Phan%20Rang-Thap%20Cham%20va%20nguc%20li_signed_signed_signed.pdf,Phụ lục 1 PDF trang 3,2026-10-29
+KH-BUS-11,85,,65000,single_ride_distance_band,https://sxd.khanhhoa.gov.vn/Portals/0/QD%20du%20chnh%20Tuyn%20s%2011%20%20Nha%20Trang%20di%20Phan%20Rang-Thap%20Cham%20va%20nguc%20li_signed_signed_signed.pdf,Phụ lục 1 PDF trang 3,2026-10-29

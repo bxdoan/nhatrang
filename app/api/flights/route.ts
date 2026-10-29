@@ -23,16 +23,17 @@ export async function GET(request: Request) {
   try {
     // Lấy tham số từ URL
     const { searchParams } = new URL(request.url);
-    const forceRefresh = searchParams.get('refresh') === 'true';
-    const limit = parseInt(searchParams.get('limit') || String(DEFAULT_LIMIT));
-    const offset = parseInt(searchParams.get('offset') || '0');
+    if (searchParams.has('date')) return NextResponse.json({error: 'Gói miễn phí không hỗ trợ lịch sử chuyến bay.'}, {status: 400});
+    const limit = 100;
+    const offset = 0;
+    if (!API_KEY) return NextResponse.json({error: 'Chưa cấu hình dữ liệu chuyến bay.'}, {status: 503});
     
     // Tạo cache key dựa trên params
-    const cacheKey = `flights_${limit}_${offset}`;
+    const cacheKey = `flights_live_${limit}_${offset}`;
     
     // Nếu không yêu cầu làm mới, kiểm tra cache trước
     let cachedData = null;
-    if (!forceRefresh) {
+    {
       try {
         cachedData = await getCachedFlightData(cacheKey);
       } catch (cacheError) {
@@ -83,7 +84,7 @@ export async function GET(request: Request) {
           canCallApi = await checkAndUpdateApiCallLimit();
         } catch (limitError) {
           console.error('Lỗi khi kiểm tra giới hạn API:', limitError);
-          // Nếu không kiểm tra được, vẫn cho phép gọi API
+          return Promise.reject(new Error('QUOTA_STORAGE_UNAVAILABLE'));
         }
         
         if (!canCallApi) {
@@ -120,6 +121,7 @@ export async function GET(request: Request) {
         // Make request to AviationStack API
         const response = await axios.get(BASE_URL, { params });
         
+        if (response.data.error) throw new Error('PROVIDER_ERROR');
         // Lưu dữ liệu vào cache
         try {
           await cacheFlightData(response.data, cacheKey);
@@ -155,8 +157,8 @@ export async function GET(request: Request) {
       
       return NextResponse.json({
         error: {
-          message: 'Đã đạt giới hạn gọi API cho ngày hôm nay',
-          details: `API chỉ được gọi ${MAX_API_CALLS_PER_DAY} lần mỗi ngày`
+          message: 'Đã đạt hạn mức cập nhật dữ liệu trong tháng',
+          details: 'Dữ liệu sẽ được cập nhật khi hạn mức được đặt lại.'
         },
         cache: {
           source: 'error',
@@ -195,7 +197,7 @@ export async function GET(request: Request) {
       }
     });
   } catch (error: any) {
-    console.error('Error fetching flight data:', error);
+    console.error('Error fetching flight data');
     
     // Reset API call flag trong trường hợp lỗi
     resetApiCallFlag();
@@ -204,7 +206,7 @@ export async function GET(request: Request) {
     return NextResponse.json(
       { 
         error: 'Failed to fetch flight data',
-        message: error.message || 'Unknown error'
+        message: 'Không thể cập nhật dữ liệu chuyến bay. Vui lòng thử lại sau.'
       },
       { status: 500 }
     );

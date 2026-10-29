@@ -1,0 +1,7 @@
+plan_item_id,description,planned_route_number,status,count,source_url,published_at,verified_at,notes
+PL-COUNT,Mạng lưới quy hoạch 2026–2030,,planning_only_not_operation,44,https://moc.gov.vn/tl/tin-tuc/96439/khanh-hoa-phe-duyet-danh-muc-mang-luoi-tuyen-xe-buyt.aspx,2026-08-21,2026-10-29,Gộp 26 Nha Trang + 5 Cam Ranh + 7 Phan Rang + 4 liền kề + 2 BRT; KHÔNG tạo route chưa rõ mã tuyến.
+PL-NHA,Khu vực Nha Trang,,planning_only_not_operation,26,https://moc.gov.vn/tl/tin-tuc/96439/khanh-hoa-phe-duyet-danh-muc-mang-luoi-tuyen-xe-buyt.aspx,2026-08-21,2026-10-29,Số lượng theo quy hoạch; không có các route_id cụ thể đủ bằng chứng.
+PL-CAM,Khu vực Cam Ranh,,planning_only_not_operation,5,https://moc.gov.vn/tl/tin-tuc/96439/khanh-hoa-phe-duyet-danh-muc-mang-luoi-tuyen-xe-buyt.aspx,2026-08-21,2026-10-29,Số lượng theo quy hoạch; không có các route_id cụ thể đủ bằng chứng.
+PL-PHAN,Khu vực Phan Rang,,planning_only_not_operation,7,https://moc.gov.vn/tl/tin-tuc/96439/khanh-hoa-phe-duyet-danh-muc-mang-luoi-tuyen-xe-buyt.aspx,2026-08-21,2026-10-29,Số lượng theo quy hoạch; không có các route_id cụ thể đủ bằng chứng.
+PL-ADJ,Liền kề tỉnh,,planning_only_not_operation,4,https://moc.gov.vn/tl/tin-tuc/96439/khanh-hoa-phe-duyet-danh-muc-mang-luoi-tuyen-xe-buyt.aspx,2026-08-21,2026-10-29,Số lượng theo quy hoạch; không có các route_id cụ thể đủ bằng chứng.
+PL-BRT,BRT,,planning_only_not_operation,2,https://moc.gov.vn/tl/tin-tuc/96439/khanh-hoa-phe-duyet-danh-muc-mang-luoi-tuyen-xe-buyt.aspx,2026-08-21,2026-10-29,Số lượng theo quy hoạch; không có các route_id cụ thể đủ bằng chứng.

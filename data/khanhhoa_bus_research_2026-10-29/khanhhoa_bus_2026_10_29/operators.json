@@ -1,0 +1,54 @@
+[
+  {
+    "operator_id": "OP-FUTA",
+    "public_name": "Phương Trang / FUTA Bus Lines",
+    "legal_entity_in_decision": "Công ty Cổ phần Xe khách Phương Trang FUTA Bus Lines",
+    "public_phone": "1900 6067",
+    "public_email": null,
+    "website": "https://futa.vn/",
+    "source_url": "https://sxd.khanhhoa.gov.vn/Portals/0/QD%20du%20chnh%20Tuyn%20s%2011%20%20Nha%20Trang%20di%20Phan%20Rang-Thap%20Cham%20va%20nguc%20li_signed_signed_signed.pdf",
+    "document_date": "2025-06-20",
+    "verified_at": "2026-10-29",
+    "confidence": "high_legal_name_medium_contact",
+    "notes": "1900 6067 theo website FUTA; HOTLINE FUTA CITY BUS 1900 638 494 là kênh thương hiệu/dịch vụ khác, cần phân định khi hỏi tuyến 11 và 8 tuyến trợ giá."
+  },
+  {
+    "operator_id": "OP-VINBUS",
+    "public_name": "VinBus",
+    "legal_entity_in_decision": "Công ty TNHH Dịch vụ Vận tải Sinh thái VinBus (tên trên website)",
+    "public_phone": "1900 866 663",
+    "public_email": "lienhe@vinbus.vn",
+    "website": "https://vinbus.vn/",
+    "source_url": "https://vinbus.vn/thong-bao-tang-tan-suat-hoat-dong-02-tuyen-buyt-dien-16-2-va-23-tai-nha-trang",
+    "document_date": null,
+    "verified_at": "2026-10-29",
+    "confidence": "high",
+    "notes": "Xác minh hotline, app VinBus và bản đồ hiện hành 16-2,23."
+  },
+  {
+    "operator_id": "OP-QUYETTHANG",
+    "public_name": "Quyết Thắng Nha Trang",
+    "legal_entity_in_decision": "Công ty TNHH Quyết Thắng Nha Trang",
+    "public_phone": "0915 411 551",
+    "public_email": null,
+    "website": null,
+    "source_url": "https://dulichso.khanhhoa.gov.vn/article/tuyen-nha-trang-doc-let-ninh-phuoc-cong-ty-tnhh-quyet-thang-khanh-hoa-eb8",
+    "document_date": null,
+    "verified_at": "2026-10-29",
+    "confidence": "medium_telephone_unconfirmed_current",
+    "notes": "Số từ cổng du lịch; chưa xác nhận tổng đài vẫn hoạt động hay là số của cá nhân. Không gửi PII hay khóa API."
+  },
+  {
+    "operator_id": "OP-TAYTHAIBINHDUONG",
+    "public_name": "Tây Thái Bình Dương / nhà vận hành city tour",
+    "legal_entity_in_decision": "Công ty CP đầu tư và du lịch Tây Thái Bình Dương (theo QĐ Sở)",
+    "public_phone": "1900 989 976",
+    "public_email": "nhatrangbuscity@gmail.com",
+    "website": "https://nhatrangbuscitytour.com/",
+    "source_url": "https://sxd.khanhhoa.gov.vn/noi-dung/id/4137/Quyet-dinh-ve-viec-cong-bo-mo-tuyen-xe-buyt-du-lich-noi-tinh-khong-tro-gia-Tuyen-so-25--Nha-Trang-City-Tour-",
+    "document_date": "2026-04-15",
+    "verified_at": "2026-10-29",
+    "confidence": "medium_company_identification_conflict",
+    "notes": "Tên pháp nhân ở footer website có thể khác tên trên quyết định; kiểm tra đơn vị pháp lý khai thác và hotline chính thức."
+  }
+]

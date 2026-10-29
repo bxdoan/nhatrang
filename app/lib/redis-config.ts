@@ -1,13 +1,15 @@
 import Redis from 'ioredis';
 
 // Cấu hình Redis URL
-const REDIS_URL = process.env.REDIS_URL || 'redis://default:password@host:port';
+const REDIS_URL = process.env.REDIS_URL;
 
 // Kết nối Redis với xử lý lỗi
 let redis: Redis;
 
 try {
-  redis = new Redis(REDIS_URL);
+  redis = REDIS_URL
+    ? new Redis(REDIS_URL, { maxRetriesPerRequest: 1, connectTimeout: 3000, lazyConnect: true })
+    : new Redis({ host: '127.0.0.1', port: 6379, maxRetriesPerRequest: 1, connectTimeout: 3000, lazyConnect: true });
   
   // Kiểm tra kết nối Redis
   redis.on('error', (error) => {
@@ -42,7 +44,7 @@ export const API_CALL_COUNT_KEY = 'api_call_count';
 export const API_CALL_DATE_KEY = 'api_call_date';
 
 // Cài đặt API
-export const API_KEY = process.env.AVIATIONSTACK_API_KEY || 'f20b5fe5cfd85d06b7c9b71dcd0a4b8e';
+export const API_KEY = process.env.AVIATIONSTACK_API_KEY || '';
 
 // Kiểm tra xem biến môi trường có được cấu hình đúng không
 if (!API_KEY) {
@@ -53,8 +55,5 @@ if (!REDIS_URL) {
   console.warn('REDIS_URL không được cấu hình. Hãy đảm bảo thiết lập biến môi trường.');
 }
 
-if (NO_LIMIT) {
-  console.log('🚀 Chế độ NO_LIMIT được bật: Không giới hạn số lần gọi API');
-}
 
 export { redis }; 

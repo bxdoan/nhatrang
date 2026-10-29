@@ -1,0 +1,1 @@
+from_stop_id,to_stop_id,walk_distance_m,walk_duration_min,walking_route_source,observed_at,confidence,notes

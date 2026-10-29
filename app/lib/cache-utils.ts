@@ -79,50 +79,17 @@ export async function cacheFlightData(data: any, cacheKey = 'default') {
 
 // Kiểm tra và cập nhật số lần gọi API trong ngày với debounce
 export async function checkAndUpdateApiCallLimit() {
-  try {
-    // Nếu NO_LIMIT=true, bỏ qua giới hạn API
-    if (NO_LIMIT) {
-      console.log('Bỏ qua kiểm tra giới hạn API do NO_LIMIT=true');
-      return true;
-    }
-    
-    // Kiểm tra nếu đang có API call khác đang thực hiện
-    if (isApiCallInProgress) {
-      console.log('API call đang trong tiến trình, từ chối request mới');
-      return false;
-    }
-    
-    const today = format(new Date(), 'yyyy-MM-dd');
-    const savedDate = await redis.get(API_CALL_DATE_KEY);
-    
-    // Reset counter nếu ngày mới
-    if (savedDate !== today) {
-      await redis.set(API_CALL_COUNT_KEY, '1');
-      await redis.set(API_CALL_DATE_KEY, today);
-      console.log(`Bắt đầu đếm API call cho ngày mới: ${today}`);
-      isApiCallInProgress = true;
-      return true;
-    }
-    
-    // Kiểm tra số lần gọi API trong ngày
-    const callCountStr = await redis.get(API_CALL_COUNT_KEY);
-    const callCount = callCountStr ? parseInt(callCountStr) : 0;
-    
-    if (callCount >= MAX_API_CALLS_PER_DAY) {
-      console.log(`Đã đạt giới hạn ${MAX_API_CALLS_PER_DAY} lần gọi API trong ngày`);
-      return false;
-    }
-    
-    // Tăng số lần gọi API
-    await redis.set(API_CALL_COUNT_KEY, (callCount + 1).toString());
-    console.log(`Đã sử dụng ${callCount + 1}/${MAX_API_CALLS_PER_DAY} lần gọi API trong ngày`);
-    isApiCallInProgress = true;
-    return true;
-  } catch (error) {
-    console.error('Lỗi khi kiểm tra giới hạn API:', error);
-    // Cho phép gọi API trong trường hợp lỗi để đảm bảo dịch vụ vẫn hoạt động
-    return true;
-  }
+  // Reserve a monthly request atomically across serverless instances. Fail closed
+  // when shared storage is unavailable so public traffic cannot exhaust the quota.
+  const month = new Date().toISOString().slice(0, 7);
+  const key = `aviationstack:requests:${month}`;
+  const count = Number(await redis.eval(`
+    local count = redis.call('INCR', KEYS[1])
+    if count == 1 then redis.call('EXPIRE', KEYS[1], 2764800) end
+    if count > 90 then redis.call('DECR', KEYS[1]); return 0 end
+    return count
+  `, 1, key));
+  return count > 0;
 }
 
 // Reset API call flag sau khi hoàn thành
