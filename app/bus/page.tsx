@@ -247,6 +247,7 @@ export default function BusPage() {
           <ApproximatePlanner />
           <details className="mb-4 rounded-xl bg-white p-4"><summary className="cursor-pointer font-semibold">Tra cứu trạm theo chiều tuyến</summary><BusPlanner /></details>
           <details className="mb-4 rounded-xl bg-white p-4"><summary className="cursor-pointer font-semibold">Xem danh mục 29 tuyến</summary><ProvincialRoutes /></details>
+        </div>
       </section>
 
       {/* Data Update Information */}
