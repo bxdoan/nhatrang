@@ -83,7 +83,7 @@ interface CacheInfo {
   maxApiCalls: number;
 }
 
-export default function useFlights() {
+export default function useFlights(date = '') {
   const [flights, setFlights] = useState<Flight[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -195,6 +195,7 @@ export default function useFlights() {
         offset: offset.toString()
       });
       
+      if (date) params.set('date', date);
       if (forceRefresh) {
         params.append('refresh', 'true');
       }
@@ -232,7 +233,7 @@ export default function useFlights() {
         
         // Sắp xếp chuyến bay theo giờ hạ cánh
         const sortedFlights = sortFlightsByArrivalTime(uniqueFlights);
-        setFlights(sortedFlights);
+        setFlights(previous => offset > 0 ? sortFlightsByArrivalTime(removeDuplicateFlights([...previous, ...sortedFlights])) : sortedFlights);
         
         console.log(`Đã lọc từ ${response.data.data.length} chuyến bay xuống còn ${uniqueFlights.length} chuyến bay duy nhất`);
       } else {
@@ -249,7 +250,7 @@ export default function useFlights() {
       
       // Nếu lỗi liên quan đến giới hạn API
       if (err.response?.status === 429) {
-        setError('Đã đạt giới hạn gọi API. Sử dụng dữ liệu cache nếu có.');
+        setError('Đã đạt giới hạn cập nhật dữ liệu. Vui lòng thử lại sau.');
         
         // Cập nhật thông tin cache nếu có
         if (err.response?.data?.cache) {
@@ -258,7 +259,7 @@ export default function useFlights() {
       } else if (err.code === 'ECONNABORTED' || err.message.includes('timeout')) {
         setError('Timeout khi tải dữ liệu. Vui lòng thử lại.');
       } else {
-        setError('Không thể tải dữ liệu chuyến bay. Vui lòng thử lại sau.');
+        setError(date ? 'Không tải được lịch sử. Gói dữ liệu có thể không hỗ trợ lịch sử; vui lòng thử lại sau.' : 'Không thể tải dữ liệu chuyến bay. Vui lòng thử lại sau.');
       }
       
       setFlights([]);
@@ -266,7 +267,7 @@ export default function useFlights() {
       isLoadingRef.current = false;
       setLoading(false);
     }
-  }, []); // Empty dependencies để tránh re-render
+  }, [date]); // Empty dependencies để tránh re-render
 
   // Hàm tải thêm dữ liệu với debounce
   const loadMore = useCallback(async () => {

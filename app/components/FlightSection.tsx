@@ -4,12 +4,16 @@ import { FaInfoCircle, FaPlane } from 'react-icons/fa';
 import FlightCard from './FlightCard';
 import useFlights from '../hooks/useFlights';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useCallback, useRef } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 export default function FlightSection({ showTitle = true }) {
+  return <FlightResults date="" showTitle={showTitle} />;
+}
+
+function FlightResults({showTitle, date}: {showTitle: boolean; date: string}) {
   const { t } = useLanguage();
   // Fetch flights data using custom hook
-  const { flights, loading, error, pagination, loadMore, refreshData } = useFlights();
+  const { flights, loading, error, pagination, loadMore, refreshData } = useFlights(date);
   
   // Throttle refresh để tránh spam clicks
   const lastRefreshRef = useRef<number>(0);
@@ -26,6 +30,12 @@ export default function FlightSection({ showTitle = true }) {
     refreshData();
   }, [refreshData]);
   
+  const [query, setQuery] = useState('');
+  const filteredFlights = flights.filter(f => {
+    const term = query.trim().toLowerCase();
+    const matches = `${f.flight.iata || ''} ${f.airline.name || ''} ${f.departure.airport || ''}`.toLowerCase().includes(term);
+    return matches && (date ? f.flight_status === 'landed' || !!f.arrival.actual : !f.arrival.actual && !['landed', 'cancelled', 'diverted'].includes(f.flight_status) && new Date(f.arrival.estimated || f.arrival.scheduled).getTime() >= Date.now());
+  });
   return (
     <section className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -38,6 +48,9 @@ export default function FlightSection({ showTitle = true }) {
           </div>
         )}
         
+        <p className="mb-4 text-sm text-slate-600">Dữ liệu cập nhật theo bộ nhớ đệm, có thể không đầy đủ; gói miễn phí không cung cấp lịch sử 7 ngày hoặc lịch bay tương lai. Tìm kiếm chỉ áp dụng cho dữ liệu đã tải.</p>
+        <label className="block mb-6 text-sm font-medium text-slate-700">Tìm theo mã chuyến bay, hãng hoặc sân bay đi<input value={query} onChange={e => setQuery(e.target.value)} placeholder="Ví dụ: VN1551" className="mt-2 block w-full max-w-lg rounded-lg border border-slate-300 p-3" /></label>
+        {!loading && !error && filteredFlights.length === 0 && <p className="mb-4 text-slate-700">Không tìm thấy chuyến bay phù hợp trong dữ liệu đã tải. Hãy thử từ khóa khác hoặc tải thêm.</p>}
         {/* Loading state - chỉ hiển thị khi lần đầu tải */}
         {loading && flights.length === 0 && (
           <div className="flex justify-center items-center p-12">
@@ -66,7 +79,7 @@ export default function FlightSection({ showTitle = true }) {
           <div>
             <div className="flex flex-col md:flex-row justify-between items-center mb-6">
               <p className="text-gray-700 mb-4 md:mb-0">
-                Hiển thị {flights.length} chuyến bay đến sân bay Cam Ranh (CXR)
+                Hiển thị {filteredFlights.length} chuyến bay phù hợp trong dữ liệu đã tải đến sân bay Cam Ranh (CXR)
               </p>
               <button 
                 onClick={handleRefresh}
@@ -78,18 +91,18 @@ export default function FlightSection({ showTitle = true }) {
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                {loading ? 'Đang cập nhật...' : 'Làm mới'}
+                {loading ? 'Đang tải...' : 'Kiểm tra dữ liệu'}
               </button>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {flights.map((flight, index) => (
+              {filteredFlights.map((flight, index) => (
                 <FlightCard key={`${flight.flight.iata}-${index}`} flight={flight} />
               ))}
             </div>
             
             {/* Pagination */}
-            {pagination.hasMore && (
+            {false && pagination.hasMore && (
               <div className="mt-10 text-center">
                 <p className="text-sm text-gray-500 mb-3">
                   Hiển thị <strong>{flights.length} / {pagination.total}</strong> chuyến bay
