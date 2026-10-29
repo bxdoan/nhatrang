@@ -9,6 +9,7 @@ import {
 } from 'react-icons/fa';
 import Link from 'next/link';
 import Script from 'next/script';
+import WeatherForecast from './components/WeatherForecast';
 import { HOMEPAGE_SCHEMA } from './lib/metadata';
 import { useLanguage } from './contexts/LanguageContext';
 import { useLocalizedLink } from './hooks/useLocalizedLink';
@@ -128,6 +129,7 @@ export default function Home() {
           </div>
         </section>
         
+        <WeatherForecast />
         {/* Tourism Info Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
