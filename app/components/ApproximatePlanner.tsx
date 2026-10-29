@@ -1,12 +1,12 @@
 'use client';
 import {useEffect, useRef, useMemo, useState} from 'react';
-import raw from '../data/busResearch.json';
+import useBusRoutes from '../hooks/useBusRoutes';
 import {CONTACT_INFO} from '../lib/contact-config';
 type Stop = {id:string; name:string; lat?:number; lng?:number};
 type Direction = {id:string; origin:string|null; destination:string|null; stops:Stop[]};
 type Route = {id:string; number:string|null; name:string|null; directions:Direction[]};
 type Point = {lat:number;lng:number};
-const routes:Route[] = raw;
+
 const distance = (a:Point,b:Point) => {const rad=Math.PI/180; const d=(b.lat-a.lat)*rad, l=(b.lng-a.lng)*rad; const h=Math.sin(d/2)**2+Math.cos(a.lat*rad)*Math.cos(b.lat*rad)*Math.sin(l/2)**2; return Math.round(12742000*Math.asin(Math.sqrt(Math.min(1,h))))};
 const located = (s:Stop): s is Stop & Point => typeof s.lat==='number' && typeof s.lng==='number';
 type Leg = {route:Route; direction:Direction; board:Stop & Point; alight:Stop & Point; start:number; end:number};
@@ -14,6 +14,7 @@ type Journey = {first:Leg; second?:Leg; access:number; transfer:number; last:num
 const label = (r:Route) => `tuyến ${r.number || 'chưa rõ số'}${r.name ? ` · ${r.name}` : ''}`;
 
 export default function ApproximatePlanner() {
+ const routes=useBusRoutes() as Route[];
  const mapElement=useRef<HTMLDivElement>(null); const map=useRef<any>(null); const drawing=useRef<any>(null);
  const [origin,setOrigin]=useState<Point|null>(null); const [target,setTarget]=useState<Point|null>(null); const [originText,setOriginText]=useState(''); const [destText,setDestText]=useState(''); const [mapChoice,setMapChoice]=useState<'origin'|'target'>('origin'); const mapChoiceRef=useRef<'origin'|'target'>('origin'); const [pending,setPending]=useState(false); const [error,setError]=useState(''); const [submitted,setSubmitted]=useState(false);
  const [preference,setPreference]=useState<'transfers'|'walking'>('transfers');
@@ -23,7 +24,7 @@ export default function ApproximatePlanner() {
  useEffect(()=>{try{const data=JSON.parse(localStorage.getItem('kh-bus-journeys') || '[]');if(Array.isArray(data))setSaved(data.filter(x=>x && Number.isFinite(x.origin?.lat) && Number.isFinite(x.origin?.lng) && Number.isFinite(x.target?.lat) && Number.isFinite(x.target?.lng) && typeof x.originText==='string' && typeof x.destText==='string').slice(0,5))}catch{}},[]);
  const save=()=>{if(!origin || !target)return;const next=[{origin,target,originText,destText},...saved.filter(x=>JSON.stringify(x.origin)!==JSON.stringify(origin)||JSON.stringify(x.target)!==JSON.stringify(target))].slice(0,5);try{localStorage.setItem('kh-bus-journeys',JSON.stringify(next));setSaved(next);setNotice('Đã lưu trên thiết bị này.')}catch{setNotice('Không lưu được trên thiết bị này.')}};
  useEffect(()=>{setSelected(0)},[origin,target,preference]);
- const points=useMemo(()=>routes.flatMap(r=>r.directions.flatMap(d=>d.stops.filter(located))),[]);
+ const points=useMemo(()=>routes.flatMap(r=>r.directions.flatMap(d=>d.stops.filter(located))),[routes]);
  const places=useMemo(()=>Array.from(new Map(points.map(s=>[s.name.toLocaleLowerCase('vi-VN'),s])).values()),[points]);
  const selectPlace=(value:string, which:'origin'|'target')=>{const match=places.find(s=>s.name===value); if(which==='origin'){setOriginText(value);setOrigin(match || null)}else{setDestText(value);setTarget(match || null)}setSubmitted(false)};
  const results=useMemo(()=>{
@@ -47,7 +48,7 @@ export default function ApproximatePlanner() {
   const walk=(j:Journey)=>j.access+j.transfer+j.last;
   const unique=Array.from(new Map(journeys.map(j=>[`${j.first.direction.id}:${j.first.board.id}:${j.first.alight.id}:${j.second?.direction.id}:${j.second?.board.id}:${j.second?.alight.id}`,j])).values());
   return unique.sort((a,b)=>preference==='walking' ? walk(a)-walk(b)||Number(!!a.second)-Number(!!b.second) : Number(!!a.second)-Number(!!b.second)||walk(a)-walk(b)).slice(0,5);
- },[submitted,origin,target,preference]);
+ },[submitted,origin,target,preference,routes]);
  const locate=()=>{if(!navigator.geolocation){setError('Trình duyệt không hỗ trợ định vị.');return}setPending(true);setError('');navigator.geolocation.getCurrentPosition(p=>{setOrigin({lat:p.coords.latitude,lng:p.coords.longitude});setOriginText('Vị trí hiện tại');setPending(false);setSubmitted(false)},()=>{setPending(false);setError('Không lấy được vị trí. Hãy bật quyền vị trí và thử lại.')},{timeout:10000,maximumAge:60000})};
  useEffect(()=>{const timer=setInterval(()=>{if(!window.L || !mapElement.current || map.current)return;clearInterval(timer);const L=window.L;map.current=L.map(mapElement.current).setView([12.24,109.19],12);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors'}).addTo(map.current);drawing.current=L.layerGroup().addTo(map.current);map.current.on('click',(e:any)=>{const p={lat:e.latlng.lat,lng:e.latlng.lng}; if(mapChoiceRef.current==='origin'){setOrigin(p);setOriginText('Điểm chọn trên bản đồ')}else{setTarget(p);setDestText('Điểm chọn trên bản đồ')}setSubmitted(false)});},150);return()=>{clearInterval(timer);map.current?.remove();map.current=null}},[]);
  useEffect(()=>{if(!map.current || !drawing.current || !window.L)return;const L=window.L, layer=drawing.current;layer.clearLayers();const coords:number[][]=[];const mark=(p:Point,text:string)=>{coords.push([p.lat,p.lng]);L.marker([p.lat,p.lng]).addTo(layer).bindTooltip(text)};if(origin)mark(origin,'A · Điểm đi');if(target)mark(target,'B · Điểm đến');const j=results[selected] || results[0];if(j){for(const leg of [j.first,j.second].filter(Boolean) as Leg[]){const path=leg.direction.stops.slice(leg.start,leg.end+1).filter(located).map(p=>[p.lat,p.lng]);L.polyline(path,{color:'#1d4ed8',weight:5}).addTo(layer);coords.push(...path);mark(leg.board,'Lên tuyến '+leg.route.number+' · '+leg.board.name);mark(leg.alight,'Xuống · '+leg.alight.name)}const walks=[[origin,j.first.board],[j.first.alight,j.second?.board || target],...(j.second?[[j.second.alight,target]]:[])];for(const pair of walks)if(pair[0]&&pair[1])L.polyline(pair.map(p=>[p!.lat,p!.lng]),{color:'#64748b',dashArray:'6,8',weight:3}).addTo(layer)}if(coords.length)map.current.fitBounds(coords,{padding:[35,35],maxZoom:15})},[origin,target,results,selected]);

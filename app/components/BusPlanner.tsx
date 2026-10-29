@@ -1,8 +1,9 @@
 'use client';
 import { useState } from 'react';
-import routes from '../data/busResearch.json';
+import useBusRoutes from '../hooks/useBusRoutes';
 
 export default function BusPlanner() {
+  const routes=useBusRoutes();
   const available = routes.filter(r => r.directions.length);
   const [routeId, setRouteId] = useState(available[0].id);
   const route = available.find(r => r.id === routeId)!;

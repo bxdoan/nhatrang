@@ -11,6 +11,7 @@ export default function robots() {
           '/admin/',
           '/cache/',
           '/bus-collect',
+          '/bus-review',
         ],
       },
     ],

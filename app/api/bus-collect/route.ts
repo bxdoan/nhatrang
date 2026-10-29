@@ -1,13 +1,9 @@
 import { NextResponse } from 'next/server';
-import { timingSafeEqual } from 'crypto';
+import {surveyAuth} from '../../lib/survey-auth';
 import { redis } from '../../lib/redis-config';
 export const dynamic = 'force-dynamic';
 export async function POST(request: Request) {
-  const secret = process.env.BUS_COLLECT_TOKEN;
-  if (!secret || !process.env.REDIS_URL) return NextResponse.json({error:'Chưa cấu hình nơi nhận. Bản ghi vẫn được giữ trên thiết bị; hãy xuất file.'},{status:503});
-  const supplied = request.headers.get('x-collect-token') || '';
-  const a=Buffer.from(secret), b=Buffer.from(supplied);
-  if(a.length!==b.length || !timingSafeEqual(a,b)) return NextResponse.json({error:'Mã truy cập không đúng.'},{status:401});
+  try {const status=await surveyAuth(request);if(status!==200)return NextResponse.json({error:status===429?'Thử mã quá nhiều lần. Đợi 15 phút.':'Kiểm tra mã truy cập và cấu hình nơi nhận.'},{status});}catch{return NextResponse.json({error:'Chưa kết nối được nơi nhận.'},{status:503});}
   try {
     const text=await request.text(); if(text.length>10000) return NextResponse.json({error:'Bản ghi quá lớn.'},{status:413});
     const v=JSON.parse(text);
