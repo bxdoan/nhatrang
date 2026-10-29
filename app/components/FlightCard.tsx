@@ -1,3 +1,5 @@
+'use client';
+import { useRef } from 'react';
 import { format, parseISO } from 'date-fns';
 import { utcToZonedTime } from 'date-fns-tz';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -56,6 +58,7 @@ interface Flight {
 
 export default function FlightCard({ flight }: { flight: Flight }) {
   const { t } = useLanguage();
+  const dialog = useRef<HTMLDialogElement>(null);
   
   // Function to format date and time with timezone conversion
   const formatTime = (dateString: string | undefined, timezone: string) => {
@@ -137,6 +140,18 @@ export default function FlightCard({ flight }: { flight: Flight }) {
 
   return (
     <div className="flight-card">
+      <button className="mb-3 text-blue-700 underline font-semibold" onClick={() => dialog.current?.showModal()}>Xem chi tiết {flight.flight.iata}</button>
+      <dialog ref={dialog} className="rounded-xl p-6 w-[min(92vw,560px)] backdrop:bg-black/50" aria-label="Chi tiết chuyến bay">
+        <form method="dialog"><button className="float-right rounded border px-3 py-2">Đóng</button></form>
+        <h2 className="text-xl font-bold mb-4">{flight.flight.iata} · {getAirlineName()}</h2>
+        <p>{flight.departure.airport} → {flight.arrival.airport}</p>
+        <dl className="mt-4 space-y-3">
+          <div><dt>Trạng thái</dt><dd>{flight.flight_status}</dd></div>
+          <div><dt>Đến theo lịch</dt><dd>{formatDate(flight.arrival.scheduled, flight.arrival.timezone)} · {formatTime(flight.arrival.scheduled, flight.arrival.timezone)}</dd></div>
+          <div><dt>Đến dự kiến / thực tế</dt><dd>{formatTime(flight.arrival.estimated, flight.arrival.timezone)} / {formatTime(flight.arrival.actual, flight.arrival.timezone)}</dd></div>
+          <div><dt>Nhà ga · Cửa đến · Băng chuyền</dt><dd>{flight.arrival.terminal || 'Chưa có'} · {flight.arrival.gate || 'Chưa có'} · {flight.arrival.baggage || 'Chưa có'}</dd></div>
+        </dl>
+      </dialog>
       <div className="flex justify-between items-center mb-2">
         <div className="font-bold text-lg">{getAirlineName()}</div>
         <span className={getStatusClass(flight.flight_status)}>
