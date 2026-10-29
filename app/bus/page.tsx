@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { FaBus, FaChevronLeft, FaMapMarkedAlt, FaInfoCircle, FaRoute, FaRegClock, FaExchangeAlt, FaSearch, FaRegDotCircle, FaRegCircle } from 'react-icons/fa';
 import Script from 'next/script';
+import BusPlanner from '../components/BusPlanner';
+import ProvincialRoutes from '../components/ProvincialRoutes';
 import busStopsData from '../data/busStops.json';
 import busRoutesData from '../data/busRoutes.json';
 import { BUS_PAGE_SCHEMA } from '../lib/metadata';
@@ -40,54 +42,6 @@ interface BusRoute {
   path: number[][]; // Tọa độ cho polyline
 }
 
-// Schema.org JSON-LD cho FAQ
-const FAQ_SCHEMA = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Giá vé xe buýt Nha Trang là bao nhiêu?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Giá vé xe buýt nội thành Nha Trang là 7.000đ/lượt, xe buýt sân bay Cam Ranh là 50.000đ/lượt, vé tháng là 200.000đ. Học sinh, sinh viên, người cao tuổi và người khuyết tật được giảm 50% giá vé.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'Xe buýt Nha Trang hoạt động từ mấy giờ đến mấy giờ?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Xe buýt nội thành hoạt động từ 05:00 - 19:00 hàng ngày. Tuyến sân bay Cam Ranh hoạt động từ 04:00 - 21:00. Tần suất xe buýt là 15-30 phút/chuyến tùy theo tuyến.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'Có bao nhiêu tuyến xe buýt tại Nha Trang?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Hiện tại Nha Trang có 4 tuyến xe buýt chính: Tuyến 23 (Ana Marina - Vinpearl), Tuyến 18 (Bình Hưng - Diên Khánh), Tuyến 9 (Bến xe - Sân bay Cam Ranh), và Tuyến 4 (Chợ Đầm - Bến xe Phía Nam).'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'Làm thế nào để đi từ sân bay Cam Ranh về trung tâm Nha Trang bằng xe buýt?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Bạn có thể đi tuyến số 9 từ sân bay Cam Ranh về bến xe phía Nam Nha Trang. Giá vé 50.000đ/lượt, thời gian di chuyển khoảng 45-60 phút, xe chạy từ 04:00 - 21:00 với tần suất 30 phút/chuyến.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'Xe buýt Nha Trang có chấp nhận thanh toán bằng thẻ không?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Hiện tại hầu hết các tuyến xe buýt Nha Trang chỉ chấp nhận thanh toán bằng tiền mặt. Bạn nên chuẩn bị sẵn tiền lẻ để mua vé. Một số tuyến đang thí điểm thanh toán không tiền mặt.'
-      }
-    }
-  ]
-};
-
 export default function BusPage() {
   const { t, isLoading } = useLanguage();
   const { createLink } = useLocalizedLink();
@@ -97,17 +51,6 @@ export default function BusPage() {
   const [selectedStop, setSelectedStop] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [mapReady, setMapReady] = useState(false);
-  
-  if (isLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading...</p>
-        </div>
-      </div>
-    );
-  }
   
   // Load dữ liệu từ files JSON
   const busStops: BusStop[] = busStopsData;
@@ -120,7 +63,7 @@ export default function BusPage() {
       .filter(date => date)
       .sort((a, b) => new Date(b).getTime() - new Date(a).getTime());
     
-    return dates[0] || new Date().toISOString().split('T')[0];
+    return dates[0] || '2025-01-01';
   };
   
   const formatDate = (dateString: string) => {
@@ -134,7 +77,7 @@ export default function BusPage() {
   
   // Khởi tạo bản đồ khi component được render
   useEffect(() => {
-    if (typeof window !== 'undefined' && !mapReady) {
+    if (typeof window !== 'undefined' && !mapReady && !isLoading) {
       // Đợi cho đến khi leaflet được load
       const checkLeaflet = setInterval(() => {
         if (window.L) {
@@ -148,7 +91,7 @@ export default function BusPage() {
         clearInterval(checkLeaflet);
       };
     }
-  }, [mapReady]);
+  }, [mapReady, isLoading]);
   
   // Theo dõi thay đổi của tuyến đường được chọn
   useEffect(() => {
@@ -228,6 +171,7 @@ export default function BusPage() {
       if (stop) {
         // Tạo marker hình tròn cho trạm với viền màu tuyến
         L.circleMarker([stop.lat, stop.lng], {
+          className: 'bus-route',
           color: route.color,
           fillColor: '#ffffff',
           fillOpacity: 1,
@@ -299,6 +243,8 @@ export default function BusPage() {
       {/* Main Content */}
       <section className="flex-grow py-6 bg-gray-50">
         <div className="container mx-auto px-4">
+          <BusPlanner />
+          <ProvincialRoutes />
           <div className="flex flex-col lg:flex-row gap-6">
             {/* Sidebar */}
             <div className="lg:w-1/3 flex flex-col gap-4">
@@ -568,62 +514,6 @@ export default function BusPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-8 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center mb-8">{t.bus?.faq?.title || 'Câu hỏi thường gặp về xe buýt Nha Trang'}</h2>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-4">
-              <details className="bg-gray-50 rounded-lg p-4">
-                <summary className="font-semibold cursor-pointer hover:text-blue-600">
-                  {t.bus?.faq?.questions?.fare?.question || 'Giá vé xe buýt Nha Trang là bao nhiêu?'}
-                </summary>
-                <div className="mt-3 text-gray-700">
-                  <p>{t.bus?.faq?.questions?.fare?.answer || 'Giá vé xe buýt nội thành Nha Trang là 7.000đ/lượt, xe buýt sân bay Cam Ranh là 50.000đ/lượt, vé tháng là 200.000đ. Học sinh, sinh viên, người cao tuổi và người khuyết tật được giảm 50% giá vé.'}</p>
-                </div>
-              </details>
-              
-              <details className="bg-gray-50 rounded-lg p-4">
-                <summary className="font-semibold cursor-pointer hover:text-blue-600">
-                  {t.bus?.faq?.questions?.schedule?.question || 'Xe buýt Nha Trang hoạt động từ mấy giờ đến mấy giờ?'}
-                </summary>
-                <div className="mt-3 text-gray-700">
-                  <p>{t.bus?.faq?.questions?.schedule?.answer || 'Xe buýt nội thành hoạt động từ 05:00 - 19:00 hàng ngày. Tuyến sân bay Cam Ranh hoạt động từ 04:00 - 21:00. Tần suất xe buýt là 15-30 phút/chuyến tùy theo tuyến.'}</p>
-                </div>
-              </details>
-              
-              <details className="bg-gray-50 rounded-lg p-4">
-                <summary className="font-semibold cursor-pointer hover:text-blue-600">
-                  {t.bus?.faq?.questions?.routes?.question || 'Có bao nhiêu tuyến xe buýt tại Nha Trang?'}
-                </summary>
-                <div className="mt-3 text-gray-700">
-                  <p>{t.bus?.faq?.questions?.routes?.answer || 'Hiện tại Nha Trang có 4 tuyến xe buýt chính: Tuyến 23 (Ana Marina - Vinpearl), Tuyến 18 (Bình Hưng - Diên Khánh), Tuyến 9 (Bến xe - Sân bay Cam Ranh), và Tuyến 4 (Chợ Đầm - Bến xe Phía Nam).'}</p>
-                </div>
-              </details>
-              
-              <details className="bg-gray-50 rounded-lg p-4">
-                <summary className="font-semibold cursor-pointer hover:text-blue-600">
-                  {t.bus?.faq?.questions?.airport?.question || 'Làm thế nào để đi từ sân bay Cam Ranh về trung tâm Nha Trang bằng xe buýt?'}
-                </summary>
-                <div className="mt-3 text-gray-700">
-                  <p>{t.bus?.faq?.questions?.airport?.answer || 'Bạn có thể đi tuyến số 9 từ sân bay Cam Ranh về bến xe phía Nam Nha Trang. Giá vé 50.000đ/lượt, thời gian di chuyển khoảng 45-60 phút, xe chạy từ 04:00 - 21:00 với tần suất 30 phút/chuyến.'}</p>
-                </div>
-              </details>
-              
-              <details className="bg-gray-50 rounded-lg p-4">
-                <summary className="font-semibold cursor-pointer hover:text-blue-600">
-                  {t.bus?.faq?.questions?.payment?.question || 'Xe buýt Nha Trang có chấp nhận thanh toán bằng thẻ không?'}
-                </summary>
-                <div className="mt-3 text-gray-700">
-                  <p>{t.bus?.faq?.questions?.payment?.answer || 'Hiện tại hầu hết các tuyến xe buýt Nha Trang chỉ chấp nhận thanh toán bằng tiền mặt. Bạn nên chuẩn bị sẵn tiền lẻ để mua vé. Một số tuyến đang thí điểm thanh toán không tiền mặt.'}</p>
-                </div>
-              </details>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Schema.org JSON-LD */}
       <Script
         id="schema-bus"
@@ -631,12 +521,6 @@ export default function BusPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BUS_PAGE_SCHEMA) }}
       />
       
-      {/* FAQ Schema */}
-      <Script
-        id="schema-faq"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
-      />
     </div>
   );
 } 
