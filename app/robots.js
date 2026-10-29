@@ -10,6 +10,7 @@ export default function robots() {
           '/api/',
           '/admin/',
           '/cache/',
+          '/bus-collect',
         ],
       },
     ],
